@@ -17,9 +17,13 @@ def merge(left,right):
         else:
             final.append(right[j])
             j += 1
-    print('mergeinfo',left,right,final,i,j)
-    print('mergeres',final + right[j:])
-    return final + left[i:] + right[j:]
+    while i < len(left):
+        final.append(left[i])
+        i += 1
+    while j < len(right):
+        final.append(right[j])
+        j += 1
+    return final
 
 # SELECT ALGORITHMS
 
@@ -41,7 +45,7 @@ def qselect(k,array):
     else:
         return pivot
 
-def rmedian():
+def rmedian(k,array):
     return False
 
 # SORT ALGORITHMS
@@ -64,21 +68,14 @@ def merge_sort(array):
     if len(array) <= 1:
         return array
     idx = int(len(array)/2)
-    print(idx,array)
-    left = merge_sort(array[:idx])
-    right = merge_sort(array[idx:])
-    m = merge(left,right)
-    print(left,right,m)
     return merge(merge_sort(array[:idx]),merge_sort(array[idx:]))
 
 if __name__ == '__main__':
-    size = 5 
+    size = 50000 
     idx = np.random.randint(size)
-    print(idx)
     array = np.random.randint(100,size=size)
-    #selected = qselect(idx,array)
-    #print('qselect: %d'%selected)
+    selected = qselect(idx,array)
+    print('qselect: %d'%selected)
     sorted_array = merge_sort(array) 
-    print(sorted_array)
     print('real: %d'%sorted_array[idx])
-    #print(len(sorted_array),len(array))
+    print(len(sorted_array),len(array))
