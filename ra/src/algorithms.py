@@ -8,6 +8,9 @@ def sample_one_element(array):
     idx = np.random.randint(len(array))
     return array[idx]
 
+def sample_with_replacement(array,size):
+    return np.random.choice(array,size,replace=True)
+
 def merge(left,right):
     i,j,final = 0,0,[]
     while i < len(left) and j < len(right):
@@ -45,8 +48,27 @@ def qselect(k,array):
     else:
         return pivot
 
-def rmedian(k,array):
-    return False
+def rmedian(S):
+    n = len(S)
+    sample_size = np.power(n,0.75)
+    R = quick_sort(sample_with_replacement(S,int(np.ceil(sample_size))))
+    d = R[int(np.floor(sample_size/2 - np.sqrt(n)))]
+    u = R[int(np.floor(sample_size/2 + np.sqrt(n)))]
+    C,Id,Iu = [],0,0
+    for x in S:
+        if x < d:
+            Id += 1
+        elif x > u:
+            Iu += 1
+        else:
+            C.append(x)
+    if Id > n/2 or Iu > n/2:
+        return False
+    if len(C) > 4*n:
+        return False
+    C = quick_sort(C)
+    idx = int(np.floor(n/2)) - Id + 1
+    return C[idx]
 
 # SORT ALGORITHMS
 
@@ -71,11 +93,14 @@ def merge_sort(array):
     return merge(merge_sort(array[:idx]),merge_sort(array[idx:]))
 
 if __name__ == '__main__':
-    size = 50000 
-    idx = np.random.randint(size)
-    array = np.random.randint(100,size=size)
-    selected = qselect(idx,array)
-    print('qselect: %d'%selected)
-    sorted_array = merge_sort(array) 
-    print('real: %d'%sorted_array[idx])
-    print(len(sorted_array),len(array))
+    size = 50000
+    #idx = np.random.randint(size)
+    array = np.random.randint(100000,size=size)
+    # selected = qselect(idx,array)
+    # print('qselect: %d'%selected)
+    # sorted_array = merge_sort(array)
+    # print('real: %d'%sorted_array[idx])
+    # print(len(sorted_array),len(array))
+    print(rmedian(array))
+    print(qselect(int(np.ceil(len(array)/2)+1),array))
+    print(quick_sort(array)[int(np.ceil(len(array)/2))+1])
