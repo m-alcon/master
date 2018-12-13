@@ -40,7 +40,6 @@ def qselect(k,array):
             right.append(element)
         else:
             elements_like_pivot += 1
-    #print(k,left,elements_like_pivot,'x',pivot,right)
     if k < len(left):
         return qselect(k,left)
     elif k >= len(left)+elements_like_pivot:
@@ -70,6 +69,26 @@ def rmedian(S):
     idx = int(np.floor(n/2)) - Id + 1
     return C[idx]
 
+def rmedian_qselect(S):
+    n = len(S)
+    sample_size = np.power(n,0.75)
+    R = quick_sort(sample_with_replacement(S,int(np.ceil(sample_size))))
+    d = R[int(np.floor(sample_size/2 - np.sqrt(n)))]
+    u = R[int(np.floor(sample_size/2 + np.sqrt(n)))]
+    C,Id,Iu = [],0,0
+    for x in S:
+        if x < d:
+            Id += 1
+        elif x > u:
+            Iu += 1
+        else:
+            C.append(x)
+    if Id > n/2 or Iu > n/2:
+        return False
+    if len(C) > 4*n:
+        return False
+    return qselect(int(np.floor(n/2)) - Id + 1,C)
+
 # SORT ALGORITHMS
 
 def quick_sort(array):
@@ -91,16 +110,3 @@ def merge_sort(array):
         return array
     idx = int(len(array)/2)
     return merge(merge_sort(array[:idx]),merge_sort(array[idx:]))
-
-if __name__ == '__main__':
-    size = 50000
-    #idx = np.random.randint(size)
-    array = np.random.randint(100000,size=size)
-    # selected = qselect(idx,array)
-    # print('qselect: %d'%selected)
-    # sorted_array = merge_sort(array)
-    # print('real: %d'%sorted_array[idx])
-    # print(len(sorted_array),len(array))
-    print(rmedian(array))
-    print(qselect(int(np.ceil(len(array)/2)+1),array))
-    print(quick_sort(array)[int(np.ceil(len(array)/2))+1])

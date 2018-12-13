@@ -3,12 +3,15 @@ import numpy as np
 
 separator = ','
 
-def write_instances(instances_adhoc,instances):
+def write_instances(instances_adhoc,instances,instances_complexity):
     with open('../data/instances.dat','w') as file:
         for instance in instances:
             file.write(separator.join(instance) + '\n')
     with open('../data/instances_adhoc.dat','w') as file:
         for instance in instances_adhoc:
+            file.write(separator.join(instance) + '\n')
+    with open('../data/instances_complexity.dat','w') as file:
+        for instance in instances_complexity:
             file.write(separator.join(instance) + '\n')
 
 def load_instances():
@@ -20,7 +23,11 @@ def load_instances():
     with open('../data/instances.dat','r') as file:
         for line in file.readlines():
             instances.append([int(x) for x in line.split(separator)])
-    return instances_adhoc, instances
+    instances_complexity = []
+    with open('../data/instances_complexity.dat','r') as file:
+        for line in file.readlines():
+            instances_complexity.append([int(x) for x in line.split(separator)])
+    return instances_adhoc, instances, instances_complexity
 
 def generate_adhoc_instances(n,size,low,high):
     instances_asc = []
@@ -39,6 +46,13 @@ def generate_random_instances(n,size,low,high):
         instances.append([str(x) for x in instance])
     return instances
 
+def generate_random_instances_complexity(n,low,high):
+    instances = []
+    for i in range(n):
+        instance = list(np.random.randint(low,high,size=(i+1)*1000))
+        instances.append([str(x) for x in instance])
+    return instances
+
 if __name__ == '__main__':
     n = 100
     size = 50000
@@ -46,5 +60,5 @@ if __name__ == '__main__':
     rand_range = (1000,1000000)
     instances_adhoc = generate_adhoc_instances(int(n*division),size,rand_range[0],rand_range[1])
     instances = generate_random_instances(int(n*(1-division)),size,rand_range[0],rand_range[1])
-    write_instances(instances_adhoc,instances)
-
+    instances_complexity = generate_random_instances_complexity(n,rand_range[0],rand_range[1])
+    write_instances(instances_adhoc,instances,instances_complexity)
