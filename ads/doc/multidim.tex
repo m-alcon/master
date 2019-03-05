@@ -1,0 +1,48 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.4}
+
+\graphicspath{{img/}}
+
+\begin{document}
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\(
+    \today % 22 february 2019
+\end{flushright}
+
+\noindent
+{\huge{\textbf{Advanced Data Structures}}}
+\section{Multidimensional Data Structures}
+\subsection{Queries}
+\begin{itemize}
+    \item Exact search: $q=(s,s,...,s)$.
+    \item Partial match: $q=(s,s,*,*,s,*,s)$.
+    \item Orthogonal queries.
+    \item Range queries: $q=([],[],...,[])$
+    \item Region queries.
+    \item Nearest-Neighbor queries: $q$, \textit{similarity function}.
+\end{itemize}
+\end{document}

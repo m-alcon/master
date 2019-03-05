@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="naivebayesDataModel">
+<entry key="ClassColumnName" type="xstring" value="Survived"/>
+<config key="ClassColumnType">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="is_null" type="xboolean" value="false"/>
+</config>
+<entry key="skipMissingVals" type="xboolean" value="true"/>
+<entry key="Threshold" type="xdouble" value="0.0"/>
+<config key="SkippedAttributes">
+<entry key="SkippedAttributesCounter" type="xint" value="0"/>
+</config>
+<config key="AttributeModelSection">
+<entry key="AttributeModelCounter" type="xint" value="4"/>
+<config key="AttributeModelData_0">
+<entry key="attributeName" type="xstring" value="Class"/>
+<entry key="type" type="xstring" value="NominalModel"/>
+<entry key="skipMissingVals" type="xboolean" value="true"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="maxNoOfAttrs" type="xint" value="20"/>
+<entry key="noOfClasses" type="xint" value="2"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xstring" value="Class:Crew"/>
+<entry key="1" type="xstring" value="Class:3rd"/>
+<entry key="2" type="xstring" value="Class:1st"/>
+<entry key="3" type="xstring" value="Class:2nd"/>
+</config>
+<config key="classValueData_0">
+<entry key="classValue" type="xstring" value="Survived:No"/>
+<entry key="noOfRows" type="xint" value="1112"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xstring" value="Class:1st"/>
+<entry key="1" type="xstring" value="Class:3rd"/>
+<entry key="2" type="xstring" value="Class:Crew"/>
+<entry key="3" type="xstring" value="Class:2nd"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xint" value="94"/>
+<entry key="1" type="xint" value="403"/>
+<entry key="2" type="xint" value="493"/>
+<entry key="3" type="xint" value="122"/>
+</config>
+</config>
+<config key="classValueData_1">
+<entry key="classValue" type="xstring" value="Survived:Yes"/>
+<entry key="noOfRows" type="xint" value="538"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xstring" value="Class:1st"/>
+<entry key="1" type="xstring" value="Class:3rd"/>
+<entry key="2" type="xstring" value="Class:Crew"/>
+<entry key="3" type="xstring" value="Class:2nd"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="4"/>
+<entry key="0" type="xint" value="148"/>
+<entry key="1" type="xint" value="130"/>
+<entry key="2" type="xint" value="167"/>
+<entry key="3" type="xint" value="93"/>
+</config>
+</config>
+</config>
+</config>
+<config key="AttributeModelData_1">
+<entry key="attributeName" type="xstring" value="Sex"/>
+<entry key="type" type="xstring" value="NominalModel"/>
+<entry key="skipMissingVals" type="xboolean" value="true"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="maxNoOfAttrs" type="xint" value="20"/>
+<entry key="noOfClasses" type="xint" value="2"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Sex:Male"/>
+<entry key="1" type="xstring" value="Sex:Female"/>
+</config>
+<config key="classValueData_0">
+<entry key="classValue" type="xstring" value="Survived:No"/>
+<entry key="noOfRows" type="xint" value="1112"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Sex:Male"/>
+<entry key="1" type="xstring" value="Sex:Female"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="1002"/>
+<entry key="1" type="xint" value="110"/>
+</config>
+</config>
+<config key="classValueData_1">
+<entry key="classValue" type="xstring" value="Survived:Yes"/>
+<entry key="noOfRows" type="xint" value="538"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Sex:Male"/>
+<entry key="1" type="xstring" value="Sex:Female"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="277"/>
+<entry key="1" type="xint" value="261"/>
+</config>
+</config>
+</config>
+</config>
+<config key="AttributeModelData_2">
+<entry key="attributeName" type="xstring" value="Age"/>
+<entry key="type" type="xstring" value="NominalModel"/>
+<entry key="skipMissingVals" type="xboolean" value="true"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="maxNoOfAttrs" type="xint" value="20"/>
+<entry key="noOfClasses" type="xint" value="2"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Age:Adult"/>
+<entry key="1" type="xstring" value="Age:Child"/>
+</config>
+<config key="classValueData_0">
+<entry key="classValue" type="xstring" value="Survived:No"/>
+<entry key="noOfRows" type="xint" value="1112"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Age:Adult"/>
+<entry key="1" type="xstring" value="Age:Child"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="1071"/>
+<entry key="1" type="xint" value="41"/>
+</config>
+</config>
+<config key="classValueData_1">
+<entry key="classValue" type="xstring" value="Survived:Yes"/>
+<entry key="noOfRows" type="xint" value="538"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Age:Adult"/>
+<entry key="1" type="xstring" value="Age:Child"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="492"/>
+<entry key="1" type="xint" value="46"/>
+</config>
+</config>
+</config>
+</config>
+<config key="AttributeModelData_3">
+<entry key="attributeName" type="xstring" value="Survived"/>
+<entry key="type" type="xstring" value="ClassModel"/>
+<entry key="skipMissingVals" type="xboolean" value="true"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="totalNoOfRecords" type="xint" value="1650"/>
+<entry key="maxNoOfClassValues" type="xint" value="20"/>
+<config key="classValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="Survived:No"/>
+<entry key="1" type="xstring" value="Survived:Yes"/>
+</config>
+<config key="classRecordCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="1112"/>
+<entry key="1" type="xint" value="538"/>
+</config>
+</config>
+</config>
+</config>
+</config>
