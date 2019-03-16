@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config xmlns="http://www.knime.org/2008/09/XMLConfig" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.knime.org/2008/09/XMLConfig http://www.knime.org/XMLConfig_2008_09.xsd" key="naivebayesDataModel">
+<entry key="ClassColumnName" type="xstring" value="Col0"/>
+<config key="ClassColumnType">
+<entry key="cell_class" type="xstring" value="org.knime.core.data.def.StringCell"/>
+<entry key="is_null" type="xboolean" value="false"/>
+</config>
+<entry key="skipMissingVals" type="xboolean" value="false"/>
+<entry key="Threshold" type="xdouble" value="0.0"/>
+<config key="SkippedAttributes">
+<entry key="SkippedAttributesCounter" type="xint" value="0"/>
+</config>
+<config key="AttributeModelSection">
+<entry key="AttributeModelCounter" type="xint" value="2"/>
+<config key="AttributeModelData_0">
+<entry key="attributeName" type="xstring" value="Col0"/>
+<entry key="type" type="xstring" value="ClassModel"/>
+<entry key="skipMissingVals" type="xboolean" value="false"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="totalNoOfRecords" type="xint" value="4626"/>
+<entry key="maxNoOfClassValues" type="xint" value="20"/>
+<config key="classValues">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xstring" value="poisonous"/>
+<entry key="1" type="xstring" value="edible"/>
+</config>
+<config key="classRecordCounter">
+<entry key="array-size" type="xint" value="2"/>
+<entry key="0" type="xint" value="2234"/>
+<entry key="1" type="xint" value="2392"/>
+</config>
+</config>
+</config>
+<config key="AttributeModelData_1">
+<entry key="attributeName" type="xstring" value="Col5"/>
+<entry key="type" type="xstring" value="NominalModel"/>
+<entry key="skipMissingVals" type="xboolean" value="false"/>
+<entry key="numberOfMissingValues" type="xint" value="0"/>
+<entry key="invalidCause" type="xstring" isnull="true" value=""/>
+<config key="data">
+<entry key="maxNoOfAttrs" type="xint" value="20"/>
+<entry key="noOfClasses" type="xint" value="2"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="9"/>
+<entry key="0" type="xstring" value="odor:pungent"/>
+<entry key="1" type="xstring" value="odor:none"/>
+<entry key="2" type="xstring" value="odor:almond"/>
+<entry key="3" type="xstring" value="odor:anise"/>
+<entry key="4" type="xstring" value="odor:foul"/>
+<entry key="5" type="xstring" value="odor:creosote"/>
+<entry key="6" type="xstring" value="odor:fishy"/>
+<entry key="7" type="xstring" value="odor:spicy"/>
+<entry key="8" type="xstring" value="odor:musty"/>
+</config>
+<config key="classValueData_0">
+<entry key="classValue" type="xstring" value="poisonous"/>
+<entry key="noOfRows" type="xint" value="2234"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="7"/>
+<entry key="0" type="xstring" value="odor:creosote"/>
+<entry key="1" type="xstring" value="odor:musty"/>
+<entry key="2" type="xstring" value="odor:none"/>
+<entry key="3" type="xstring" value="odor:pungent"/>
+<entry key="4" type="xstring" value="odor:fishy"/>
+<entry key="5" type="xstring" value="odor:foul"/>
+<entry key="6" type="xstring" value="odor:spicy"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="7"/>
+<entry key="0" type="xint" value="113"/>
+<entry key="1" type="xint" value="19"/>
+<entry key="2" type="xint" value="64"/>
+<entry key="3" type="xint" value="148"/>
+<entry key="4" type="xint" value="326"/>
+<entry key="5" type="xint" value="1235"/>
+<entry key="6" type="xint" value="329"/>
+</config>
+</config>
+<config key="classValueData_1">
+<entry key="classValue" type="xstring" value="edible"/>
+<entry key="noOfRows" type="xint" value="2392"/>
+<entry key="MissingValCounter" type="xint" value="0"/>
+<config key="attributeValues">
+<entry key="array-size" type="xint" value="3"/>
+<entry key="0" type="xstring" value="odor:anise"/>
+<entry key="1" type="xstring" value="odor:almond"/>
+<entry key="2" type="xstring" value="odor:none"/>
+</config>
+<config key="attributeCounter">
+<entry key="array-size" type="xint" value="3"/>
+<entry key="0" type="xint" value="234"/>
+<entry key="1" type="xint" value="224"/>
+<entry key="2" type="xint" value="1934"/>
+</config>
+</config>
+</config>
+</config>
+</config>
+</config>
