@@ -11,6 +11,8 @@
 \usepackage[bottom]{footmisc}
 \usepackage{cite}
 \usepackage{parskip}
+\usepackage{listings}
+\usepackage{amssymb}
 
 \hypersetup{
 	colorlinks=true,       % false: boxed links; true: colored links
@@ -29,7 +31,7 @@
 \begin{document}
 \noindent
 \begin{flushright}
-    \large\textbf{Miguel Alcón Doganoc} \\(
+    \large\textbf{Miguel Alcón Doganoc} \\
     \today % 22 february 2019
 \end{flushright}
 
@@ -45,4 +47,17 @@
     \item Region queries.
     \item Nearest-Neighbor queries: $q$, \textit{similarity function}.
 \end{itemize}
+
+\section{Geometric Data Structures}
+\subsection{Vertical Line Stabbing}
+\textbf{Input:} Collection of $n$ intervals.
+\begin{lstlisting}[mathescape=true]
+        I = {[$a_1$,$b_1$],[$a_2$,$b_2$],...,[$a_n$,$b_n$]}b
+        $a_i,b_i \in \mathbb{R}$
+        $q \in \mathbb{R}$
+\end{lstlisting}
+\textbf{Output:} List if intervals in $I$ that contain $q$.
+
+\textbf{Solution:} Interval Trees
+
 \end{document}
