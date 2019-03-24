@@ -58,13 +58,13 @@
                 "nrfails":0,
                 "exectime":18,
                 "nrcreated":1,
-                "successor":"org.knime.base.node.preproc.partition.PartitionNodeFactory#Partitioning"
+                "successor":"NodeContainer"
             },
             {
                 "id":"org.knime.base.node.meta.xvalidation.XValidatePartitionerFactory#X-Partitioner",
-                "nrexecs":30,
+                "nrexecs":40,
                 "nrfails":0,
-                "exectime":364,
+                "exectime":443,
                 "nrcreated":0,
                 "successor":"org.knime.base.node.mine.bayes.naivebayes.predictor4.NaiveBayesPredictorNodeFactory3#Naive Bayes Predictor"
             },
@@ -86,35 +86,43 @@
             },
             {
                 "id":"org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory#X-Aggregator",
-                "nrexecs":30,
+                "nrexecs":40,
                 "nrfails":0,
-                "exectime":29,
+                "exectime":41,
                 "nrcreated":0,
                 "successor":"n/a"
             },
             {
                 "id":"org.knime.base.node.mine.scorer.accuracy.AccuracyScorerNodeFactory#Scorer",
-                "nrexecs":3,
+                "nrexecs":4,
                 "nrfails":0,
-                "exectime":22,
+                "exectime":35,
                 "nrcreated":0,
                 "successor":"n/a"
             },
             {
                 "id":"org.knime.base.node.mine.svm.learner.SVMLearnerNodeFactory2#SVM Learner",
-                "nrexecs":10,
+                "nrexecs":20,
                 "nrfails":0,
-                "exectime":193388,
+                "exectime":345063,
                 "nrcreated":1,
                 "successor":"org.knime.base.node.mine.svm.predictor2.SVMPredictorNodeFactory#SVM Predictor"
             },
             {
                 "id":"org.knime.base.node.mine.svm.predictor2.SVMPredictorNodeFactory#SVM Predictor",
-                "nrexecs":10,
+                "nrexecs":20,
                 "nrfails":0,
-                "exectime":1046,
+                "exectime":2022,
                 "nrcreated":1,
                 "successor":"org.knime.base.node.meta.xvalidation.AggregateOutputNodeFactory#X-Aggregator"
+            },
+            {
+                "id":"org.knime.base.node.preproc.pmml.missingval.compute.MissingValueHandlerNodeFactory#Missing Value",
+                "nrexecs":1,
+                "nrfails":0,
+                "exectime":496,
+                "nrcreated":1,
+                "successor":"NodeContainer"
             }
         ],
         "metaNodes":{
@@ -126,12 +134,12 @@
         "wrappedNodes":{
         }
     },
-    "uptime":1885439,
+    "uptime":2061423,
     "workflowsOpened":3,
     "remoteWorkflowsOpened":0,
-    "launches":2,
+    "launches":3,
     "lastApplicationID":"org.knime.product.KNIME_APPLICATION",
-    "timeSinceLastStart":3607739,
+    "timeSinceLastStart":2413392,
     "crashes":0,
-    "properlyShutDown":true
+    "properlyShutDown":false
 }
