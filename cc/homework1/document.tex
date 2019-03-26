@@ -1,0 +1,142 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{minted}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usemintedstyle{vs}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.4}
+
+\graphicspath{{img/}}
+
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Computational Complexity \\
+    \today
+\end{flushright}
+
+\noindent
+{\huge{\textbf{Homework 1}}}
+
+\section{Exercise: Verifiers in L}
+\section{Exercise: NP = NL?}
+\section{Exercise: Comparison in logspace}
+
+As it is said in the statement, we know that $n$ is the length of $x$, and the input tape is as following:
+\[
+    \square \hspace{1mm} x_1,x_2,...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+Starting from this, I describe the TM that outputs 0 if $m < n$ and 1 if $m \geq n$, with the input tape defined above. For a more understandable explanation, I have made a visual representation of both tapes (first input, second work tape) at the end of each general step. Note that the position of the head of each tape is represented as a square surrounding the symbol which is in this position. Let us start with the description.
+
+First, we have to check if $n = 0$. If it happens, we assume that both $m$ and $n$ are 0, so $m = n$.
+\begin{enumerate}
+    \item Scan the actual position of the head of the input tape, which is the first position starting from the left. If it is a $\#$ symbol, output 1 and halt.    
+\end{enumerate}
+\[
+    \square \hspace{1mm} \boxed{x_1},x_2,...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+We copy $y$ into the work tape. Because $y$ is the binary encoding of $n$, we know that it is $O (\log n)$ in space.
+\begin{enumerate}\setcounter{enumi}{1}
+    \item Move the input tape to the right until finding the $\#$ symbol.
+    \item Move the input tape to the right until finding a 1.
+    \item Copy into the work tape from the first 1 (current position) to the $\square$ symbol (end of the input tape), from left to right.
+\end{enumerate}
+\[
+    \square \hspace{1mm} x_1,x_2,...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \boxed{\square}
+\]
+\[
+    \square \hspace{1mm} y_1,y_2,...,y_n \hspace{1mm} \boxed{\square}    
+\]
+
+Before starting to check whether $m < n$ or $m \geq n$, we have to place the head of each tape in the proper position.
+\begin{enumerate}\setcounter{enumi}{4}
+    \item Move the input tape to the left until finding the $\#$ symbol.
+    \item Move the input and the work tape simultaneously\footnote{First move one, then the other.} to the left until finding the $\square$ symbol in the work tape.
+\end{enumerate}
+
+\[
+    \square \hspace{1mm} x_1,x_2,...,\boxed{x_i},...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+\[
+    \boxed{\square} \hspace{1mm} y_1,y_2,...,y_n \hspace{1mm} \square   
+\]
+
+At this point, if we find a 1 between $x_1$ and $x_i$, with $i \in \{1,2,...,n\}$ or $x_i = \square$, then $m > n$.
+\begin{enumerate}\setcounter{enumi}{6}
+    \item Move the input tape to the left until finding a 1 or the $\square$ symbol. If it finds a 1, then it outputs 1 and halts.
+\end{enumerate}
+\[
+    \boxed{\square} \hspace{1mm} x_1,x_2,...,x_i,...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+\[
+    \boxed{\square} \hspace{1mm} y_1,y_2,...,y_n \hspace{1mm} \square   
+\]
+
+After that, if the TM haven't halted yet, we have to move the heads to the positions like at the end of step 6.
+\begin{enumerate}\setcounter{enumi}{7}
+    \item Move the input tape to the right until finding the $\#$ symbol.
+    \item Move the working tape to the right until finding the $\square$ symbol.
+    \item Repeat step 6.
+\end{enumerate}
+
+\[
+    \square \hspace{1mm} x_1,x_2,...,\boxed{x_i},...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+\[
+    \boxed{\square} \hspace{1mm} y_1,y_2,...,y_n \hspace{1mm} \square   
+\]
+
+Now, we continue checking whether $m < n$ or $m \geq n$, but this time comparing $x$ with $y$. 
+\begin{enumerate}\setcounter{enumi}{10}
+    \item Scan both tapes and, if the TM does not halt, move the head one position to the right. \begin{enumerate}
+        \item If the value of the header of the input tape is 1, and the one of the work tape is 0, then output 1 and halt.
+        \item Else if the value of the header of the input tape is 0, and the one of the work tape is 1, output 0 and halt.
+        \item Else if the value of both heads are the $\square$ symbol (end of both tapes) output 1 and halt.
+        \item Otherwise repeat step 11.
+    \end{enumerate}
+\end{enumerate}
+
+\[
+    \square \hspace{1mm} x_1,x_2,...,\boxed{x_i},...,x_n \# y_1,y_2,...,y_n \hspace{1mm} \square
+\]
+\[
+    \square \hspace{1mm} y_1,y_2,...,\boxed{y_i},...,y_n \hspace{1mm} \square   
+\]
+
+\section{Exercise: Composition of logspace computable functions}
+
+
+%\input{sections/end.tex}
+
+\newpage
+\bibliographystyle{unsrt}
+\bibliography{sections/cites}
+
+\end{document}
+    

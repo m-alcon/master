@@ -1,30 +1,3 @@
-/*
- *  Authors:
- *    Christian Schulte <schulte@gecode.org>
- *
- *  Copyright:
- *    Christian Schulte, 2008-2013
- *
- *  Permission is hereby granted, free of charge, to any person obtaining
- *  a copy of this software, to deal in the software without restriction,
- *  including without limitation the rights to use, copy, modify, merge,
- *  publish, distribute, sublicense, and/or sell copies of the software,
- *  and to permit persons to whom the software is furnished to do so, subject
- *  to the following conditions:
- *
- *  The above copyright notice and this permission notice shall be
- *  included in all copies or substantial portions of the software.
- *
- *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
- *  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
- *  MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
- *  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
- *  LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
- *  OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
- *  WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
- *
- */
-
 #include <gecode/int.hh>
 #include <gecode/minimodel.hh>
 #include <gecode/search.hh>
@@ -33,10 +6,58 @@ using namespace Gecode;
 
 class Queens : public Space {
 protected:
-  IntVarArray board;
+  BoolVarArray board;
+  int N;
 public:
-  Queens(int n) : board(*this, n*n, 0, 1) {
-    branch(*this, board, INT_VAR_SIZE_MIN(), INT_VAL_MIN());
+  Queens(int n) : N(n), board(*this, n*n, 0, 1) {
+    // At most 1 queen per column
+    for (int j = 0; j < N; ++j) {
+      BoolVarArgs v(N);
+      for (int i = 0; i < N; ++i) 
+        v[i] = queen(i, j);
+      linear(*this, v, IRT_LQ, 1);
+    }
+    // At most 1 queen per row
+    for (int i = 0; i < N; ++i) {
+      BoolVarArgs v(N);
+      for (int j = 0; j < N; ++j) 
+        v[j] = queen(i, j);
+      linear(*this, v, IRT_LQ, 1);
+    }
+    // At most 1 queen per column right diagonal
+    for (int j = 0; j < N; ++j) {
+      BoolVarArgs v(N-j);
+      for (int step = 0; j+step < N; ++step) {
+        v[step] = queen(step, j+step);
+      }
+      linear(*this, v, IRT_LQ, 1);
+    }
+    // At most 1 queen per row right diagonal
+    for (int i = 1; i < N; ++i) {
+      BoolVarArgs v(N-i);
+      for (int step = 0; i+step < N; ++step) {
+        v[step] = queen(i+step, step);
+      }
+      linear(*this, v, IRT_LQ, 1);
+    }
+    // At most 1 queen per column left diagonal
+    for (int j = 0; j < N; ++j) {
+      BoolVarArgs v(j+1);
+      for (int step = 0; j-step >= 0; ++step) {
+        v[step] = queen(step, j-step);
+      }
+      linear(*this, v, IRT_LQ, 1);
+    }
+    // At most 1 queen per row left diagonal
+    for (int i = 1; i < N; ++i) {
+      BoolVarArgs v(N-i);
+      for (int step = 0; i+step < N; ++step) {
+        v[step] = queen(i+step, N-1-step);
+      }
+      linear(*this, v, IRT_LQ, 1);
+    }
+    linear(*this, board, IRT_EQ, N);
+    branch(*this, board, BOOL_VAR_NONE(), BOOL_VAL_MAX());
   }
   Queens(Queens& q) : Space(q) {
     board.update(*this, q.board);
@@ -44,20 +65,34 @@ public:
   virtual Space* copy() {
     return new Queens(*this);
   }
-  void print(void) const {
-    std::cout << board << std::endl;
+  void print(int n) const {
+    for (int i = 0; i < n; ++i) {
+      for (int j = 0; j < n; ++j) {
+        std::cout << board[i*n+j] << " ";
+        //if (queen(i,j) == 1)
+        //  std::cout << "X" << std::endl;
+        //else
+        //  std::cout << " . " << std::endl;
+      }
+      std::cout << std::endl;
+    }
   }
+  BoolVar queen(int i, int j) const {
+    return board[i*N+j];
+  }
+
 };
 
 int main(int argc, char* argv[]) {
-  if (argc < 1) {
-	std::cout << "./" << argv[0] <<" N\n\tN:\tSpecify the size of the board (NxN)." << std::endl;
-	return -1;
+  if (argc < 2) {
+    std::cout << argv[0] <<" N\n\tN:\tSpecify the size of the board (NxN)." << std::endl;
+    return -1;
   }
-  Queens* q = new Queens(atoi(argv[1]));
+  int n = atoi(argv[1]);
+  Queens* q = new Queens(n);
   DFS<Queens> e(q);
   delete q;
-  while (Queens* s = e.next()) {
-    s->print(); delete s;
+  if (Queens* s = e.next()) {
+    s->print(n); delete s;
   }
 }
