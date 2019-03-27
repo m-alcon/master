@@ -130,7 +130,23 @@ Now, we continue checking whether $m < n$ or $m \geq n$, but this time comparing
 \]
 
 \section{Exercise: Composition of logspace computable functions}
+Consider the function $g':\Sigma^* \times \mathbb{N} \rightarrow \Sigma \cup \{\#\}$ that, given a string $x$ and an integer $i \in \mathbb{N}$, returns the $i$-th symbol of $g(x)$, or $\#$ if $i > |g(x)|$, where $\#$ is a symbol not in $\Sigma$. 
 
+[\textit{Function $g'$ is computable by deterministic TMs in logarithmic space}]: Because $g(x)$ is computable by deterministic TMs in logarithmic space, then $g'(x,i)$ can compute just 1 element of the output with the same conditions. Using the same TM as $g(x)$, we can define $g'(x,i)$ as:
+\begin{enumerate}
+    \item Compute all the outputs of $g(x)$ until reaching the $i$-th one, without writing on the output tape.
+    \item Compute the $i$-th element, output its value and halt.
+\end{enumerate}
+
+[\textit{Using $g'$ to compute $f \circ g$}]: We can compute $(f \circ g)(x)$ applying $f$ to $x$, but using $g'(x,i)$ as an input tape, i.e. as a process over $x$, launched before the scanning of the desired input, which is $g(x)$. We can map the operations of a conventional tape with the following operations of $g'(x,i)$, with $i \in \mathbb{N}$:
+\begin{itemize}
+    \item Moving to the right represents adding 1 to $i$.
+    \item Moving to the left represents subtracting 1 to $i$.
+    \item Scanning the symbol of the head represents applying $g'(x,i)$.
+\end{itemize}
+Notice that the bounds of this `input tape' are defined by $i \in \mathbb{N}$, and by $i > |g(x)| \Leftrightarrow$ output $\#$. Furthermore, the starting position of the input tape's head should be $i = 0$. 
+
+Because $f(x)$ is computable by deterministic TMs in logarithmic space, and each call to $g'$ re-uses the same space (logarithmic), we can conclude then that  $(f \circ g)(x)$ is also computable by deterministic TMs in logarithmic space.
 
 %\input{sections/end.tex}
 
