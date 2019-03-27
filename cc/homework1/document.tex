@@ -45,6 +45,17 @@
 {\huge{\textbf{Homework 1}}}
 
 \section{Exercise: Verifiers in L}
+We want to show that NP is characterized as the class of languages $A$ for which there exists a polynomial $p(n)$ and a language $B$ in \textbf{L} such that for every string $x$ we have
+\[
+    x \in A \Leftrightarrow \exists y \in \{0,1\}^* \text{ such that } |y| \leq p(|x|) \text{ and} \langle x,y \rangle \in B.    
+\]
+
+First, we add more information to the certificate $y$. Specifically, we add the encoding of the verifier of $x$, which is the deterministic TM $V$. We redefine $y$ as the concatenation of the encoding of the certificate ($y_c$) and the encoding of the verifier ($y_v$). Because $y \in \{0,1\}^*$, we have to add something to distinguish when $y_c$ finishes and $y_v$ starts, so  $y = 1^{|y_c|}\hspace{1mm} 0 \hspace{1mm} y_c \hspace{1mm}  y_v$.
+
+Then, we can compute $V(x,y_c)$ using a UTM U such that $U(\langle V, \langle x,y_c \rangle \rangle) = V(x,y_c)$ with the encoding $y_v$.
+
+Finally we should check that $U(\langle V, \langle x,y_c \rangle \rangle)$ computes the verification of $x$ in polynomial time and logarithmic space, but we did not manage to achieve it.
+
 \section{Exercise: NP = NL?}
 \section{Exercise: Comparison in logspace}
 
