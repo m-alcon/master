@@ -1,0 +1,276 @@
+================================= NB =================================
+------------------------- Feature elimination -------------------------
+Cross validation without feature elimination: 0.53379
+Train-test without feature elimination: 0.58333
+Dropping features:
+  - Drop age feature: 0.54092.
+  - Drop sex feature: 0.51751.
+  - Drop cp feature: 0.51359.
+  - Drop trestbps feature: 0.53001.
+  - Drop chol feature: 0.51795.
+  - Drop fbs feature: 0.53264.
+  - Drop restecg feature: 0.51438.
+  - Drop thalach feature: 0.53468.
+  - Drop exang feature: 0.53063.
+  - Drop oldpeak feature: 0.53101.
+  - Drop slope feature: 0.51404.
+  - Drop ca feature: 0.53533.
+  - Drop thal feature: 0.51081.
+Features to eliminate: age thalach ca
+Cross validation: 0.51795
+Final predicton accuracy: 0.55000
+Confusion matrix:
+[[31  4  0  0  1]
+ [ 1  1  0  0  7]
+ [ 0  1  0  1  3]
+ [ 0  1  0  0  6]
+ [ 0  2  0  0  1]]
+--------------------- Binary Feature elimination ---------------------
+Cross validation without feature elimination: 0.84506
+Train-test without feature elimination: 0.91667
+Dropping features:
+  - Drop age feature: 0.84494.
+  - Drop sex feature: 0.84172.
+  - Drop cp feature: 0.81483.
+  - Drop trestbps feature: 0.83839.
+  - Drop chol feature: 0.84506.
+  - Drop fbs feature: 0.84172.
+  - Drop restecg feature: 0.85184.
+  - Drop thalach feature: 0.82506.
+  - Drop exang feature: 0.83851.
+  - Drop oldpeak feature: 0.82517.
+  - Drop slope feature: 0.84529.
+  - Drop ca feature: 0.81828.
+  - Drop thal feature: 0.80126.
+Features to eliminate: restecg slope
+Cross validation: 0.83184
+Final predicton accuracy: 0.90000
+Confusion matrix:
+[[34  2]
+ [ 4 20]]
+-------------------------- First prediction --------------------------
+Prediction 1 accuracy: 0.91667
+Confusion matrix:
+[[35  1]
+ [ 4 20]]
+-------------------------- Second prediction --------------------------
+Prediction 2 accuracy: 0.09524
+Confusion matrix:
+[[0 1 0 0 0]
+ [0 1 0 0 5]
+ [0 0 0 3 2]
+ [0 1 1 0 4]
+ [0 2 0 0 1]]
+------------------------------- Fusion -------------------------------
+Final accuracy: 0.61667
+Final confusion matrix:
+[[35  1  0  0  0]
+ [ 3  1  0  0  5]
+ [ 0  0  0  3  2]
+ [ 1  1  1  0  4]
+ [ 0  2  0  0  1]]
+================================= NN =================================
+------------------------- Feature elimination -------------------------
+Cross validation without feature elimination: 0.53640
+Train-test without feature elimination: 0.60000
+Dropping features:
+  - Drop age feature: 0.53262.
+  - Drop sex feature: 0.53640.
+  - Drop cp feature: 0.53640.
+  - Drop trestbps feature: 0.54310.
+  - Drop chol feature: 0.54646.
+  - Drop fbs feature: 0.53640.
+  - Drop restecg feature: 0.53640.
+  - Drop thalach feature: 0.54021.
+  - Drop exang feature: 0.53640.
+  - Drop oldpeak feature: 0.53640.
+  - Drop slope feature: 0.53640.
+  - Drop ca feature: 0.53640.
+  - Drop thal feature: 0.53640.
+Features to eliminate: trestbps chol thalach
+Cross validation: 0.55649
+Final predicton accuracy: 0.58333
+Confusion matrix:
+[[34  2  0  0  0]
+ [ 8  0  1  0  0]
+ [ 4  0  1  0  0]
+ [ 5  1  1  0  0]
+ [ 1  0  2  0  0]]
+--------------------- Binary Feature elimination ---------------------
+Cross validation without feature elimination: 0.66368
+Train-test without feature elimination: 0.58333
+Dropping features:
+  - Drop age feature: 0.67023.
+  - Drop sex feature: 0.66368.
+  - Drop cp feature: 0.66368.
+  - Drop trestbps feature: 0.65322.
+  - Drop chol feature: 0.70414.
+  - Drop fbs feature: 0.66368.
+  - Drop restecg feature: 0.66368.
+  - Drop thalach feature: 0.54839.
+  - Drop exang feature: 0.66368.
+  - Drop oldpeak feature: 0.66368.
+  - Drop slope feature: 0.66368.
+  - Drop ca feature: 0.66368.
+  - Drop thal feature: 0.66034.
+Features to eliminate: age chol
+Cross validation: 0.70736
+Final predicton accuracy: 0.75000
+Confusion matrix:
+[[30  6]
+ [ 9 15]]
+-------------------------- First prediction --------------------------
+Prediction 1 accuracy: 0.75000
+Confusion matrix:
+[[30  6]
+ [ 9 15]]
+-------------------------- Second prediction --------------------------
+Prediction 2 accuracy: 0.09524
+Confusion matrix:
+[[0 1 3 2 0]
+ [0 0 1 3 0]
+ [0 1 2 1 1]
+ [1 2 2 0 0]
+ [0 0 1 0 0]]
+------------------------------- Fusion -------------------------------
+Final accuracy: 0.53333
+Final confusion matrix:
+[[30  1  3  2  0]
+ [ 5  0  1  3  0]
+ [ 0  1  2  1  1]
+ [ 3  2  2  0  0]
+ [ 2  0  1  0  0]]
+================================= DT =================================
+------------------------- Feature elimination -------------------------
+Cross validation without feature elimination: 0.50608
+Train-test without feature elimination: 0.53333
+Dropping features:
+  - Drop age feature: 0.50876.
+  - Drop sex feature: 0.50274.
+  - Drop cp feature: 0.50869.
+  - Drop trestbps feature: 0.49004.
+  - Drop chol feature: 0.46072.
+  - Drop fbs feature: 0.49238.
+  - Drop restecg feature: 0.51514.
+  - Drop thalach feature: 0.48033.
+  - Drop exang feature: 0.51222.
+  - Drop oldpeak feature: 0.49148.
+  - Drop slope feature: 0.50477.
+  - Drop ca feature: 0.51364.
+  - Drop thal feature: 0.51614.
+Features to eliminate: age cp restecg exang ca thal
+Cross validation: 0.44618
+Final predicton accuracy: 0.40000
+Confusion matrix:
+[[18 14  3  1  0]
+ [ 3  4  0  2  0]
+ [ 0  3  1  1  0]
+ [ 3  2  0  1  1]
+ [ 2  0  0  1  0]]
+--------------------- Binary Feature elimination ---------------------
+Cross validation without feature elimination: 0.74747
+Train-test without feature elimination: 0.80000
+Dropping features:
+  - Drop age feature: 0.72034.
+  - Drop sex feature: 0.75103.
+  - Drop cp feature: 0.76747.
+  - Drop trestbps feature: 0.76069.
+  - Drop chol feature: 0.72690.
+  - Drop fbs feature: 0.75080.
+  - Drop restecg feature: 0.76069.
+  - Drop thalach feature: 0.72736.
+  - Drop exang feature: 0.74115.
+  - Drop oldpeak feature: 0.76126.
+  - Drop slope feature: 0.73402.
+  - Drop ca feature: 0.72747.
+  - Drop thal feature: 0.73425.
+Features to eliminate: sex cp trestbps fbs restecg oldpeak
+Cross validation: 0.73080
+Final predicton accuracy: 0.68333
+Confusion matrix:
+[[25 11]
+ [ 8 16]]
+-------------------------- First prediction --------------------------
+Prediction 1 accuracy: 0.78333
+Confusion matrix:
+[[27  9]
+ [ 4 20]]
+-------------------------- Second prediction --------------------------
+Prediction 2 accuracy: 0.24138
+Confusion matrix:
+[[0 5 4 0 0]
+ [0 2 3 2 0]
+ [0 0 3 1 1]
+ [0 3 0 2 1]
+ [0 1 0 1 0]]
+------------------------------- Fusion -------------------------------
+Final accuracy: 0.56667
+Final confusion matrix:
+[[27  5  4  0  0]
+ [ 2  2  3  2  0]
+ [ 0  0  3  1  1]
+ [ 1  3  0  2  1]
+ [ 1  1  0  1  0]]
+================================= SVM =================================
+------------------------- Feature elimination -------------------------
+Cross validation without feature elimination: 0.60288
+Train-test without feature elimination: 0.61667
+Dropping features:
+  - Drop age feature: 0.57633.
+  - Drop sex feature: 0.59552.
+  - Drop cp feature: 0.56026.
+  - Drop trestbps feature: 0.58952.
+  - Drop chol feature: 0.58516.
+  - Drop fbs feature: 0.59394.
+  - Drop restecg feature: 0.59951.
+  - Drop thalach feature: 0.58247.
+  - Drop exang feature: 0.60253.
+  - Drop oldpeak feature: 0.58571.
+  - Drop slope feature: 0.59096.
+  - Drop ca feature: 0.57977.
+  - Drop thal feature: 0.55749.
+Any feature to eliminate.
+--------------------- Binary Feature elimination ---------------------
+Cross validation without feature elimination: 0.83149
+Train-test without feature elimination: 0.90000
+Dropping features:
+  - Drop age feature: 0.83161.
+  - Drop sex feature: 0.84816.
+  - Drop cp feature: 0.83816.
+  - Drop trestbps feature: 0.84506.
+  - Drop chol feature: 0.82161.
+  - Drop fbs feature: 0.83161.
+  - Drop restecg feature: 0.83506.
+  - Drop thalach feature: 0.82839.
+  - Drop exang feature: 0.83494.
+  - Drop oldpeak feature: 0.83126.
+  - Drop slope feature: 0.82506.
+  - Drop ca feature: 0.81494.
+  - Drop thal feature: 0.81816.
+Features to eliminate: age sex cp trestbps fbs restecg exang
+Cross validation: 0.82805
+Final predicton accuracy: 0.86667
+Confusion matrix:
+[[31  5]
+ [ 3 21]]
+-------------------------- First prediction --------------------------
+Prediction 1 accuracy: 0.90000
+Confusion matrix:
+[[33  3]
+ [ 3 21]]
+-------------------------- Second prediction --------------------------
+Prediction 2 accuracy: 0.16667
+Confusion matrix:
+[[0 1 1 1 0]
+ [0 2 2 2 1]
+ [0 1 2 2 0]
+ [0 1 4 0 2]
+ [0 0 1 1 0]]
+------------------------------- Fusion -------------------------------
+Final accuracy: 0.61667
+Final confusion matrix:
+[[33  1  1  1  0]
+ [ 2  2  2  2  1]
+ [ 0  1  2  2  0]
+ [ 0  1  4  0  2]
+ [ 1  0  1  1  0]]
