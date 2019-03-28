@@ -1,4 +1,0 @@
-file:/Users/miquel/GitHub/master/wtf/data/processed.cleveland.data
-knime://knime.workflow/data.all
-/Users/miquel/GitHub/master/wtf/data/processed.cleveland.data
-knime://LOCAL/LabADM20190220/ds/mushroomTr.txt

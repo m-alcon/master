@@ -100,7 +100,7 @@ def target_to_binary(y, y_train, y_test):
 
 
 def perform_experiment(method_name_1,method_name_2,X,y):
-    print_title('=',method_name_1)
+    print_title('=','%s & %s'%(method_name_1,method_name_2))
 
     method = methods[method_name_1]
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
@@ -128,7 +128,8 @@ def perform_experiment(method_name_1,method_name_2,X,y):
 
     ## Train score
     score,train_binary_y_pred = predict(method,X_train,binary_y_train,X_train,binary_y_train)
-
+    print_title('*','Method changed')
+    method = methods[method_name_2]
     # Train model and predict if target is {0,1,2,3,4} with test data that predicts to 1 before
     ## New train data consists in all data with target != 0 and the ones that the other predictor failed
     new_X_train = X_train[y_train != 0]

@@ -1,0 +1,8 @@
+\begin{thebibliography}{1}
+
+\bibitem{dataset}
+Andras Janosi, William Steinbrunn, Matthias Pfisterer, and Robert Detrano.
+\newblock Heart disease.
+\newblock \url{https://archive.ics.uci.edu/ml/datasets/heart+Disease}, 2019.
+
+\end{thebibliography}
