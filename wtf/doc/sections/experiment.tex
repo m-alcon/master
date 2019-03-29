@@ -1,4 +1,5 @@
 \section{Experimentation}
+\label{sec:experimentation}
 Our experiment suffered several modifications along its lifetime. We started with a straightforward experiment that divides data into train and test (with 80\% of train data), trains different models using each of the classifiers and predicts the target value. We also performed a 10-fold cross validation with each of them. With this, we wanted to know if one of the classifiers works better by default, and get a first impression about how difficult will be predicting the target. As you can see in \ref{tab:first_exp}, we obtained very low accuracy in our first predictions. We had to improve that.
 
 \begin{table}[hbtp]
@@ -6,8 +7,8 @@ Our experiment suffered several modifications along its lifetime. We started wit
     \begin{tabular}{c c c c c}
         \toprule
         \textbf{Method} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
-        \textbf{Train \& Test} & 0.583 & 0.600 & 0.500 & 0.617 \\
-        \textbf{Cross-validation} & 0.534 & 0.536 & 0.510 & 0.603 \\
+        \textbf{Train \& Test} & 0.583 & 0.600 & 0.533 & 0.617 \\
+        \textbf{Cross-validation} & 0.534 & 0.536 & 0.480 & 0.603 \\
         \bottomrule
     \end{tabular}
     \caption{Accuracy predicting the target variable in the first experiment.}
@@ -28,8 +29,8 @@ In table \ref{tab:first_exp_fe}, you can see that removing all the selected feat
     \begin{tabular}{c c c c c}
         \toprule
         \textbf{Method} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
-        \textbf{Train \& Test} & 0.55000 & 0.58333 & 0.43333 & - \\
-        \textbf{Cross-validation} & 0.51795 & 0.55649 & 0.43059 & - \\
+        \textbf{Train \& Test} & 0.550 & 0.583 & 0.450 & - \\
+        \textbf{Cross-validation} & 0.518 & 0.556 & 0.449 & - \\
         \bottomrule
     \end{tabular}
     \caption{Accuracy predicting the target variable after feature elimination.}
@@ -68,9 +69,9 @@ In the first stage, before training, we performed the feature elimination with t
     \begin{tabular}{c c c c c}
         \toprule
         \textbf{Stage} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
-        \textbf{Binary pred.} & 0.917 & 0.750 & 0.800 & 0.900 \\
-        \textbf{Degree pred.} & 0.095 & 0.095 & 0.269 & 0.167 \\
-        \textbf{Fusion} & 0.617 & 0.533 & 0.600 & 0.617 \\
+        \textbf{Binary pred.} & 0.917 & 0.750 &  0.767 & 0.900 \\
+        \textbf{Degree pred.} & 0.095 & 0.095 & 0.192 & 0.167 \\
+        \textbf{Fusion} & 0.617 & 0.533 & 0.550 & 0.617 \\
         \bottomrule
     \end{tabular}
     \caption{Accuracy predicting the target variable in the second experiment.}
@@ -86,10 +87,10 @@ Looking at table \ref{tab:second_exp}, we realized that each classifier obtains 
     \begin{tabular}{c c c c c}
         \toprule
          & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
-        \textbf{NB} & 0.616 & \underline{0.683} & 0.650 & 0.650 \\
-        \textbf{NN} & 0.600 & 0.533 & 0.617 & 0.633 \\
-        \textbf{DT} & 0.483 & 0.566 & 0.600 & 0.533 \\
-        \textbf{SVM} & 0.583 & 0.650 & 0.650 & 0.617 \\
+        \textbf{NB} & 0.616 & \underline{0.683} & 0.633 & 0.650 \\
+        \textbf{NN} & 0.600 & 0.533 & 0.583 & 0.633 \\
+        \textbf{DT} & 0.500 & 0.583 & 0.550 & 0.566 \\
+        \textbf{SVM} & 0.583 & 0.650 & 0.633 & 0.617 \\
         \bottomrule
     \end{tabular}
     \caption{Accuracy predicting the target variable in the third experiment.}
@@ -98,7 +99,7 @@ Looking at table \ref{tab:second_exp}, we realized that each classifier obtains 
 
 We finally achieved to increase the global prediction, from 0.617 to 0.683. The prediction process using NB in the first stage and NN in the second stage gave us this maximum accuracy. This is the process that we are going to select to perform the fourth and last experiment.
 
-The fourth experiment consists on performing feature elimination to obtain the optimum prediction process combining NB and NN. As you can see in table \ref{tab:fourth_exp}, sex was the only feature that was really unnecessary for the combination of NB and NN. Deleting it, we obtained an accuracy of 0.70, almost 0.1 more than at the start. In table \ref{tab:fourth_exp_cm} we show the confusion matrix of this, the best classification process that we achieved. 
+The fourth experiment consists on performing feature elimination to obtain the optimum prediction process combining NB and NN. As you can see in table \ref{tab:fourth_exp}, sex was the only feature that was really unnecessary for the combination of NB and NN. Deleting it, we obtained an accuracy of 0.70, almost 0.1 more than at the start. In table \ref{tab:fourth_exp_cm} we show the confusion matrix of this, the best classification process that we achieved. As you can see there, and compared with table \ref{tab:first_exp_cm}, we predicted correctly (diagonal of the matrix) 5 more instances that just with SVM, but we did not predict any value of target with value 4.
 
 \begin{table}[hbtp]
     \centering
@@ -106,7 +107,7 @@ The fourth experiment consists on performing feature elimination to obtain the o
         \toprule
         \textbf{Erased feature} & \textbf{Accuracy} \\ \midrule
         \textbf{(1)} & 0.667 \\
-        \textbf{(2)} & 0.700 \\
+        \textbf{(2)} & \underline{0.700} \\
         \textbf{(3)} & 0.667 \\
         \textbf{(4)} & 0.650 \\
         \textbf{(5)} & 0.633 \\
@@ -140,3 +141,5 @@ The fourth experiment consists on performing feature elimination to obtain the o
     \caption{Confusion matrix of the final classification process.}
     \label{tab:fourth_exp_cm}
 \end{table}
+
+If you want more details about the experiments, you can either execute the Python script that we developed or look at the output file that we provide with this documentation.
