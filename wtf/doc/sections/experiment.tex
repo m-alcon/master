@@ -1,2 +1,142 @@
-\section{Design of the experiment}
-Our experiment suffered several modifications along its lifetime. We started with a straightforward experiment that divides data into train and test, trains different models using each of the classifiers and predicts the target value. With this, we wanted to know if one of the classifiers 
+\section{Experimentation}
+Our experiment suffered several modifications along its lifetime. We started with a straightforward experiment that divides data into train and test (with 80\% of train data), trains different models using each of the classifiers and predicts the target value. We also performed a 10-fold cross validation with each of them. With this, we wanted to know if one of the classifiers works better by default, and get a first impression about how difficult will be predicting the target. As you can see in \ref{tab:first_exp}, we obtained very low accuracy in our first predictions. We had to improve that.
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c}
+        \toprule
+        \textbf{Method} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
+        \textbf{Train \& Test} & 0.583 & 0.600 & 0.500 & 0.617 \\
+        \textbf{Cross-validation} & 0.534 & 0.536 & 0.510 & 0.603 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy predicting the target variable in the first experiment.}
+    \label{tab:first_exp}
+\end{table}
+
+In order to improve the accuracy of our predictions, we decided to perform feature elimination. We implemented our version of this method, which is described in section \ref{sec:implementation} and depends on the classifier that we are training. With it, we select the less relevant features in the data set, i.e., the ones that make us fail more often, and we remove them. We repeated the first experiment with the new data. For each classification method, we obtained the following non-relevant features:
+\begin{itemize}
+    \item \textbf{NB:} age, maximum heart rate achieved and number of major vessels colored by fluoroscopy.
+    \item \textbf{NN:} resting blood pressure, serum cholesterol and maximum heart rate achieved.
+    \item \textbf{DT:} age, sex, chest pain, exercise induced angina, and thalassemia.
+    \item \textbf{SVM:.} any feature.
+\end{itemize}
+In table \ref{tab:first_exp_fe}, you can see that removing all the selected features did not go well. With SVM, our feature selector did not select any feature, so we could not remove anything. Even though these bad results, we know that the elimination of the selected features can lead to better accuracy. We use this information in later experiments.
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c}
+        \toprule
+        \textbf{Method} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
+        \textbf{Train \& Test} & 0.55000 & 0.58333 & 0.43333 & - \\
+        \textbf{Cross-validation} & 0.51795 & 0.55649 & 0.43059 & - \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy predicting the target variable after feature elimination.}
+    \label{tab:first_exp_fe}
+\end{table}
+
+At this point, we included to our experiment the resultant confusion matrices of our predictions. They helped us to notice that the predictions of the target for value 0 were a lot much more accurate than the other ones. You can see this in table \ref{tab:first_exp_cm}, with the confusion matrix of the best classifier until now. 
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c c}
+        \toprule
+         & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ \midrule
+        \textbf{0} & 35 & 0 & 0 & 1 & 0 \\
+        \textbf{1} & 6 & 0 & 1 & 1 & 1 \\
+        \textbf{2} & 1 & 1 & 2 & 1 & 0 \\
+        \textbf{3} & 1 & 2 & 2 & 0 & 2 \\
+        \textbf{4} & 2 & 0 & 0 & 1 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Confusion matrix resultant of the predictions with SVM.}
+    \label{tab:first_exp_cm}
+\end{table}
+
+The difference in accuracy between target 0 and the other values may be preceded by the unbalance of the data set. We tried to fix it with a new design of the experiment. We can divide this second experiment into three stages: 
+\begin{enumerate}
+    \item \textbf{Predict whether the patient has presence of heart disease or not.} We start the first stage (binary prediction) with the change of the target value to 1 of all instances that have a target value greater than 0, we train the model with the data, and then we perform the predictions over it. These predictions are made with data from training and testing. With the train predictions, we want to obtain all the conflictive instances for taking them into account when training the model of the second stage.
+    \item \textbf{Predict the degree of the presence of heart disease of patients who suffer from it.} We start the second stage (degree prediction) returning their real values to the target variable of all instances. Then, we take as the new training data set all instances of the first training data that have a target value greater than 0, together with the conflictive training data of the first stage. With it, we train the model and perform the final prediction of the instances that we predicted to 1 previously.
+    \item \textbf{Fusion the results of previous stages.} In the third stage (fusion), we obtain the final accuracy and confusion matrix of the whole experiment.
+\end{enumerate}
+
+In the first stage, before training, we performed the feature elimination with the binary targets. We only deleted the features when the predictions were better than without it. Only DT obtained better results, with an increment from 0.583 to 0.750. Selected features were age and serum cholesterol. The final accuracy of each stage is shown in table \ref{tab:second_exp}.
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c}
+        \toprule
+        \textbf{Stage} & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
+        \textbf{Binary pred.} & 0.917 & 0.750 & 0.800 & 0.900 \\
+        \textbf{Degree pred.} & 0.095 & 0.095 & 0.269 & 0.167 \\
+        \textbf{Fusion} & 0.617 & 0.533 & 0.600 & 0.617 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy predicting the target variable in the second experiment.}
+    \label{tab:second_exp}
+\end{table}
+
+As we can see, for NB and DT we obtained better predictions, for NN worst and for SVM the same (compared with \textit{Train \& Test} field in table \ref{tab:first_exp}). We still had the same maximum accuracy, which is 0.617, so we had to keep experimenting if we wanted to get a better prediction process.
+
+Looking at table \ref{tab:second_exp}, we realized that each classifier obtains different accuracies for the degree predictions, whatever was the accuracy for the binary prediction. Hence, we thought that we could use different classifiers in stages 1 and 2 of the second experiment, in order to improve the whole prediction process. The third experiment just implements that. It performs the second experiment with different classifiers for both predicting stages. The final predictions of this experiments are shown in table \ref{tab:third_exp}. Each row represents the predictions calculated in the fusion process, using the classifiers on the left for the binary prediction, and the classifiers on the top for the degree prediction.
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c}
+        \toprule
+         & \textbf{NB} & \textbf{NN} & \textbf{DT} & \textbf{SVM} \\ \midrule
+        \textbf{NB} & 0.616 & \underline{0.683} & 0.650 & 0.650 \\
+        \textbf{NN} & 0.600 & 0.533 & 0.617 & 0.633 \\
+        \textbf{DT} & 0.483 & 0.566 & 0.600 & 0.533 \\
+        \textbf{SVM} & 0.583 & 0.650 & 0.650 & 0.617 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy predicting the target variable in the third experiment.}
+    \label{tab:third_exp}
+\end{table}
+
+We finally achieved to increase the global prediction, from 0.617 to 0.683. The prediction process using NB in the first stage and NN in the second stage gave us this maximum accuracy. This is the process that we are going to select to perform the fourth and last experiment.
+
+The fourth experiment consists on performing feature elimination to obtain the optimum prediction process combining NB and NN. As you can see in table \ref{tab:fourth_exp}, sex was the only feature that was really unnecessary for the combination of NB and NN. Deleting it, we obtained an accuracy of 0.70, almost 0.1 more than at the start. In table \ref{tab:fourth_exp_cm} we show the confusion matrix of this, the best classification process that we achieved. 
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c}
+        \toprule
+        \textbf{Erased feature} & \textbf{Accuracy} \\ \midrule
+        \textbf{(1)} & 0.667 \\
+        \textbf{(2)} & 0.700 \\
+        \textbf{(3)} & 0.667 \\
+        \textbf{(4)} & 0.650 \\
+        \textbf{(5)} & 0.633 \\
+        \textbf{(6)} & 0.683 \\
+        \textbf{(7)} & 0.650 \\
+        \textbf{(8)} & 0.633 \\
+        \textbf{(9)} & 0.667 \\
+        \textbf{(10)} & 0.650 \\
+        \textbf{(11)} & 0.667 \\
+        \textbf{(12)} & 0.683 \\
+        \textbf{(13)} & 0.650 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy of the classifier process deleting one feature.}
+    \label{tab:fourth_exp}
+\end{table}
+
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c c c}
+        \toprule
+         & \textbf{0} & \textbf{1} & \textbf{2} & \textbf{3} & \textbf{4} \\ \midrule
+        \textbf{0} &  35 & 0 & 0 & 1 & 0 \\
+        \textbf{1} &  3 & 2 & 2 & 2 & 0 \\
+        \textbf{2} &  0 & 1 & 3 & 1 & 0 \\
+        \textbf{3} &  1 & 3 & 1 & 2 & 0 \\
+        \textbf{4} &  0 & 3 & 0 & 0 & 0 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Confusion matrix of the final classification process.}
+    \label{tab:fourth_exp_cm}
+\end{table}

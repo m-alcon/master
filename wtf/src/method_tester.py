@@ -108,7 +108,7 @@ def perform_experiment(method_name_1,method_name_2,X,y):
     print_title('-','Feature elimination')
     feature_elimination_experiment(method,X,y,X_test,y_test,X_train,y_train)
 
-    print_title('-','Binary Feature elimination')
+    print_title('-','Binary feature elimination')
     binary_y, binary_y_train, binary_y_test = target_to_binary(y, y_train, y_test)
     feature_score, features = feature_elimination_experiment(method,X,binary_y,X_test,binary_y_test,X_train,binary_y_train)
 
@@ -119,16 +119,16 @@ def perform_experiment(method_name_1,method_name_2,X,y):
 
     # Train model and predict whether target y is 0 or 1, with 1 = {1,2,3}
     ## Test score
-    print_title('-','First prediction')
+    print_title('-','Degree prediction')
     score,binary_y_pred = predict(method,X_train,binary_y_train,X_test,binary_y_test)
-    print('Prediction 1 accuracy: %0.5f'%score)
+    print('Accuracy: %0.5f'%score)
     print('Confusion matrix:')
     cm = confusion_matrix(binary_y_test,binary_y_pred)
     print(cm)
 
     ## Train score
     score,train_binary_y_pred = predict(method,X_train,binary_y_train,X_train,binary_y_train)
-    print_title('*','Method changed')
+    print_title('*','Method change')
     method = methods[method_name_2]
     # Train model and predict if target is {0,1,2,3,4} with test data that predicts to 1 before
     ## New train data consists in all data with target != 0 and the ones that the other predictor failed
@@ -143,9 +143,9 @@ def perform_experiment(method_name_1,method_name_2,X,y):
     new_y_test = y_test[binary_y_pred != 0]
 
     ## Prediction
-    print_title('-','Second prediction')
+    print_title('-','Degree prediction')
     score,y_pred = predict(method,new_X_train,new_y_train,new_X_test,new_y_test)
-    print('Prediction 2 accuracy: %0.5f'%score)
+    print('Accuracy: %0.5f'%score)
     print('Confusion matrix:')
     cm = confusion_matrix(new_y_test,y_pred)
     print(cm)
@@ -160,12 +160,52 @@ def perform_experiment(method_name_1,method_name_2,X,y):
             idx = new_indexs.index(binary_indexs[i])
             binary_y_pred[i] = y_pred[idx]
 
-    print('Final accuracy: %0.5f'%accuracy_score(y_test,binary_y_pred, normalize=True))
-    print('Final confusion matrix:')
+    print('Accuracy: %0.5f'%accuracy_score(y_test,binary_y_pred, normalize=True))
+    print('Confusion matrix:')
     cm = confusion_matrix(y_test,binary_y_pred)
     print(cm)
 
+def predict_process(method_name_1,method_name_2,X_train,y_train,X_test,y_test):
+    method = methods[method_name_1]
 
+    _, binary_y_train, binary_y_test = target_to_binary(y, y_train, y_test)
+
+    # Train model and predict whether target y is 0 or 1, with 1 = {1,2,3}
+    ## Test score
+    score,binary_y_pred = predict(method,X_train,binary_y_train,X_test,binary_y_test)
+    print('     Binary prediction accuracy: %0.5f'%score)
+
+    ## Train score
+    score,train_binary_y_pred = predict(method,X_train,binary_y_train,X_train,binary_y_train)
+    method = methods[method_name_2]
+
+    # Train model and predict if target is {0,1,2,3,4} with test data that predicts to 1 before
+    ## New train data consists in all data with target != 0 and the ones that the other predictor failed
+    new_X_train = X_train[y_train != 0]
+    new_X_train = pd.concat([new_X_train,X_train[train_binary_y_pred != y_train]])
+    new_y_train = y_train[y_train != 0]
+    new_y_train = pd.concat([new_y_train,y_train[train_binary_y_pred != y_train]])
+
+    ## New test data consists in all predictions != 0
+    new_X_test = X_test[binary_y_pred != 0]
+    new_y_test = y_test[binary_y_pred != 0]
+
+    ## Prediction
+    score,y_pred = predict(method,new_X_train,new_y_train,new_X_test,new_y_test)
+    print('     Degree prediction accuracy: %0.5f'%score)
+
+    # Fusion predictions
+    binary_indexs = binary_y_test.index.tolist()
+    new_indexs = new_y_test.index.tolist()
+    
+    for i in range(len(binary_indexs)):
+        if binary_y_pred[i] > 0:
+            idx = new_indexs.index(binary_indexs[i])
+            binary_y_pred[i] = y_pred[idx]
+
+    final_score = accuracy_score(y_test,binary_y_pred, normalize=True)
+    print('     Fusion accuracy: %0.5f'%final_score)
+    return final_score, binary_y_pred
 
 
 
@@ -178,22 +218,37 @@ if __name__ == '__main__':
 
     X = data.drop(['num'], axis=1)
     y = data.num
-    #y = y.apply(lambda x: int(x > 0))
 
-
-    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
-
-
-    #score,_ = predict(X_train,y_train,X_test,y_test)
-    #print(score)
-
-    #####################################################################################################
+    # Third experiment
     for method_name_1 in methods.keys():
         for method_name_2 in methods.keys():
             perform_experiment(method_name_1,method_name_2,X,y)
     
-    ####################################################################################################
-    # X = data[data['num'] != 0]
-    # y = X.num
-    # X = X.drop(['num'], axis=1)
-    # perform_experiment('NB',X,y)
+    # Fourth experiment
+    print_title('=','Fourth experiment')
+
+    method = methods['NB']
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
+
+    binary_y, binary_y_train, binary_y_test = target_to_binary(y, y_train, y_test)
+    print('Score without droping features:')
+    main_score,_ = predict_process('NB','NN',X_train,y_train,X_test,y_test)
+    features_to_eliminate = []
+    print('Dropping features:')
+    for feature in list(X):
+        print('  - Drop %s feature:'%feature)
+        fe_X_train = X_train.drop(feature, axis=1)
+        fe_X_test = X_test.drop(feature, axis=1)
+        score,_ = predict_process('NB','NN',fe_X_train,y_train,fe_X_test,y_test)
+        if score > main_score:
+            features_to_eliminate.append(feature)
+    print('Features to eliminate: %s'%' '.join(features_to_eliminate))
+    for feature in features_to_eliminate:
+        X_train = X_train.drop(feature, axis=1)
+        X_test = X_test.drop(feature, axis=1)
+    print('Final prediction process:')
+    score,y_pred = predict_process('NB','NN',X_train,y_train,X_test,y_test)
+    print('Confusion matrix:')
+    print(confusion_matrix(y_test,y_pred))
+    
+

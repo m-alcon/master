@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.28)  28 MAR 2019 19:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.28)  29 MAR 2019 14:57
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1242,6 +1242,9 @@ LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/b/n' will be
 (Font)              scaled to size 10.95pt on input line 26.
 
 
+Package natbib Warning: Citation `dataset' on page 1 undefined on input line 26.
+
+
 Package hyperref Warning: Option `pdflang' has already been used,
 (hyperref)                setting the option has no effect on input line 26.
 
@@ -1251,8 +1254,28 @@ Package hyperref Warning: Option `pdfdisplaydoctitle' has already been used,
 
 (./sections/introduction.tex) (./sections/dataset.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 4.
-) (./sections/objective.tex) (./sections/experiment.tex) (./sections/implementation.tex) (./ADM-Miguel_Alcon.bbl) [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+(Font)              scaled to size 9.0pt on input line 9.
+
+
+Package natbib Warning: Citation `dataset' on page 1 undefined on input line 19.
+
+) (./sections/objective.tex) (./sections/experiment.tex
+Underfull \vbox (badness 4752) has occurred while \output is active []
+
+ [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
+
+]
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
+(Font)              scaled to size 9.0pt on input line 80.
+) (./sections/implementation.tex
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/n' will be
+(Font)              scaled to size 6.0pt on input line 7.
+ [2.2])
+No file ADM-Miguel_Alcon.bbl.
+
+Package natbib Warning: There were undefined citations.
+
+[3.3
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 40.
@@ -1261,21 +1284,21 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 40.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 40.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 40.
 Package rerunfilecheck Info: File `ADM-Miguel_Alcon.out' has not changed.
-(rerunfilecheck)             Checksum: D960C425B1AB835D5237E96583D26AB0;916.
+(rerunfilecheck)             Checksum: 712A14B0166F75F70E673239155FAA2B;768.
  ) 
 Here is how much of TeX's memory you used:
- 17985 strings out of 492982
- 265980 string characters out of 6134896
- 384412 words of memory out of 5000000
- 20969 multiletter control sequences out of 15000+600000
- 77595 words of font info for 117 fonts, out of 8000000 for 9000
+ 18088 strings out of 492982
+ 268041 string characters out of 6134896
+ 392067 words of memory out of 5000000
+ 20984 multiletter control sequences out of 15000+600000
+ 93872 words of font info for 161 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
  60i,11n,94p,862b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
-Output written on ADM-Miguel_Alcon.pdf (1 page, 254162 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb>
+Output written on ADM-Miguel_Alcon.pdf (3 pages, 312368 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
- 11 named destinations out of 1000 (max. 500000)
- 20557 words of extra memory for PDF output out of 20736 (max. 10000000)
+ 128 PDF objects out of 1000 (max. 8388607)
+ 106 compressed objects within 2 object streams
+ 35 named destinations out of 1000 (max. 500000)
+ 21061 words of extra memory for PDF output out of 24883 (max. 10000000)
 
