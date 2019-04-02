@@ -68,11 +68,7 @@ public:
   void print(int n) const {
     for (int i = 0; i < n; ++i) {
       for (int j = 0; j < n; ++j) {
-        std::cout << board[i*n+j] << " ";
-        //if (queen(i,j) == 1)
-        //  std::cout << "X" << std::endl;
-        //else
-        //  std::cout << " . " << std::endl;
+        std::cout << (board[i*n+j].val() ? "X" : ".");
       }
       std::cout << std::endl;
     }
