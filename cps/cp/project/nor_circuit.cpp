@@ -30,7 +30,7 @@ public:
   }
 
   NOR_Circuit(NOR_Circuit& c) : Space(c) {
-    c.truth_table;
+    truth_table = c.truth_table;
     circuit.update(*this, c.circuit);
   }
 
