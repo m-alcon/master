@@ -1,16 +1,27 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.datasets.samples_generator import make_blobs
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import cross_val_score
 from sklearn.metrics import confusion_matrix
+import matplotlib.colors as colors
+import matplotlib.cm as cmx
+from matplotlib import rcParams
+import colorsys
+
+rcParams['font.family'] = 'serif'
+rcParams['font.size'] = 10
+rcParams['font.sans-serif'] = ['Console Modern']
+rcParams['savefig.format'] = ['pdf']
+rcParams['savefig.bbox'] = 'tight'
+rcParams['savefig.pad_inches'] = 0
 
 
 header = ['age','sex','cp','trestbps','chol','fbs','restecg','thalach',
         'exang','oldpeak','slope','ca','thal','num']
 
-need_preprocess = False
 title_length = 70
 
 methods = {
@@ -49,21 +60,25 @@ def target_to_binary(y, y_train, y_test):
 
 if __name__ == '__main__':
 
-    data = pd.read_csv('./data/processed.csv')
+    centers = [[1, 1], [-1, -1], [-1, 1], [1, -1]]
+    #n_centers = 8
+    #centers = [[n_centers*x,n_centers*y] for x,y in np.random.rand(n_centers,2)]
+    #centers = np.random.uniform(0,n_centers+4, (n_centers, 2))
+    #print(centers)
 
-    if need_preprocess:
-        data = preprocess(data,True)
-    
-    colors = ['#ff0000','#00ff00']
+    cNorm  = colors.Normalize(vmin=0, vmax=len(centers))
+    scalarMap = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
 
-    X = data.drop(['num'], axis=1)
-    y = data.num
+    data, truth_labels = make_blobs(n_samples=300, centers=centers, cluster_std=0.4,
+                            random_state=73)
 
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
+    colors = [scalarMap.to_rgba(l) for l in truth_labels]
 
-    binary_y, binary_y_train, binary_y_test = target_to_binary(y, y_train, y_test)
-    labels = [colors[y_i] for y_i in binary_y]
+    x = [d[0] for d in data]
+    y = [d[1] for d in data]
+
+    #X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.20, random_state=42)
 
     #fig, ax = plt.subplot()
-    plt.scatter(X['age'],X['sex'],c=labels,s=50)
+    plt.scatter(x,y,c=colors)
     plt.show()
