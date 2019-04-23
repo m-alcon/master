@@ -13,23 +13,20 @@ using namespace Gecode;
 class NOR_Circuit : public Space {
 protected:
   vector<int> truth_table;
-  vector<IntVarArray> circuit;
+  IntVarArray circuit;
   IntVar size;
   int n, depth;
 public:
-  NOR_Circuit(vector<int> t, int d) : n(t.size()), truth_table(t), depth(d), circuit(depth) {
-    // Creation of structure of the circuit (variables)
-    for (int i = 0; i <= n; ++i)
-      circuit[i] = IntVarArray(*this, pow(2,i), -1, n);
-    // At most 1 queen per column
+  NOR_Circuit(vector<int> t, int d) : n(t.size()), truth_table(t), depth(d), circuit(*this, pow(2,depth+1)-1, -2, n) {
+    // Not NOR
     // for (int j = 0; j < N; ++j) {
     //   BoolVarArgs v(N);
     //   for (int i = 0; i < N; ++i) 
     //     v[i] = queen(i, j);
     //   linear(*this, v, IRT_LQ, 1);
     // }
-    //linear(*this, circuit, IRT_EQ, n);
-    //branch(*this, circuit, BOOL_VAR_NONE(), BOOL_VAL_MAX());
+    //linear(*this, circuit, IRT_EQ, n); 
+    branch(*this, circuit, INT_VAR_NONE(), INT_VAL_MIN()); // CAREFUL
   }
 
   NOR_Circuit(NOR_Circuit& c) : Space(c) {
@@ -42,10 +39,26 @@ public:
     return new NOR_Circuit(*this);
   }
 
+  IntVar node(const int & row, const int & col) {
+    if (col >= pow(2,row))
+      cout << "ERR: Trying to access an invalid node." << endl;
+    return circuit[(pow(2,row)-1)+col];
+  }
+
+  void analyze(const int & row, const int & col) {
+    if (row+1 > depth) {
+    }
+    else {
+      node(row,col);
+      analyze(row+1,2*col);
+      analyze(row+1,2*col+1);
+    }
+    
+  }
+
   void print() const {
     cout << "Need implementation." << endl;
-    for (auto row: circuit) 
-    cout << row << endl;
+    cout << circuit << endl;
   }
 
 };
