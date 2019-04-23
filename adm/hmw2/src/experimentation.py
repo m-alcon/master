@@ -38,11 +38,12 @@ def generate_centers(n):
     while placed < n:
         if placed+row_size <= n:
             for i in range(row_size):
-                centers.append((i*2,-placed*2))
+                centers.append((i*2,-(placed/row_size)*2))
         else:
-            distance = row_size/(n-placed)
-            for i in np.arange(distance,int(n-placed)+distance,distance):
-                centers.append((i*2,-placed*2))
+            distance = (row_size-1)/float(n-placed+1)
+            x_centers = [(i+1)*distance for i in range(n-placed)]
+            for x in x_centers:
+                centers.append((x*2,-(placed/row_size)*2))
         placed += row_size
     return centers
 
@@ -58,8 +59,6 @@ def clear_plt():
     plt.cla()
     plt.close()
 
-
-
 if __name__ == '__main__':
     #n_centers = 8
     #centers = [[n_centers*x,n_centers*y] for x,y in np.random.rand(n_centers,2)]
@@ -67,7 +66,7 @@ if __name__ == '__main__':
     #print(centers)
 
     # Centers of the clusters to generate
-    experiments = [(4,4),(1,4),(8,8),(8,4),(32,2),(32,32)]
+    experiments = [(4,4),(1,4),(16,16),(16,8),(49,2),(49,49)]
     for real_centers, n_centers in experiments:
         print_title('=','%d-%d'%(real_centers,n_centers))
         n_samples = 2000
@@ -90,10 +89,10 @@ if __name__ == '__main__':
         cNorm  = colors.Normalize(vmin=0, vmax=real_centers)
         scalarMap = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
         truth_colors = [scalarMap.to_rgba(l) for l in truth_labels]
-        
+
         cNorm  = colors.Normalize(vmin=0, vmax=n_centers)
         scalarMap_pred = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
-        
+
 
         plt.scatter(x,y,c=truth_colors)
         plt.savefig('./plots/truth_%d-%d.pdf'%(real_centers,n_centers))
@@ -117,10 +116,10 @@ if __name__ == '__main__':
                     mixed_colors.append(scalarMap.to_rgba(t))
                 else:
                     mixed_colors.append('#000000') # Color of a bad prediction
-            
+
             # Print score
             print('Score:', metrics.adjusted_rand_score(truth_labels, pred_labels))
-            
+
             # Generate and save plots
             plt.scatter(x,y,c=pred_colors)
             plt.savefig('./plots/%d-%d_pred_%s.pdf'%(real_centers,n_centers,method_name))
