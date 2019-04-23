@@ -13,11 +13,14 @@ using namespace Gecode;
 class NOR_Circuit : public Space {
 protected:
   vector<int> truth_table;
-  IntVarArray circuit;
+  vector<IntVarArray> circuit;
   IntVar size;
   int n, depth;
 public:
-  NOR_Circuit(vector<int> t, int d) : n(t.size()), truth_table(t), depth(d), circuit(*this, n*depth, 0, 1) {
+  NOR_Circuit(vector<int> t, int d) : n(t.size()), truth_table(t), depth(d), circuit(depth) {
+    // Creation of structure of the circuit (variables)
+    for (int i = 0; i <= n; ++i)
+      circuit[i] = IntVarArray(*this, pow(2,i), -1, n);
     // At most 1 queen per column
     // for (int j = 0; j < N; ++j) {
     //   BoolVarArgs v(N);
@@ -25,13 +28,14 @@ public:
     //     v[i] = queen(i, j);
     //   linear(*this, v, IRT_LQ, 1);
     // }
-    linear(*this, circuit, IRT_EQ, n);
+    //linear(*this, circuit, IRT_EQ, n);
     //branch(*this, circuit, BOOL_VAR_NONE(), BOOL_VAL_MAX());
   }
 
   NOR_Circuit(NOR_Circuit& c) : Space(c) {
     truth_table = c.truth_table;
-    circuit.update(*this, c.circuit);
+    for (int i = 0; i <= n; ++i)
+      circuit[i].update(*this, c.circuit[i]);
   }
 
   virtual Space* copy() {
@@ -40,10 +44,8 @@ public:
 
   void print() const {
     cout << "Need implementation." << endl;
-  }
-
-  IntVar queen(int i, int j) const {
-    return circuit[i*n+j];
+    for (auto row: circuit) 
+    cout << row << endl;
   }
 
 };

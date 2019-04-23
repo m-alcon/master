@@ -2,6 +2,8 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.mixture import GaussianMixture
+from sklearn.cluster import DBSCAN
+from sklearn.cluster import Birch
 from sklearn.datasets.samples_generator import make_blobs
 from sklearn.model_selection import train_test_split
 from sklearn import metrics
@@ -21,9 +23,7 @@ rcParams['savefig.pad_inches'] = 0
 header = ['age','sex','cp','trestbps','chol','fbs','restecg','thalach',
         'exang','oldpeak','slope','ca','thal','num']
 
-title_length = 70
-
-def print_title(char,title):
+def print_title(char,title,title_length=30):
     bar_size = int(np.ceil(float(title_length - len(title) - 2)/2))
     if bar_size < 1:
         print(title)
@@ -32,14 +32,18 @@ def print_title(char,title):
         print('%s %s %s'%(bar,title,bar))
 
 def generate_centers(n):
-    div = np.floor(np.sqrt(n))
-    x = int(np.floor(n/div) + n%div)
-    y = int(np.floor(n/div))
-    print(x,y)
+    row_size = int(np.round(np.sqrt(n)))
     centers = []
-    for j in range(y):
-        for i in range(x):
-            centers.append([i*2,j*2])
+    placed = 0
+    while placed < n:
+        if placed+row_size <= n:
+            for i in range(row_size):
+                centers.append((i*2,-placed*2))
+        else:
+            distance = row_size/(n-placed)
+            for i in np.arange(distance,int(n-placed)+distance,distance):
+                centers.append((i*2,-placed*2))
+        placed += row_size
     return centers
 
 
@@ -48,6 +52,11 @@ def map_labels(truth, pred):
     for t,p in zip(truth,pred):
         mapping[p][t] += 1
     return [np.argmax(m) for m in mapping]
+
+def clear_plt():
+    plt.clf()
+    plt.cla()
+    plt.close()
 
 
 
@@ -58,49 +67,65 @@ if __name__ == '__main__':
     #print(centers)
 
     # Centers of the clusters to generate
-    centers = generate_centers(16)
-    n_centers = 16
+    experiments = [(4,4),(1,4),(8,8),(8,4),(32,2),(32,32)]
+    for real_centers, n_centers in experiments:
+        print_title('=','%d-%d'%(real_centers,n_centers))
+        n_samples = 2000
+        centers = generate_centers(real_centers)
 
-    # Methods to compare
-    methods = {
-        'EM': GaussianMixture(n_components=n_centers, covariance_type='full')
-    }
+        # Methods to compare
+        methods = {
+            'em': GaussianMixture(n_components=n_centers, covariance_type='full'),
+            #'DB': DBSCAN(eps=0.3, min_samples=10),
+            'birch': Birch(branching_factor=50, n_clusters=n_centers, threshold=0.5, compute_labels=True)
+        }
 
-    # Generation of data
-    data, truth_labels = make_blobs(n_samples=1000, centers=centers, cluster_std=0.4,
-                            random_state=55)
-    x = [d[0] for d in data]
-    y = [d[1] for d in data]
+        # Generation of data
+        data, truth_labels = make_blobs(n_samples=n_samples, centers=centers, cluster_std=0.4,
+                                random_state=55)
+        x = [d[0] for d in data]
+        y = [d[1] for d in data]
 
-    # Automatic cluster coloring
-    cNorm  = colors.Normalize(vmin=0, vmax=n_centers)
-    scalarMap = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
-    truth_colors = [scalarMap.to_rgba(l) for l in truth_labels]
+        # Automatic cluster coloring
+        cNorm  = colors.Normalize(vmin=0, vmax=real_centers)
+        scalarMap = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
+        truth_colors = [scalarMap.to_rgba(l) for l in truth_labels]
+        
+        cNorm  = colors.Normalize(vmin=0, vmax=n_centers)
+        scalarMap_pred = cmx.ScalarMappable(norm=cNorm, cmap='gist_rainbow')
+        
 
-    # Clustering
-    methods['EM'].fit(data, y=truth_labels)
-    pred_labels = methods['EM'].predict(data)
-    pred_colors = [scalarMap.to_rgba(l) for l in pred_labels]
+        plt.scatter(x,y,c=truth_colors)
+        plt.savefig('./plots/truth_%d-%d.pdf'%(real_centers,n_centers))
+        clear_plt()
 
-    # Map truth labels with predicted labels
-    label_map = map_labels(truth_labels,pred_labels)
-    mapped_labels = [label_map[l] for l in pred_labels]
+        # Clustering
+        for method_name in methods.keys():
+            print_title('-',method_name)
+            methods[method_name].fit(data)
+            pred_labels = methods[method_name].predict(data)
+            pred_colors = [scalarMap_pred.to_rgba(l) for l in pred_labels]
 
-    # Prepare colors for the plot
-    mixed_colors = []
-    for t,p in zip(truth_labels,mapped_labels):
-        if t == p:
-            mixed_colors.append(scalarMap.to_rgba(t))
-        else:
-            mixed_colors.append('#000000') # Color of a bad prediction
-    
-    # Print score
-    print('Score:', metrics.adjusted_rand_score(truth_labels, pred_labels))
-    
-    # Generate and save plots
-    plt.scatter(x,y,c=truth_colors)
-    plt.savefig('./plots/truth.pdf')
-    plt.scatter(x,y,c=pred_colors)
-    plt.savefig('./plots/pred.pdf')
-    plt.scatter(x,y,c=mixed_colors)
-    plt.savefig('./plots/mixed.pdf')
+            # Map truth labels with predicted labels
+            label_map = map_labels(truth_labels,pred_labels)
+            mapped_labels = [label_map[l] for l in pred_labels]
+
+            # Prepare colors for the plot
+            mixed_colors = []
+            for t,p in zip(truth_labels,mapped_labels):
+                if t == p:
+                    mixed_colors.append(scalarMap.to_rgba(t))
+                else:
+                    mixed_colors.append('#000000') # Color of a bad prediction
+            
+            # Print score
+            print('Score:', metrics.adjusted_rand_score(truth_labels, pred_labels))
+            
+            # Generate and save plots
+            plt.scatter(x,y,c=pred_colors)
+            plt.savefig('./plots/%d-%d_pred_%s.pdf'%(real_centers,n_centers,method_name))
+            clear_plt()
+            if real_centers == n_centers:
+                plt.scatter(x,y,c=mixed_colors)
+                plt.savefig('./plots/%d-%d_mixed_%s.pdf'%(real_centers,n_centers,method_name))
+                clear_plt()
