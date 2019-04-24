@@ -5,3 +5,4 @@ doc/*.blg
 doc/*.log
 doc/*.blg
 doc/*.syntex.gz
+doc/*.out
