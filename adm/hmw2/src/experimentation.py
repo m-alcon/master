@@ -58,7 +58,7 @@ def map_labels(truth, pred):
         mapping[p][t] += 1
     keys = list(mapping.keys())
     keys.sort()
-    return [np.argmax(mapping[k]) for k in keys]
+    return {k:np.argmax(mapping[k]) for k in keys}
 
 def clear_plt():
     plt.clf()
@@ -66,10 +66,6 @@ def clear_plt():
     plt.close()
 
 if __name__ == '__main__':
-    #n_centers = 8
-    #centers = [[n_centers*x,n_centers*y] for x,y in np.random.rand(n_centers,2)]
-    #centers = np.random.uniform(0,n_centers+4, (n_centers, 2))
-    #print(centers)
 
     make_experiment = [True,True,True]
     n_samples = 2000
@@ -87,7 +83,7 @@ if __name__ == '__main__':
             methods = {
                 'em': GaussianMixture(n_components=n_centers),
                 'dbscan': DBSCAN(eps=0.2, min_samples=10),
-                'birch': Birch(branching_factor=50, n_clusters=n_centers, threshold=0.5, compute_labels=True)
+                #'birch': Birch(branching_factor=50, n_clusters=n_centers, threshold=0.5, compute_labels=True)
             }
 
             # Generation of data
@@ -113,7 +109,12 @@ if __name__ == '__main__':
             for method_name in methods.keys():
                 print_title('-',method_name)
                 pred_labels = methods[method_name].fit_predict(data)
-                pred_colors = [scalarMap_pred.to_rgba(l) for l in pred_labels]
+                pred_colors = []
+                for l in pred_labels:
+                    color = scalarMap_pred.to_rgba(l)
+                    if l == -1:
+                        color = '#AAAAAA'
+                    pred_colors.append(color)
 
                 # Map truth labels with predicted labels
                 label_map = map_labels(truth_labels,pred_labels)
@@ -146,7 +147,7 @@ if __name__ == '__main__':
         methods = {
             'em': GaussianMixture(n_components=2, covariance_type='full'),
             'dbscan': DBSCAN(eps=0.2, min_samples=10),
-            'birch': Birch(branching_factor=50, n_clusters=2, threshold=0.5, compute_labels=True)
+            #'birch': Birch(branching_factor=50, n_clusters=2, threshold=0.5, compute_labels=True)
         }
 
         ## Automatic cluster coloring

@@ -1,0 +1,16 @@
+\begin{thebibliography}{1}
+
+\bibitem{em}
+A.~P. Dempster, N.~M. Laird, and D.~B. Rubin.
+\newblock Maximum likelihood from incomplete data via the em algorithm.
+\newblock {\em Journal of the Royal Statistical Society. Series B
+  (Methodological)}, 39(1):1--38, 1977.
+
+\bibitem{wiki_em}
+Wikipedia.
+\newblock Expectation–maximization algorithm.
+\newblock
+  \url{https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm},
+  2019.
+
+\end{thebibliography}
