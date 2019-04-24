@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.28)  24 APR 2019 14:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.28)  24 APR 2019 16:18
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1251,12 +1251,18 @@ Package hyperref Warning: Option `pdfdisplaydoctitle' has already been used,
 
 (./sections/introduction.tex) (./sections/algorithms.tex
 LaTeX Font Info:    Font shape `OT1/LinuxLibertineT-TLF/m/n' will be
-(Font)              scaled to size 9.0pt on input line 8.
+(Font)              scaled to size 9.0pt on input line 13.
 ) (./sections/dataset.tex) (./sections/experiment.tex) (./sections/implementation.tex) (./sections/conclusion.tex) (./ADM-Miguel_Alcon.bbl
+LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/sc' will be
+(Font)              scaled to size 7.0pt on input line 4.
 LaTeX Font Info:    Font shape `T1/LinuxLibertineT-TLF/m/it' will be
 (Font)              scaled to size 7.0pt on input line 6.
-) [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
+Underfull \hbox (badness 10000) in paragraph at lines 16--21
+\T1/LinuxLibertineT-TLF/m/n/7 (+20) latest / studio / operators / modeling / segmentation / expectation _ maximization _
+ []
+
+) [1.1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 38.
@@ -1268,18 +1274,18 @@ Package rerunfilecheck Info: File `ADM-Miguel_Alcon.out' has not changed.
 (rerunfilecheck)             Checksum: 2071A612967F62257A753196286720AA;1068.
  ) 
 Here is how much of TeX's memory you used:
- 18013 strings out of 492982
- 266612 string characters out of 6134896
- 383419 words of memory out of 5000000
- 20978 multiletter control sequences out of 15000+600000
- 81821 words of font info for 121 fonts, out of 8000000 for 9000
+ 18069 strings out of 492982
+ 267927 string characters out of 6134896
+ 383464 words of memory out of 5000000
+ 20989 multiletter control sequences out of 15000+600000
+ 89762 words of font info for 149 fonts, out of 8000000 for 9000
  1302 hyphenation exceptions out of 8191
- 60i,11n,94p,867b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
-Output written on ADM-Miguel_Alcon.pdf (1 page, 283646 bytes).
+ 60i,11n,94p,1346b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_7grukw.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_ncsllp.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/newtx/libertinealt.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_nh77jq.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_76gpa5.enc}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/libertine/lbtn_25tcsq.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinBiolinumTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineT.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTB.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/libertine/LinLibertineTI.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/txsys.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/newtx/zxlri.pfb>
+Output written on ADM-Miguel_Alcon.pdf (1 page, 315570 bytes).
 PDF statistics:
- 103 PDF objects out of 1000 (max. 8388607)
- 85 compressed objects within 1 object stream
- 17 named destinations out of 1000 (max. 500000)
- 24669 words of extra memory for PDF output out of 24883 (max. 10000000)
+ 125 PDF objects out of 1000 (max. 8388607)
+ 103 compressed objects within 2 object streams
+ 20 named destinations out of 1000 (max. 500000)
+ 28765 words of extra memory for PDF output out of 29859 (max. 10000000)
 
