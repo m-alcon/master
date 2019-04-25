@@ -20,10 +20,6 @@ rcParams['savefig.format'] = ['pdf']
 rcParams['savefig.bbox'] = 'tight'
 rcParams['savefig.pad_inches'] = 0
 
-
-header = ['age','sex','cp','trestbps','chol','fbs','restecg','thalach',
-        'exang','oldpeak','slope','ca','thal','num']
-
 color_map = 'plasma'
 
 def print_title(char,title,title_length=30):
@@ -34,19 +30,19 @@ def print_title(char,title,title_length=30):
         bar = char*bar_size
         print('%s %s %s'%(bar,title,bar))
 
-def generate_centers(n):
+def generate_centers(n, separation):
     row_size = int(np.round(np.sqrt(n)))
     centers = []
     placed = 0
     while placed < n:
         if placed+row_size <= n:
             for i in range(row_size):
-                centers.append((i*2,-(placed/row_size)*2))
+                centers.append((i*separation,-(placed/row_size)*separation))
         else:
             distance = (row_size-1)/float(n-placed+1)
             x_centers = [(i+1)*distance for i in range(n-placed)]
             for x in x_centers:
-                centers.append((x*2,-(placed/row_size)*2))
+                centers.append((x*separation,-(placed/row_size)*separation))
         placed += row_size
     return centers
 
@@ -67,17 +63,21 @@ def clear_plt():
 
 if __name__ == '__main__':
 
-    make_experiment = [True,True,True]
+    make_experiment = [True,False,False]
     n_samples = 2000
+    default_sep = 2
 
     # FIRST EXPERIMENT
     if make_experiment[0]:
         print_title('=','FIRST EXPERIMENT')
         #Centers of the clusters to generate
-        experiments = [(4,4),(1,3),(10,10),(16,16),(16,8),(49,2),(49,49)]
-        for real_centers, n_centers in experiments:
-            print_title('+','%d-%d'%(real_centers,n_centers))
-            centers = generate_centers(real_centers)
+        experiments = [(4,4,default_sep),(7,3,default_sep), (30,30,default_sep),(30,30,6)]
+        for real_centers,n_centers,separation in experiments:
+            props = '%s-%s'%(n_centers,real_centers)
+            if separation != default_sep:
+                props += '-%s'%separation
+            print_title('+',props)
+            centers = generate_centers(real_centers, separation)
 
             # Methods to compare
             methods = {
@@ -88,7 +88,7 @@ if __name__ == '__main__':
 
             # Generation of data
             data, truth_labels = sg.make_blobs(n_samples=n_samples, centers=centers, cluster_std=0.4,
-                                    random_state=55)
+                                    random_state=25)
             x = [d[0] for d in data]
             y = [d[1] for d in data]
 
@@ -97,12 +97,8 @@ if __name__ == '__main__':
             scalarMap = cmx.ScalarMappable(norm=cNorm, cmap=color_map)
             truth_colors = [scalarMap.to_rgba(l) for l in truth_labels]
 
-            cNorm  = colors.Normalize(vmin=0, vmax=n_centers-1)
-            scalarMap_pred = cmx.ScalarMappable(norm=cNorm, cmap=color_map)
-
-
             plt.scatter(x,y,c=truth_colors)
-            plt.savefig('./plots/truth_%d-%d.pdf'%(real_centers,n_centers))
+            plt.savefig('./plots/truth_%s.pdf'%(props))
             clear_plt()
 
             # Clustering
@@ -110,6 +106,14 @@ if __name__ == '__main__':
                 print_title('-',method_name)
                 pred_labels = methods[method_name].fit_predict(data)
                 pred_colors = []
+
+                # Colors for predicted labels
+                n_labels = len((set(pred_labels)))
+                if n_labels > 1:
+                    n_labels -= 1
+                cNorm  = colors.Normalize(vmin=0, vmax=n_labels)
+                scalarMap_pred = cmx.ScalarMappable(norm=cNorm, cmap=color_map)
+
                 for l in pred_labels:
                     color = scalarMap_pred.to_rgba(l)
                     if l == -1:
@@ -119,6 +123,7 @@ if __name__ == '__main__':
                 # Map truth labels with predicted labels
                 label_map = map_labels(truth_labels,pred_labels)
                 mapped_labels = [label_map[l] for l in pred_labels]
+
 
                 # Prepare colors for the plot
                 mixed_colors = []
@@ -130,11 +135,11 @@ if __name__ == '__main__':
 
                 # Generate and save plots
                 plt.scatter(x,y,c=pred_colors)
-                plt.savefig('./plots/%d-%d_pred_%s.pdf'%(real_centers,n_centers,method_name))
+                plt.savefig('./plots/%s_pred_%s.pdf'%(props,method_name))
                 clear_plt()
                 if real_centers == n_centers:
                     plt.scatter(x,y,c=mixed_colors)
-                    plt.savefig('./plots/%d-%d_mixed_%s.pdf'%(real_centers,n_centers,method_name))
+                    plt.savefig('./plots/%s_mixed_%s.pdf'%(props,method_name))
                     clear_plt()
                 # Print score
                     print('Score:', metrics.adjusted_rand_score(truth_labels, pred_labels))
@@ -171,6 +176,8 @@ if __name__ == '__main__':
             clear_plt()
 
     # THIRD EXPERIMENT
+    #header = ['age','sex','cp','trestbps','chol','fbs','restecg','thalach',
+    #    'exang','oldpeak','slope','ca','thal','num']
     if make_experiment[2]:
         print_title('=','THIRD EXPERIMENT')
         data = pd.read_csv('./data/processed.csv')
