@@ -82,7 +82,7 @@ if __name__ == '__main__':
             # Methods to compare
             methods = {
                 'em': GaussianMixture(n_components=n_centers),
-                'dbscan': DBSCAN(eps=0.2, min_samples=10),
+                'dbscan': DBSCAN(eps=0.2, min_samples=5),
                 #'birch': Birch(branching_factor=50, n_clusters=n_centers, threshold=0.5, compute_labels=True)
             }
 
