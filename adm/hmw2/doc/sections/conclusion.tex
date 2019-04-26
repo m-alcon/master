@@ -1,4 +1,8 @@
 \section{Conclusions}
-% Analyzing the behavior of four classifier methods applied to the Heart Disease data set, starting from a classification process composed only by one classifier with at most 0.617 accuracy (with SVM), we developed a whole process divided in three different stages, explained in section \ref{sec:experimentation}, which involves feature elimination, different labeling of the target values, two different classifiers, and a fusion process to obtain the final accuracy. The best accuracy that we achieve is 0.7, increasing by almost 0.1 the starting accuracy.
+We cannot conclude this work with a clear winner. EM and DBSCAN are both good clustering algorithms, and one is better than the other only depending on the data. 
+As we have seen in the first and second experiment in section \ref{sec:experimentation}, and with the appropriate value of $k$, EM predicts with high accuracy the data with blob shape, but it fails when predicting moons and circles. So, it suffers when points of the same cluster can be far one from the other, but `connected' by the rest of the points. 
+\cleardoublepage These could be expected because of the design of the algorithm, explained in section \ref{sec:algorithms}.
 
-% As future work, we could perform the same experimentation but with other classifiers. Moreover, we could try the feature elimination of the last experiment with all possible combinations of the classifiers, including new ones.
+On the other hand, DBSCAN, with the appropriate parameters, can also predict with high accuracy the data with blob shape, but it fails with a huge number of clusters. Unlike EM, it is also really accurate with the predictions of moons and circles, since it uses the previous mentioned `connection' of the points in order to decide the clusters. Furthermore, the prediction of noise can be really useful with some data.
+
+In both cases, the prediction of the real dataset was horrible. There are problems that the clustering algorithms are just not made for them, and the Heart disease dataset is one of those. Better use the classification algorithms in this cases.

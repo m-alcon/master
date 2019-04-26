@@ -3,9 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.mixture import GaussianMixture
 from sklearn.cluster import DBSCAN
-from sklearn.cluster import Birch
 from sklearn.datasets import samples_generator as sg
-from sklearn.model_selection import train_test_split
 from sklearn import metrics
 import matplotlib.colors as colors
 import matplotlib.cm as cmx
@@ -63,7 +61,7 @@ def clear_plt():
 
 if __name__ == '__main__':
 
-    make_experiment = [True,False,False]
+    make_experiment = [True,True,True]
     n_samples = 2000
     default_sep = 2
 
@@ -82,8 +80,7 @@ if __name__ == '__main__':
             # Methods to compare
             methods = {
                 'em': GaussianMixture(n_components=n_centers),
-                'dbscan': DBSCAN(eps=0.2, min_samples=5),
-                #'birch': Birch(branching_factor=50, n_clusters=n_centers, threshold=0.5, compute_labels=True)
+                'dbscan': DBSCAN(eps=0.2, min_samples=10),
             }
 
             # Generation of data
@@ -142,7 +139,14 @@ if __name__ == '__main__':
                     plt.savefig('./plots/%s_mixed_%s.pdf'%(props,method_name))
                     clear_plt()
                 # Print score
-                    print('Score:', metrics.adjusted_rand_score(truth_labels, pred_labels))
+                if real_centers == n_centers or method_name == 'dbscan':
+                    preproc_pred_labels = []
+                    for l in pred_labels:
+                        if l >= 0:
+                            preproc_pred_labels.append(l)
+                        else:
+                            preproc_pred_labels.append(0)
+                    print('Score:', metrics.adjusted_rand_score(truth_labels, preproc_pred_labels))
                 else:
                     print('Score: not meaningful')
 
@@ -152,7 +156,6 @@ if __name__ == '__main__':
         methods = {
             'em': GaussianMixture(n_components=2, covariance_type='full'),
             'dbscan': DBSCAN(eps=0.2, min_samples=10),
-            #'birch': Birch(branching_factor=50, n_clusters=2, threshold=0.5, compute_labels=True)
         }
 
         ## Automatic cluster coloring
@@ -176,25 +179,25 @@ if __name__ == '__main__':
             clear_plt()
 
     # THIRD EXPERIMENT
-    #header = ['age','sex','cp','trestbps','chol','fbs','restecg','thalach',
-    #    'exang','oldpeak','slope','ca','thal','num']
     if make_experiment[2]:
         print_title('=','THIRD EXPERIMENT')
         data = pd.read_csv('./data/processed.csv')
         x = data.drop(['num'], axis=1)
         experiments = {
             'binary': (2,data.num.apply(lambda x: int(x != 0))),
-            'normal': (4,data.num)
+            'normal': (5,data.num)
         }
         for e in experiments.keys():
             n_clusters, truth_labels = experiments[e]
             print_title('+','%s'%e)
             methods = {
                 'em': GaussianMixture(n_components=n_clusters, covariance_type='full'),
-                'dbscan': DBSCAN(eps=0.1, min_samples=10),
-                'birch': Birch(branching_factor=50, n_clusters=n_clusters, threshold=0.5, compute_labels=True)
+                'dbscan': DBSCAN(eps=14.7, min_samples=8),
+                'dbscan_binary': DBSCAN(eps=13, min_samples=8),
             }
             for method_name,m in methods.items():
+                if 'binary' in method_name and e != 'binary':
+                    continue
                 print_title('-','%s'%method_name)
                 summary = {}
                 pred_labels = m.fit_predict(x)

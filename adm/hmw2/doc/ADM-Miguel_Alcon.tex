@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{booktabs}
 \usepackage{bm}
+\usepackage{appendix}
 %\usepackage{cite}
 %\top-mid-bottomrule
 
@@ -21,17 +22,20 @@
 \email{miguel.alcon@est.fib.upc.edu}
 \date{\today}
 
+\newcommand{\code}[1]{\texttt{#1}}
+
 \begin{document}
 
-\input{sections/abstract.tex}
+%\input{sections/abstract.tex}
 
 \maketitle
 
 \input{sections/introduction.tex}
 \input{sections/algorithms.tex}
 \input{sections/dataset.tex}
-\input{sections/experiment.tex}
 \input{sections/implementation.tex}
+\input{sections/experiment.tex}
+\input{sections/figures.tex}
 \input{sections/conclusion.tex}
 
 \bibliographystyle{acm}
