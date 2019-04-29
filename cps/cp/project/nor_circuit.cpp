@@ -18,6 +18,15 @@ protected:
   int n, depth;
 public:
   NOR_Circuit(vector<int> t, int d) : n(t.size()), truth_table(t), depth(d), circuit(*this, pow(2,d+1)-1, -1, t.size()) {
+    
+    for (int truth_idx = 0; truth_idx < n; ++truth_idx) {
+      BoolVarArgs circuit_vals(pow(2,d+1)-1);
+      // Relate variables
+      // for (int i = 0; i < n; ++i)
+      //   for (int j = 1; j <= n; ++j)
+      //       rel(*this, (circuit[i] == j) >> (circuit_vals[i] == is_bit_up(n-1-j,truth_idx)));
+      analyze(0, 0, truth_idx, circuit_vals);
+    }
     // Not NOR
     // for (int j = 0; j < N; ++j) {
     //   BoolVarArgs v(N);
@@ -54,19 +63,52 @@ public:
     return (bit_pos & (unsigned int) pow(2,number)) != 0;
   }
 
-  void relate_variables(const int & row, const int & col, const int &truth_idx, BoolVarArray & circuit_values) {
+  void analyze(const int &row, const int &col, const int &truth_idx, BoolVarArgs &circuit_vals) {
+    cout << row << ", "<< col << endl;
     IntVar root = node(row,col);
+    BoolVar root_val = circuit_vals[node_pos(row,col)];
     if (row == depth) {
-      for (int i = 1; i < n; ++i)
-        rel(*this, (root == i) >> (circuit_values[node_pos(row,col)] == is_bit_up(n-1-i,truth_idx)));
+      rel(*this, (root == -1) >> (root_val == 0));
+      rel(*this, (root == 0) >> (root_val == 0));
+      for (int i = 1; i <= n; ++i)
+        rel(*this, (root == i) >> (root_val == is_bit_up(n-1-i,truth_idx)));
     }
     else {
-      for (int i = 1; i < n; ++i)
-        rel(*this, (root == i) >> (circuit_values[node_pos(row,col)] == is_bit_up(n-1-i,truth_idx)));
-      relate_variables(row+1,2*col, truth_idx, circuit_values);
-      relate_variables(row+1,2*col+1, truth_idx, circuit_values);
+      analyze(row+1, 2*col, truth_idx, circuit_vals);
+      analyze(row+1, 2*col+1, truth_idx, circuit_vals);
+      BoolVar left_val = circuit_vals[node_pos(row+1,2*col)];
+      BoolVar right_val = circuit_vals[node_pos(row+1, 2*col+1)];
+      rel(*this, (root == -1) >> (root_val == !(left_val || right_val)));
+      for (int i = 0; i <= n; ++i)
+        rel(*this, (root == i) >> (root_val == is_bit_up(n-1-i,truth_idx)));
     }
   }
+
+  // void relate_vars(const int & row, const int & col, const int &truth_idx, BoolVarArray & circuit_vals) {
+  //   IntVar root = node(row,col);
+  //   if (row == depth) {
+  //     for (int i = 1; i < n; ++i)
+  //       rel(*this, (root == i) >> (circuit_vals[node_pos(row,col)] == is_bit_up(n-1-i,truth_idx)));
+  //   }
+  //   else {
+  //     for (int i = 1; i < n; ++i)
+  //       rel(*this, (root == i) >> (circuit_vals[node_pos(row,col)] == is_bit_up(n-1-i,truth_idx)));
+  //     relate_vars(row+1,2*col, truth_idx, circuit_vals);
+  //     relate_vars(row+1,2*col+1, truth_idx, circuit_vals);
+  //   }
+  // }
+
+  // SetExpr relate_variables(const int & row, const int & col, const int &truth_idx, BoolVarArray & circuit_values) {
+  //   IntVar root = node(row,col);
+  //   if (row == depth) { 
+  //     return singleton(root);
+  //   }
+  //   else {
+  //     SetExpr left = relate_variables(row+1,2*col, truth_idx, circuit_values);
+  //     SetExpr right = relate_variables(row+1,2*col+1, truth_idx, circuit_values);
+  //     return 1-max(left,right);
+  //   }
+  // }
 
   void print() const {
     //cout << "Need implementation." << endl;
