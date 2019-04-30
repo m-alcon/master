@@ -5,7 +5,7 @@
 #include <vector>
 #include <fstream>
 
-#define MAX_DEPTH 10
+#define MAX_DEPTH 6
 
 using namespace std;
 using namespace Gecode;
@@ -69,10 +69,12 @@ public:
       rel(*this, (root == -1) >> !root_bool);
       rel(*this, (root == 0) >> !root_bool);
       for (int i = 1; i <= n; ++i) {
+        //cout << i << " " << is_bit_up(n-i,truth_idx) << endl;
         rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
       }
     }
     else {
+      //cout << "LOL" << endl;
       analyze(row+1, 2*col, truth_idx, circuit_bool);
       analyze(row+1, 2*col+1, truth_idx, circuit_bool);
       BoolVar left_bool = circuit_bool[node_pos(row+1,2*col)];
