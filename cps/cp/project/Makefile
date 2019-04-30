@@ -22,4 +22,4 @@ init_directories:
 	$(CXX) -L$(DIR)/lib -o $(BIN)$@ $(OBJ)$@.o $(LIBS)
 
 clean:
-	rm -rf $(OBJ) $(BIN)
+	rm -rf $(OBJ)*.o $(TAR)
