@@ -120,23 +120,18 @@ public:
 
 };
 
-vector<int> read_input(string path) {
-  ifstream input(path);
+vector<int> read_input() {
   int n;
-  input >> n;
+  cin >> n;
   vector<int> truth_table(pow(2,n));
   for (int i = 0; i < pow(2,n); ++i)
-    input >> truth_table[i];
+    cin >> truth_table[i];
   return truth_table;
 }
 
 int main(int argc, char* argv[]) {
-  if (argc != 2) {
-    cout << argv[0] <<" FILE\n\tFILE:\tPath of the input file." << endl;
-    return -1;
-  }
   try {
-    vector<int> truth_table = read_input(argv[1]);
+    vector<int> truth_table = read_input();
     for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
       cerr << "Solving with depth = " << depth << "." << endl;
       NOR_Circuit* mod = new NOR_Circuit(truth_table, depth);
