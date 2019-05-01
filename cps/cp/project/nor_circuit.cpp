@@ -5,7 +5,7 @@
 #include <vector>
 #include <fstream>
 
-#define MAX_DEPTH 6
+#define MAX_DEPTH 5
 
 using namespace std;
 using namespace Gecode;
@@ -23,7 +23,7 @@ public:
       rel(*this, circuit_bool[0] == ((bool)truth_table[truth_idx]));
     }
 
-    branch(*this, circuit, INT_VAR_NONE(), INT_VAL_MIN()); // CAREFUL
+    branch(*this, circuit, INT_VAR_RND(77), INT_VAL_MAX()); // CAREFUL
   }
 
   NOR_Circuit(NOR_Circuit& c) : Space(c) {
@@ -62,28 +62,24 @@ public:
   }
 
   void analyze(const int &row, const int &col, const int &truth_idx, BoolVarArray &circuit_bool) {
-    //cout << row << ", " << col << " = " << node_pos(row,col) << endl;
+    //cerr << row << ", " << col << " = " << node_pos(row,col) << endl;
     IntVar root = node(row,col);
     BoolVar root_bool = circuit_bool[node_pos(row,col)];
     if (row == depth) {
       rel(*this, (root == -1) >> !root_bool);
-      rel(*this, (root == 0) >> !root_bool);
-      for (int i = 1; i <= n; ++i) {
-        //cout << i << " " << is_bit_up(n-i,truth_idx) << endl;
-        rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
-      }
     }
     else {
-      //cout << "LOL" << endl;
+      //cerr << "LOL" << endl;
       analyze(row+1, 2*col, truth_idx, circuit_bool);
       analyze(row+1, 2*col+1, truth_idx, circuit_bool);
       BoolVar left_bool = circuit_bool[node_pos(row+1,2*col)];
       BoolVar right_bool = circuit_bool[node_pos(row+1, 2*col+1)];
       rel(*this, (root == -1) >> (root_bool == !(left_bool || right_bool)));
-      rel(*this, (root == 0) >> !root_bool);
-      for (int i = 1; i <= n; ++i) {
-        rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
-      }
+    }
+    // In both cases
+    rel(*this, (root == 0) >> !root_bool);
+    for (int i = 1; i <= n; ++i) {
+      rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
     }
   }
 
@@ -112,6 +108,10 @@ public:
     cout << depth << " " << size() << endl;
     int remaining_id = 1;
     print_circuit(0, 0, remaining_id, remaining_id);
+    print_cerr();
+  }
+
+  void print_cerr() const {
     cerr << circuit << endl;
   }
 
@@ -141,16 +141,17 @@ int main(int argc, char* argv[]) {
       delete mod;
       NOR_Circuit *s, *sant;
       sant = e.next();
-      if (sant != NULL and (s = e.next())) {
-        while (s != NULL) {
+      if (sant != NULL) {
+        while (s = e.next()) {
           delete sant; 
           sant = s;
-          s = e.next();
+          sant->print_cerr();
         }
         sant->print();
         delete sant;
         break;
       }
+      cerr << "No solution found." << endl;
     }
   }
   catch (Exception e) {
