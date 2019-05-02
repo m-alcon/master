@@ -16,8 +16,7 @@ i=`(expr 0)`
 for input in $input_folder*.inp; do
 	file_name=`basename $input`
 	file_name=${file_name%.*}
-	timeout 5m ./nor_circuit < $input 1> ./$sol_folder/$file_name.out 2> ./$output_folder/$file_name.err
+	./nor_circuit < $input 1> ./$sol_folder/$file_name.out 2> ./$output_folder/$file_name.err
 	let i+=1
 	echo -ne "$i/$total_files"\\r
-	#bc <<< "$i/$total_files"
 done

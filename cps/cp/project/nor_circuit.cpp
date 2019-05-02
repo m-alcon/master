@@ -5,6 +5,7 @@
 #include <vector>
 #include <fstream>
 
+#define THREADS 4
 #define MAX_DEPTH 5
 
 using namespace std;
@@ -18,7 +19,7 @@ protected:
 public:
   NOR_Circuit(vector<int> t, int d) : n(log2(t.size())), truth_table(t), depth(d), circuit(*this, pow(2,d+1)-1, -1, log2(t.size())) {
     for (int truth_idx = 0; truth_idx < t.size(); ++truth_idx) {
-      BoolVarArray circuit_bool(*this, pow(2,depth+1)-1, 0,1);
+      BoolVarArray circuit_bool(*this, pow(2,depth+1)-1, false, true);
       analyze(0, 0, truth_idx, circuit_bool);
       rel(*this, circuit_bool[0] == ((bool)truth_table[truth_idx]));
     }
@@ -51,33 +52,41 @@ public:
     return circuit[(pow(2,row)-1)+col];
   }
 
-  int node_pos(const int & row, const int & col) {
+  BoolVar node_bool(const int & row, const int & col, const BoolVarArray &circuit_bool) const {
     if (col >= pow(2,row))
       cerr << "ERR: Trying to access an invalid node." << endl;
-    return (pow(2,row)-1)+col;
+    return circuit_bool[(pow(2,row)-1)+col];
   }
 
-  bool is_bit_up(const unsigned int &bit_pos, const int &number) {
+  bool is_bit_up(const unsigned int &bit_pos, const int &number) const {
     return ((unsigned int) pow(2, bit_pos) & number) != 0;
   }
 
   void analyze(const int &row, const int &col, const int &truth_idx, BoolVarArray &circuit_bool) {
-    //cerr << row << ", " << col << " = " << node_pos(row,col) << endl;
-    IntVar root = node(row,col);
-    BoolVar root_bool = circuit_bool[node_pos(row,col)];
+    IntVar root = node(row, col);
+    BoolVar root_bool = node_bool(row, col, circuit_bool);
     if (row == depth) {
-      rel(*this, (root == -1) >> !root_bool);
+      // NOR gates on leaves are not allowed
+      rel(*this, (root >= 0));
     }
     else {
-      //cerr << "LOL" << endl;
       analyze(row+1, 2*col, truth_idx, circuit_bool);
       analyze(row+1, 2*col+1, truth_idx, circuit_bool);
-      BoolVar left_bool = circuit_bool[node_pos(row+1,2*col)];
-      BoolVar right_bool = circuit_bool[node_pos(row+1, 2*col+1)];
+      BoolVar left_bool = node_bool(row+1, 2*col, circuit_bool);
+      BoolVar right_bool = node_bool(row+1, 2*col+1, circuit_bool);
+      IntVar left = node(row+1,2*col);
+      IntVar right = node(row+1, 2*col+1);
+      // Link -1 with the value according to the functionality of a NOR gate
       rel(*this, (root == -1) >> (root_bool == !(left_bool || right_bool)));
+      // Force childs of root be 0 if root is not a NOR gate 
+      rel(*this, (root >= 0) >> (left == 0 && right == 0));
+      // Force non-symetry
+      rel(*this, (root == -1) >> (left >= right));
+      rel(*this, ((root == -1) && (left > 0 || right > 0)) >> (left > right));
     }
-    // In both cases
+    // Link 0 with value 0
     rel(*this, (root == 0) >> !root_bool);
+    // Link each variable with its value according to truth_idx (idx of the row of the truth table)
     for (int i = 1; i <= n; ++i) {
       rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
     }
@@ -85,17 +94,17 @@ public:
 
   void print_circuit(const int &row, const int &col, const int &id, int &remaining_id) const {
     int code = node(row,col).val();
-    cout << id << " " << code;
+    cout << id << " " << code << " ";
     if (code == -1) {
       int left_id = remaining_id+1;
       int right_id = remaining_id+2;
-      cout << " " << left_id << " " << right_id << endl;
+      cout << left_id << " " << right_id << endl;
       remaining_id += 2;
       print_circuit(row+1, 2*col, left_id, remaining_id);
       print_circuit(row+1, 2*col+1, right_id, remaining_id);
     }
     else {
-      cout << " " << 0 << " " << 0 << endl;
+      cout << 0 << " " << 0 << endl;
     }
     
   }
@@ -134,10 +143,11 @@ vector<int> read_input() {
 int main(int argc, char* argv[]) {
   try {
     vector<int> truth_table = read_input();
+    Search::Options options;
+    options.threads = THREADS;
     for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
-      cerr << "Solving with depth = " << depth << "." << endl;
       NOR_Circuit* mod = new NOR_Circuit(truth_table, depth);
-      BAB<NOR_Circuit> e(mod);
+      BAB<NOR_Circuit> e(mod,options);
       delete mod;
       NOR_Circuit *s, *sant;
       sant = e.next();
@@ -147,11 +157,12 @@ int main(int argc, char* argv[]) {
           sant = s;
           sant->print_cerr();
         }
+        cerr << "Solution found with depth " << depth << "." << endl;
         sant->print();
         delete sant;
         break;
       }
-      cerr << "No solution found." << endl;
+      cerr << "No solution found with depth " << depth << "." << endl;
     }
   }
   catch (Exception e) {

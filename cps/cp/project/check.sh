@@ -3,7 +3,7 @@
 input_folder=./solutions
 output_file=./output/checks.out
 
-#mkdir -p $output_folder
+mkdir -p output
 rm $output_file
 
 total_files=`ls -1 $input_folder | wc -l`
@@ -16,5 +16,4 @@ for input in $input_folder/*.out; do
 	./checker < $input &>> $output_file
 	let i+=1
 	echo -ne "$i/$total_files"\\r
-	#bc <<< "$i/$total_files"
 done
