@@ -72,24 +72,32 @@ public:
     else {
       constraint_creation(row+1, 2*col, truth_idx, circuit_bool);
       constraint_creation(row+1, 2*col+1, truth_idx, circuit_bool);
-      BoolVar left_bool = node_bool(row+1, 2*col, circuit_bool);
-      BoolVar right_bool = node_bool(row+1, 2*col+1, circuit_bool);
       IntVar left = node(row+1,2*col);
       IntVar right = node(row+1, 2*col+1);
-      // Link -1 with the value according to the functionality of a NOR gate
-      rel(*this, (root == -1) >> (root_bool == !(left_bool || right_bool)));
-      // Force childs of root be 0 if root is not a NOR gate 
+      BoolVar left_bool = node_bool(row+1, 2*col, circuit_bool);
+      BoolVar right_bool = node_bool(row+1, 2*col+1, circuit_bool);
+      // Force childs of root to be 0 if root is not a NOR gate 
       rel(*this, (root >= 0) >> (left == 0 && right == 0));
       // Force non-symetry
       rel(*this, (root == -1) >> (left >= right));
       rel(*this, ((root == -1) && (left > 0 || right > 0)) >> (left > right));
+      // Link -1 with the value according to the functionality of a NOR gate
+      rel(*this, (root == -1) >> (root_bool == !(left_bool || right_bool)));
     }
     // Link 0 with value 0
     rel(*this, (root == 0) >> !root_bool);
     // Link each variable with its value according to truth_idx (idx of the row of the truth table)
     for (int i = 1; i <= n; ++i) {
-      rel(*this, (root == i) >> (root_bool == is_bit_up(n-i,truth_idx)));
+      if (is_bit_up(n-i,truth_idx))
+        rel(*this, (root == i) >> root_bool);
+      else
+        rel(*this, (root == i) >> !root_bool);
     }
+
+    // if (row > 0) {
+    //   IntVar father = node(row-1, (col-col%2)/2);
+    //   rel(*this, (root != 0) >> (father == -1));
+    // }
   }
 
   void print_circuit(const int &row, const int &col, const int &id, int &remaining_id) const {
@@ -106,14 +114,12 @@ public:
     else {
       cout << 0 << " " << 0 << endl;
     }
-    
   }
 
   void print() const {
     cout << n << endl;
-    for (int i = 0; i < truth_table.size(); ++i) {
+    for (int i = 0; i < truth_table.size(); ++i)
       cout << truth_table[i] << endl;
-    }
     cout << depth << " " << size() << endl;
     int remaining_id = 1;
     print_circuit(0, 0, remaining_id, remaining_id);

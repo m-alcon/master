@@ -1,5 +1,0 @@
-Solving with depth = 0.
-Solving with depth = 1.
-Solving with depth = 2.
-Solving with depth = 3.
-Solving with depth = 4.
