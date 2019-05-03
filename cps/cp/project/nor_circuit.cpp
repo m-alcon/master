@@ -20,11 +20,11 @@ public:
   NOR_Circuit(vector<int> t, int d) : n(log2(t.size())), truth_table(t), depth(d), circuit(*this, pow(2,d+1)-1, -1, log2(t.size())) {
     for (int truth_idx = 0; truth_idx < t.size(); ++truth_idx) {
       BoolVarArray circuit_bool(*this, pow(2,depth+1)-1, false, true);
-      analyze(0, 0, truth_idx, circuit_bool);
+      constraint_creation(0, 0, truth_idx, circuit_bool);
       rel(*this, circuit_bool[0] == ((bool)truth_table[truth_idx]));
     }
 
-    branch(*this, circuit, INT_VAR_RND(77), INT_VAL_MAX()); // CAREFUL
+    branch(*this, circuit, INT_VAR_DEGREE_MAX(), INT_VALUES_MAX()); // CAREFUL
   }
 
   NOR_Circuit(NOR_Circuit& c) : Space(c) {
@@ -62,7 +62,7 @@ public:
     return ((unsigned int) pow(2, bit_pos) & number) != 0;
   }
 
-  void analyze(const int &row, const int &col, const int &truth_idx, BoolVarArray &circuit_bool) {
+  void constraint_creation(const int &row, const int &col, const int &truth_idx, BoolVarArray &circuit_bool) {
     IntVar root = node(row, col);
     BoolVar root_bool = node_bool(row, col, circuit_bool);
     if (row == depth) {
@@ -70,8 +70,8 @@ public:
       rel(*this, (root >= 0));
     }
     else {
-      analyze(row+1, 2*col, truth_idx, circuit_bool);
-      analyze(row+1, 2*col+1, truth_idx, circuit_bool);
+      constraint_creation(row+1, 2*col, truth_idx, circuit_bool);
+      constraint_creation(row+1, 2*col+1, truth_idx, circuit_bool);
       BoolVar left_bool = node_bool(row+1, 2*col, circuit_bool);
       BoolVar right_bool = node_bool(row+1, 2*col+1, circuit_bool);
       IntVar left = node(row+1,2*col);
