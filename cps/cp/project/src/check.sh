@@ -1,7 +1,7 @@
 #!/bin/bash
 
-input_folder=./out
-output_file=./err/checks.out
+input_folder=../out
+output_file=../err/checks.out
 
 mkdir -p output
 rm $output_file

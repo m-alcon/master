@@ -148,9 +148,14 @@ vector<int> read_input() {
 
 int main(int argc, char* argv[]) {
   try {
-    vector<int> truth_table = read_input();
     Search::Options options;
-    options.threads = THREADS;
+    if (argc > 1) {
+       options.threads = atoi(argv[1]);
+    }
+    else {
+      options.threads = THREADS;
+    }
+    vector<int> truth_table = read_input();
     for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
       NOR_Circuit* mod = new NOR_Circuit(truth_table, depth);
       BAB<NOR_Circuit> e(mod,options);

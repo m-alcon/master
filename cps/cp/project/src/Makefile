@@ -6,8 +6,8 @@ LIBS = -lgecodedriver    -lgecodesearch  \
 OBJ = ./
 BIN = ./
 
-SRC = $(wildcard *.cpp)
-TAR = $(SRC:.cpp=)
+SRC = $(wildcard *.cc)
+TAR = $(SRC:.cc=)
 
 .PHONY: all clean
 
@@ -17,9 +17,10 @@ init_directories:
 	mkdir -p $(OBJ) 
 	mkdir -p $(BIN) 
 
-%: %.cpp
+%: %.cc
 	$(CXX) -I$(DIR)/include -c $^ -o $(OBJ)$@.o
 	$(CXX) -L$(DIR)/lib -o $(BIN)$@ $(OBJ)$@.o $(LIBS)
+	rm $(OBJ)$@.o
 
 clean:
 	rm -rf $(OBJ)*.o $(TAR)
