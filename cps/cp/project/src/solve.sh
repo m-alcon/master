@@ -12,11 +12,11 @@ rm $debug_folder/*
 
 n_threads=4
 n_timeouts=`expr 0`
-if [ -z $1 ]; then
+if [ -n "$1" ]; then
 	n_threads=$1
 fi
 
-
+echo "Executing with $n_threads threads."
 total_files=`ls -1 $input_folder | wc -l`
 
 i=`expr 0`

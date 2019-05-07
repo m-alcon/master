@@ -76,9 +76,9 @@ public:
       IntVar right = node(row+1, 2*col+1);
       BoolVar left_bool = node_bool(row+1, 2*col, circuit_bool);
       BoolVar right_bool = node_bool(row+1, 2*col+1, circuit_bool);
-      // Force childs of root to be 0 if root is not a NOR gate 
+      // Force children of root to be 0 if root is not a NOR gate 
       rel(*this, (root >= 0) >> (left == 0 && right == 0));
-      // Force non-symetry
+      // Force non-symmetry
       rel(*this, (root == -1) >> (left >= right));
       rel(*this, ((root == -1) && (left > 0 || right > 0)) >> (left > right));
       // Link -1 with the value according to the functionality of a NOR gate
@@ -93,11 +93,6 @@ public:
       else
         rel(*this, (root == i) >> !root_bool);
     }
-
-    // if (row > 0) {
-    //   IntVar father = node(row-1, (col-col%2)/2);
-    //   rel(*this, (root != 0) >> (father == -1));
-    // }
   }
 
   void print_circuit(const int &row, const int &col, const int &id, int &remaining_id) const {
@@ -150,7 +145,7 @@ int main(int argc, char* argv[]) {
   try {
     Search::Options options;
     if (argc > 1) {
-       options.threads = atoi(argv[1]);
+      options.threads = atoi(argv[1]);
     }
     else {
       options.threads = THREADS;
