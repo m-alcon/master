@@ -25,6 +25,16 @@ IloNumVar var(const int &h, const int &w, IloNumVarArray &V)  {
   return V[(pow(2,h)-1)+w];
 }
 
+// Variable at the left
+IloNumVar lvar(const int &h, const int &w, IloNumVarArray &V)  {
+  return var(h+1, 2*w, V);
+}
+
+// Variable at the right
+IloNumVar rvar(const int &h, const int &w, IloNumVarArray &V)  {
+  return var(h+1, 2*w+1, V);
+}
+
 void circuit_constraints(const int &h, const int &w, const int &depth, const int &truth_idx, 
                           IloNumVarArray &Z, IloNumVarArray &I, IloNumVarArray &N, IloModel &model) {
   if (h == depth) {
@@ -33,6 +43,14 @@ void circuit_constraints(const int &h, const int &w, const int &depth, const int
   else {
     constraint_creation(h+1,   2*w, depth, truth_idx, Z, I, N, model);
     constraint_creation(h+1, 2*w+1, depth, truth_idx, Z, I, N, model);
+    // Force children of root to be 0 if root is not a NOR gate 
+    model.add( lvar(h,w,Z) + rvar(h,w,Z) >= var(h,w,Z)*2 )
+    model.add( lvar(h,w,Z) + rvar(h,w,Z) >= var(h,w,I)*2 )
+    // Force non-symmetry
+    // TODO
+
+    // Link -1 with the value according to the functionality of a NOR gate
+    
   }
 
 }
@@ -48,13 +66,13 @@ int main () {
   const int circuit_size = pow(2,depth+1)-1;
 
   for (int depth = 0; depth < MAX_DEPTH; ++i) {
-    IloNumVarArray zero_nodes   = IloNumVarArray(env, circuit_size, 0, 1, ILOINT);
-    IloNumVarArray input_nodes  = IloNumVarArray(env, circuit_size, 0, 1, ILOINT);
-    IloNumVarArray nor_nodes    = IloNumVarArray(env, circuit_size, 0, 1, ILOINT);
+    IloNumVarArray Z = IloNumVarArray(env, circuit_size, 0, 1, ILOINT); // Zero
+    IloNumVarArray I = IloNumVarArray(env, circuit_size, 0, 1, ILOINT); // Input
+    IloNumVarArray N = IloNumVarArray(env, circuit_size, 0, 1, ILOINT); // NOR
 
     // Each node must be only of one type
     for (int i = 0; i < circuit_size; ++i) {
-      model.add( zero_nodes[i] + input_nodes[i] + nor_nodes[i] == 1 )
+      model.add( Z[i] + I[i] + N[i] == 1 )
     }
     
   }
