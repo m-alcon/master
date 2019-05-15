@@ -75,8 +75,8 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
 
   // Link each variable with its value according to truth_idx (idx of the row of the truth table)
   for (int i = 0; i < n; ++i) {
-    model.add( 1 - var(I,h,w,i,cs) >= var(B,h,w,i,cs) - is_bit_up(n-i-1,t) );
-    model.add( 1 - var(I,h,w,i,cs) >= is_bit_up(n-i-1,t) - var(B,h,w,i,cs) );
+    model.add( 1 - var(I,h,w,i,cs) >= var(B,h,w,t,cs) - is_bit_up(n-i-1,t) );
+    model.add( 1 - var(I,h,w,i,cs) >= is_bit_up(n-i-1,t) - var(B,h,w,t,cs) );
   }
 
   // Each node must be only of one type
@@ -85,25 +85,28 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
   for (int i = 0; i < n; ++i)
      unique += var(I,h,w,i,cs);
   model.add( unique == 1 );
-  unique.end();
 }
 
 
 int main () {
 
-  IloEnv env;
-  IloModel model(env);
-
   const vector<int> truth_table = read_input();
   const int n = log2(truth_table.size());
+  for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
+    //cout << "================ " <<  depth << " ================" << endl;
+    IloEnv env;
+    IloModel model(env);
 
-  for (int depth = 0; depth < MAX_DEPTH; ++depth) {
     const int circuit_size = pow(2,depth+1)-1;
 
     IloNumVarArray Z(env, circuit_size, 0, 1, ILOINT);                    // Zero
     IloNumVarArray N(env, circuit_size, 0, 1, ILOINT);                    // NOR
     IloNumVarArray I(env, circuit_size*n, 0, 1, ILOINT);                  // Input
     IloNumVarArray B(env, circuit_size*truth_table.size(), 0, 1, ILOINT); // Circuit bool
+    Z.setNames("Z");
+    N.setNames("N");
+    I.setNames("I");
+    B.setNames("B");
 
     for (int truth_idx = 0; truth_idx < truth_table.size(); ++truth_idx) {
       define_constraints(0, 0, depth, truth_idx, n, circuit_size, Z, I, N, B, model, env);
@@ -114,15 +117,21 @@ int main () {
     for (int i = 0; i < circuit_size; ++i)
       size += N[i];
     model.add( IloMinimize(env, size) );
-    size.end();
 
+    cerr << model << endl;
     IloCplex cplex(model);
+    cplex.setOut(env.getNullStream()); // remove CPLEX messages
     if (cplex.solve()) {
-      cout << cplex.getObjValue() << endl;
+      cerr << cplex.getObjValue() << endl;
+      cerr << "SOLVED " << depth << endl;
+      env.end();
       break;
     }
+    else {
+      cerr << "INFEASIBLE " << depth << endl;
+    }
+    env.end();
   }
 
   
-  env.end();
 }
