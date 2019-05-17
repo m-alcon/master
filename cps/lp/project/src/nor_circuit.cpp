@@ -62,8 +62,15 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
     define_constraints(h+1, 2*w+1, depth, t, n, cs, Z, I, N, B, model, env);
     // Force children of root to be 0 if root is not a NOR gate 
     model.add( lvar(Z,h,w) + rvar(Z,h,w) >= (1-var(N,h,w))*2 );
-    // Force non-symmetry
-    // TODO
+    //Force non-symmetry
+    for (int i = 0; i < n; ++i) {
+      model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
+      model.add ( lvar(Z,h,w) + rvar(N,h,w) <= 1 );
+      model.add( lvar(I,h,w,i,cs) + rvar(I,h,w,i,cs) <= 1 );
+      for (int j = i+1; j < n; ++j) {
+        model.add( lvar(I,h,w,j,cs) + rvar(I,h,w,i,cs) <= 1 );
+      }
+    }
 
     // Link -1 with the value according to the functionality of a NOR gate
     model.add( (1 - rvar(B,h,w,t,cs) - lvar(B,h,w,t,cs)) - 2*var(B,h,w,t,cs) <= 1-var(N,h,w) );
@@ -87,9 +94,52 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
   model.add( unique == 1 );
 }
 
+void print_circuit(const int &h, const int &w, const int &n, const int &cs, 
+                   IloNumVarArray &Z, IloNumVarArray &I, IloNumVarArray &N, 
+                   int &id, int &remaining_id, IloCplex &cplex) {
+  int code;
+  if (cplex.getValue(var(Z,h,w))) {
+    code = 0;
+  }
+  else if (cplex.getValue(var(N,h,w))) {
+    code = -1;
+  }
+  else {
+    for (int i = 0; i < n; ++i) {
+      if (cplex.getValue(var(I,h,w,i,cs))) {
+        code = i+1;
+        break;
+      }
+    }
+  }
+
+  cout << id << " " << code << " ";
+  if (code == -1) {
+    int left_id = remaining_id+1;
+    int right_id = remaining_id+2;
+    cout << left_id << " " << right_id << endl;
+    remaining_id += 2;
+    print_circuit(h+1, 2*w, n, cs, Z, I, N, left_id, remaining_id, cplex);
+    print_circuit(h+1, 2*w+1, n, cs, Z, I, N, right_id, remaining_id, cplex);
+  }
+  else {
+    cout << 0 << " " << 0 << endl;
+  }
+}
+
+void print_solution(const int &n, const int &depth, const int &cs, 
+                    const int &size, const vector<int> &truth_table, 
+                    IloNumVarArray &Z, IloNumVarArray &I, IloNumVarArray &N, IloCplex &cplex) {
+  cout << n << endl;
+  for (int i = 0; i < truth_table.size(); ++i)
+    cout << truth_table[i] << endl;
+  cout << depth << " " << size << endl;
+  int remaining_id = 1;
+  print_circuit(0, 0, n, cs, Z, I, N, remaining_id, remaining_id, cplex);
+}
+
 
 int main () {
-
   const vector<int> truth_table = read_input();
   const int n = log2(truth_table.size());
   for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
@@ -103,10 +153,10 @@ int main () {
     IloNumVarArray N(env, circuit_size, 0, 1, ILOINT);                    // NOR
     IloNumVarArray I(env, circuit_size*n, 0, 1, ILOINT);                  // Input
     IloNumVarArray B(env, circuit_size*truth_table.size(), 0, 1, ILOINT); // Circuit bool
-    Z.setNames("Z");
-    N.setNames("N");
-    I.setNames("I");
-    B.setNames("B");
+    // Z.setNames("Z");
+    // N.setNames("N");
+    // I.setNames("I");
+    // B.setNames("B");
 
     for (int truth_idx = 0; truth_idx < truth_table.size(); ++truth_idx) {
       define_constraints(0, 0, depth, truth_idx, n, circuit_size, Z, I, N, B, model, env);
@@ -118,12 +168,12 @@ int main () {
       size += N[i];
     model.add( IloMinimize(env, size) );
 
-    cerr << model << endl;
+    //cerr << model << endl;
     IloCplex cplex(model);
     cplex.setOut(env.getNullStream()); // remove CPLEX messages
     if (cplex.solve()) {
-      cerr << cplex.getObjValue() << endl;
       cerr << "SOLVED " << depth << endl;
+      print_solution(n, depth, circuit_size, cplex.getObjValue(), truth_table, Z, I, N, cplex);
       env.end();
       break;
     }
