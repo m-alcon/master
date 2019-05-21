@@ -6,3 +6,11 @@ doc/*.log
 doc/*.blg
 doc/*.synctex.gz
 doc/*.out
+cc/homework*/*.aux
+cc/homework*/*.bbl
+cc/homework*/*.blg
+cc/homework*/*.log
+cc/homework*/*.blg
+cc/homework*/*.synctex.gz
+cc/homework*/*.out
+_minted-*/

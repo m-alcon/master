@@ -64,7 +64,7 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
     model.add( lvar(Z,h,w) + rvar(Z,h,w) >= (1-var(N,h,w))*2 );
     //Force non-symmetry
     for (int i = 0; i < n; ++i) {
-      model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
+	  model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
       model.add ( lvar(Z,h,w) + rvar(N,h,w) <= 1 );
       model.add( lvar(I,h,w,i,cs) + rvar(I,h,w,i,cs) <= 1 );
       for (int j = i+1; j < n; ++j) {
@@ -98,15 +98,15 @@ void print_circuit(const int &h, const int &w, const int &n, const int &cs,
                    IloNumVarArray &Z, IloNumVarArray &I, IloNumVarArray &N, 
                    int &id, int &remaining_id, IloCplex &cplex) {
   int code;
-  if (cplex.getValue(var(Z,h,w))) {
+  if (round(cplex.getValue(var(Z,h,w)))) {
     code = 0;
   }
-  else if (cplex.getValue(var(N,h,w))) {
+  else if (round(cplex.getValue(var(N,h,w)))) {
     code = -1;
   }
   else {
     for (int i = 0; i < n; ++i) {
-      if (cplex.getValue(var(I,h,w,i,cs))) {
+      if (round(cplex.getValue(var(I,h,w,i,cs)))) {
         code = i+1;
         break;
       }
