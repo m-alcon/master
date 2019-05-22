@@ -14,3 +14,4 @@ cc/homework*/*.blg
 cc/homework*/*.synctex.gz
 cc/homework*/*.out
 _minted-*/
+*.swp

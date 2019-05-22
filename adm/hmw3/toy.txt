@@ -1,0 +1,4 @@
+1 a b a
+1 a a c
+1 a d
+2 e f a
