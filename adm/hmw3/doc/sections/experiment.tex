@@ -1,0 +1,51 @@
+\section{Experimentation}
+\label{sec:experimentation}
+\subsection{First experiment}
+The goal of the first experiment is to observe the differences of applying EM and DBSCAN to the generated data with blob shape. For this, we created an algorithm that given a number of blobs ($n_b$) and the space between them ($s_b$), it places the $n_b$ isotropic Gaussian blobs in a well-distributed way, and with centers separated at a distance of $s_b$ (see table \ref{tab:data-param}). We tried EM and DBSCAN for several cases generated with the algorithm, but we selected 4 of them that show clearly the differences between both. These are represented in sub-figures \ref{subfig:4-4-truth}, \ref{subfig:7-3-truth}, \ref{subfig:30-30-truth} and \ref{subfig:30-30-6-truth}.
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c}
+        \toprule
+        \textbf{Sub-figure} & $\bm{n_b}$ & $\bm{s_b}$ \\ \midrule
+        \ref{subfig:4-4-truth} & 4 & 2 \\
+        \ref{subfig:7-3-truth} & 7 & 2 \\
+        \ref{subfig:30-30-truth} & 30 & 2 \\
+        \ref{subfig:30-30-6-truth} & 30 & 6 \\
+        \bottomrule
+    \end{tabular}
+    \caption{Parameters for the generation of the the blob shape data}
+    \label{tab:data-param}
+\end{table}
+
+The selected parameters for EM ($k$) vary for each dataset, but for DBSCAN we fixed them to $\varepsilon = 0.2$ and $minPts = 10$, with which we obtained better results after trying several possibilities. Notice that the colors of the clusters in figures \ref{fig:pred1} and \ref{fig:pred2} are not an identifier, they are just there to ease the visualization of them. Also, the grey color in DBSCAN means noise. Next, we explain the results of this experiment.
+
+\begin{table}[hbtp]
+    \centering
+    \begin{tabular}{c c c c}
+        \toprule
+        $\bm{n_b}$ & \textbf{Algorithm} &  \textbf{Accuracy} & \textbf{Sub-figure} \\ \midrule
+        4 & EM & 0.9552 & \ref{subfig:4-4-em} \\
+        4 & DBSCAN & 0.8650 & \ref{subfig:4-4-dbscan} \\
+        7 & EM ($k = 3$) & - & \ref{subfig:7-3-em} \\
+        7 & DBSCAN & 0.7575 & \ref{subfig:7-3-dbscan} \\
+        30 & EM & 0.9356 & \ref{subfig:30-30-em} \\
+        30 & DBSCAN & 0.0111 & \ref{subfig:30-30-dbscan} \\
+        30 ($s_b = 6$) & EM & 1 & \ref{subfig:30-30-6-em} \\
+        30 ($s_b = 6$) & DBSCAN & 0.0111 & \ref{subfig:30-30-6-dbscan} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Accuracy of the predictions of the first experiment}
+    \label{tab:accuracy}
+\end{table}
+
+When $k = n_b$, EM is by far the algorithm with more accuracy when identifying the clusters, as we can see in sub-figures \ref{subfig:4-4-em}, \ref{subfig:4-4-dbscan}, \ref{subfig:30-30-em}, \ref{subfig:30-30-dbscan}, \ref{subfig:30-30-6-em}, \ref{subfig:30-30-6-dbscan}, and in table \ref{tab:accuracy}. Also, when $k$ is incorrect, EM predicts the clusters as better as possible, as seen in sub-figure \ref{subfig:7-3-em}. But DBSCAN is not bad. In sub-figures \ref{subfig:4-4-dbscan} and \ref{subfig:7-3-dbscan}, it predicts well the clusters, identifying the outer points as noise, which is a property that can be desireable in some situations. It is true that in cases with lots of small clusters it fails, as in sub-figures \ref{subfig:30-30-dbscan} and \ref{subfig:30-30-6-dbscan}, but the bad choice of its parameters is not discarded, although we tried several combinations of them. In these sub-figures we can also see that the separation of the clusters does not affect to the predictions, DBSCAN detects roughly the same ones in both cases. This does not happen for EM, which with more space between clusters it predicts them much better.
+
+\subsection{Second experiment}
+The goal of the second experiment is to observe the differences of applying EM and DBSCAN to the generated data with circle and moon shapes. For this, we used the functions \code{dataset.make\_circles} and \code{dataset.make\_moons} of the \textit{scikit-learn} package. The resultant data is shown in sub-figures \ref{subfig:circle-truth} and \ref{subfig:moons-truth}.
+
+Unlike the first experiment, and as sub-figures \ref{subfig:circle-em}, \ref{subfig:circle-dbscan}, \ref{subfig:moon-em} and \ref{subfig:moon-dbscan} show, DBSCAN predicts the clusters perfectly, while EM is unable to identify them because of their shape.
+
+\subsection{Third experiment}
+The goal of the third experiment is to observe the differences of applying EM and DBSCAN to a real dataset (Heart disease), with lots of data and dimensions, and also to compare their predictions with the results obtained in the previous work.
+
+We tried to detect the degree of presence of heart disease in a patient using the provided data. As we did in the previous work, we made the detection first to predict if the patient has presence of hearth disease or not (binary decision), and then to predict its degree. For DBSCAN, we selected the parameters in order to obtain the desired number of clusters (with noise being a cluster itself). The parameters are \{$\varepsilon = 13, minPts = 8$\} for the binary decision, and \{$\varepsilon = 14.7, minPts = 8$\} for detecting the degree. For EM we selected $k = n_b$. The final results are just too bad to comment them. None of the algorithms cannot be better than selecting the clusters at random. Hence, the classifier process, developed in the previous work, is by far better. If you want to take a look at the results of the experiment, or whichever of the other two, the output of the script is in the file \textit{`experimentation\_out.txt'} in the main folder, or you can just execute it.
