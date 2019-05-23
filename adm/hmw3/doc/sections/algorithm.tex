@@ -1,0 +1,17 @@
+\section{Algorithm}
+\label{sec:algorithm}
+Now is time to explain the algorithm behind the MNBC. For a better understanding, we divided it in two processes, \textbf{fit} and \textbf{predict}. In the \textbf{fit} stage, the classifier model is build from the input data, while in the \textbf{predict} stage, MNBC uses the model to predict an input observation.
+
+
+\begin{lstlisting}[escapeinside={*}{*}]
+*Algorithm for \textbf{fit}:*
+    *Let $c_k$ be a class of observation,*
+        *with $1 \geq k \geq$ number of classes in X*
+    *Let $t_i$ be an item of the observations in $X$,*
+        *with $1 \geq i \geq$ number of unique items in $X$*
+    *Let $f_i$ be the frequency of item $t_i$ within X*
+    *Let $f_{i,k}$ be the frequency of item $t_i$* 
+        *within observations of class $c_k$*
+    *Given input $X$*
+        
+\end{lstlisting}
