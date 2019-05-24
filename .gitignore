@@ -1,11 +1,8 @@
 .vscode/
-*/**/doc/*.aux
-*/**/doc/*.bbl
-*/**/doc/*.blg
-*/**/doc/*.log
-*/**/doc/*.blg
-*/**/doc/*.synctex.gz
-*/**/doc/*.out
+*/**/doc/*.*
+!*/**/doc/*.tex
+!*/**/doc/*.pdf
+!*/**/doc/*.bib
 cc/homework*/*.aux
 cc/homework*/*.bbl
 cc/homework*/*.blg

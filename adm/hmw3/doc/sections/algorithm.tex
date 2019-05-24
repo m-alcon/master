@@ -1,17 +1,46 @@
 \section{Algorithm}
 \label{sec:algorithm}
-Now is time to explain the algorithm behind the MNBC. For a better understanding, we divided it in two processes, \textbf{fit} and \textbf{predict}. In the \textbf{fit} stage, the classifier model is build from the input data, while in the \textbf{predict} stage, MNBC uses the model to predict an input observation.
+Now is time to explain the algorithm behind the MNB. For giving a more practical view, we divided it in two processes, \textbf{\textit{fit}} and \textbf{\textit{predict}}. In the \textbf{\textit{fit}} stage, the classifier model is build from the input data, while in the \textbf{\textit{predict}} stage, MNBC uses the model to predict an input observation.
 
+\subsection{Algorithm of \textit{fit}}
 
-\begin{lstlisting}[escapeinside={*}{*}]
-*Algorithm for \textbf{fit}:*
+The algorithm, described below, makes the necessary counting of the classes $c_k$ and items $t_i$ of the input, in order to compute the probabilities $Pr(c_k)$ and $Pr(t_i$ | $c_k)$ of each item and class. In the case of $Pr(t_i$ | $c_k)$, we applied the Laplace Correction. 
+
+All these probabilities together with the information of the classes form what we call a \textit{model} of the input, which is used in the \textbf{\textit{predict}} stage.
+
+\begin{tcblisting}{breakable,listing only,
+    listing options={escapeinside={*}{*}},size=fbox,boxrule=0.5pt,frame hidden,arc=0pt,colback=white}
+*Given input $X$*
+    *Let $C$ be the number of classes in $X$*
     *Let $c_k$ be a class of observation,*
-        *with $1 \geq k \geq$ number of classes in X*
+        *with $1 \geq k \geq C$*
+    *Let $fc_k$ be the frequency of class $c_k$ within X*
+    *Let $T$ be the number of unique items in $X$*
     *Let $t_i$ be an item of the observations in $X$,*
-        *with $1 \geq i \geq$ number of unique items in $X$*
-    *Let $f_i$ be the frequency of item $t_i$ within X*
+        *with $1 \geq i \geq T$*
+    *Let $ft_i$ be the frequency of item $t_i$ within X*
     *Let $f_{i,k}$ be the frequency of item $t_i$* 
         *within observations of class $c_k$*
-    *Given input $X$*
-        
-\end{lstlisting}
+    *For each $c_k$ classes in $X$*
+        *$Pr(c_k) = \frac{fc_k}{\sum_j^C{fc_j}}$*
+        *For each $t_i$ items in $X$*
+            *$Pr(t_i$ | $c_k) = \frac{f_{i,k} + 1}{\sum_j^T{f_{j,k}} + T}$*
+\end{tcblisting}
+
+\subsection{Algorithm of \textit{predict}}
+The algorithm of \textbf{\textit{predict}} computes $L(c_k)$ for every possible class $c_k$ in order to predict which of them is the class of the observation, with the highest probability (highest $L(c_k)$). This function, $L(c_k)$, comes from 
+
+$$Pr(O\text{ | }c_k) = Pr(c_k)\cdot\prod_i^T{Pr(t_i\text{ | } c_k)}$$
+
+But instead of the multiplication of probabilities, we used the summation of the negative logarithms of the probabilities. This decision was made to avoid the high risk of underflow that the multiplication of small numbers has.
+\begin{tcblisting}{breakable,listing only,
+    listing options={escapeinside={*}{*}},size=fbox,boxrule=0.5pt,frame hidden,arc=0pt,colback=white}
+*Given an observation $O$*
+    *Let $T$ be the number of items in O*
+    *Let $t_i$ be an item of $O$*
+        *with $1 \geq i \geq$ T*
+    *For each $c_k$ possible class*
+        *$L(c_k) = -\log Pr(c_k)+\sum_i^T{-\log Pr(t_i\text{ | } c_k)}$*
+    *Output the class $argmax_k L(c_k)$*
+\end{tcblisting}
+

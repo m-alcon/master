@@ -50,7 +50,7 @@ class MultinomialNB(object):
         for c in self.classes:
             p = reduce(mult,[self.cond_probs[(f,c)] for f in features])
             print(sum([-np.log2(self.cond_probs[(f,c)]) for f in features]))
-            predictions[c] = self.global_probs[c]*p
+            predictions[c] = p-np.log2(self.global_probs[c])
             
         pprint(predictions)
 
