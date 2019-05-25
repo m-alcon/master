@@ -1,2 +1,24 @@
 \section{Experimentation}
 \label{sec:experimentation}
+
+\subsection{Correctness}
+We tested our algorithm with the \textit{toy} example to check if it predicts the class of the `a a a e f' observation as expected, and it does it. First, we tried it with the sum of logarithms of the probabilities, and it predicts the class 1, same as in the example. To ensure that it was not coincidence, we also tried it with the multiplication of the probabilities. Our MNB gave the exactly the same probabilities than in the example, as it is shown below.
+
+\begin{lstlisting}[escapeinside={*}{*}]
+        *$Pr( a | 1 ) = 0.42857$ \hspace{7mm} $Pr( a | 2 ) = 0.22222$*
+        *$Pr( b | 1 ) = 0.14286$ \hspace{7mm} $Pr( b | 2 ) = 0.11111$*
+        *$Pr( c | 1 ) = 0.14286$ \hspace{7mm}  $Pr( c | 2 ) = 0.11111$*
+        *$Pr( d | 1 ) = 0.14286$ \hspace{6.5mm} $Pr( d | 2 ) = 0.11111$*
+        *$Pr( e | 1 ) = 0.07143$ \hspace{6.5mm} $Pr( e | 2 ) = 0.22222$*
+        *$Pr( f | 1 ) = 0.07143$ \hspace{7mm}$Pr( f | 2 ) = 0.22222$*
+
+        *$Pr (\text{$a$ $a$ $f$ $a$ $e$}| 1) = 0.00030$*
+        *$Pr (\text{$a$ $a$ $f$ $a$ $e$}| 2) = 0.00014$*
+\end{lstlisting}
+
+\subsection{Behavior in a realistic case}
+In this experiment, we used our classifier to predict the class of some instances of the \textit{markbask} data. First we tried predicting the gender and then whether the purchaser owns a house or not (ownership). As usual, we started splitting (randomly) the input data into train and test sets, for \textbf{\textit{fit}} and \textbf{\textit{predict}}, respectively.
+For the gender classification, we obtained an accuracy of $0.63$, while in the ownership one we obtained $0.62$.
+
+For deeper information about the predictions of all the experiments, you can take a look to the `experiments.out' file, or you can just execute the \textit{Python} script.
+

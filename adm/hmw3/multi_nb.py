@@ -3,6 +3,14 @@ from functools import reduce
 import numpy as np
 from pprint import pprint
 
+def print_title(char,title,title_length=80):
+    bar_size = int(np.ceil(float(title_length - len(title) - 2)/2))
+    if bar_size < 1:
+        print(title)
+    else:
+        bar = char*bar_size
+        print('%s %s %s'%(bar,title,bar))
+
 class MultinomialNB(object):
 
     def __init__(self, alpha=0.5):
@@ -31,28 +39,34 @@ class MultinomialNB(object):
 
         for class_y in self.classes:
             self.global_probs[class_y] = self.global_freq[class_y]/len(data)
-            print("Pr(%s) = %d/%d"%(class_y,self.global_freq[class_y],len(data)))
-            #print('P(%s) = %0.5f'%(class_y,self.global_probs[class_y]))
             total_class_items = sum(self.cond_freq[class_y].values())
             total_obs = len(self.global_freq.keys())-len(self.classes)
             for item_xi,freq_xi_y in self.cond_freq[class_y].items():
                 if not item_xi in self.classes:
                     self.cond_probs[(item_xi,class_y)] = (freq_xi_y + 1)/(total_class_items + total_obs)
-                    print("Pr(%s|%s) = (%d + %d)/(%d + %d)"%(item_xi,class_y,freq_xi_y,1,total_class_items,total_obs))
 
-        pprint(self.global_freq)
-        pprint(self.cond_freq)
-        pprint(self.cond_probs)
-
-    def predict(self, features):
-        predictions = {}
+    def predict(self, observations, log2=True, verbose=False):
         mult = lambda x,y: x*y
-        for c in self.classes:
-            p = reduce(mult,[self.cond_probs[(f,c)] for f in features])
-            print(sum([-np.log2(self.cond_probs[(f,c)]) for f in features]))
-            predictions[c] = p-np.log2(self.global_probs[c])
-            
-        pprint(predictions)
+        res_predictions = []
+        for o in observations:
+            predictions = {}
+            for c in self.classes:
+                if log2:
+                    p = np.log2(self.global_probs[c])+sum([np.log2(self.cond_probs[(f,c)]) for f in o])
+                else:
+                    p = self.global_probs[c]*reduce(mult,[self.cond_probs[(f,c)] for f in o])
+                predictions[c] = p
+            if verbose:
+                print('Probabilities for observation %s'%str(o))
+                for k,v in predictions.items():
+                    print('\tPr( %s ) = %0.5f'%(k,v))
+            res_predictions.append(max(predictions, key=predictions.get))
+        return res_predictions
+
+    def print_probabilities(self):
+        for (t,c),p in self.cond_probs.items():
+            print('Pr( %s | %s ) = %0.5f'%(t,c,p))
+
 
     def fit_and_predict(self, data, features, classes=[]):
         self.fit(data,classes)
@@ -66,16 +80,52 @@ def read_file(path):
     return data
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('path', help='Path of the data file')
-    args = parser.parse_args()
 
-    data = read_file(args.path)
-
+    # Correctness experiment
+    print_title('=','CORRECTNESS')
+    data = read_file('data/toy.txt')
     mnb = MultinomialNB()
     mnb.fit(data)
-    #mnb.predict(['a', 'a', 'f', 'a', 'e'])
-    mnb.predict(['freshmeat', 'dairy', 'confectionery'])
+    mnb.print_probabilities()
+    print_title('-','Prediction probabilities')
+    pred = mnb.predict([['a', 'a', 'f', 'a', 'e']], log2=False ,verbose=True)
+    print('Class predicted: %s'%pred[0])
 
+
+    # Behavior in realistic case experiment
+    print_title('=','BEHAVIOR')
+    data = read_file('data/markbask.txt')
+    np.random.seed(10)
+    np.random.shuffle(data)
+    division = int(np.ceil(len(data)*0.8))
+    train, test = data[:division], data[division:]
+    print_title('*','Gender')
+    ## Gender
+    mnb = MultinomialNB()
+    mnb.fit(train)
+    mnb.print_probabilities()
+    y = [t[0] for t in test]
+    X = [t[1:] for t in test]
+    print_title('-','Prediction probabilities (log2)')
+    pred = mnb.predict(X, verbose=True)
+    errors = 0
+    for i in range(len(pred)):
+        if pred[i] != y[i]:
+            errors += 1
+    print('Accuracy: %0.5f'%(1- errors/len(pred)))
+    print_title('*','House owner')
+    ## House owner or not
+    mnb = MultinomialNB()
+    mnb.fit(train,classes=['Homeowner','DoNotOwnHome'])
+    mnb.print_probabilities()
+    y = [t[1] for t in test]
+    X = [[t[0]]+t[2:] for t in test]
+    print_title('-','Prediction probabilities (log2)')
+    pred = mnb.predict(X, verbose=True)
+    errors = 0
+    for i in range(len(pred)):
+        if pred[i] != y[i]:
+            errors += 1
+    print('Accuracy: %0.5f'%(1- errors/len(pred)))
 
 

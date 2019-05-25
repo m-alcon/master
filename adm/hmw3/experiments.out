@@ -1,0 +1,1277 @@
+================================== CORRECTNESS ==================================
+Pr( a | 2 ) = 0.22222
+Pr( b | 2 ) = 0.11111
+Pr( e | 2 ) = 0.22222
+Pr( c | 1 ) = 0.14286
+Pr( c | 2 ) = 0.11111
+Pr( b | 1 ) = 0.14286
+Pr( d | 1 ) = 0.14286
+Pr( d | 2 ) = 0.11111
+Pr( f | 2 ) = 0.22222
+Pr( a | 1 ) = 0.42857
+Pr( e | 1 ) = 0.07143
+Pr( f | 1 ) = 0.07143
+--------------------------- Prediction probabilities ---------------------------
+Probabilities for observation ['a', 'a', 'f', 'a', 'e']
+	Pr( 2 ) = 0.00014
+	Pr( 1 ) = 0.00030
+Class predicted: 1
+=================================== BEHAVIOR ===================================
+************************************ Gender ************************************
+Pr( frozenmeal | Female ) = 0.04650
+Pr( cannedmeat | Male ) = 0.05523
+Pr( beer | Male ) = 0.09877
+Pr( confectionery | Female ) = 0.09496
+Pr( cannedveg | Female ) = 0.05828
+Pr( confectionery | Male ) = 0.05263
+Pr( dairy | Male ) = 0.04029
+Pr( softdrink | Male ) = 0.04743
+Pr( fruitveg | Male ) = 0.06628
+Pr( fruitveg | Female ) = 0.08710
+Pr( DoNotOwnHome | Female ) = 0.13687
+Pr( cannedveg | Male ) = 0.10331
+Pr( softdrink | Female ) = 0.05370
+Pr( fish | Male ) = 0.06888
+Pr( frozenmeal | Male ) = 0.11046
+Pr( beer | Female ) = 0.05501
+Pr( cannedmeat | Female ) = 0.05632
+Pr( Homeowner | Female ) = 0.13621
+Pr( Homeowner | Male ) = 0.12281
+Pr( wine | Female ) = 0.09561
+Pr( freshmeat | Female ) = 0.04715
+Pr( fish | Female ) = 0.08186
+Pr( wine | Male ) = 0.05653
+Pr( DoNotOwnHome | Male ) = 0.12865
+Pr( freshmeat | Male ) = 0.04873
+Pr( dairy | Female ) = 0.05043
+------------------------ Prediction probabilities (log2) ------------------------
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'cannedmeat']
+	Pr( Male ) = -15.38220
+	Pr( Female ) = -15.58819
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'wine', 'fish', 'confectionery']
+	Pr( Male ) = -19.44457
+	Pr( Female ) = -18.63669
+Probabilities for observation ['Homeowner', 'frozenmeal', 'wine', 'confectionery']
+	Pr( Male ) = -15.65182
+	Pr( Female ) = -15.03291
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -18.50739
+	Pr( Female ) = -20.84429
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'frozenmeal', 'fish', 'confectionery']
+	Pr( Male ) = -19.21509
+	Pr( Female ) = -18.77123
+Probabilities for observation ['Homeowner', 'freshmeat', 'cannedveg']
+	Pr( Male ) = -11.71453
+	Pr( Female ) = -12.33024
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'frozenmeal', 'fish']
+	Pr( Male ) = -18.24205
+	Pr( Female ) = -19.47540
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'wine', 'softdrink', 'confectionery']
+	Pr( Male ) = -21.43786
+	Pr( Female ) = -19.12788
+Probabilities for observation ['Homeowner', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -13.87381
+	Pr( Female ) = -16.53459
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -26.21548
+	Pr( Female ) = -27.96927
+Probabilities for observation ['DoNotOwnHome', 'cannedmeat', 'wine']
+	Pr( Male ) = -12.33678
+	Pr( Female ) = -11.35289
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( Male ) = -25.82983
+	Pr( Female ) = -27.05615
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'wine', 'fish']
+	Pr( Male ) = -15.93361
+	Pr( Female ) = -14.33458
+Probabilities for observation ['Homeowner', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -17.73366
+	Pr( Female ) = -20.14529
+Probabilities for observation ['Homeowner', 'freshmeat', 'cannedmeat', 'wine', 'confectionery']
+	Pr( Male ) = -21.01078
+	Pr( Female ) = -19.16295
+Probabilities for observation ['Homeowner', 'frozenmeal', 'beer']
+	Pr( Male ) = -10.59891
+	Pr( Female ) = -12.43384
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'dairy', 'cannedveg', 'softdrink', 'confectionery']
+	Pr( Male ) = -28.84223
+	Pr( Female ) = -27.76973
+Probabilities for observation ['DoNotOwnHome', 'softdrink']
+	Pr( Male ) = -8.41152
+	Pr( Female ) = -8.03495
+Probabilities for observation ['Homeowner', 'beer', 'wine', 'softdrink']
+	Pr( Male ) = -15.96331
+	Pr( Female ) = -15.61269
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -13.80669
+	Pr( Female ) = -16.52767
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'frozenmeal', 'beer']
+	Pr( Male ) = -15.16538
+	Pr( Female ) = -16.73662
+Probabilities for observation ['Homeowner', 'cannedveg']
+	Pr( Male ) = -7.35557
+	Pr( Female ) = -7.92368
+Probabilities for observation ['Homeowner', 'cannedmeat', 'wine']
+	Pr( Male ) = -12.40390
+	Pr( Female ) = -11.35981
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( Male ) = -30.90702
+	Pr( Female ) = -32.25120
+Probabilities for observation ['DoNotOwnHome', 'fruitveg']
+	Pr( Male ) = -7.92891
+	Pr( Female ) = -7.33722
+Probabilities for observation ['DoNotOwnHome', 'wine', 'softdrink', 'confectionery']
+	Pr( Male ) = -16.80428
+	Pr( Female ) = -14.81818
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal']
+	Pr( Male ) = -7.19195
+	Pr( Female ) = -8.24275
+Probabilities for observation ['Homeowner', 'freshmeat', 'dairy']
+	Pr( Male ) = -13.07322
+	Pr( Female ) = -12.53919
+Probabilities for observation ['Homeowner', 'fruitveg', 'cannedmeat', 'beer', 'wine', 'fish', 'confectionery']
+	Pr( Male ) = -27.76688
+	Pr( Female ) = -26.07246
+Probabilities for observation ['DoNotOwnHome', 'fish']
+	Pr( Male ) = -7.87342
+	Pr( Female ) = -7.42671
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -17.66655
+	Pr( Female ) = -20.13837
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'fish']
+	Pr( Male ) = -11.78877
+	Pr( Female ) = -10.94792
+Probabilities for observation ['Homeowner', 'freshmeat', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( Male ) = -22.37760
+	Pr( Female ) = -24.32781
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'softdrink']
+	Pr( Male ) = -22.90534
+	Pr( Female ) = -25.06322
+Probabilities for observation ['Homeowner', 'freshmeat']
+	Pr( Male ) = -8.43964
+	Pr( Female ) = -8.22949
+Probabilities for observation ['Homeowner', 'beer']
+	Pr( Male ) = -7.42053
+	Pr( Female ) = -8.00710
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedmeat', 'beer']
+	Pr( Male ) = -15.44715
+	Pr( Female ) = -15.67160
+Probabilities for observation ['Homeowner', 'fruitveg']
+	Pr( Male ) = -7.99603
+	Pr( Female ) = -7.34414
+Probabilities for observation ['Homeowner', 'wine', 'fish']
+	Pr( Male ) = -12.08537
+	Pr( Female ) = -10.82029
+Probabilities for observation ['DoNotOwnHome', 'fruitveg']
+	Pr( Male ) = -7.92891
+	Pr( Female ) = -7.33722
+Probabilities for observation ['Homeowner', 'frozenmeal', 'fish']
+	Pr( Male ) = -11.11892
+	Pr( Female ) = -11.86037
+Probabilities for observation ['DoNotOwnHome', 'freshmeat']
+	Pr( Male ) = -8.37252
+	Pr( Female ) = -8.22257
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'cannedmeat']
+	Pr( Male ) = -11.46684
+	Pr( Female ) = -12.06698
+Probabilities for observation ['Homeowner', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -17.73366
+	Pr( Female ) = -20.14529
+Probabilities for observation ['Homeowner', 'cannedveg', 'cannedmeat', 'frozenmeal', 'beer']
+	Pr( Male ) = -18.05219
+	Pr( Female ) = -20.68481
+Probabilities for observation ['Homeowner', 'cannedveg', 'cannedmeat', 'wine']
+	Pr( Male ) = -15.67879
+	Pr( Female ) = -15.46056
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'dairy', 'fish']
+	Pr( Male ) = -16.42235
+	Pr( Female ) = -15.25761
+Probabilities for observation ['DoNotOwnHome', 'cannedveg']
+	Pr( Male ) = -7.28846
+	Pr( Female ) = -7.91676
+Probabilities for observation ['Homeowner', 'dairy', 'softdrink']
+	Pr( Male ) = -13.11221
+	Pr( Female ) = -12.35156
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'fish', 'confectionery']
+	Pr( Male ) = -16.03670
+	Pr( Female ) = -14.34449
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'frozenmeal', 'softdrink', 'fish']
+	Pr( Male ) = -19.36511
+	Pr( Female ) = -19.59359
+Probabilities for observation ['DoNotOwnHome', 'confectionery']
+	Pr( Male ) = -8.26149
+	Pr( Female ) = -7.21259
+Probabilities for observation ['Homeowner', 'frozenmeal', 'beer', 'wine']
+	Pr( Male ) = -14.74375
+	Pr( Female ) = -15.82050
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'wine', 'fish']
+	Pr( Male ) = -21.81138
+	Pr( Female ) = -23.52503
+Probabilities for observation ['Homeowner', 'softdrink']
+	Pr( Male ) = -8.47863
+	Pr( Female ) = -8.04187
+Probabilities for observation ['Homeowner', 'frozenmeal', 'beer', 'confectionery']
+	Pr( Male ) = -14.84684
+	Pr( Female ) = -15.83041
+Probabilities for observation ['Homeowner', 'fruitveg', 'wine']
+	Pr( Male ) = -12.14086
+	Pr( Female ) = -10.73079
+Probabilities for observation ['Homeowner', 'cannedmeat', 'softdrink']
+	Pr( Male ) = -12.65702
+	Pr( Female ) = -12.19209
+Probabilities for observation ['Homeowner', 'fruitveg', 'freshmeat', 'fish']
+	Pr( Male ) = -16.21484
+	Pr( Female ) = -15.36139
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'fish']
+	Pr( Male ) = -12.23238
+	Pr( Female ) = -11.83327
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'frozenmeal']
+	Pr( Male ) = -11.82553
+	Pr( Female ) = -12.55245
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'wine', 'confectionery']
+	Pr( Male ) = -16.32168
+	Pr( Female ) = -14.12045
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'softdrink']
+	Pr( Male ) = -18.20465
+	Pr( Female ) = -20.74660
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'frozenmeal']
+	Pr( Male ) = -15.46626
+	Pr( Female ) = -16.17051
+Probabilities for observation ['Homeowner', 'beer']
+	Pr( Male ) = -7.42053
+	Pr( Female ) = -8.00710
+Probabilities for observation ['Homeowner', 'fruitveg', 'freshmeat', 'confectionery']
+	Pr( Male ) = -16.60292
+	Pr( Female ) = -15.14727
+Probabilities for observation ['Homeowner', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -13.87381
+	Pr( Female ) = -16.53459
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'beer', 'wine', 'fish']
+	Pr( Male ) = -19.27346
+	Pr( Female ) = -18.51874
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'cannedveg', 'beer']
+	Pr( Male ) = -18.90262
+	Pr( Female ) = -20.02869
+Probabilities for observation ['Homeowner', 'freshmeat', 'cannedveg', 'wine', 'confectionery']
+	Pr( Male ) = -20.10729
+	Pr( Female ) = -19.11348
+Probabilities for observation ['Homeowner']
+	Pr( Male ) = -4.08068
+	Pr( Female ) = -3.82293
+Probabilities for observation ['Homeowner', 'cannedveg', 'confectionery']
+	Pr( Male ) = -11.60350
+	Pr( Female ) = -11.32026
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'dairy', 'fish', 'confectionery']
+	Pr( Male ) = -20.67028
+	Pr( Female ) = -18.65419
+Probabilities for observation ['DoNotOwnHome']
+	Pr( Male ) = -4.01356
+	Pr( Female ) = -3.81601
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'confectionery']
+	Pr( Male ) = -12.62045
+	Pr( Female ) = -11.61915
+Probabilities for observation ['Homeowner', 'fruitveg', 'dairy', 'cannedmeat', 'frozenmeal', 'softdrink', 'fish']
+	Pr( Male ) = -28.24419
+	Pr( Female ) = -28.06042
+Probabilities for observation ['Homeowner', 'freshmeat', 'frozenmeal']
+	Pr( Male ) = -11.61802
+	Pr( Female ) = -12.65623
+Probabilities for observation ['DoNotOwnHome', 'wine', 'confectionery']
+	Pr( Male ) = -12.40632
+	Pr( Female ) = -10.59925
+Probabilities for observation ['Homeowner', 'frozenmeal', 'fish']
+	Pr( Male ) = -11.11892
+	Pr( Female ) = -11.86037
+Probabilities for observation ['Homeowner', 'cannedveg', 'cannedmeat', 'frozenmeal', 'beer']
+	Pr( Male ) = -18.05219
+	Pr( Female ) = -20.68481
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'cannedmeat', 'softdrink', 'fish']
+	Pr( Male ) = -24.72407
+	Pr( Female ) = -23.72363
+Probabilities for observation ['Homeowner', 'wine', 'confectionery']
+	Pr( Male ) = -12.47344
+	Pr( Female ) = -10.60617
+Probabilities for observation ['Homeowner', 'wine', 'fish', 'confectionery']
+	Pr( Male ) = -16.33330
+	Pr( Female ) = -14.21687
+Probabilities for observation ['Homeowner']
+	Pr( Male ) = -4.08068
+	Pr( Female ) = -3.82293
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'softdrink']
+	Pr( Male ) = -12.77047
+	Pr( Female ) = -12.44151
+Probabilities for observation ['Homeowner', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -13.87381
+	Pr( Female ) = -16.53459
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'cannedveg', 'cannedmeat', 'wine']
+	Pr( Male ) = -20.24526
+	Pr( Female ) = -19.76334
+Probabilities for observation ['Homeowner', 'fruitveg', 'cannedveg', 'frozenmeal']
+	Pr( Male ) = -14.44931
+	Pr( Female ) = -15.87162
+Probabilities for observation ['Homeowner', 'dairy']
+	Pr( Male ) = -8.71426
+	Pr( Female ) = -8.13263
+Probabilities for observation ['Homeowner', 'fruitveg', 'beer']
+	Pr( Male ) = -11.33588
+	Pr( Female ) = -11.52830
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'dairy', 'cannedmeat', 'frozenmeal', 'fish']
+	Pr( Male ) = -23.77913
+	Pr( Female ) = -23.83457
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'cannedmeat', 'fish']
+	Pr( Male ) = -16.68539
+	Pr( Female ) = -15.88663
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'frozenmeal', 'fish']
+	Pr( Male ) = -14.96716
+	Pr( Female ) = -15.37465
+Probabilities for observation ['Homeowner', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( Male ) = -25.89694
+	Pr( Female ) = -27.06307
+Probabilities for observation ['Homeowner', 'cannedveg', 'cannedmeat', 'wine', 'softdrink', 'confectionery']
+	Pr( Male ) = -24.32467
+	Pr( Female ) = -23.07607
+Probabilities for observation ['Homeowner', 'freshmeat', 'cannedmeat']
+	Pr( Male ) = -12.61802
+	Pr( Female ) = -12.37971
+Probabilities for observation ['Homeowner', 'fish']
+	Pr( Male ) = -7.94053
+	Pr( Female ) = -7.43363
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'wine', 'fish']
+	Pr( Male ) = -25.72674
+	Pr( Female ) = -27.04623
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'softdrink']
+	Pr( Male ) = -12.32687
+	Pr( Female ) = -11.55615
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'fish']
+	Pr( Male ) = -11.05181
+	Pr( Female ) = -11.85345
+Probabilities for observation ['DoNotOwnHome', 'fish']
+	Pr( Male ) = -7.87342
+	Pr( Female ) = -7.42671
+Probabilities for observation ['Homeowner', 'beer']
+	Pr( Male ) = -7.42053
+	Pr( Female ) = -8.00710
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -17.72205
+	Pr( Female ) = -20.04887
+Probabilities for observation ['Homeowner', 'fruitveg', 'freshmeat', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -22.14812
+	Pr( Female ) = -24.46235
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'fish']
+	Pr( Male ) = -16.14773
+	Pr( Female ) = -15.35448
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg', 'beer', 'softdrink']
+	Pr( Male ) = -19.72696
+	Pr( Female ) = -20.63648
+Probabilities for observation ['Homeowner', 'cannedveg']
+	Pr( Male ) = -7.35557
+	Pr( Female ) = -7.92368
+Probabilities for observation ['Homeowner', 'freshmeat', 'wine', 'confectionery']
+	Pr( Male ) = -16.83240
+	Pr( Female ) = -15.01273
+Probabilities for observation ['Homeowner', 'cannedmeat']
+	Pr( Male ) = -8.25906
+	Pr( Female ) = -7.97315
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'wine', 'softdrink', 'fish']
+	Pr( Male ) = -23.60645
+	Pr( Female ) = -22.65426
+Probabilities for observation ['Homeowner', 'freshmeat', 'frozenmeal', 'wine', 'confectionery']
+	Pr( Male ) = -20.01078
+	Pr( Female ) = -19.43946
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'dairy', 'softdrink', 'fish']
+	Pr( Male ) = -25.17926
+	Pr( Female ) = -23.88311
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'dairy', 'fish']
+	Pr( Male ) = -16.42235
+	Pr( Female ) = -15.25761
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'wine', 'confectionery']
+	Pr( Male ) = -20.68063
+	Pr( Female ) = -18.52701
+Probabilities for observation ['Homeowner']
+	Pr( Male ) = -4.08068
+	Pr( Female ) = -3.82293
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'cannedmeat', 'beer']
+	Pr( Male ) = -14.80669
+	Pr( Female ) = -16.25115
+Probabilities for observation ['Homeowner', 'fruitveg', 'freshmeat']
+	Pr( Male ) = -12.35499
+	Pr( Female ) = -11.75069
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'beer', 'wine', 'fish', 'confectionery']
+	Pr( Male ) = -23.52138
+	Pr( Female ) = -21.91532
+Probabilities for observation ['DoNotOwnHome', 'cannedmeat', 'beer']
+	Pr( Male ) = -11.53180
+	Pr( Female ) = -12.15040
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'beer', 'wine', 'fish']
+	Pr( Male ) = -22.54835
+	Pr( Female ) = -22.61949
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'cannedveg', 'cannedmeat', 'wine', 'confectionery']
+	Pr( Male ) = -24.49319
+	Pr( Female ) = -23.15992
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'fish']
+	Pr( Male ) = -12.50700
+	Pr( Female ) = -11.73641
+Probabilities for observation ['Homeowner', 'cannedmeat', 'wine', 'confectionery']
+	Pr( Male ) = -16.65182
+	Pr( Female ) = -14.75639
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'fish']
+	Pr( Male ) = -12.50700
+	Pr( Female ) = -11.73641
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'wine', 'softdrink']
+	Pr( Male ) = -19.00963
+	Pr( Female ) = -19.94909
+Probabilities for observation ['Homeowner', 'fruitveg', 'dairy']
+	Pr( Male ) = -12.62961
+	Pr( Female ) = -11.65383
+Probabilities for observation ['Homeowner', 'freshmeat', 'wine']
+	Pr( Male ) = -12.58447
+	Pr( Female ) = -11.61615
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'beer', 'confectionery']
+	Pr( Male ) = -14.77973
+	Pr( Female ) = -15.82349
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( Male ) = -22.58511
+	Pr( Female ) = -24.22403
+Probabilities for observation ['DoNotOwnHome', 'cannedmeat']
+	Pr( Male ) = -8.19195
+	Pr( Female ) = -7.96623
+Probabilities for observation ['DoNotOwnHome', 'wine', 'confectionery']
+	Pr( Male ) = -12.40632
+	Pr( Female ) = -10.59925
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -18.50739
+	Pr( Female ) = -20.84429
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -17.66655
+	Pr( Female ) = -20.13837
+Probabilities for observation ['Homeowner', 'frozenmeal', 'beer', 'softdrink']
+	Pr( Male ) = -14.99687
+	Pr( Female ) = -16.65277
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( Male ) = -21.58190
+	Pr( Female ) = -23.65957
+Probabilities for observation ['Homeowner', 'fruitveg', 'dairy']
+	Pr( Male ) = -12.62961
+	Pr( Female ) = -11.65383
+Probabilities for observation ['Homeowner', 'frozenmeal', 'fish']
+	Pr( Male ) = -11.11892
+	Pr( Female ) = -11.86037
+Probabilities for observation ['Homeowner', 'freshmeat', 'wine', 'confectionery']
+	Pr( Male ) = -16.83240
+	Pr( Female ) = -15.01273
+Probabilities for observation ['Homeowner', 'fruitveg', 'wine', 'confectionery']
+	Pr( Male ) = -16.38879
+	Pr( Female ) = -14.12737
+Probabilities for observation ['Homeowner', 'wine', 'confectionery']
+	Pr( Male ) = -12.47344
+	Pr( Female ) = -10.60617
+Probabilities for observation ['Homeowner', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'confectionery']
+	Pr( Male ) = -22.03709
+	Pr( Female ) = -23.45237
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'fish']
+	Pr( Male ) = -11.78877
+	Pr( Female ) = -10.94792
+Probabilities for observation ['DoNotOwnHome', 'cannedmeat', 'wine', 'confectionery']
+	Pr( Male ) = -16.58471
+	Pr( Female ) = -14.74947
+Probabilities for observation ['Homeowner', 'cannedmeat']
+	Pr( Male ) = -8.25906
+	Pr( Female ) = -7.97315
+Probabilities for observation ['Homeowner', 'freshmeat', 'beer']
+	Pr( Male ) = -11.77949
+	Pr( Female ) = -12.41366
+Probabilities for observation ['Homeowner', 'frozenmeal']
+	Pr( Male ) = -7.25906
+	Pr( Female ) = -8.24967
+Probabilities for observation ['DoNotOwnHome', 'wine']
+	Pr( Male ) = -8.15840
+	Pr( Female ) = -7.20267
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'dairy', 'cannedmeat']
+	Pr( Male ) = -17.18449
+	Pr( Female ) = -16.68249
+Probabilities for observation ['Homeowner', 'fruitveg', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( Male ) = -22.42274
+	Pr( Female ) = -24.36549
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( Male ) = -17.95153
+	Pr( Female ) = -19.91433
+Probabilities for observation ['DoNotOwnHome', 'dairy']
+	Pr( Male ) = -8.64714
+	Pr( Female ) = -8.12571
+Probabilities for observation ['Homeowner']
+	Pr( Male ) = -4.08068
+	Pr( Female ) = -3.82293
+Probabilities for observation ['Homeowner', 'wine', 'softdrink', 'confectionery']
+	Pr( Male ) = -16.87139
+	Pr( Female ) = -14.82510
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedmeat', 'fish', 'confectionery']
+	Pr( Male ) = -20.21509
+	Pr( Female ) = -18.49471
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'fish', 'confectionery']
+	Pr( Male ) = -20.39566
+	Pr( Female ) = -18.75105
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( Male ) = -21.91448
+	Pr( Female ) = -23.53494
+Probabilities for observation ['Homeowner', 'softdrink']
+	Pr( Male ) = -8.47863
+	Pr( Female ) = -8.04187
+Probabilities for observation ['Homeowner', 'dairy', 'cannedmeat', 'frozenmeal']
+	Pr( Male ) = -16.07103
+	Pr( Female ) = -16.70959
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'wine', 'softdrink']
+	Pr( Male ) = -16.47170
+	Pr( Female ) = -14.94281
+Probabilities for observation ['Homeowner', 'wine', 'fish']
+	Pr( Male ) = -12.08537
+	Pr( Female ) = -10.82029
+Probabilities for observation ['Homeowner', 'cannedmeat', 'wine', 'confectionery']
+	Pr( Male ) = -16.65182
+	Pr( Female ) = -14.75639
+Probabilities for observation ['Homeowner', 'softdrink', 'fish']
+	Pr( Male ) = -12.33849
+	Pr( Female ) = -11.65257
+Probabilities for observation ['Homeowner', 'fruitveg', 'cannedmeat']
+	Pr( Male ) = -12.17442
+	Pr( Female ) = -11.49435
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedveg', 'beer', 'fish']
+	Pr( Male ) = -18.40352
+	Pr( Female ) = -19.23283
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'cannedmeat', 'fish']
+	Pr( Male ) = -15.96716
+	Pr( Female ) = -15.09814
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( Male ) = -18.63958
+	Pr( Female ) = -19.43419
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'frozenmeal', 'softdrink', 'fish']
+	Pr( Male ) = -19.36511
+	Pr( Female ) = -19.59359
+Probabilities for observation ['DoNotOwnHome', 'softdrink', 'confectionery']
+	Pr( Male ) = -12.65944
+	Pr( Female ) = -11.43152
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'confectionery']
+	Pr( Male ) = -11.43988
+	Pr( Female ) = -11.63933
+Probabilities for observation ['Homeowner', 'wine']
+	Pr( Male ) = -8.22551
+	Pr( Female ) = -7.20959
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'softdrink']
+	Pr( Male ) = -16.68583
+	Pr( Female ) = -15.96271
+Probabilities for observation ['DoNotOwnHome', 'frozenmeal', 'wine', 'confectionery']
+	Pr( Male ) = -15.58471
+	Pr( Female ) = -15.02599
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg', 'softdrink']
+	Pr( Male ) = -16.38711
+	Pr( Female ) = -16.45231
+Probabilities for observation ['Homeowner', 'wine']
+	Pr( Male ) = -8.22551
+	Pr( Female ) = -7.20959
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'beer']
+	Pr( Male ) = -11.98699
+	Pr( Female ) = -12.30988
+Probabilities for observation ['DoNotOwnHome', 'fish']
+	Pr( Male ) = -7.87342
+	Pr( Female ) = -7.42671
+Probabilities for observation ['Homeowner', 'beer']
+	Pr( Male ) = -7.42053
+	Pr( Female ) = -8.00710
+Probabilities for observation ['Homeowner', 'freshmeat', 'confectionery']
+	Pr( Male ) = -12.68756
+	Pr( Female ) = -11.62607
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'beer', 'softdrink', 'fish']
+	Pr( Male ) = -19.52657
+	Pr( Female ) = -19.35102
+Probabilities for observation ['DoNotOwnHome', 'freshmeat']
+	Pr( Male ) = -8.37252
+	Pr( Female ) = -8.22257
+Probabilities for observation ['Homeowner', 'dairy', 'fish']
+	Pr( Male ) = -12.57411
+	Pr( Female ) = -11.74333
+Probabilities for observation ['Homeowner']
+	Pr( Male ) = -4.08068
+	Pr( Female ) = -3.82293
+Probabilities for observation ['DoNotOwnHome', 'freshmeat', 'beer']
+	Pr( Male ) = -11.71237
+	Pr( Female ) = -12.40674
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'cannedmeat', 'wine', 'fish', 'confectionery']
+	Pr( Male ) = -28.71888
+	Pr( Female ) = -26.28793
+Probabilities for observation ['Homeowner', 'cannedveg', 'confectionery']
+	Pr( Male ) = -11.60350
+	Pr( Female ) = -11.32026
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'beer', 'wine', 'confectionery']
+	Pr( Male ) = -19.66153
+	Pr( Female ) = -18.30462
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'frozenmeal']
+	Pr( Male ) = -11.10730
+	Pr( Female ) = -11.76395
+Probabilities for observation ['Homeowner', 'dairy', 'cannedveg']
+	Pr( Male ) = -11.98915
+	Pr( Female ) = -12.23338
+Probabilities for observation ['Homeowner', 'dairy', 'wine']
+	Pr( Male ) = -12.85909
+	Pr( Female ) = -11.51929
+Probabilities for observation ['Homeowner', 'fruitveg', 'dairy', 'softdrink']
+	Pr( Male ) = -17.02756
+	Pr( Female ) = -15.87277
+Probabilities for observation ['Homeowner', 'frozenmeal']
+	Pr( Male ) = -7.25906
+	Pr( Female ) = -8.24967
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'fish']
+	Pr( Male ) = -11.78877
+	Pr( Female ) = -10.94792
+Probabilities for observation ['Homeowner', 'cannedveg']
+	Pr( Male ) = -7.35557
+	Pr( Female ) = -7.92368
+Probabilities for observation ['Homeowner', 'cannedveg', 'cannedmeat']
+	Pr( Male ) = -11.53396
+	Pr( Female ) = -12.07390
+Probabilities for observation ['DoNotOwnHome', 'dairy', 'wine', 'confectionery']
+	Pr( Male ) = -17.03991
+	Pr( Female ) = -14.90895
+Probabilities for observation ['Homeowner', 'freshmeat', 'dairy', 'cannedmeat']
+	Pr( Male ) = -17.25160
+	Pr( Female ) = -16.68941
+Probabilities for observation ['DoNotOwnHome', 'fruitveg', 'freshmeat', 'beer', 'wine', 'fish']
+	Pr( Male ) = -23.63241
+	Pr( Female ) = -22.92530
+Probabilities for observation ['DoNotOwnHome', 'cannedveg', 'fish']
+	Pr( Male ) = -11.14831
+	Pr( Female ) = -11.52746
+Probabilities for observation ['Homeowner', 'dairy', 'frozenmeal', 'beer', 'confectionery']
+	Pr( Male ) = -19.48042
+	Pr( Female ) = -20.14011
+Probabilities for observation ['Homeowner', 'fruitveg', 'wine']
+	Pr( Male ) = -12.14086
+	Pr( Female ) = -10.73079
+Accuracy: 0.63000
+********************************** House owner **********************************
+Pr( beer | Homeowner ) = 0.07974
+Pr( cannedmeat | Homeowner ) = 0.05244
+Pr( wine | Homeowner ) = 0.07543
+Pr( Male | DoNotOwnHome ) = 0.11828
+Pr( Female | DoNotOwnHome ) = 0.12485
+Pr( freshmeat | Homeowner ) = 0.05532
+Pr( fish | Homeowner ) = 0.05675
+Pr( frozenmeal | DoNotOwnHome ) = 0.08065
+Pr( softdrink | DoNotOwnHome ) = 0.04958
+Pr( cannedmeat | DoNotOwnHome ) = 0.05854
+Pr( wine | DoNotOwnHome ) = 0.07646
+Pr( freshmeat | DoNotOwnHome ) = 0.04182
+Pr( dairy | Homeowner ) = 0.04885
+Pr( frozenmeal | Homeowner ) = 0.07615
+Pr( fruitveg | DoNotOwnHome ) = 0.08841
+Pr( Female | Homeowner ) = 0.14943
+Pr( cannedveg | Homeowner ) = 0.07399
+Pr( confectionery | Homeowner ) = 0.08190
+Pr( dairy | DoNotOwnHome ) = 0.04241
+Pr( Male | Homeowner ) = 0.13578
+Pr( beer | DoNotOwnHome ) = 0.07467
+Pr( fruitveg | Homeowner ) = 0.06250
+Pr( confectionery | DoNotOwnHome ) = 0.06691
+Pr( cannedveg | DoNotOwnHome ) = 0.08662
+Pr( softdrink | Homeowner ) = 0.05172
+Pr( fish | DoNotOwnHome ) = 0.09080
+------------------------ Prediction probabilities (log2) ------------------------
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -15.18498
+	Pr( Homeowner ) = -15.90841
+Probabilities for observation ['Female', 'frozenmeal', 'wine', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -18.68804
+	Pr( Homeowner ) = -18.95359
+Probabilities for observation ['Female', 'frozenmeal', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.22688
+	Pr( Homeowner ) = -14.81443
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -19.52588
+	Pr( Homeowner ) = -19.37432
+Probabilities for observation ['Female', 'fruitveg', 'frozenmeal', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -18.47859
+	Pr( Homeowner ) = -19.22489
+Probabilities for observation ['Female', 'freshmeat', 'cannedveg']
+	Pr( DoNotOwnHome ) = -12.09278
+	Pr( Homeowner ) = -11.69325
+Probabilities for observation ['Female', 'fruitveg', 'cannedveg', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -18.10603
+	Pr( Homeowner ) = -19.37128
+Probabilities for observation ['Female', 'dairy', 'wine', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -20.48800
+	Pr( Homeowner ) = -19.72790
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -14.96655
+	Pr( Homeowner ) = -15.01884
+Probabilities for observation ['Male', 'fruitveg', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -26.48667
+	Pr( Homeowner ) = -27.51349
+Probabilities for observation ['Female', 'cannedmeat', 'wine']
+	Pr( DoNotOwnHome ) = -11.78726
+	Pr( Homeowner ) = -11.74247
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -25.82906
+	Pr( Homeowner ) = -26.76806
+Probabilities for observation ['Male', 'fruitveg', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -14.73168
+	Pr( Homeowner ) = -15.76671
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -18.42770
+	Pr( Homeowner ) = -19.15800
+Probabilities for observation ['Female', 'freshmeat', 'cannedmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -20.26879
+	Pr( Homeowner ) = -19.52868
+Probabilities for observation ['Female', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -11.35937
+	Pr( Homeowner ) = -11.12420
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'dairy', 'cannedveg', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -28.46552
+	Pr( Homeowner ) = -28.07000
+Probabilities for observation ['Female', 'softdrink']
+	Pr( DoNotOwnHome ) = -8.31785
+	Pr( Homeowner ) = -8.03367
+Probabilities for observation ['Female', 'beer', 'wine', 'softdrink']
+	Pr( DoNotOwnHome ) = -15.77023
+	Pr( Homeowner ) = -15.41090
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -14.96655
+	Pr( Homeowner ) = -15.01884
+Probabilities for observation ['Male', 'dairy', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -15.99671
+	Pr( Homeowner ) = -15.61788
+Probabilities for observation ['Female', 'cannedveg']
+	Pr( DoNotOwnHome ) = -7.51298
+	Pr( Homeowner ) = -7.51709
+Probabilities for observation ['Male', 'cannedmeat', 'wine']
+	Pr( DoNotOwnHome ) = -11.86526
+	Pr( Homeowner ) = -11.88067
+Probabilities for observation ['Male', 'freshmeat', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -31.46857
+	Pr( Homeowner ) = -31.29970
+Probabilities for observation ['Female', 'fruitveg']
+	Pr( DoNotOwnHome ) = -7.48343
+	Pr( Homeowner ) = -7.76065
+Probabilities for observation ['Female', 'wine', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.92866
+	Pr( Homeowner ) = -15.37242
+Probabilities for observation ['Male', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -7.69407
+	Pr( Homeowner ) = -7.61387
+Probabilities for observation ['Male', 'freshmeat', 'dairy']
+	Pr( DoNotOwnHome ) = -13.20094
+	Pr( Homeowner ) = -12.43049
+Probabilities for observation ['Female', 'fruitveg', 'cannedmeat', 'beer', 'wine', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -26.39308
+	Pr( Homeowner ) = -27.14021
+Probabilities for observation ['Male', 'fish']
+	Pr( DoNotOwnHome ) = -7.52296
+	Pr( Homeowner ) = -8.03801
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -18.42770
+	Pr( Homeowner ) = -19.15800
+Probabilities for observation ['Female', 'fruitveg', 'fish']
+	Pr( DoNotOwnHome ) = -10.94459
+	Pr( Homeowner ) = -11.89981
+Probabilities for observation ['Male', 'freshmeat', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( DoNotOwnHome ) = -23.25543
+	Pr( Homeowner ) = -22.92370
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'softdrink']
+	Pr( DoNotOwnHome ) = -23.85993
+	Pr( Homeowner ) = -23.64734
+Probabilities for observation ['Male', 'freshmeat']
+	Pr( DoNotOwnHome ) = -8.64161
+	Pr( Homeowner ) = -8.07501
+Probabilities for observation ['Male', 'beer']
+	Pr( DoNotOwnHome ) = -7.80510
+	Pr( Homeowner ) = -7.54738
+Probabilities for observation ['Male', 'fruitveg', 'cannedmeat', 'beer']
+	Pr( DoNotOwnHome ) = -15.39911
+	Pr( Homeowner ) = -15.80049
+Probabilities for observation ['Male', 'fruitveg']
+	Pr( DoNotOwnHome ) = -7.56144
+	Pr( Homeowner ) = -7.89885
+Probabilities for observation ['Female', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -11.15404
+	Pr( Homeowner ) = -11.62851
+Probabilities for observation ['Male', 'fruitveg']
+	Pr( DoNotOwnHome ) = -7.56144
+	Pr( Homeowner ) = -7.89885
+Probabilities for observation ['Female', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -11.07723
+	Pr( Homeowner ) = -11.61484
+Probabilities for observation ['Female', 'freshmeat']
+	Pr( DoNotOwnHome ) = -8.56360
+	Pr( Homeowner ) = -7.93681
+Probabilities for observation ['Male', 'cannedveg', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -11.68535
+	Pr( Homeowner ) = -11.90841
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -18.42770
+	Pr( Homeowner ) = -19.15800
+Probabilities for observation ['Male', 'cannedveg', 'cannedmeat', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -19.06092
+	Pr( Homeowner ) = -19.27196
+Probabilities for observation ['Male', 'cannedveg', 'cannedmeat', 'wine']
+	Pr( DoNotOwnHome ) = -15.39444
+	Pr( Homeowner ) = -15.63711
+Probabilities for observation ['Male', 'fruitveg', 'dairy', 'fish']
+	Pr( DoNotOwnHome ) = -15.58193
+	Pr( Homeowner ) = -16.39349
+Probabilities for observation ['Male', 'cannedveg']
+	Pr( DoNotOwnHome ) = -7.59098
+	Pr( Homeowner ) = -7.65529
+Probabilities for observation ['Female', 'dairy', 'softdrink']
+	Pr( DoNotOwnHome ) = -12.87718
+	Pr( Homeowner ) = -12.38915
+Probabilities for observation ['Female', 'fruitveg', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -14.84632
+	Pr( Homeowner ) = -15.50987
+Probabilities for observation ['Female', 'fruitveg', 'frozenmeal', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -18.91090
+	Pr( Homeowner ) = -19.88786
+Probabilities for observation ['Female', 'confectionery']
+	Pr( DoNotOwnHome ) = -7.88553
+	Pr( Homeowner ) = -7.37070
+Probabilities for observation ['Male', 'frozenmeal', 'beer', 'wine']
+	Pr( DoNotOwnHome ) = -15.14646
+	Pr( Homeowner ) = -14.99110
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -22.13679
+	Pr( Homeowner ) = -22.88670
+Probabilities for observation ['Male', 'softdrink']
+	Pr( DoNotOwnHome ) = -8.39585
+	Pr( Homeowner ) = -8.17187
+Probabilities for observation ['Female', 'frozenmeal', 'beer', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.26110
+	Pr( Homeowner ) = -14.73426
+Probabilities for observation ['Male', 'fruitveg', 'wine']
+	Pr( DoNotOwnHome ) = -11.27052
+	Pr( Homeowner ) = -11.62755
+Probabilities for observation ['Female', 'cannedmeat', 'softdrink']
+	Pr( DoNotOwnHome ) = -12.41222
+	Pr( Homeowner ) = -12.28679
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'fish']
+	Pr( DoNotOwnHome ) = -15.60239
+	Pr( Homeowner ) = -16.21417
+Probabilities for observation ['Female', 'freshmeat', 'fish']
+	Pr( DoNotOwnHome ) = -12.02476
+	Pr( Homeowner ) = -12.07597
+Probabilities for observation ['Male', 'dairy', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -12.25341
+	Pr( Homeowner ) = -11.96935
+Probabilities for observation ['Female', 'fruitveg', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.09425
+	Pr( Homeowner ) = -15.09940
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'softdrink']
+	Pr( DoNotOwnHome ) = -19.30059
+	Pr( Homeowner ) = -19.29186
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -15.69550
+	Pr( Homeowner ) = -15.65183
+Probabilities for observation ['Male', 'beer']
+	Pr( DoNotOwnHome ) = -7.80510
+	Pr( Homeowner ) = -7.54738
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.96496
+	Pr( Homeowner ) = -15.54686
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -14.96655
+	Pr( Homeowner ) = -15.01884
+Probabilities for observation ['Male', 'fruitveg', 'beer', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -18.47498
+	Pr( Homeowner ) = -19.41524
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'cannedveg', 'beer']
+	Pr( DoNotOwnHome ) = -19.41371
+	Pr( Homeowner ) = -19.47998
+Probabilities for observation ['Female', 'freshmeat', 'cannedveg', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.70359
+	Pr( Homeowner ) = -19.03200
+Probabilities for observation ['Male']
+	Pr( DoNotOwnHome ) = -4.06181
+	Pr( Homeowner ) = -3.89885
+Probabilities for observation ['Male', 'cannedveg', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.49271
+	Pr( Homeowner ) = -11.26534
+Probabilities for observation ['Female', 'fruitveg', 'dairy', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.40566
+	Pr( Homeowner ) = -19.86535
+Probabilities for observation ['Male']
+	Pr( DoNotOwnHome ) = -4.06181
+	Pr( Homeowner ) = -3.89885
+Probabilities for observation ['Male', 'freshmeat', 'confectionery']
+	Pr( DoNotOwnHome ) = -12.54333
+	Pr( Homeowner ) = -11.68506
+Probabilities for observation ['Female', 'fruitveg', 'dairy', 'cannedmeat', 'frozenmeal', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -27.56461
+	Pr( Homeowner ) = -28.49645
+Probabilities for observation ['Female', 'freshmeat', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -12.19587
+	Pr( Homeowner ) = -11.65183
+Probabilities for observation ['Female', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.59462
+	Pr( Homeowner ) = -11.09940
+Probabilities for observation ['Female', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -11.07723
+	Pr( Homeowner ) = -11.61484
+Probabilities for observation ['Male', 'cannedveg', 'cannedmeat', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -19.06092
+	Pr( Homeowner ) = -19.27196
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'cannedmeat', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -24.03081
+	Pr( Homeowner ) = -24.74031
+Probabilities for observation ['Female', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.59462
+	Pr( Homeowner ) = -11.09940
+Probabilities for observation ['Female', 'wine', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.05577
+	Pr( Homeowner ) = -15.23857
+Probabilities for observation ['Female']
+	Pr( DoNotOwnHome ) = -3.98380
+	Pr( Homeowner ) = -3.76065
+Probabilities for observation ['Male', 'freshmeat', 'softdrink']
+	Pr( DoNotOwnHome ) = -12.97565
+	Pr( Homeowner ) = -12.34802
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -14.96655
+	Pr( Homeowner ) = -15.01884
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'cannedmeat', 'wine']
+	Pr( DoNotOwnHome ) = -19.95377
+	Pr( Homeowner ) = -19.99259
+Probabilities for observation ['Female', 'fruitveg', 'cannedveg', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -14.64488
+	Pr( Homeowner ) = -15.23212
+Probabilities for observation ['Female', 'dairy']
+	Pr( DoNotOwnHome ) = -8.54314
+	Pr( Homeowner ) = -8.11613
+Probabilities for observation ['Male', 'fruitveg', 'beer']
+	Pr( DoNotOwnHome ) = -11.30474
+	Pr( Homeowner ) = -11.54738
+Probabilities for observation ['Female', 'fruitveg', 'dairy', 'cannedmeat', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -23.23057
+	Pr( Homeowner ) = -24.22344
+Probabilities for observation ['Male', 'dairy', 'cannedmeat', 'fish']
+	Pr( DoNotOwnHome ) = -16.17667
+	Pr( Homeowner ) = -16.64661
+Probabilities for observation ['Male', 'fruitveg', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -14.65486
+	Pr( Homeowner ) = -15.75303
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -25.82906
+	Pr( Homeowner ) = -26.76806
+Probabilities for observation ['Female', 'cannedveg', 'cannedmeat', 'wine', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -23.55221
+	Pr( Homeowner ) = -23.38198
+Probabilities for observation ['Female', 'freshmeat', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -12.65798
+	Pr( Homeowner ) = -12.18993
+Probabilities for observation ['Female', 'fish']
+	Pr( DoNotOwnHome ) = -7.44496
+	Pr( Homeowner ) = -7.89981
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -25.63642
+	Pr( Homeowner ) = -26.88670
+Probabilities for observation ['Female', 'fruitveg', 'softdrink']
+	Pr( DoNotOwnHome ) = -11.81748
+	Pr( Homeowner ) = -12.03367
+Probabilities for observation ['Female', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -11.07723
+	Pr( Homeowner ) = -11.61484
+Probabilities for observation ['Male', 'fish']
+	Pr( DoNotOwnHome ) = -7.52296
+	Pr( Homeowner ) = -8.03801
+Probabilities for observation ['Male', 'beer']
+	Pr( DoNotOwnHome ) = -7.80510
+	Pr( Homeowner ) = -7.54738
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -18.46618
+	Pr( Homeowner ) = -19.01884
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -23.04598
+	Pr( Homeowner ) = -23.19500
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'fish']
+	Pr( DoNotOwnHome ) = -15.60239
+	Pr( Homeowner ) = -16.21417
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'beer', 'softdrink']
+	Pr( DoNotOwnHome ) = -20.22766
+	Pr( Homeowner ) = -19.93232
+Probabilities for observation ['Male', 'cannedveg']
+	Pr( DoNotOwnHome ) = -7.59098
+	Pr( Homeowner ) = -7.65529
+Probabilities for observation ['Female', 'freshmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -16.17442
+	Pr( Homeowner ) = -15.27556
+Probabilities for observation ['Female', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -8.07818
+	Pr( Homeowner ) = -8.01377
+Probabilities for observation ['Female', 'fruitveg', 'cannedveg', 'wine', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -22.51689
+	Pr( Homeowner ) = -23.65797
+Probabilities for observation ['Female', 'freshmeat', 'frozenmeal', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.80668
+	Pr( Homeowner ) = -18.99058
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'dairy', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -24.41777
+	Pr( Homeowner ) = -24.70447
+Probabilities for observation ['Male', 'fruitveg', 'dairy', 'fish']
+	Pr( DoNotOwnHome ) = -15.58193
+	Pr( Homeowner ) = -16.39349
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.67405
+	Pr( Homeowner ) = -19.27556
+Probabilities for observation ['Male']
+	Pr( DoNotOwnHome ) = -4.06181
+	Pr( Homeowner ) = -3.89885
+Probabilities for observation ['Male', 'cannedveg', 'cannedmeat', 'beer']
+	Pr( DoNotOwnHome ) = -15.42865
+	Pr( Homeowner ) = -15.55694
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat']
+	Pr( DoNotOwnHome ) = -12.14124
+	Pr( Homeowner ) = -12.07501
+Probabilities for observation ['Female', 'fruitveg', 'beer', 'wine', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -22.29870
+	Pr( Homeowner ) = -22.88709
+Probabilities for observation ['Male', 'cannedmeat', 'beer']
+	Pr( DoNotOwnHome ) = -11.89948
+	Pr( Homeowner ) = -11.80049
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'beer', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -22.00415
+	Pr( Homeowner ) = -23.17168
+Probabilities for observation ['Female', 'dairy', 'cannedveg', 'cannedmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -23.77750
+	Pr( Homeowner ) = -23.46445
+Probabilities for observation ['Female', 'dairy', 'fish']
+	Pr( DoNotOwnHome ) = -12.00430
+	Pr( Homeowner ) = -12.25529
+Probabilities for observation ['Female', 'cannedmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.68899
+	Pr( Homeowner ) = -15.35252
+Probabilities for observation ['Male', 'dairy', 'fish']
+	Pr( DoNotOwnHome ) = -12.08230
+	Pr( Homeowner ) = -12.39349
+Probabilities for observation ['Female', 'cannedveg', 'frozenmeal', 'wine', 'softdrink']
+	Pr( DoNotOwnHome ) = -19.18837
+	Pr( Homeowner ) = -19.23383
+Probabilities for observation ['Male', 'fruitveg', 'dairy']
+	Pr( DoNotOwnHome ) = -12.12077
+	Pr( Homeowner ) = -12.25433
+Probabilities for observation ['Female', 'freshmeat', 'wine']
+	Pr( DoNotOwnHome ) = -12.27269
+	Pr( Homeowner ) = -11.66551
+Probabilities for observation ['Female', 'frozenmeal', 'beer', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.26110
+	Pr( Homeowner ) = -14.73426
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( DoNotOwnHome ) = -23.23497
+	Pr( Homeowner ) = -23.10302
+Probabilities for observation ['Male', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -8.15618
+	Pr( Homeowner ) = -8.15197
+Probabilities for observation ['Male', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.67262
+	Pr( Homeowner ) = -11.23760
+Probabilities for observation ['Male', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -19.52588
+	Pr( Homeowner ) = -19.37432
+Probabilities for observation ['Female', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -18.34970
+	Pr( Homeowner ) = -19.01981
+Probabilities for observation ['Female', 'frozenmeal', 'beer', 'softdrink']
+	Pr( DoNotOwnHome ) = -15.69341
+	Pr( Homeowner ) = -15.39722
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -21.92733
+	Pr( Homeowner ) = -23.15800
+Probabilities for observation ['Female', 'fruitveg', 'dairy']
+	Pr( DoNotOwnHome ) = -12.04277
+	Pr( Homeowner ) = -12.11613
+Probabilities for observation ['Male', 'frozenmeal', 'fish']
+	Pr( DoNotOwnHome ) = -11.15523
+	Pr( Homeowner ) = -11.75303
+Probabilities for observation ['Female', 'freshmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -16.17442
+	Pr( Homeowner ) = -15.27556
+Probabilities for observation ['Female', 'fruitveg', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.09425
+	Pr( Homeowner ) = -15.09940
+Probabilities for observation ['Female', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.59462
+	Pr( Homeowner ) = -11.09940
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'frozenmeal', 'beer', 'confectionery']
+	Pr( DoNotOwnHome ) = -22.36791
+	Pr( Homeowner ) = -22.62890
+Probabilities for observation ['Male', 'fruitveg', 'fish']
+	Pr( DoNotOwnHome ) = -11.02259
+	Pr( Homeowner ) = -12.03801
+Probabilities for observation ['Female', 'cannedmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.68899
+	Pr( Homeowner ) = -15.35252
+Probabilities for observation ['Female', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -8.07818
+	Pr( Homeowner ) = -8.01377
+Probabilities for observation ['Female', 'freshmeat', 'beer']
+	Pr( DoNotOwnHome ) = -12.30690
+	Pr( Homeowner ) = -11.58534
+Probabilities for observation ['Male', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -7.69407
+	Pr( Homeowner ) = -7.61387
+Probabilities for observation ['Male', 'wine']
+	Pr( DoNotOwnHome ) = -7.77089
+	Pr( Homeowner ) = -7.62755
+Probabilities for observation ['Male', 'freshmeat', 'dairy', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -17.29532
+	Pr( Homeowner ) = -16.68360
+Probabilities for observation ['Male', 'fruitveg', 'dairy', 'cannedveg', 'frozenmeal', 'beer']
+	Pr( DoNotOwnHome ) = -23.02551
+	Pr( Homeowner ) = -23.37432
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'wine']
+	Pr( DoNotOwnHome ) = -18.67563
+	Pr( Homeowner ) = -18.74754
+Probabilities for observation ['Female', 'dairy']
+	Pr( DoNotOwnHome ) = -8.54314
+	Pr( Homeowner ) = -8.11613
+Probabilities for observation ['Female']
+	Pr( DoNotOwnHome ) = -3.98380
+	Pr( Homeowner ) = -3.76065
+Probabilities for observation ['Female', 'wine', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.92866
+	Pr( Homeowner ) = -15.37242
+Probabilities for observation ['Male', 'fruitveg', 'cannedmeat', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.01869
+	Pr( Homeowner ) = -19.90118
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.50412
+	Pr( Homeowner ) = -19.82422
+Probabilities for observation ['Male', 'cannedveg', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -22.32943
+	Pr( Homeowner ) = -22.76806
+Probabilities for observation ['Female', 'softdrink']
+	Pr( DoNotOwnHome ) = -8.31785
+	Pr( Homeowner ) = -8.03367
+Probabilities for observation ['Male', 'dairy', 'cannedmeat', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -16.34778
+	Pr( Homeowner ) = -16.22247
+Probabilities for observation ['Female', 'fruitveg', 'wine', 'softdrink']
+	Pr( DoNotOwnHome ) = -15.52656
+	Pr( Homeowner ) = -15.76237
+Probabilities for observation ['Female', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -11.15404
+	Pr( Homeowner ) = -11.62851
+Probabilities for observation ['Male', 'cannedmeat', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.76699
+	Pr( Homeowner ) = -15.49072
+Probabilities for observation ['Female', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -11.77900
+	Pr( Homeowner ) = -12.17283
+Probabilities for observation ['Female', 'fruitveg', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -11.57781
+	Pr( Homeowner ) = -12.01377
+Probabilities for observation ['Male', 'fruitveg', 'cannedveg', 'beer', 'fish']
+	Pr( DoNotOwnHome ) = -18.29507
+	Pr( Homeowner ) = -19.44298
+Probabilities for observation ['Female', 'fruitveg', 'cannedmeat', 'fish']
+	Pr( DoNotOwnHome ) = -15.03896
+	Pr( Homeowner ) = -16.15293
+Probabilities for observation ['Female', 'frozenmeal', 'beer', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -18.72226
+	Pr( Homeowner ) = -18.87342
+Probabilities for observation ['Male', 'fruitveg', 'frozenmeal', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -18.98890
+	Pr( Homeowner ) = -20.02605
+Probabilities for observation ['Female', 'softdrink', 'confectionery']
+	Pr( DoNotOwnHome ) = -12.21958
+	Pr( Homeowner ) = -11.64372
+Probabilities for observation ['Male', 'frozenmeal', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.59580
+	Pr( Homeowner ) = -11.22392
+Probabilities for observation ['Male', 'wine']
+	Pr( DoNotOwnHome ) = -7.77089
+	Pr( Homeowner ) = -7.62755
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'softdrink']
+	Pr( DoNotOwnHome ) = -16.39728
+	Pr( Homeowner ) = -16.20983
+Probabilities for observation ['Female', 'frozenmeal', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -15.22688
+	Pr( Homeowner ) = -14.81443
+Probabilities for observation ['Female', 'dairy', 'cannedveg', 'softdrink']
+	Pr( DoNotOwnHome ) = -16.40636
+	Pr( Homeowner ) = -16.14559
+Probabilities for observation ['Male', 'wine']
+	Pr( DoNotOwnHome ) = -7.77089
+	Pr( Homeowner ) = -7.62755
+Probabilities for observation ['Female', 'dairy', 'beer']
+	Pr( DoNotOwnHome ) = -12.28644
+	Pr( Homeowner ) = -11.76466
+Probabilities for observation ['Female', 'fish']
+	Pr( DoNotOwnHome ) = -7.44496
+	Pr( Homeowner ) = -7.89981
+Probabilities for observation ['Female', 'beer']
+	Pr( DoNotOwnHome ) = -7.72710
+	Pr( Homeowner ) = -7.40918
+Probabilities for observation ['Male', 'freshmeat', 'confectionery']
+	Pr( DoNotOwnHome ) = -12.54333
+	Pr( Homeowner ) = -11.68506
+Probabilities for observation ['Female', 'fruitveg', 'beer', 'softdrink', 'fish']
+	Pr( DoNotOwnHome ) = -19.02193
+	Pr( Homeowner ) = -19.82136
+Probabilities for observation ['Male', 'freshmeat']
+	Pr( DoNotOwnHome ) = -8.64161
+	Pr( Homeowner ) = -8.07501
+Probabilities for observation ['Male', 'dairy', 'fish']
+	Pr( DoNotOwnHome ) = -12.08230
+	Pr( Homeowner ) = -12.39349
+Probabilities for observation ['Male']
+	Pr( DoNotOwnHome ) = -4.06181
+	Pr( Homeowner ) = -3.89885
+Probabilities for observation ['Male', 'freshmeat', 'beer']
+	Pr( DoNotOwnHome ) = -12.38491
+	Pr( Homeowner ) = -11.72353
+Probabilities for observation ['Female', 'fruitveg', 'freshmeat', 'cannedmeat', 'wine', 'fish', 'confectionery']
+	Pr( DoNotOwnHome ) = -27.22958
+	Pr( Homeowner ) = -27.66784
+Probabilities for observation ['Female', 'cannedveg', 'confectionery']
+	Pr( DoNotOwnHome ) = -11.41471
+	Pr( Homeowner ) = -11.12715
+Probabilities for observation ['Female', 'fruitveg', 'beer', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -18.83755
+	Pr( Homeowner ) = -18.74793
+Probabilities for observation ['Female', 'fruitveg', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -11.11570
+	Pr( Homeowner ) = -11.47567
+Probabilities for observation ['Female', 'dairy', 'cannedveg']
+	Pr( DoNotOwnHome ) = -12.07231
+	Pr( Homeowner ) = -11.87257
+Probabilities for observation ['Male', 'dairy', 'wine']
+	Pr( DoNotOwnHome ) = -12.33023
+	Pr( Homeowner ) = -11.98303
+Probabilities for observation ['Male', 'fruitveg', 'dairy', 'softdrink']
+	Pr( DoNotOwnHome ) = -16.45482
+	Pr( Homeowner ) = -16.52735
+Probabilities for observation ['Male', 'frozenmeal']
+	Pr( DoNotOwnHome ) = -7.69407
+	Pr( Homeowner ) = -7.61387
+Probabilities for observation ['Female', 'fruitveg', 'fish']
+	Pr( DoNotOwnHome ) = -10.94459
+	Pr( Homeowner ) = -11.89981
+Probabilities for observation ['Female', 'cannedveg']
+	Pr( DoNotOwnHome ) = -7.51298
+	Pr( Homeowner ) = -7.51709
+Probabilities for observation ['Female', 'cannedveg', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -11.60735
+	Pr( Homeowner ) = -11.77021
+Probabilities for observation ['Female', 'dairy', 'wine', 'confectionery']
+	Pr( DoNotOwnHome ) = -16.15395
+	Pr( Homeowner ) = -15.45488
+Probabilities for observation ['Female', 'freshmeat', 'dairy', 'cannedmeat']
+	Pr( DoNotOwnHome ) = -17.21731
+	Pr( Homeowner ) = -16.54541
+Probabilities for observation ['Male', 'fruitveg', 'freshmeat', 'beer', 'wine', 'fish']
+	Pr( DoNotOwnHome ) = -23.05478
+	Pr( Homeowner ) = -23.59139
+Probabilities for observation ['Female', 'cannedveg', 'fish']
+	Pr( DoNotOwnHome ) = -10.97413
+	Pr( Homeowner ) = -11.65626
+Probabilities for observation ['Male', 'dairy', 'frozenmeal', 'beer', 'confectionery']
+	Pr( DoNotOwnHome ) = -19.89844
+	Pr( Homeowner ) = -19.22793
+Probabilities for observation ['Male', 'fruitveg', 'wine']
+	Pr( DoNotOwnHome ) = -11.27052
+	Pr( Homeowner ) = -11.62755
+Accuracy: 0.62000
