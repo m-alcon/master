@@ -36,12 +36,23 @@ In this project, our goal is to solve the \textit{NOR Logic Synthesis Problem}
 \section{Decision variables}
 Given the number of input signals $n$, the depth $d$, and the truth table of the logical circuit, I defined the following variables:
 \begin{itemize}
-    \item $\mathbf{c_{i,j}}:=$ ``Code of the node ($i$,$j$)'', where
+    \item $\mathbf{Z_{i,j}}:=$ ``The node ($i$,$j$) contains a constant zero'', where
     \begin{itemize}
         \item $0 \leq i \leq d$
         \item $0 \leq j < 2^i$
     \end{itemize}
-    \item $\mathbf{b_{i,j}^{(t)}}:=$ ``Boolean value of the node ($i,j$) for the row $t$ of the truth table'', where
+    \item $\mathbf{N_{i,j}}:=$ ``The node ($i$,$j$) contains a NOR gate'', where
+    \begin{itemize}
+        \item $0 \leq i \leq d$
+        \item $0 \leq j < 2^i$
+    \end{itemize}
+    \item $\mathbf{I_{i,j,k}}:=$ ``The node ($i$,$j$) contains the input $k$'', where
+    \begin{itemize}
+        \item $0 \leq i \leq d$
+        \item $0 \leq j < 2^i$
+        \item $1 \leq k \leq n$
+    \end{itemize}
+    \item $\mathbf{B_{i,j}^{(t)}}:=$ ``Boolean value of the node ($i,j$) for the row $t$ of the truth table'', where
     \begin{itemize}
         \item $0 \leq i \leq d$
         \item $0 \leq j < 2^i$
@@ -49,7 +60,7 @@ Given the number of input signals $n$, the depth $d$, and the truth table of the
     \end{itemize}
 \end{itemize}
 
-For example, for a NOR-circuit that implements the functionality of an AND gate (see figure \ref{fig:original}), with $n = d = 2$, one possible solution for the variables $c_{i,j}$ and $b_{i,j}^{(0)}$ is shown in figures \ref{subfig:ci} and \ref{subfig:bit}, respectively.
+For example, for a NOR-circuit that implements the functionality of an AND gate (see figure \ref{fig:original}), with $n = d = 2$, one possible solution for the variables $c_{i,j}$ and $B_{i,j}^{(0)}$ is shown in figures \ref{subfig:ci} and \ref{subfig:bit}, respectively.
 \begin{figure}[hbtp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -77,23 +88,40 @@ For example, for a NOR-circuit that implements the functionality of an AND gate 
     \end{subfigure}
     \hspace{0.01\textwidth}
     \begin{subfigure}[b]{0.30\textwidth}
-        \includegraphics[width=\textwidth]{ci.pdf}
-        \caption{$c_{i,j}$}
+        \includegraphics[width=\textwidth]{Z.pdf}
+        \caption{$Z_{i,j}$}
+        \label{subfig:ci}
+    \end{subfigure}
+    \hspace{0.01\textwidth}
+    \begin{subfigure}[b]{0.30\textwidth}
+        \includegraphics[width=\textwidth]{N.pdf}
+        \caption{$N_{i,j}$}
+        \label{subfig:ci}
+    \end{subfigure}
+    \begin{subfigure}[b]{0.30\textwidth}
+        \includegraphics[width=\textwidth]{I1.pdf}
+        \caption{$I_{i,j,1}$}
+        \label{subfig:ci}
+    \end{subfigure}
+    \hspace{0.01\textwidth}
+    \begin{subfigure}[b]{0.30\textwidth}
+        \includegraphics[width=\textwidth]{I2.pdf}
+        \caption{$I_{i,j,2}$}
         \label{subfig:ci}
     \end{subfigure}
     \hspace{0.01\textwidth}
     \begin{subfigure}[b]{0.30\textwidth}
         \includegraphics[width=\textwidth]{bit.pdf}
-        \caption{$b_{i,j}^{(0)}$}
+        \caption{$B_{i,j}^{(0)}$}
         \label{subfig:bit}
     \end{subfigure}
-    \caption{Visual representation of ($i,j$) and both variables.}
+    \caption{Visual representation of ($i,j$) and the variables.}
     \label{fig:variables}
 \end{figure}
 
 
 \section{Constraints}
-In order to simplify the definition of the constraints, I define three functions. Given the variable $v_{i,j}$, with $v_{i,j} = c_{i,j}$ or $v_{i,j} = b_{i,j}^{(t)}$,
+In order to simplify the definition of the constraints, I define three functions. Given the variable $v_{i,j}$, with $v_{i,j} \in \{Z_{i,j}; N_{i,j}; I_{i,j,k}; B_{i,j}^{(t)}\}$,
 \begin{itemize}
     \item \textbf{left($v_{i,j}$)} := ``Variable corresponding to the one on the left of $v_{i,j}$'' $ = v_{i+1,2\times j}$.
     \item \textbf{right($v_{i,j}$)} := ``Variable corresponding to the one on the right of $v_{i,j}$'' $ = v_{i+1,2\times j+1}$.
@@ -129,22 +157,22 @@ So, the constraints are the following:
     \end{align*}
     \item Link each NOR gate with its corresponding value, which is the NOR operation between both children.
     \begin{align*}
-        c_{i,j} = -1 \Rightarrow (b_{i,j}^{(t)} = \lnot (\mathbf{left}(b_{i,j}^{(t)}) \lor \mathbf{right}(b_{i,j}^{(t)}))) \\
+        c_{i,j} = -1 \Rightarrow (B_{i,j}^{(t)} = \lnot (\mathbf{left}(B_{i,j}^{(t)}) \lor \mathbf{right}(B_{i,j}^{(t)}))) \\
         \forall t < 2^n\text{ }\forall i < d\text{ }\forall j < 2^i
     \end{align*}
     \item Link each constant 0 signal with `false'.
     \begin{align*}
-        c_{i,j} = 0 \Rightarrow \lnot b_{i,j}^{(t)} \\
+        c_{i,j} = 0 \Rightarrow \lnot B_{i,j}^{(t)} \\
         \forall t < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i
     \end{align*}
     \item Link each input signal that has value 1 in the truth table, with `true'.
     \begin{align*}
-        c_{i,j} = k \Rightarrow b_{i,j}^{(t)} \\
+        c_{i,j} = k \Rightarrow B_{i,j}^{(t)} \\
         \forall 1 \leq k \leq n\text{ }\forall t  < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i\text{ where \textbf{bit($k,t$)}} = 1
     \end{align*}
     \item Link each input signal that has value 0 in the truth table, with `false'.
     \begin{align*}
-        c_{i,j} = k \Rightarrow \lnot b_{i,j}^{(t)} \\
+        c_{i,j} = k \Rightarrow \lnot B_{i,j}^{(t)} \\
         \forall 1 \leq k \leq n\text{ }\forall t < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i\text{ where \textbf{bit($k,t$)} }= 0
     \end{align*}
 \end{itemize}
