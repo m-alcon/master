@@ -64,7 +64,7 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
     model.add( lvar(Z,h,w) + rvar(Z,h,w) >= (1-var(N,h,w))*2 );
     //Force non-symmetry
     for (int i = 0; i < n; ++i) {
-	  model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
+	    model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
       model.add ( lvar(Z,h,w) + rvar(N,h,w) <= 1 );
       model.add( lvar(I,h,w,i,cs) + rvar(I,h,w,i,cs) <= 1 );
       for (int j = i+1; j < n; ++j) {
@@ -143,7 +143,6 @@ int main () {
   const vector<int> truth_table = read_input();
   const int n = log2(truth_table.size());
   for (int depth = 0; depth <= MAX_DEPTH; ++depth) {
-    //cout << "================ " <<  depth << " ================" << endl;
     IloEnv env;
     IloModel model(env);
 
@@ -153,13 +152,10 @@ int main () {
     IloNumVarArray N(env, circuit_size, 0, 1, ILOINT);                    // NOR
     IloNumVarArray I(env, circuit_size*n, 0, 1, ILOINT);                  // Input
     IloNumVarArray B(env, circuit_size*truth_table.size(), 0, 1, ILOINT); // Circuit bool
-    // Z.setNames("Z");
-    // N.setNames("N");
-    // I.setNames("I");
-    // B.setNames("B");
 
     for (int truth_idx = 0; truth_idx < truth_table.size(); ++truth_idx) {
       define_constraints(0, 0, depth, truth_idx, n, circuit_size, Z, I, N, B, model, env);
+      // Output of the circuit must be the corresponding value in the truth table 
       model.add( var(B,0,0,truth_idx,circuit_size) == truth_table[truth_idx] );
     }
 
@@ -168,7 +164,6 @@ int main () {
       size += N[i];
     model.add( IloMinimize(env, size) );
 
-    //cerr << model << endl;
     IloCplex cplex(model);
     cplex.setOut(env.getNullStream()); // remove CPLEX messages
     if (cplex.solve()) {

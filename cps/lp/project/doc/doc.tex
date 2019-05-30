@@ -60,7 +60,7 @@ Given the number of input signals $n$, the depth $d$, and the truth table of the
     \end{itemize}
 \end{itemize}
 
-For example, for a NOR-circuit that implements the functionality of an AND gate (see figure \ref{fig:original}), with $n = d = 2$, one possible solution for the variables $c_{i,j}$ and $B_{i,j}^{(0)}$ is shown in figures \ref{subfig:ci} and \ref{subfig:bit}, respectively.
+For example, for a NOR-circuit that implements the functionality of an AND gate (see figure \ref{fig:original}), with $n = d = 2$, one possible solution (variable assignation) is shown in figure \ref{fig:variables}.
 \begin{figure}[hbtp]
     \centering
     \begin{subfigure}[b]{0.45\textwidth}
@@ -90,24 +90,24 @@ For example, for a NOR-circuit that implements the functionality of an AND gate 
     \begin{subfigure}[b]{0.30\textwidth}
         \includegraphics[width=\textwidth]{Z.pdf}
         \caption{$Z_{i,j}$}
-        \label{subfig:ci}
+        \label{subfig:zi}
     \end{subfigure}
     \hspace{0.01\textwidth}
     \begin{subfigure}[b]{0.30\textwidth}
         \includegraphics[width=\textwidth]{N.pdf}
         \caption{$N_{i,j}$}
-        \label{subfig:ci}
+        \label{subfig:ni}
     \end{subfigure}
     \begin{subfigure}[b]{0.30\textwidth}
         \includegraphics[width=\textwidth]{I1.pdf}
         \caption{$I_{i,j,1}$}
-        \label{subfig:ci}
+        \label{subfig:i1}
     \end{subfigure}
     \hspace{0.01\textwidth}
     \begin{subfigure}[b]{0.30\textwidth}
         \includegraphics[width=\textwidth]{I2.pdf}
         \caption{$I_{i,j,2}$}
-        \label{subfig:ci}
+        \label{subfig:i2}
     \end{subfigure}
     \hspace{0.01\textwidth}
     \begin{subfigure}[b]{0.30\textwidth}
@@ -119,80 +119,81 @@ For example, for a NOR-circuit that implements the functionality of an AND gate 
     \label{fig:variables}
 \end{figure}
 
-
 \section{Constraints}
 In order to simplify the definition of the constraints, I define three functions. Given the variable $v_{i,j}$, with $v_{i,j} \in \{Z_{i,j}; N_{i,j}; I_{i,j,k}; B_{i,j}^{(t)}\}$,
 \begin{itemize}
     \item \textbf{left($v_{i,j}$)} := ``Variable corresponding to the one on the left of $v_{i,j}$'' $ = v_{i+1,2\times j}$.
     \item \textbf{right($v_{i,j}$)} := ``Variable corresponding to the one on the right of $v_{i,j}$'' $ = v_{i+1,2\times j+1}$.
-    \item \textbf{bit($k,t$)} := ``Boolean value of $x_k$ in the $t$ row of the truth table'' = ``Value of the position $k$ of the binary representation of $t$ (i.e. $t_k \in \{t_1 t_2 ... t_n$\})''.
+    \item \textbf{bit($k,t$)} := ``Boolean value of $x_k$ in the $t$-th row of the truth table'' = ``Value of the position $k$ of the binary representation of $t$ (i.e. $t_k \in \{t_1 t_2 ... t_n$\})''.
 \end{itemize}
 
 So, the constraints are the following:
 \begin{itemize}
     \item The output of the circuit is equal to the desired value for each row $t$ of the truth table.
     \begin{align*}
-        b_{0,0}^{(t)} = y_t \\
+        B_{0,0}^{(t)} = y_t \\
         \forall t < 2^n
     \end{align*}
     \item NOR gates are not allowed on the leaves of the circuit.
     \begin{align*}
-        c_{d,j} \geq 0 \\
+        N_{d,j} = 0 \\
         \forall j < 2^d 
     \end{align*}
     \item Force children (if any) of each node to be 0 if the node is not a NOR gate.
     \begin{align*}
-        c_{i,j} \geq 0 \Rightarrow (\mathbf{left}(c_{i,j}) = 0 \land \mathbf{right}(c_{i,j}) = 0) \\
+        \mathbf{left}(Z_{i,j}) + \mathbf{right}(Z_{i,j}) \geq (1-N_{i,j})\cdot 2 \\
         \forall i < d\text{ }\forall j < 2^i
     \end{align*}
-    \item Force the left child of NOR gates to be greater or equal than the right one (non-symmetry of NOR gates).
-    \begin{align*}
-        c_{i,j} = -1 \Rightarrow (\mathbf{left}(c_{i,j}) \geq \mathbf{right}(c_{i,j})) \\
-        \forall i < d\text{ }\forall j < 2^i
-    \end{align*}
-    \item Force the left child of NOR gates to be greater than the right one if one of them is an input signal (non-symmetry of NOR gates).
-    \begin{align*}
-        (c_{i,j} = -1 \land (\mathbf{left}(c_{i,j}) > 0 \lor \mathbf{right}(c_{i,j}) > 0)) \Rightarrow (\mathbf{left}(c_{i,j}) > \mathbf{right}(c_{i,j})) \\
-        \forall i < d\text{ }\forall j < 2^i
-    \end{align*}
+    \item Force non-symmetry of NOR gates' children.
+    \begin{itemize}
+        \item Allow an input on the left only if there is an input on the right.
+            \begin{align*}
+                \mathbf{left}(I_{i,j,k}) + \mathbf{right}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1 \\
+                \forall i < d\text{ }\forall j < 2^i
+            \end{align*}
+        \item Allow a constant zero on the left only if there is not a NOR gate on the right.
+            \begin{align*}
+                \mathbf{left}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1  \\
+                \forall i < d\text{ }\forall j < 2^i
+            \end{align*}
+        \item Do not allow the same input on both sides.
+            \begin{align*}
+                \mathbf{left}(I_{i,j,k}) + \mathbf{right}(I_{i,j,k}) \leq 1 \\
+                \forall i < d\text{ }\forall j < 2^i\text{ }\forall k \leq n
+            \end{align*}
+        \item Inputs on the left must be smaller than the ones on the right.
+            \begin{align*}
+                \mathbf{left}(I_{i,j,k}) + \mathbf{right}(I_{i,j,l}) \leq 1 \\
+                \forall i < d\text{ }\forall j < 2^i\text{ }\forall k,l < n\text{ with }k < l
+            \end{align*}
+    \end{itemize}
     \item Link each NOR gate with its corresponding value, which is the NOR operation between both children.
     \begin{align*}
-        c_{i,j} = -1 \Rightarrow (B_{i,j}^{(t)} = \lnot (\mathbf{left}(B_{i,j}^{(t)}) \lor \mathbf{right}(B_{i,j}^{(t)}))) \\
+        (1 - \mathbf{right}(B_{i,j}^{(t)}) - \mathbf{left}(B_{i,j}^{(t)})) - 2\cdot B_{i,j}^{(t)} \leq 1-N_{i,j} \\
+   (1 - \mathbf{right}(B_{i,j}^{(t)}) - \mathbf{left}(B_{i,j}^{(t)})) - 2\cdot B_{i,j}^{(t)} \geq 2 \cdot N_{i,j} - 3 \\
         \forall t < 2^n\text{ }\forall i < d\text{ }\forall j < 2^i
     \end{align*}
     \item Link each constant 0 signal with `false'.
     \begin{align*}
-        c_{i,j} = 0 \Rightarrow \lnot B_{i,j}^{(t)} \\
+        1 - Z_{i,j} \geq B_{i,j}^{(t)} \\
         \forall t < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i
     \end{align*}
     \item Link each input signal that has value 1 in the truth table, with `true'.
     \begin{align*}
-        c_{i,j} = k \Rightarrow B_{i,j}^{(t)} \\
-        \forall 1 \leq k \leq n\text{ }\forall t  < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i\text{ where \textbf{bit($k,t$)}} = 1
+        1 - I_{i,j,k} \geq B_{i,j}^{(t)} - \mathbf{bit}(k,t) \\
+        1 - I_{i,j,k} \geq \mathbf{bit}(k,t) - B_{i,j}^{(t)} \\
+        \forall 1 \leq k \leq n\text{ }\forall t  < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i
     \end{align*}
-    \item Link each input signal that has value 0 in the truth table, with `false'.
+    \item Force each node to be only of one type.
     \begin{align*}
-        c_{i,j} = k \Rightarrow \lnot B_{i,j}^{(t)} \\
-        \forall 1 \leq k \leq n\text{ }\forall t < 2^n\text{ }\forall i \leq d\text{ }\forall j < 2^i\text{ where \textbf{bit($k,t$)} }= 0
+        Z_{i,j} + N_{i,j} + \sum_{k = 1}^n {I_{i,j,k}} = 1\\
+        \forall i < d\text{ }\forall j < 2^i
     \end{align*}
 \end{itemize}
 
-\section{Relation between the documentation and the code}
-\subsection{Variables}
-\begin{itemize}
-    \item \code{IntVarArray circuit = }$\{c_{0,0},c_{1,0},c_{1,1},...,c_{d,2^d-1}\}$.
-    \item For each $t$, which in the code is \code{truth\_idx}, \code{BoolVarArray circuit\_bool = }$\{b_{0,0}^{(t)},b_{1,0}^{(t)},b_{1,1}^{(t)},...,b_{d,2^d-1}^{(t)}\}$.
-\end{itemize}
-\subsection{Functions}
-\begin{itemize}
-    \item \textbf{left{($i,j$)}} and \textbf{right($v_{i,j}$)} are not directly implemented as functions.
-    \item Function \code{bool is\_bit\_up(bit\_pos, number)} = \textbf{bit($k,t$)}.
-\end{itemize}
-\subsection{Others}
-\begin{itemize}
-    \item Most of the constrains are defined within the recursive function \code{constraint\_creation(...)}, accessing to variables like a tree.
-    \item The algorithm tries to solve the problem from \textit{depth} 0 to \code{MAX\_DEPTH}, which is equal to 5, and stops in the first \textit{depth} where it finds a solution. 
-    \item I used 4 threads when solving the instances.
-\end{itemize}
+We want to \textbf{minimize} the size of the circuit:
+\begin{align*}
+    \sum_{i=0}^{d-1} \sum_{j=0}^{2^i-1} N_{i,j} \\
+\end{align*}
 
 \end{document}
