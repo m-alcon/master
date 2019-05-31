@@ -10,7 +10,7 @@ mkdir -p $debug_folder
 rm $output_folder/*
 rm $debug_folder/*
 
-n_threads=4
+n_threads=0
 n_timeouts=`expr 0`
 if [ -n "$1" ]; then
 	n_threads=$1
@@ -25,13 +25,13 @@ for input in $input_folder*.inp; do
 	file_name=`basename $input`
 	file_name=${file_name%.*}
 	is_timeout=0
-	#timeout 3m ./nor_circuit $n_threads < $input 1> $output_folder/${file_name}.out 2> $debug_folder/${file_name}.err || is_timeout=1
-	./nor_circuit $n_threads < $input 1> $output_folder/${file_name}.out 2> $debug_folder/${file_name}.err || is_timeout=1
+	timeout 1m ./nor_circuit $n_threads < $input 1> $output_folder/${file_name}.out 2> $debug_folder/${file_name}.err || is_timeout=1
 	if [ $is_timeout -eq 1 ]; then
 		rm $output_folder/${file_name}.out
 		let n_timeouts+=1
 	fi
 	let i+=1
-	echo -ne "Finished $i/$total_files instances | $n_timeouts instances failed | Last instance computed at ${SECONDS}s"\\r
+	echo -ne "$i/$total_files instances | $n_timeouts timeouts | Last computed ${SECONDS}s"\\r
 done
+echo ""
 echo "${SECONDS}s to compute all instances | $n_timeouts instances failed"

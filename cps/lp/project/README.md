@@ -1,7 +1,7 @@
 # Instructions
 All the instructions assume that you are inside the src/ folder.
 
-The solver can be executed in parallel, executing it with NTHREADS number of threads. I recomend to use as many as the number of cores in your machine. By default (if you do not specify NTHREADS) it will be executed by 4 threads.
+The solver can be executed in parallel, executing it with NTHREADS number of threads. I recomend to use as many as the number of cores in your machine. By default (if you do not specify NTHREADS) it will be executed by all possible cores.
 
 ## Code compilation
     $ make
