@@ -26,17 +26,22 @@ clean:
 
 ################################
 
-# Uncomment for CPLEX_Enterprise_Server126
 SYSTEM     = x86-64_linux
 LIBFORMAT  = static_pic
 CPLEXDIR      = /home/malcon/Programs/CPLEX_Studio126/cplex
 CONCERTDIR    = /home/malcon/Programs/CPLEX_Studio126/concert
 
+# Uncomment for CPLEX_Enterprise_Server126
+# SYSTEM     = x86-64_linux
+# LIBFORMAT  = static_pic
+# CPLEXDIR      = /opt/ibm/ILOG/CPLEX_Enterprise_Server126/CPLEX_Studio/cplex
+# CONCERTDIR    = /opt/ibm/ILOG/CPLEX_Enterprise_Server126/CPLEX_Studio/concert
+
 # Uncomment for CPLEX_Studio124
-#SYSTEM     = x86-64_sles10_4.1
-#LIBFORMAT  = static_pic
-#CPLEXDIR      = /home/malcon/Programs/CPLEX_Studio126/cplex
-#CONCERTDIR    = /home/malcon/Programs/CPLEX_Studio126/concert
+# SYSTEM     = x86-64_sles10_4.1
+# LIBFORMAT  = static_pic
+# CPLEXDIR      = /opt/ibm/ILOG/CPLEX_Studio124/cplex
+# CONCERTDIR    = /opt/ibm/ILOG/CPLEX_Studio124/concert
 
 ################
 

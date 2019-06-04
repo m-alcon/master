@@ -17,7 +17,7 @@
 \begin{flushright}
     \large\textbf{Miguel Alcón Doganoc} \\
     Combinatorial Problem Solving \\
-    May 7, 2019
+    \today
 \end{flushright}
 
 \newcommand{\code}[1]{\texttt{#1}}
@@ -146,25 +146,10 @@ So, the constraints are the following:
     \end{align*}
     \item Force non-symmetry of NOR gates' children.
     \begin{itemize}
-        \item Allow an input on the left only if there is an input on the right.
-            \begin{align*}
-                \mathbf{left}(I_{i,j,k}) + \mathbf{right}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1 \\
-                \forall i < d\text{ }\forall j < 2^i
-            \end{align*}
-        \item Allow a constant zero on the left only if there is not a NOR gate on the right.
-            \begin{align*}
-                \mathbf{left}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1  \\
-                \forall i < d\text{ }\forall j < 2^i
-            \end{align*}
         \item Do not allow the same input on both sides.
             \begin{align*}
                 \mathbf{left}(I_{i,j,k}) + \mathbf{right}(I_{i,j,k}) \leq 1 \\
                 \forall i < d\text{ }\forall j < 2^i\text{ }\forall k \leq n
-            \end{align*}
-        \item Inputs on the left must be smaller than the ones on the right.
-            \begin{align*}
-                \mathbf{left}(I_{i,j,k}) + \mathbf{right}(I_{i,j,l}) \leq 1 \\
-                \forall i < d\text{ }\forall j < 2^i\text{ }\forall k,l < n\text{ with }k < l
             \end{align*}
     \end{itemize}
     \item Link each NOR gate with its corresponding value, which is the NOR operation between both children.
@@ -191,9 +176,36 @@ So, the constraints are the following:
     \end{align*}
 \end{itemize}
 
+\subsection{Worsen performance}
+We tried to use the same constraints than in CP, but the following ones affected negatively to the performance of the program.
+\begin{itemize}
+\item Force non-symmetry of NOR gates' children.
+\begin{itemize}
+    \item Allow an input on the left only if there is an input on the right.
+        \begin{align*}
+            \mathbf{left}(I_{i,j,k}) + \mathbf{right}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1 \\
+            \forall i < d\text{ }\forall j < 2^i
+        \end{align*}
+    \item Allow a constant zero on the left only if there is not a NOR gate on the right.
+        \begin{align*}
+            \mathbf{left}(Z_{i,j}) + \mathbf{right}(N_{i,j}) \leq 1  \\
+            \forall i < d\text{ }\forall j < 2^i
+        \end{align*}
+    \item Inputs on the left must be smaller than the ones on the right.
+        \begin{align*}
+            \mathbf{left}(I_{i,j,k}) + \mathbf{right}(I_{i,j,l}) \leq 1 \\
+            \forall i < d\text{ }\forall j < 2^i\text{ }\forall k,l < n\text{ with }k < l
+        \end{align*}
+\end{itemize}
+\end{itemize}
+
+\section{Minimize function}
 We want to \textbf{minimize} the size of the circuit:
 \begin{align*}
     \sum_{i=0}^{d-1} \sum_{j=0}^{2^i-1} N_{i,j} \\
 \end{align*}
+
+\section{Extra comments}
+Without using any \code{timeout}, we were able to solve all the problems correctly in around 4200 s. But with 1 min of it, the program fails in 20 of 332 instances. Inside the `out/' directory you can find the solutions for all problems.
 
 \end{document}

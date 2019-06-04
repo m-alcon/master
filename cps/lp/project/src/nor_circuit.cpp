@@ -64,8 +64,8 @@ void define_constraints(const int &h, const int &w, const int &depth, const int 
     model.add( lvar(Z,h,w) + rvar(Z,h,w) >= (1-var(N,h,w))*2 );
     //Force non-symmetry
     for (int i = 0; i < n; ++i) {
-	    //model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 );
-      //model.add ( lvar(Z,h,w) + rvar(N,h,w) <= 1 );
+	    //model.add ( lvar(I,h,w,i,cs) + rvar(Z,h,w) + rvar(N,h,w) <= 1 ); //
+      //model.add ( lvar(Z,h,w) + rvar(N,h,w) <= 1 ); //
       model.add( lvar(I,h,w,i,cs) + rvar(I,h,w,i,cs) <= 1 );
       // for (int j = i+1; j < n; ++j) {
       //   model.add( lvar(I,h,w,j,cs) + rvar(I,h,w,i,cs) <= 1 );
