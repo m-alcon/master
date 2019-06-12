@@ -1,4 +1,4 @@
-#include "kd_tree.h"
+#include "normal_kd_tree.h"
 
 ostream & operator << (std::ostream & out, const Point & p) {
     out << "(";

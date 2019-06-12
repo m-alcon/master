@@ -19,13 +19,14 @@ class KDTree {
         Point search(const Point &p);
         Point limited_search(const uint &n, const Point &p); //TODO
 
-    private:
-        uint dim, axis, location;
+    private:  
+        Point location;
         KDTree* left;
         KDTree* right;
+        uint dim, axis; 
 
-        static Point median(const uint &axis, PointVector v);
-        static Point qselect(const uint &k, const uint &axis, PointVector v);
+        static Point median(const Point &axis, PointVector v);
+        static uint qselect(const uint &k, const uint &axis, PointVector v);
         static float distance(const Point &p, const Point &q);
         void recursive_search(float &best_distance, Point &best_p, const Point &p);
         void build_standard (const PointVector &v);
