@@ -1,18 +1,19 @@
 CXX  = g++ -std=c++11
-OBJ = ./
+OBJ = ../obj/
 BIN = ./
 
 SRC = $(wildcard *.cc)
-TAR = $(SRC:.cc=)
+TAR = $(SRC:.cc=.o)
 
 .PHONY: all clean
 
-all: $(TAR)
+all: $(TAR) experiment
 
-%: %.cc
-	$(CXX) -c $^ -o $(OBJ)$@.o
-	$(CXX) -o $(BIN)$@ $(OBJ)$@.o
-	rm $(OBJ)$@.o
+%.o: %.cc
+	$(CXX) -c $^ -o $(OBJ)$@
+
+experiment: utils.o kd_tree.o rkd_tree.o experiment.o
+	$(CXX) -o $(BIN)experiment $(OBJ)experiment.o $(OBJ)utils.o $(OBJ)kd_tree.o $(OBJ)rkd_tree.o
 
 clean:
 	rm -rf $(OBJ)*.o $(TAR)

@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <vector>
+#include <numeric>
 #include <math.h>   
 using namespace std;
 
@@ -12,40 +13,18 @@ struct IPoint {
     uint idx;
 };
 
-typedef vector<IPoint> PointVector;
+typedef vector<Point> PointVector;
+typedef vector<IPoint> IPointVector;
 
 struct Data {
-    PointVector v;
-    vector<float> hv_idx; //High variance indexes
+    IPointVector v;
+    vector<uint> hv_idx; //High variance indexes
 };
 
-ostream & operator << (std::ostream & out, const Point & p) {
-    out << "(";
-    out << p[0];
-    for (int j = 1; j < p.size(); ++j)
-        out << "," << p[j];
-    out << ")";
-    return out;
-}
-
-ostream & operator << (std::ostream & out, const PointVector & v) {
-    for (int i = 0; i < v.size(); ++i) {
-        out << (v[i].point);
-    }
-    return out;
-}
-
-PointVector generate_point_vector(const vector<Point> v) {
-    PointVector pv = PointVector (v.size());
-    for (int i = 0; i < v.size(); ++i) {
-        IPoint ip;
-        ip.idx = i;
-        ip.point = v[i];
-        pv[i] = ip;
-    }
-    return pv;
-}
-
-vector<float> compute_high_variance_idx(const PointVector &v) {
-    
-}
+ostream & operator << (std::ostream & out, const Point & p);
+ostream & operator << (std::ostream & out, const IPoint & p);
+ostream & operator << (std::ostream & out, const IPointVector & v);
+ostream & operator << (std::ostream & out, const PointVector & v);
+IPointVector pointvector_to_ipointvector(const PointVector v);
+vector<float> variance(const IPointVector &v);
+vector<uint> compute_high_variance_idx(const uint &k, IPointVector v);

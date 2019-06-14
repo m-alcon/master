@@ -29,6 +29,15 @@ ostream & operator << (std::ostream & out, const KDTree* kdt) {
     return out;
 }
 
+KDTree::KDTree () {
+    this->dim = 0;
+    this->axis = 0;
+    this->location = 0;
+    this->left = NULL;
+    this->right = NULL;
+    this->data = NULL;
+}
+
 KDTree::KDTree (const uint &dim) {
     this->dim = dim;
 }
@@ -43,7 +52,7 @@ KDTree::KDTree (const uint &dim, Data* data) {
         throw string("Dimensions does not match.");
 }
 
-bool KDTree::check_dimension(const PointVector &v) {
+bool KDTree::check_dimension(const IPointVector &v) {
     for (auto element : v) {
         if (element.point.size() != this->dim)
             return false;
@@ -51,10 +60,10 @@ bool KDTree::check_dimension(const PointVector &v) {
     return true;
 }
 
-IPoint KDTree::qselect (const uint &k, const uint &axis, const PointVector &v) {
+IPoint KDTree::qselect (const uint &k, const uint &axis, const IPointVector &v) {
     int idx = rand() % v.size();
     IPoint pivot = v[idx];
-    PointVector left, right;
+    IPointVector left, right;
     uint elements_like_pivot = 0;
     for (IPoint element: v) {
         if (element.point[axis] < pivot.point[axis])
@@ -72,7 +81,7 @@ IPoint KDTree::qselect (const uint &k, const uint &axis, const PointVector &v) {
         return pivot;
 }
 
-//Point KDTree::median(const uint &axis, PointVector v) {
+//Point KDTree::median(const uint &axis, IPointVector v) {
 //    uint median_pos;
 //    if (v.size() % 2 == 0) 
 //        median_pos = v.size()/2;
@@ -84,7 +93,7 @@ IPoint KDTree::qselect (const uint &k, const uint &axis, const PointVector &v) {
 //    return v[median_pos];
 //}
 
-IPoint KDTree::median (const uint &axis, const PointVector &v) {
+IPoint KDTree::median (const uint &axis, const IPointVector &v) {
     uint median_pos;
     if (v.size() % 2 == 0) 
         median_pos = v.size()/2;
@@ -93,16 +102,16 @@ IPoint KDTree::median (const uint &axis, const PointVector &v) {
     return KDTree::qselect(median_pos, axis, v);
 }
 
-void KDTree::build_standard (const uint &dim, Data* data, const PointVector &v) {
+void KDTree::build_standard (const uint &dim, Data* data, const IPointVector &v) {
     if (!v.empty()) {
         this->dim = uint(dim);
         this->data = data;
-        this->axis = rand() % dim;
+        this->axis = this->data->hv_idx[rand() % this->data->hv_idx.size()];
         this->location = KDTree::median(this->axis,v).idx;
-        PointVector left, right;
+        IPointVector left, right;
         for (IPoint element: v) {
-            if (element.point != this->data->v[this->location].point) {
-                if (element.point[this->axis] <= this->data->v[this->location].point[this->axis])
+            if (element.point != this->current_point()) {
+                if (element.point[this->axis] <= this->current_point()[this->axis])
                     left.push_back(element);
                 else
                     right.push_back(element);
@@ -165,7 +174,7 @@ void KDTree::explore_children(float &best_distance, Point &best_p, const Point &
 }
 
 void KDTree::recursive_search(float &best_distance, Point &best_p, int &n, const Point &p) {
-    Point current_p = this->data->v[this->location].point;
+    Point current_p = this->current_point();
     float d = distance(p, current_p);
     if (d < best_distance) {
         best_distance = d;
@@ -178,7 +187,7 @@ void KDTree::recursive_search(float &best_distance, Point &best_p, int &n, const
 
 Point KDTree::limited_search(int &n, const Point &p) {
     if (this->dim == p.size()) {
-        Point current_p = this->data->v[this->location].point;
+        Point current_p = this->current_point();
         Point best_p = current_p;
         float best_distance = distance(p, best_p);
         explore_children(best_distance, best_p, current_p, n, p);
@@ -193,7 +202,7 @@ Point KDTree::limited_search(int &n, const Point &p) {
 
 Point KDTree::search(const Point &p) {
     if (this->dim == p.size()) {
-        Point current_p = this->data->v[this->location].point;
+        Point current_p = this->current_point();
         Point best_p = current_p;
         float best_distance = distance(p, best_p);
         int n = 0;
@@ -207,22 +216,26 @@ Point KDTree::search(const Point &p) {
     }
 }
 
-int main() {
-    srand (time(NULL));
-    try {
-        Data* data = new Data;
-        vector<Point> v = {{5,2},{9,5},{2,6},{4,3},{3,4},{6,1}};
-        data->v = generate_point_vector(v);
-        data->hv_idx = {};
-        KDTree t (2, data);
-        cout << t << endl;
-        Point p = t.search({9,4});
-        int n = 2;
-        Point q = t.limited_search(n,{9,4});
-        cout << p <<  endl;
-        cout << q <<  endl;
-    }
-    catch (string s) {
-        cout << s << endl;
-    }
+Point KDTree::current_point() {
+    return this->data->v[this->location].point;
 }
+
+// int main() {
+//     srand (time(NULL));
+//     try {
+//         Data* data = new Data;
+//         PointVector v = {{5,2},{9,5},{2,6},{4,3},{3,4},{6,1}};
+//         data->v = pointvector_to_ipointvector(v);
+//         data->hv_idx = {};
+//         KDTree t (2, data);
+//         cout << t << endl;
+//         Point p = t.search({9,4});
+//         int n = 2;
+//         Point q = t.limited_search(n,{9,4});
+//         cout << p <<  endl;
+//         cout << q <<  endl;
+//     }
+//     catch (string s) {
+//         cout << s << endl;
+//     }
+// }
