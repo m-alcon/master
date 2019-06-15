@@ -4,7 +4,20 @@
 #include <vector>
 #include <numeric>
 #include <math.h>   
+#include <chrono>
 using namespace std;
+
+#define INIT_TIME()                                     \
+chrono::time_point<chrono::system_clock> start, end;    \
+double elapsed_time;                                    \
+
+
+#define TIME(code)                                                              \
+start = chrono::system_clock::now();                                            \
+code;                                                                           \
+end = chrono::system_clock::now();                                              \
+elapsed_time = chrono::duration_cast<chrono::milliseconds> (end-start).count(); \
+cout << "Time: " << elapsed_time/1000 << endl;                                       \
 
 typedef vector<float> Point;
 

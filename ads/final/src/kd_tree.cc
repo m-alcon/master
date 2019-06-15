@@ -152,24 +152,33 @@ void KDTree::explore_children(float &best_distance, Point &best_p, const Point &
     uint left_or_right = rand() % 2;
     bool check_other = true;
     if (left_or_right == 0) {
-        if (this->left != NULL) {
+        // if (this->left != NULL) {
+        //     this->left->recursive_search(best_distance, best_p, n, p);
+        //     Point splitting_coordinate = p;
+        //     splitting_coordinate[this->axis] = current_p[this->axis];
+        //     check_other = distance(p, splitting_coordinate) < best_distance;
+        // }
+        // if (check_other && n != 0 && this->right != NULL)
+        //     this->right->recursive_search(best_distance, best_p, n, p);
+        if (n != 0 and this->left != NULL and p[this->axis] - best_distance <= current_p[this->axis])
             this->left->recursive_search(best_distance, best_p, n, p);
-            Point splitting_coordinate = p;
-            splitting_coordinate[this->axis] = current_p[this->axis];
-            check_other = distance(p, splitting_coordinate) < best_distance;
-        }
-        if (check_other && n != 0 && this->right != NULL)
+        if (n != 0 and this->right != NULL and p[this->axis] + best_distance > current_p[this->axis])
             this->right->recursive_search(best_distance, best_p, n, p);
     }
     else {
-        if (this->right != NULL) {
+        // if (this->right != NULL) {
+        //     this->right->recursive_search(best_distance, best_p, n, p);
+        //     Point splitting_coordinate = p;
+        //     splitting_coordinate[this->axis] = current_p[this->axis];
+        //     check_other = distance(p, splitting_coordinate) < best_distance;
+        // }
+        // if (check_other && n != 0 && this->left != NULL)
+        //     this->left->recursive_search(best_distance, best_p, n, p);
+        if (n != 0 and this->right != NULL and p[this->axis] + best_distance > current_p[this->axis])
             this->right->recursive_search(best_distance, best_p, n, p);
-            Point splitting_coordinate = p;
-            splitting_coordinate[this->axis] = current_p[this->axis];
-            check_other = distance(p, splitting_coordinate) < best_distance;
-        }
-        if (check_other && n != 0 && this->left != NULL)
+        if (n != 0 and this->left != NULL and p[this->axis] - best_distance <= current_p[this->axis])
             this->left->recursive_search(best_distance, best_p, n, p);
+        
     }
 }
 
@@ -205,7 +214,7 @@ Point KDTree::search(const Point &p) {
         Point current_p = this->current_point();
         Point best_p = current_p;
         float best_distance = distance(p, best_p);
-        int n = 0;
+        int n = -1;
         explore_children(best_distance, best_p, current_p, n, p);
         cout << "Visited nodes:" << -n << endl;
         return best_p;
@@ -217,6 +226,8 @@ Point KDTree::search(const Point &p) {
 }
 
 Point KDTree::current_point() {
+    if (this->data == NULL)
+        return Point ();
     return this->data->v[this->location].point;
 }
 

@@ -12,28 +12,50 @@ RKDTree::RKDTree (const int &n, const int &m, const int &k, const PointVector &v
     cout << endl;
     this->trees = TreeVector (this->m);
 
-    for (KDTree t : this->trees) {
-        t = KDTree(this->data.v[0].point.size(), &this->data);
+    for (int i = 0; i < this->m; ++i) {
+        this->trees[i] = KDTree(this->data.v[0].point.size(), &this->data);
     }
+}
+
+ITree RKDTree::generate_itree(KDTree* t, const Point &p) {
+    ITree it;
+    it.tree = t;
+    if (t != NULL)
+        it.distance = KDTree::distance(it.tree->current_point(), p);
+    else
+        it.distance = -1;
+    return it;
 }
 
 Point RKDTree::search(const Point &p) {
     auto comp = [&](ITree t1, ITree t2) {
-        return t1.distance > t2.distance;
+        return t1.distance < t2.distance;
     };
     priority_queue<ITree, vector<ITree>, function<bool(ITree, ITree)>> q(comp);
-    for (int i = 0; i < this->trees.size(); ++i) {
-        ITree t;
-        t.tree = &trees[i];
-        t.distance = KDTree::distance(t.tree->current_point(), p);
-        q.push(t);
-    }
-    int n = this->n;
-    float best_distance = 0;
+    for (int i = 0; i < this->trees.size(); ++i) 
+        q.push(RKDTree::generate_itree(&trees[i], p));
 
-    while (n > 0) {
+    int n = this->n;
+    float best_distance = -1;
+    Point best_point;
+    // TODO: RECURSIVITY
+    while (n > 0 and !q.empty() and best_distance != 0) {
+        ITree t = q.top();
+        q.pop();
+        if (best_distance == -1 or t.distance < best_distance) {
+            best_distance = t.distance;
+            best_point = t.tree->current_point();
+        }
+        if (t.tree->left != NULL)
+            q.push(RKDTree::generate_itree(t.tree->left, p));
+        if (t.tree->right != NULL)
+            q.push(RKDTree::generate_itree(t.tree->right, p));
         --n;
     }
+    cout << "Visited nodes:" << this->n - n << endl;
+    cout << "Best distance:" << best_distance << endl;
+    cout << "Empty:" << q.empty() << endl;
+    return best_point;
 
 }
 
