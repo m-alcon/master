@@ -17,7 +17,7 @@ start = chrono::system_clock::now();                                            
 code;                                                                           \
 end = chrono::system_clock::now();                                              \
 elapsed_time = chrono::duration_cast<chrono::milliseconds> (end-start).count(); \
-cout << "Time: " << elapsed_time/1000 << endl;                                       \
+cout << "   Time: " << elapsed_time/1000 << endl;                                          \
 
 typedef vector<float> Point;
 

@@ -11,6 +11,7 @@ struct ITree {
 
 class RKDTree {
     public:
+        int n, m, k;
         Data data;
         
         RKDTree (const int &n, const int &m, const int &k, const PointVector &v);
@@ -19,7 +20,6 @@ class RKDTree {
         
     private:
         // n = limitation of searched nodes, m = limitation of trees, k = #idxs of high variance
-        int n, m, k;
         TreeVector trees;
         
         void recursive_search(float &best_distance, Point &best_p, int &n, const Point &p);

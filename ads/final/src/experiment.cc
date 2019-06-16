@@ -2,10 +2,12 @@
 #include "rkd_tree.h"
 
 #define MAX_NUM_VAL 10
-#define MAX_SEARCH_LIM 10000
+#define MAX_SEARCH_LIM 50000
 #define NUM_HIGH_VAR 16
 #define SIZE 100000
 #define DIMENSIONS 128
+#define TREES 6
+#define ITERATIONS 100
 
 Point generate_point(const uint &dim, random_device &rd, uniform_real_distribution<float> &dis) {
     Point p = Point(dim);
@@ -34,25 +36,52 @@ int main() {
     PointVector v = generate_point_vector(SIZE, DIMENSIONS, rd, dis);
 
     INIT_TIME();
-    cout << "RKDTree ";
-    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, 10, NUM_HIGH_VAR, v));
-    cout << "KDTree ";
+    for (int hv = 1; hv <= DIMENSIONS; ++hv) {
+    cout << "========= Construction =========" << endl;
+    cout << "RKDTree: " << endl;
+    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, TREES, hv, v));
+    cout << "KDTree: " << endl;
     TIME(KDTree kd = KDTree(DIMENSIONS, &rkd.data));
-    
-    Point p = generate_point(DIMENSIONS, rd, dis);
 
-    cout << "====== KDTree search ======" << endl;
-    TIME(Point p_found_kd = kd.search(p));
-    cout << "Point: " << p_found_kd << endl;
-    double kd_dist = KDTree::distance(p_found_kd, p);
-    cout << "Distance: " << kd_dist << endl;
+    cout << "========== Execution ==========" << endl;
+    // for (int search_lim = 1000; search_lim <= SIZE; search_lim += 1000) {
+    //     rkd.n = search_lim;
+    //     int count_correct = 0;
+    //     for (int i = 0; i < ITERATIONS; ++i) {
+    //         Point p = generate_point(DIMENSIONS, rd, dis);
+    //         cout << "RKDTree: " << endl;
+    //         TIME(Point p_found_rkd = rkd.search(p));
+    //         double rkd_dist = KDTree::distance(p_found_rkd, p);
+    //         cout << "   Distance: " << rkd_dist << endl;
 
-    cout << "====== RKDTree search ======" << endl;
-    TIME(Point p_found_rkd = rkd.search(p));
-    cout << "Point: " << p_found_rkd << endl;
-    double rkd_dist = KDTree::distance(p_found_rkd, p);
-    cout << "Distance: " << rkd_dist << endl;
+    //         cout << "KDTree: " << endl;
+    //         TIME(Point p_found_kd = kd.search(p));
+    //         double kd_dist = KDTree::distance(p_found_kd, p);
+    //         cout << "   Distance: " << kd_dist << endl;
 
-    cout << "========== Results ==========" << endl;
-    cout << "Distance difference: " << rkd_dist - kd_dist << endl;
+    //         cout << "Difference: " << rkd_dist - kd_dist << endl;
+    //         if (rkd_dist - kd_dist == 0) ++count_correct;
+    //         cout << "--------------------------------" << endl;
+    //     }
+    //     cout << "* " << search_lim << " " << count_correct << endl; 
+    //}
+        int count_correct = 0;
+        for (int i = 0; i < ITERATIONS; ++i) {
+            Point p = generate_point(DIMENSIONS, rd, dis);
+            cout << "RKDTree: " << endl;
+            TIME(Point p_found_rkd = rkd.search(p));
+            double rkd_dist = KDTree::distance(p_found_rkd, p);
+            cout << "   Distance: " << rkd_dist << endl;
+
+            cout << "KDTree: " << endl;
+            TIME(Point p_found_kd = kd.search(p));
+            double kd_dist = KDTree::distance(p_found_kd, p);
+            cout << "   Distance: " << kd_dist << endl;
+
+            cout << "Difference: " << rkd_dist - kd_dist << endl;
+            if (rkd_dist - kd_dist == 0) ++count_correct;
+            cout << "--------------------------------" << endl;
+        }
+        cout << "* " << hv << " " << count_correct << endl; 
+    }
 }

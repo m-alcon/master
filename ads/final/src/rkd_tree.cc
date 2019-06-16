@@ -6,10 +6,6 @@ RKDTree::RKDTree (const int &n, const int &m, const int &k, const PointVector &v
     this->k = k;
     this->data.v = pointvector_to_ipointvector(v);
     this->data.hv_idx = compute_high_variance_idx(this->k, this->data.v); //TODO
-    for (uint id : this->data.hv_idx) {
-        cout << id << " ";
-    }
-    cout << endl;
     this->trees = TreeVector (this->m);
 
     for (int i = 0; i < this->m; ++i) {
@@ -29,7 +25,7 @@ ITree RKDTree::generate_itree(KDTree* t, const Point &p) {
 
 Point RKDTree::search(const Point &p) {
     auto comp = [&](ITree t1, ITree t2) {
-        return t1.distance < t2.distance;
+        return t1.distance > t2.distance;
     };
     priority_queue<ITree, vector<ITree>, function<bool(ITree, ITree)>> q(comp);
     for (int i = 0; i < this->trees.size(); ++i) 
@@ -53,8 +49,6 @@ Point RKDTree::search(const Point &p) {
         --n;
     }
     cout << "Visited nodes:" << this->n - n << endl;
-    cout << "Best distance:" << best_distance << endl;
-    cout << "Empty:" << q.empty() << endl;
     return best_point;
 
 }
