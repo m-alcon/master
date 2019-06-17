@@ -1,0 +1,10007 @@
+========= Construction =========
+RKDTree: 
+   Time: 81.422
+KDTree: 
+   Time: 5.242
+========== Execution ==========
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4985.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4985.5
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5129.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5129.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5501.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5381.53
+Difference: 119.598
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5471.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5471.63
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5026.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5026.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5049.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5049.44
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5127.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4959.08
+Difference: 167.973
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5224.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5224.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5129.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4716.07
+Difference: 413.369
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5418.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5418.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4678.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4678.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5127.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5127.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5501.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5501.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5213.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4872.32
+Difference: 341.225
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5266.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5266.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5380.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5138.09
+Difference: 242.683
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5233.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5129.88
+Difference: 103.436
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5551.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5388.83
+Difference: 162.421
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5156.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5156.73
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5320.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5151.19
+Difference: 169.203
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5393.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5393.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5330.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5330.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5510.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5333.15
+Difference: 177.035
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5429.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5429.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5532.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5532.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4951.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4951.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5127.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5127.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5157.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5157.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5010.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5010.65
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4905.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4905.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5267.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5267.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.292
+   Distance: 5586.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5204.68
+Difference: 381.557
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4995.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4995.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5130.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5130.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5068.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5068.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5055.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5055.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5314.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5314.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5222.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5021.58
+Difference: 200.465
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5400.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5255.56
+Difference: 144.995
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5261.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4832.71
+Difference: 428.347
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5257.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5257.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4928.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4928.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4833.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4833.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5192.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4814.52
+Difference: 377.618
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4629.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4629.24
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4791.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4791.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5022.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5022.64
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5470.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5354.86
+Difference: 115.561
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5242.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5221.35
+Difference: 21.0347
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5125.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5125.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5660.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5617.82
+Difference: 42.9727
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5349.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5349.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5316.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5021.24
+Difference: 295.255
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5670.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5649.86
+Difference: 20.2168
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5071.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5071.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5276.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4966.66
+Difference: 309.678
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4690.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4690.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5366.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5366.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4653.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4653.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.297
+   Distance: 5315.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5153.75
+Difference: 161.291
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5042.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5042.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5425.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5420.48
+Difference: 5.33252
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5075.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5075.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4937.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4937.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5298.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5298.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5328.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5328.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5445.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5445.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5310.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5310.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5193.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5193.92
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5361.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5361.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4350.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4350.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5423.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5423.92
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4911.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4911.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5508.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5508.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5679.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5670.81
+Difference: 8.67773
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.295
+   Distance: 5347.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5347.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5323.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5323.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5446
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5373.92
+Difference: 72.0806
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5352.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5352.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5220.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5181
+Difference: 39.8936
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5332.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5332.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5421.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5421.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5452.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5452.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4607.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4607.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4436.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4436.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5126.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5126.29
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5225.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5225.22
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5339.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5020.69
+Difference: 318.811
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5388.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5388.19
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5429.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5429.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5171.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5171.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5542.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5542.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5279.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5279.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5353.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5353.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5387.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5326.18
+Difference: 61.7437
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4892.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4892.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5555.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5366.45
+Difference: 188.598
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4756.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4756.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5305.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5305.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5002.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5002.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5425.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5425.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5434.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5434.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4777.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4777.29
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4786.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.274
+   Distance: 4786.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4733.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4733.46
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5000.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5000.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5176.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5176.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5722.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5351.86
+Difference: 370.167
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5601.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5452.76
+Difference: 148.247
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4756.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4756.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5218.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5218.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5123.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5123.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5157.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5157.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5358.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5358.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5175.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5175.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5147.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.259
+   Distance: 5147.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.331
+   Distance: 5144.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 5103.74
+Difference: 40.3882
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.326
+   Distance: 5153.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.26
+   Distance: 4928.99
+Difference: 224.752
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5358.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5358.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4959.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.271
+   Distance: 4959.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.339
+   Distance: 5299.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.271
+   Distance: 5074.16
+Difference: 224.92
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4948.86
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4948.86
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5740.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5390.77
+Difference: 349.288
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5084.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5084.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4735.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4735.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4820.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4820.63
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5171.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5088.43
+Difference: 82.6216
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5186.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5186.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5437.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5437.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5149.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5149.19
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5009.86
+KDTree: 
+Visited nodes:100000
+   Time: 0.287
+   Distance: 4942.92
+Difference: 66.9399
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.375
+   Distance: 5658.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.299
+   Distance: 5419.35
+Difference: 238.988
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.327
+   Distance: 5164.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5057.64
+Difference: 107.096
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5282.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5282.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5223.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4946.47
+Difference: 276.863
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5481.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.26
+   Distance: 5481.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.366
+   Distance: 5523.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.296
+   Distance: 5405.24
+Difference: 118.709
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.342
+   Distance: 4845.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4845.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5416.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5416.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5531.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4999.29
+Difference: 532.336
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5215.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5215.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5219.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5219.58
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4742.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4742.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5104.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4821.99
+Difference: 282.18
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5782.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5782.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5174.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5174.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5532.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5395.12
+Difference: 137.831
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5334.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5334.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5653.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5480.12
+Difference: 173.059
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5212.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5212.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5111.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5111.15
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5307.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5307.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5523.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5523.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5054.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5041.55
+Difference: 12.7026
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5074.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5074.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5029.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5029.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4972.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4972.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4667.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4590.38
+Difference: 77.4966
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5568.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5568.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5287.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5287.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5590.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.273
+   Distance: 5426.38
+Difference: 163.681
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.37
+   Distance: 4895.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.296
+   Distance: 4895.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.343
+   Distance: 4719.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4719.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5800.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5604.38
+Difference: 196.018
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.331
+   Distance: 5035.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.273
+   Distance: 5035.19
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.328
+   Distance: 5255.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.263
+   Distance: 5255.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5717.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5622.78
+Difference: 94.6387
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5046.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 5046.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5018.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5018.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.345
+   Distance: 5392.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.273
+   Distance: 5048.38
+Difference: 343.978
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.334
+   Distance: 5095.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 5095.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5287.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5287.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5801.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.271
+   Distance: 5733.92
+Difference: 67.0938
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.35
+   Distance: 5627.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.3
+   Distance: 5223.63
+Difference: 404.134
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.331
+   Distance: 5543.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5056.35
+Difference: 486.808
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.329
+   Distance: 5183.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.282
+   Distance: 5174.98
+Difference: 8.99463
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.333
+   Distance: 5038.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.259
+   Distance: 4958.37
+Difference: 79.7764
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5801.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5573.4
+Difference: 228.12
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5550.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4993.38
+Difference: 556.751
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4775.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4775.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5512.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5379.29
+Difference: 133.221
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5258.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5258.05
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.329
+   Distance: 5232.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.276
+   Distance: 5232.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.335
+   Distance: 4958.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.263
+   Distance: 4958.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.322
+   Distance: 5296.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5296.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5195.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5195.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5334.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 5334.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.327
+   Distance: 5720.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.267
+   Distance: 5157.13
+Difference: 563.645
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5815.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5771.78
+Difference: 43.6724
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5229.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5229.92
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5539.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5487.74
+Difference: 51.6782
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4603.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4603.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4861.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4861.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5833.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.26
+   Distance: 5703.38
+Difference: 130.158
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.336
+   Distance: 5103.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.296
+   Distance: 5103.5
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.362
+   Distance: 4804.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 4804.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.353
+   Distance: 4918.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.298
+   Distance: 4846.35
+Difference: 72.0107
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.342
+   Distance: 5075.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.274
+   Distance: 5006.72
+Difference: 68.9858
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.378
+   Distance: 5242.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.287
+   Distance: 5242.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5378.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.261
+   Distance: 5378.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.318
+   Distance: 5412.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.261
+   Distance: 5412.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5114.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.295
+   Distance: 5114.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.379
+   Distance: 5146.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.265
+   Distance: 4932.7
+Difference: 213.456
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5375.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.259
+   Distance: 5362.41
+Difference: 13.2593
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.335
+   Distance: 5487.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.264
+   Distance: 5239.53
+Difference: 248.056
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.332
+   Distance: 5123.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.297
+   Distance: 5123.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.386
+   Distance: 5546.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.28
+   Distance: 5546.53
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5045.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.263
+   Distance: 5045.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5462.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.256
+   Distance: 5417.32
+Difference: 44.7798
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.469
+   Distance: 5220.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.375
+   Distance: 5041.28
+Difference: 179.019
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.321
+   Distance: 5027.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.272
+   Distance: 5027.26
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.333
+   Distance: 5295.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5295.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5294.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.263
+   Distance: 5294.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5406
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5283.38
+Difference: 122.627
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5368.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 5315.59
+Difference: 53.0723
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5396.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5317.3
+Difference: 78.7163
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5018.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5018.29
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5091.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.255
+   Distance: 5091.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4832.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4832.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5845.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5330.59
+Difference: 515.08
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4710.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4710.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5288.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5130.99
+Difference: 157.586
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5163.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5163.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5702.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5702.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4917.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4756.12
+Difference: 161.472
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4638.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4638.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5325.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5182.97
+Difference: 142.438
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5232.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5232.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4940.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4940.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.32
+   Distance: 4713.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4713.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5616.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5410.17
+Difference: 206.42
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 6043.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 6043.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4915.94
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4915.94
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5375.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5268.22
+Difference: 107.042
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5061.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5061.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5258.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5258.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.297
+   Distance: 5456
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5456
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5504.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5504.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.321
+   Distance: 5280.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5280.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.322
+   Distance: 4904.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4904.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5597.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5597.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5154.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5154.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5199.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5199.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5006.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5006.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4852.96
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4676.49
+Difference: 176.467
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5491.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5491.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5251.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5251.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5179.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5179.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5410.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5404.39
+Difference: 5.93457
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5304.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5304.81
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4826.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4826.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5139.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5139.05
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5121.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5118.35
+Difference: 2.83203
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4850.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4850.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5330.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5330.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5676.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5490.9
+Difference: 185.912
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4989.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4989.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5525.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5347.36
+Difference: 178.611
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4977.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4977.62
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5076.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5076.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5846.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5608.53
+Difference: 238.001
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5246.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4743.42
+Difference: 502.904
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5359.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5359.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4912.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4912.46
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5413.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5313.99
+Difference: 99.5366
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4876.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4876.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4890.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4890.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 4826.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4826.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5534.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5534.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5003.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5003.78
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5468.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5100.39
+Difference: 368.126
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5708.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5708.44
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5102.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5102.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4834.94
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4834.94
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5030.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5030.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5389.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5389.26
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5016.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4639.43
+Difference: 377.512
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4923.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4923.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4880.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4880.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5356.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4796.86
+Difference: 560.062
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5283.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5283.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5248.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5248.22
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5945.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5721.94
+Difference: 223.3
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5332.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5332.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5080.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4803.47
+Difference: 277.155
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5614.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5614.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5091.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4846.4
+Difference: 244.667
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.291
+   Distance: 5075.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4850.64
+Difference: 225.136
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4950.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4950.5
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5656.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5522.29
+Difference: 134.657
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4563.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4563.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5190.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5190.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5634.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5634.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5348.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5348.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5488.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5488.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5249.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5249.73
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5915.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5802.77
+Difference: 113.133
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5245.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5025.49
+Difference: 220.182
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5225.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5225.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5138.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4981.26
+Difference: 157.016
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5361.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5361.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.32
+   Distance: 4865.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4865.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5332.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5332.5
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5305.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4846.51
+Difference: 458.799
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5325.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4951.89
+Difference: 373.402
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5216.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5216.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5056.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5056.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5312.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5312.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4866.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4694.72
+Difference: 171.444
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5236.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5101
+Difference: 135.557
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5165.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5057.48
+Difference: 107.98
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5681.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5681.75
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5734.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5516.42
+Difference: 217.73
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5004.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5004.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5243.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5243.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5175.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5175.81
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4631.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4631.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4943.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4943.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5541.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5541.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.325
+   Distance: 5698.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5528.87
+Difference: 169.439
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5394.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4913.96
+Difference: 480.163
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5673.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5566.65
+Difference: 106.774
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5190.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.257
+   Distance: 5190.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4953.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4953.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5598.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5598.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5738.96
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5738.96
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4897.96
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4897.96
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5677.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5677.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 4914.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4914.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5158.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5158.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5502.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5502.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5485.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5485.43
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5284.96
+KDTree: 
+Visited nodes:100000
+   Time: 0.255
+   Distance: 5284.96
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4876.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4636.41
+Difference: 240.168
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4889.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4889.26
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5140.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5140.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5444.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5444.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5476.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5458.92
+Difference: 17.7285
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5640.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5463.09
+Difference: 177.708
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4763.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4763.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5403.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5403.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5202.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5202.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5015.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4936.96
+Difference: 78.9917
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5721.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5097.73
+Difference: 624.145
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5187.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4986.5
+Difference: 200.529
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4752.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4752.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5040.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4971.57
+Difference: 68.5425
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4947.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4947.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5634.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5575.21
+Difference: 59.229
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5303.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5303.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5432.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5432.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5074.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5074.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5369.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5369.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5480.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5480.15
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5324.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5324.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5173.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4974.19
+Difference: 199.099
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5527.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5429.49
+Difference: 97.7256
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5792.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5590.4
+Difference: 202.427
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4871.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4871.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4959.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4959.58
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5280.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5280.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5412.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5412.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5373.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5171.57
+Difference: 202.068
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4633.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4633.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4708.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4708.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5048.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5048.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4981.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4981.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5312.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4983.7
+Difference: 328.551
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5140.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5083.76
+Difference: 56.5088
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5472.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5355.48
+Difference: 117.06
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.295
+   Distance: 5378.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5378.62
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4576.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4576.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4795.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4795.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5031.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4903.74
+Difference: 128.177
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5142.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5142.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5425.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4981.46
+Difference: 444.244
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5465.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5465.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5384.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5384.63
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4670.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4670.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5511.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5511.92
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5358.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5358.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4748.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4748.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5032.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4728.8
+Difference: 303.383
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5293.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5293.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4718.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4718.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5042.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5042.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4686.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4686.04
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4960.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4960.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5992.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5992.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5833.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5833.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5268.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5268.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4797.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4797.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5196.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5196.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5294.48
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5294.48
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5016.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4816.98
+Difference: 199.633
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5177.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5177.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5428.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5428.58
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5464.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5464.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5012.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5012.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5651.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.269
+   Distance: 5459.69
+Difference: 192.104
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5416.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5416.62
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5979.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5979.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4947.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4947.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5814.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5814.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5785.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5562.49
+Difference: 222.572
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.29
+   Distance: 5470.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5470.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5238.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5238.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4547.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4547.46
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5712.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5419.51
+Difference: 293.22
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5638.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5234.59
+Difference: 404.294
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5390.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5390.24
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5671.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5671.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5570.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5231.75
+Difference: 338.837
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5329.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5263.82
+Difference: 65.3691
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5430.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5402.73
+Difference: 28.083
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5259.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.255
+   Distance: 5259.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5492.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5248.6
+Difference: 243.825
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5297.86
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5192.56
+Difference: 105.299
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4941.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4941.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4509.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4509.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5240.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5240.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5238.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5238.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4833.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4801.48
+Difference: 32.2612
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5008.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5008.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5526.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5331.46
+Difference: 194.841
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5035.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5035.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5086.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5086.3
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.318
+   Distance: 4672.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4672.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5013.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5013.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5301.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5249.89
+Difference: 51.1733
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4515.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4515.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5352.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5296.16
+Difference: 56.6836
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5644.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5128.15
+Difference: 516.622
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4661.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4661.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5281.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5281.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5156.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5156.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5345.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5345.93
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5453.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5444.09
+Difference: 9.50781
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5142.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5142.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5073.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5073.45
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5221.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5088.84
+Difference: 132.444
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5265.86
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5265.86
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5047.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5047.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4822.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4822.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5052.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5052.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5383.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5263.81
+Difference: 119.608
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5166.92
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5109.42
+Difference: 57.502
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5198.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4858.45
+Difference: 340.217
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 4904.94
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4904.94
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5258.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5258.93
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5045.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5045.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5473.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5473.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5268.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5268.53
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5229.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5229.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5338.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5338.29
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5534.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5147.76
+Difference: 386.26
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5636.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5636.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5654.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5310.2
+Difference: 344.625
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5240.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5240.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5163.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5163.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4970.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4970.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5185.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5185.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5054.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5054.73
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5157.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5157.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4689.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4689.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5079.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5079.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4880.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4880.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5147.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5147.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5194.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4964.81
+Difference: 229.421
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5430.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5144.63
+Difference: 285.988
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5371.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5223.84
+Difference: 147.613
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4923.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4923.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4964.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4964.75
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5588.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5444.81
+Difference: 144.16
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5132.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 5132.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5572.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5572.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5206.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5206.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5173.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5106.55
+Difference: 66.9458
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5106.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5106.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5518.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5408.25
+Difference: 109.939
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5332.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5318.14
+Difference: 13.894
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5178.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5178.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 6011.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5776.81
+Difference: 234.482
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5686.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5668.18
+Difference: 18.2236
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5191.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5191.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4706.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4706.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5815.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5793.7
+Difference: 21.7881
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5004.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5004.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5279.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5213.99
+Difference: 65.6553
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5127.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5127.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5096.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5020.59
+Difference: 76.3872
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5319.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5319.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4957.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4957.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5231.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4785.52
+Difference: 445.971
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4878.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4878.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5161.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5161.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4994.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4994.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5447.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5447.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.317
+   Distance: 4716.5
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4716.5
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5323.78
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5256.69
+Difference: 67.0894
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5070.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5009.79
+Difference: 60.2515
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5149.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5041.26
+Difference: 107.886
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4911.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4809.54
+Difference: 102.114
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5255.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5255.62
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5032.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5032.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4957.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4957.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5081.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5081.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4745.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4745.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5129.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5129.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5534.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5534.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5290.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5290.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5408.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5408.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5191.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5080.91
+Difference: 110.964
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5020.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5020.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5508.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5287.58
+Difference: 221.39
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5299.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5299.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5139.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.256
+   Distance: 5139.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5442.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5442.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4874.96
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4874.96
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5163.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5156.37
+Difference: 6.91504
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4875.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4875.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5246.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5246.46
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5815.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5753.34
+Difference: 62.2896
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4726.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4726.93
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.297
+   Distance: 5418.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5405.51
+Difference: 12.7725
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5290.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5237.2
+Difference: 52.8701
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4874.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4874.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5263.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5263.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4967.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4967.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4989.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4989.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5112.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5112.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5346.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5346.75
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5008.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4887.84
+Difference: 120.338
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5601.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5381.88
+Difference: 219.157
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4618.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4618.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5675.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5675.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4890.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4890.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5472.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5472.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5257.48
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5193.58
+Difference: 63.8994
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5450.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4988.21
+Difference: 462.624
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5277.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5277.05
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5865.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5512.12
+Difference: 352.885
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5208.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5119.29
+Difference: 89.313
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5664.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5200.05
+Difference: 464.391
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5210.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5210.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5458.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5408.76
+Difference: 49.6831
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5221.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5221.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5319.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5319.93
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5395.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5297.27
+Difference: 98.478
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5513.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5513.44
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5215.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5072.2
+Difference: 143.397
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4525.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4525.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5487.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5487.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5464.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5330.63
+Difference: 134.318
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4968.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4968.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5209.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5209.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5396.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5396.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5181.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4879.96
+Difference: 301.743
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4833.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4833.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5438.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5299.66
+Difference: 138.59
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 5329.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4343.6
+Difference: 985.798
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4731.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4731.05
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5291.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5281.39
+Difference: 10.3198
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5022.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5022.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4961.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4961.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5284.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5284.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5595.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5553.06
+Difference: 42.6411
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5239
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5231.46
+Difference: 7.5376
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4477.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4477.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5391.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5391.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5115.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5115.22
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5209.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5209.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5487.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5344.59
+Difference: 142.797
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4589.15
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4589.15
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5221.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5221.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5803.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5612.36
+Difference: 190.875
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5487.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5487.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4815.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4563.54
+Difference: 252.252
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5169.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5169.44
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4949.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4949.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5635.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5635.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5581.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4925.76
+Difference: 655.527
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4979.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4979.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5326.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5120.99
+Difference: 205.023
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5282.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5282.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5256.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5256.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5443.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5443.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5558.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5526.18
+Difference: 32.0405
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 6031.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5871.11
+Difference: 160.436
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5035.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5035.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5728.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5728.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 4752.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4752.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5579.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5198.92
+Difference: 380.534
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5520.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5400.94
+Difference: 119.436
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5723.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5723.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5018.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 4956.88
+Difference: 61.2109
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5220.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5220.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5350.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5350.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5380
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5380
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5639.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5639.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4791.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4791.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5045.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5025.03
+Difference: 20.6611
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5289.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5289.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5302.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5302.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.292
+   Distance: 5424.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4992.03
+Difference: 432.362
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5538.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4538.13
+Difference: 1000.1
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5631.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5553.3
+Difference: 78.6704
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4587.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4587.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5886.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5443.37
+Difference: 442.984
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4913.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4913.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5148.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5148.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5612.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5612.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4981.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4981.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5330.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5330.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5105.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5105.64
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5501.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5392.4
+Difference: 109.269
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4824.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4824.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5163.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5163.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5624.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5595.87
+Difference: 29.022
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5491.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5491.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5097.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5097.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4925.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4925.64
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4857.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4857.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5196.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4918.54
+Difference: 277.687
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4605.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.258
+   Distance: 4605.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5306.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5273.91
+Difference: 32.6538
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4891.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4891.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4760.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4760.46
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 6124.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 6088.44
+Difference: 35.5933
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5421.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5421.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5221.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5221.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5138.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5138.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5099.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4505.09
+Difference: 594.255
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5431.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5431.04
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4923.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4923.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5610.2
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5610.2
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5260.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5260.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4754.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.276
+   Distance: 4754.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5599.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5569.11
+Difference: 30.5049
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5438.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5296.03
+Difference: 142.044
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5173.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5173.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5509.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5509.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5346.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5346.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5318.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5318.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4546.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4546.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5751.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5481.28
+Difference: 270.504
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4770.26
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4770.26
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4431.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4431.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5224.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5224.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4905.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4905.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5431.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5431.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5115.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 5052.83
+Difference: 62.832
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5037.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4859.69
+Difference: 177.842
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5645.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4986.39
+Difference: 658.95
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5114.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5114.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4778.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4778.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4479.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4479.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5210.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5210.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5165.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5165.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5540.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5540.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5041.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5041.73
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4831.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4831.3
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5480.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5480.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5387.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5327.82
+Difference: 59.2524
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4843.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4843.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5157.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5157.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5438.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5432.47
+Difference: 6.375
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5173.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5173.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4893.9
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4893.9
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5663.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5575.61
+Difference: 87.6841
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5763.46
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5138.36
+Difference: 625.097
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5375.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5375.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5068.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4749.21
+Difference: 319.439
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5502.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5352.23
+Difference: 150.517
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4795.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4795.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5156.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5156.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5212.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5212.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5009.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5009.58
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5804.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5804.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5282.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4586.61
+Difference: 696.185
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.384
+   Distance: 5382
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5382
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5671.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.277
+   Distance: 5329.78
+Difference: 341.52
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.336
+   Distance: 5669.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.27
+   Distance: 5669.24
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5339.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5339.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 4985.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4985.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5060.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5060.39
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5384.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4907.85
+Difference: 476.99
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5474.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5474.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4665.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4665.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5317.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5288.55
+Difference: 28.8301
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5600.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5435.35
+Difference: 165.092
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5328.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5328.43
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4961.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4961.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5105.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5105.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5299.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5299.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5030.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5030.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5955.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5613.73
+Difference: 341.865
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5190.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5190.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5233.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5233.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.317
+   Distance: 5288.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5281.18
+Difference: 7.51514
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4952.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4952.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.321
+   Distance: 4335.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4335.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5556.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5291.32
+Difference: 264.965
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5640.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5640.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5247.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5247.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5092.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5092.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5585.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5585.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5225.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5047.99
+Difference: 177.258
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5152.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5152.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5346.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5335.02
+Difference: 11.5566
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5282.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5282.65
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4845.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4845.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5513.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5329.49
+Difference: 183.741
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5052.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5052.81
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5194.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4747.59
+Difference: 447.001
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5048.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5048.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5704.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5543.19
+Difference: 161.05
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5603.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5603.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5152.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5101.44
+Difference: 50.6396
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 5434.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5434.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 4822.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4822.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4919.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4919.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5178.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5178.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5646.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5646.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5023.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5015.24
+Difference: 7.93506
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5364.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5272.52
+Difference: 92.1714
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5347.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5347.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4939.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4939.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4679.36
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4679.36
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5127.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5127.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5464.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5464.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4849.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4849.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5730.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5730.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5406.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5183.66
+Difference: 222.809
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4863.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4863.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5229.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5229.81
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5358.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5358.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4624.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4624.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5527.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5403.16
+Difference: 124.662
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5128.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5028.94
+Difference: 99.2837
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5283.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5271.84
+Difference: 11.3809
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4686.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4686.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4577.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4577.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5290.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5290.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 4982.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4982.65
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 5149.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5149.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5455.94
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5455.94
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5485.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5485.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5459.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5459.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5625.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5625.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4853.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4853.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 4912.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4875.92
+Difference: 36.1655
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5454.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5454.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5602.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5306.72
+Difference: 296.032
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5210.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5210.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5211.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5211.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5526.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5332.23
+Difference: 193.839
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.32
+   Distance: 5625.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5555.74
+Difference: 69.394
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5000.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5000.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.297
+   Distance: 5565.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5403.09
+Difference: 161.99
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.329
+   Distance: 5244.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5244.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5175.65
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5175.65
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4994.71
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4994.71
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5217.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5217.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5189.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5189.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5097.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5097.97
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4650.81
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4650.81
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.32
+   Distance: 5061.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5061.3
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5159.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5159.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5183.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5183.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5070.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5070.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5213.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5213.45
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 4799.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 4799.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5297.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5297.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5418.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.254
+   Distance: 5418.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5209
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5209
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5243.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5243.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5406.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5291.71
+Difference: 114.707
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4992.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4992.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4875.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4875.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5288.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5288.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5218.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5218.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5781.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5713.52
+Difference: 67.8706
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5342.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5342.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5530.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5459.7
+Difference: 70.4575
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5074.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5074.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5510.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5284.64
+Difference: 225.465
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5158.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5158.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5410.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5186.19
+Difference: 224.232
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4938.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4938.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5184.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5184.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5059.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5059.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4984.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4984.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4945.19
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4915.96
+Difference: 29.2329
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5307.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5307.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4541.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4541.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4785.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4785.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5279.86
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5279.86
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5431.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5431.53
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5158.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5158.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 4888.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4888.4
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5264.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4950.56
+Difference: 314
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5422.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5401.23
+Difference: 21.1553
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4986.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4986.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5446.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5446.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5411.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5411.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4778.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4778.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5350.67
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5350.67
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5228.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5121.67
+Difference: 106.377
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5014.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5014.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5043.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 4795.35
+Difference: 248.398
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5141.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5053.99
+Difference: 87.106
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5623.33
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5623.33
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5162.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5162.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4931.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4931.34
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5272.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5272.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5044.49
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5044.49
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5296.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5296.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5151.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5125.28
+Difference: 26.3135
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4710.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4710.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4961.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4961.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4971.35
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4971.35
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4897.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 4897.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 5449.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5368.82
+Difference: 80.6914
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4790.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4790.44
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4435.85
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4435.85
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 4866.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4866.58
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4924.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4871.63
+Difference: 52.7812
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.296
+   Distance: 5154.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5154.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5412.62
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5412.62
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5300.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5300.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 4930.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4757.93
+Difference: 172.746
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5385.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5385.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4934.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4934.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4961.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4961.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5150.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5150.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5602.25
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5602.25
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5167.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5167.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5156.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5156.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5746.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.259
+   Distance: 5342.65
+Difference: 403.448
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5054.29
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5054.29
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4988.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4988.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5169.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5169.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4585.94
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4585.94
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5719.12
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5719.12
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5638.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5638.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5197.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5197.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5201.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5201.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5132.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5132.43
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4967.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4967.93
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5157.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5055.32
+Difference: 102.289
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5314.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5314.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4981.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4981.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5042.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5042.56
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5226.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5065.72
+Difference: 161.271
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 4921.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4921.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4960.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4647.89
+Difference: 312.28
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5004.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5004.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4906.51
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4906.51
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5623.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5623.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5124.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5124.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5023.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5023.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5043.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4955.81
+Difference: 87.5132
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5199.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5199.04
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5090.77
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5090.77
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5939.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5827.91
+Difference: 111.786
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5262.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5262.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4849.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4849.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5877.64
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5786.01
+Difference: 91.6279
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5703.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5583.37
+Difference: 120.434
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5164.88
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5164.88
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5265.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5265.1
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5082.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5082.75
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5206.44
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5151.96
+Difference: 54.4839
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4745.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4745.91
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5313.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5313.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5126.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5126.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5263.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5263.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5328.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5328.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5431.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4874.41
+Difference: 557.142
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5282.37
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5282.37
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5081.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5081.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5465.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5465.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5281.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5255.71
+Difference: 25.3809
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4872.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4872.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5098.47
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5098.47
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5494.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5117.04
+Difference: 377.063
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5294.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5294.05
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 4884.98
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4884.98
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5522.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5522.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5263.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5263.57
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5029.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5029.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5294.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5294.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5162.48
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5090.91
+Difference: 71.5713
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4742.01
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4742.01
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 4933.79
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4933.79
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5490.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5490.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4955.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4955.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5505.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5505.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5603.58
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5516.44
+Difference: 87.1445
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.304
+   Distance: 5648.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5462.04
+Difference: 186.788
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5539.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5539.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 4786.63
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4786.63
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.318
+   Distance: 5691.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5691.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5064.48
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5064.48
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 5249.18
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5249.18
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5184.83
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5184.83
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5639.02
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5639.02
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5642.11
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5642.11
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5565.95
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5565.95
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5541.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5541.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5015.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.255
+   Distance: 4861.99
+Difference: 153.548
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5219.28
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5219.28
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5290.6
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5290.6
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5757.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5563.14
+Difference: 194.543
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4716.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4716.04
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5232.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5232.55
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 4501.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4501.43
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5236.17
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5236.17
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5236.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5223.56
+Difference: 12.4932
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 4458.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4458.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5891.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5891.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5455.4
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5233.33
+Difference: 222.069
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.295
+   Distance: 5458.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5458.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 4823.69
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4823.69
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5751.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5751.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 5478.53
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5377.32
+Difference: 101.205
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5245.7
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5245.7
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5564.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5564.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5327.66
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5327.66
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5901.55
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5291.39
+Difference: 610.165
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5111.3
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5111.3
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.337
+   Distance: 4956.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.296
+   Distance: 4956.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.371
+   Distance: 5080.08
+KDTree: 
+Visited nodes:100000
+   Time: 0.309
+   Distance: 5080.08
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5410.76
+KDTree: 
+Visited nodes:100000
+   Time: 0.269
+   Distance: 5410.76
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.332
+   Distance: 4701.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.301
+   Distance: 4701.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.384
+   Distance: 5468.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.361
+   Distance: 5468.84
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.366
+   Distance: 5233.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.259
+   Distance: 5233.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.341
+   Distance: 5497.1
+KDTree: 
+Visited nodes:100000
+   Time: 0.262
+   Distance: 5211.28
+Difference: 285.819
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.381
+   Distance: 5175
+KDTree: 
+Visited nodes:100000
+   Time: 0.359
+   Distance: 5175
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.356
+   Distance: 4973.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.293
+   Distance: 4973.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.377
+   Distance: 5050.73
+KDTree: 
+Visited nodes:100000
+   Time: 0.301
+   Distance: 4992.3
+Difference: 58.4312
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.37
+   Distance: 5324.34
+KDTree: 
+Visited nodes:100000
+   Time: 0.278
+   Distance: 5198.48
+Difference: 125.852
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.394
+   Distance: 4900.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.276
+   Distance: 4900.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.332
+   Distance: 5116.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.264
+   Distance: 5075.7
+Difference: 40.8535
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.345
+   Distance: 5339.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5339.07
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4844.04
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4844.04
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 5050.42
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5050.42
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.339
+   Distance: 5055.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5055.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5318.99
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 5318.99
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.321
+   Distance: 5673.39
+KDTree: 
+Visited nodes:100000
+   Time: 0.263
+   Distance: 5419.69
+Difference: 253.702
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5335.21
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5335.21
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.32
+   Distance: 5258.54
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5258.54
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.332
+   Distance: 5093.75
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5093.75
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5319.57
+KDTree: 
+Visited nodes:100000
+   Time: 0.246
+   Distance: 5313.97
+Difference: 5.59961
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 5591.72
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5591.72
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5362.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5362.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.3
+   Distance: 5487.43
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 5487.43
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5425.97
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5315.24
+Difference: 110.734
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.302
+   Distance: 4782.8
+KDTree: 
+Visited nodes:100000
+   Time: 0.253
+   Distance: 4782.8
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 4700.13
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4700.13
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4945.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 4945.23
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5150.07
+KDTree: 
+Visited nodes:100000
+   Time: 0.255
+   Distance: 4763.73
+Difference: 386.343
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5113.24
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 5113.24
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 4885.45
+KDTree: 
+Visited nodes:100000
+   Time: 0.252
+   Distance: 4828.94
+Difference: 56.5107
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5534.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5534.22
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5002.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5002.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5274.27
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5274.27
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.316
+   Distance: 5209.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5119.77
+Difference: 89.8403
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.325
+   Distance: 5391.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 5333.55
+Difference: 58.1851
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.338
+   Distance: 5438.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.265
+   Distance: 5259.02
+Difference: 179.852
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.305
+   Distance: 5177.93
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5141.26
+Difference: 36.6772
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.298
+   Distance: 5942.84
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5540.14
+Difference: 402.701
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.313
+   Distance: 4831.82
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4831.82
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5047.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.25
+   Distance: 4959.73
+Difference: 87.8765
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5858.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.268
+   Distance: 5324.1
+Difference: 534.045
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.321
+   Distance: 5694.41
+KDTree: 
+Visited nodes:100000
+   Time: 0.271
+   Distance: 5694.41
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.326
+   Distance: 4987.38
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4987.38
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4242.74
+KDTree: 
+Visited nodes:100000
+   Time: 0.249
+   Distance: 4242.74
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.331
+   Distance: 4993.22
+KDTree: 
+Visited nodes:100000
+   Time: 0.266
+   Distance: 4993.22
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.319
+   Distance: 5041.32
+KDTree: 
+Visited nodes:100000
+   Time: 0.254
+   Distance: 5041.32
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5578.06
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5578.06
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 5057.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5057.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.315
+   Distance: 4877.52
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4877.52
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.306
+   Distance: 5495.61
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5495.61
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 5203.16
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5203.16
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.303
+   Distance: 5375.91
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4998.89
+Difference: 377.018
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.301
+   Distance: 4944.48
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4701.9
+Difference: 242.576
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.31
+   Distance: 5101.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5101.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5237.14
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5237.14
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5537.09
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5537.09
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.314
+   Distance: 5745.23
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5704.55
+Difference: 40.6719
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.312
+   Distance: 5481.59
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 5481.59
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5032.03
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5032.03
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.309
+   Distance: 5520.05
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5249.01
+Difference: 271.034
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.294
+   Distance: 5060.87
+KDTree: 
+Visited nodes:100000
+   Time: 0.251
+   Distance: 5060.87
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.307
+   Distance: 4864.89
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 4864.89
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.308
+   Distance: 5062.68
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5062.68
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.311
+   Distance: 4825.31
+KDTree: 
+Visited nodes:100000
+   Time: 0.248
+   Distance: 4825.31
+Difference: 0
+--------------------------------
+RKDTree: 
+Visited nodes:60000
+   Time: 0.299
+   Distance: 5346.56
+KDTree: 
+Visited nodes:100000
+   Time: 0.247
+   Distance: 5346.56
+Difference: 0
+--------------------------------
+* 700

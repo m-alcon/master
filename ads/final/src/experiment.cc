@@ -2,11 +2,11 @@
 #include "rkd_tree.h"
 
 #define MAX_NUM_VAL 10
-#define MAX_SEARCH_LIM 50000
+#define MAX_SEARCH_LIM 60000
 #define NUM_HIGH_VAR 16
 #define SIZE 100000
 #define DIMENSIONS 128
-#define TREES 6
+#define TREES 16
 #define ITERATIONS 1000
 
 Point generate_point(const uint &dim, random_device &rd, uniform_real_distribution<float> &dis) {
