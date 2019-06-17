@@ -7,7 +7,7 @@
 #define SIZE 100000
 #define DIMENSIONS 128
 #define TREES 6
-#define ITERATIONS 100
+#define ITERATIONS 1000
 
 Point generate_point(const uint &dim, random_device &rd, uniform_real_distribution<float> &dis) {
     Point p = Point(dim);
@@ -36,10 +36,9 @@ int main() {
     PointVector v = generate_point_vector(SIZE, DIMENSIONS, rd, dis);
 
     INIT_TIME();
-    for (int hv = 1; hv <= DIMENSIONS; ++hv) {
     cout << "========= Construction =========" << endl;
     cout << "RKDTree: " << endl;
-    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, TREES, hv, v));
+    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, TREES, NUM_HIGH_VAR, v));
     cout << "KDTree: " << endl;
     TIME(KDTree kd = KDTree(DIMENSIONS, &rkd.data));
 
@@ -65,23 +64,22 @@ int main() {
     //     }
     //     cout << "* " << search_lim << " " << count_correct << endl; 
     //}
-        int count_correct = 0;
-        for (int i = 0; i < ITERATIONS; ++i) {
-            Point p = generate_point(DIMENSIONS, rd, dis);
-            cout << "RKDTree: " << endl;
-            TIME(Point p_found_rkd = rkd.search(p));
-            double rkd_dist = KDTree::distance(p_found_rkd, p);
-            cout << "   Distance: " << rkd_dist << endl;
+    int count_correct = 0;
+    for (int i = 0; i < ITERATIONS; ++i) {
+        Point p = generate_point(DIMENSIONS, rd, dis);
+        cout << "RKDTree: " << endl;
+        TIME(Point p_found_rkd = rkd.search(p));
+        double rkd_dist = KDTree::distance(p_found_rkd, p);
+        cout << "   Distance: " << rkd_dist << endl;
 
-            cout << "KDTree: " << endl;
-            TIME(Point p_found_kd = kd.search(p));
-            double kd_dist = KDTree::distance(p_found_kd, p);
-            cout << "   Distance: " << kd_dist << endl;
+        cout << "KDTree: " << endl;
+        TIME(Point p_found_kd = kd.search(p));
+        double kd_dist = KDTree::distance(p_found_kd, p);
+        cout << "   Distance: " << kd_dist << endl;
 
-            cout << "Difference: " << rkd_dist - kd_dist << endl;
-            if (rkd_dist - kd_dist == 0) ++count_correct;
-            cout << "--------------------------------" << endl;
-        }
-        cout << "* " << hv << " " << count_correct << endl; 
+        cout << "Difference: " << rkd_dist - kd_dist << endl;
+        if (rkd_dist - kd_dist == 0) ++count_correct;
+        cout << "--------------------------------" << endl;
     }
+    cout << "* " << count_correct << endl;
 }
