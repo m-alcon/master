@@ -1,8 +1,0 @@
-\section{Implementation}
-Since I do not know how to perform rotations in a $k$-dimensional space (with $k > 3$) or creating the \textit{Householder} matrices, again, in a $k$-dimensional space, I was not able to implement \textit{NKD-tree} nor \textit{PKD-tree}. Furthermore, some formulas related to their implementation are not complete in the paper. I also made some research on how to do it, but I did not achieve anything. So, my experiments are focused on comparing the basic \textit{KD-tree} with the \textit{RKD-tree} proposed in the paper. Before starting with the experiments, I implemented in \textit{C++} both \textit{KD-tree} and \textit{RKD-tree}.
-
-I followed the guidelines in \cite{wiki} to implement the needed operations of \textit{KD-trees}, which are construction and nearest neighbor search (\textit{NNS}).
-\begin{itemize}
-    \item \textbf{Construction.} qselect, high variance, space
-    \item \textbf{NNS.} \cite{nns} search and limited search
-\end{itemize}
