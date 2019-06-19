@@ -5,11 +5,11 @@
 
 using namespace std;
 
-#define SIZE 10000
+#define SIZE 100000
 #define DIMENSIONS 3
 #define MAX_NUM_VAL 100
 #define N_NEIGHBORS 100
-#define ITERATIONS 100 
+#define ITERATIONS 100
 
 #define INIT_TIME()                                     \
 chrono::time_point<chrono::system_clock> start, end;    \
@@ -20,7 +20,7 @@ double elapsed_time;                                    \
 start = chrono::system_clock::now();                                            \
 code;                                                                           \
 end = chrono::system_clock::now();                                              \
-elapsed_time = chrono::duration_cast<chrono::milliseconds> (end-start).count(); \
+elapsed_time = chrono::duration_cast<chrono::microseconds> (end-start).count(); \
 
 typedef vector<double> Point;
 typedef vector<Point> PointVector;
@@ -75,13 +75,13 @@ int main() {
     TIME(vpt::VpTree vptree = vpt::VpTree(v));
     times << "[" << elapsed_time;
 
-    
+
     data.open ("data.txt");
     data << v << endl;
     data.close();
     queries.open ("queries.txt");
     results.open ("results.txt");
-    
+
     for (int i = 0; i < ITERATIONS; ++i) {
         Point p = generate_point(DIMENSIONS, rd, dis);
         queries << p << endl;

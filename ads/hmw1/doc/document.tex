@@ -1,0 +1,64 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.4}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Advance Data Structures \\
+    \today
+\end{flushright}
+
+\noindent
+{\huge{\textbf{Vantage Point Trees}}}
+
+\section*{Introduction}
+In this document I am going to compare two implementations of the vantage point trees (\textit{VPT}), one written in \textit{Python} \cite{python} and the other one in \textit{C++} \cite{cpp}. With this, we can compare which of the programming languages perform better with this kind of data structure.
+
+\section*{Experiment}
+In order to compare both implementations, I designed the following experiment. First, in \textit{C++} I generated randomly a vector of 3-dimensional points of size 10000, with real values between 100 and -100. Then, I created the \textit{VPT} with the vector. Finally, I searched 100 neighbors of a random point, 100 times. I saved the vector of points, the searched points, the results, and the execution times in a file, to reproduce the same experiment with the other implementation and compare the results.
+
+With the \textit{Python} implementation I did the same, but instead of generating the data, I read from the saved files.
+
+\section*{Results}
+As a result of the experiment, I saw that the \textit{C++} implementation performs much better than the \textit{Python} one, in both time and found neighbors.
+
+In the case of time, \textit{Python} lasts 21.930 s to construct the tree, 0.0163 s to search 100 neighbors of a point on average, and 0.0234 s at most. In the other hand, \textit{C++} lasts 2.831 s to construct the tree, 0.0004 s to search 100 neighbors of a point on average, and 0.0027 s at most.
+
+In the other case, the \textit{C++} implementation always returns the 100 closest neighbors to the searched point, while in some cases the \textit{Python} implementation returns other ones or even less than 100 neighbors. Moreover, the \textit{C++} implementation has more decimal precision. As a final comment, the \textit{Python} implementation returned the correct neighbor points 97 of the 100 executions.
+
+\bibliographystyle{unsrt}
+\bibliography{cite}
+
+
+\end{document}
