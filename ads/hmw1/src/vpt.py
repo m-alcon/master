@@ -47,6 +47,7 @@ cpp_dist = [[e[0] for e in r] for r in cpp_results]
 
 correct = 0
 almost_correct = 0
+wrong = 0
 dist_difference = []
 lost_neig = []
 for i in range(len(py_points)):
@@ -60,14 +61,20 @@ for i in range(len(py_points)):
         if py_points[i] == cpp_points[i][:len(py_points[i])]:
             almost_correct += 1
             dist_difference += list(np.array(py_dist[i]) - np.array(cpp_dist[i][:len(py_points[i])]))
+        else:
+            wrong += 1
 
-print('Correct:',correct/len(py_points))
-print('Almost correct:',almost_correct/len(py_points))
-print('Dist mean:',np.mean(dist_difference))
-print('Dist max:',np.max(dist_difference))
-print('Point lost mean:',np.sum(lost_neig)/len(py_points))
-print('Point lost max:',np.max(lost_neig))
-print('Py construct time:',py_const_time)
-print('Py time mean:',np.mean(py_times))
-print('C++ construct time:',cpp_const_time/1000)
-print('C++ time mean:',np.mean(cpp_times)/1000)
+print('Correct: %0.5f'%float(correct/len(py_points)))
+print('Almost correct: %0.5f'%float(almost_correct/len(py_points)))
+print('Wrong: %0.5f'%float(wrong/len(py_points)))
+print('Dist mean: %0.5f'%float(np.mean(dist_difference)))
+print('Dist max: %0.5f'%float(np.max(dist_difference)))
+print('Point lost mean: %0.5f'%float(np.sum(lost_neig)/len(py_points)))
+print('Point lost max: %0.5f'%float(np.max(lost_neig)))
+print('Point lost max: %0.5f'%float(np.min(lost_neig)))
+print('Py construct time: %0.5f'%float(py_const_time))
+print('Py time mean: %0.5f'%float(np.mean(py_times)))
+print('Py time max: %0.5f'%float(np.max(py_times)))
+print('C++ construct time: %0.5f'%float(cpp_const_time/1000000))
+print('C++ time mean: %0.5f'%float(np.mean(cpp_times)/1000000))
+print('C++ time max: %0.5f'%float(np.max(cpp_times)/1000000))
