@@ -2,7 +2,7 @@
 #include "rkd_tree.h"
 
 #define MAX_NUM_VAL 10
-#define MAX_SEARCH_LIM 1000
+#define MAX_SEARCH_LIM 8000
 #define NUM_HIGH_VAR 32
 #define SIZE 20000
 #define DIMENSIONS 128
@@ -36,16 +36,16 @@ int main() {
     PointVector v = generate_point_vector(SIZE, DIMENSIONS, rd, dis);
 
     INIT_TIME();
-    //for (int hv = 2; hv < DIMENSIONS; ++hv) {
+    for (int trees = 1; trees < 32; ++trees) {
     cout << "========= Construction =========" << endl;
     cout << "RKDTree: " << endl;
-    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, TREES, NUM_HIGH_VAR, v));
+    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, trees, NUM_HIGH_VAR, v));
     cout << "KDTree: " << endl;
     TIME(KDTree kd = KDTree(DIMENSIONS, &rkd.data));
 
     cout << "========== Execution ==========" << endl;
-    for (int search_lim = 1000; search_lim <= SIZE; search_lim += 100) {
-        rkd.n = search_lim;
+    //for (int search_lim = 1000; search_lim <= SIZE; search_lim += 100) {
+        //rkd.n = search_lim;
         int count_correct = 0;
         double total_time_rkd = 0, total_time_kd = 0;
         for (int i = 0; i < ITERATIONS; ++i) {
@@ -67,7 +67,7 @@ int main() {
             cout << "--------------------------------" << endl;
         }
         //cout << "* " << search_lim << " " << count_correct << endl; 
-        cout << "* " << search_lim << " " << count_correct << " " << total_time_kd << " " << total_time_rkd << endl;
+        cout << "* " << trees << " " << count_correct << " " << total_time_kd << " " << total_time_rkd << endl;
     }
     // int count_correct = 0;
     // for (int i = 0; i < ITERATIONS; ++i) {
