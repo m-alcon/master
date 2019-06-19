@@ -1,17 +1,12 @@
 \section{Experiments}
 
-Since I do not know how to perform rotations in a $k$-dimensional space (with $k > 3$) or creating the \textit{Householder} matrices, again, in a $k$-dimensional space, I was not able to implement \textit{NKD-tree} nor \textit{PKD-tree}. Furthermore, some formulas related to their implementation are not complete in the paper. I also made some research on how to do it, but I did not achieve anything. So, my experiments are focused on comparing the basic \textit{KD-tree} with the \textit{RKD-tree} proposed in the paper. Before starting with the experiments, I implemented in \textit{C++} both \textit{KD-tree} and \textit{RKD-tree}.
-
-\subsection{\textit{KD-tree} implementation}
-I only implemented the required operations of \textit{KD-trees} to make the experiments, which are construction and nearest neighbor search (\textit{NNS}). I based my implementation in \cite{wiki}, but I made the following changes.
+First, I tried to reproduce the experiment that is explained in the paper about \textit{RKD-trees} to check its result. This experiment compares the  expended time in searching one point in a \textit{KD-tree} and a \textit{RKD-tree}. I repeated it 100 times, in order to count how much times the \textit{RKD-tree} does not reach the closest point to the query point. I used the same parameters as the authors to construct the trees, which are the following ones:
 \begin{itemize}
-    \item \textbf{Construction.} To select the pivot among a point list, in each recursion step, I used the \textit{Quick Select} algorithm. Moreover, as the authors did in the paper, I implemented the random selection of the axis that is going to be used to create the splitting plane among a subset of the axis with high variance. In order to use less space, instead of saving one point in each node of the tree, I saved the index of the point's position within the main vector.
-    \item \textbf{NNS.} To know if the other side of the splitting hyperplane crosses the hypersphere around the search point (with radius equal to the current nearest distance), I followed what is explained in \cite{nns}. I also created a new type of search, the \textit{limited search}, which, given a positive integer $n$, it limits the search to $n$ nodes.
+    \item A random vector of 128-dimensional points $V$ of size 20000, with real values between -10 and 10. In the case of the paper, points are normalized to unit length, but this just complicate things and is not relevant.
+    \item A vector $HV$ with the indices of the top ($k$) axes with highest variance of $V$.
+    \item The number of trees $m$ is set to 6.
+    \item The limitation of searched $n$ nodes is set to 1000;
 \end{itemize}
 
-\subsection{\textit{RKD-tree} implementation}
-For the \textit{RKD-tree}, I followed what is explained in the paper. In this case I want to explain what I did in detail.
-\begin{itemize}
-    \item \textbf{Construction.} Given $n$, $m$, $k$ and a vector of points $V$, first the algorithm computes the top $k$ axis with highest variance, and then it generates the vector of its indices (I will refer to this vector as $HV$). Finally it creates $m$ \textit{KD-trees} as explained before. In order to create the trees without using a lot more of space, it passes to them a pointer to $V$ and to $HV$. The algorithm also stores $n$ as the maximum number of nodes that the search algorithm can visit. At this moment, we have $m$ \textit{KD-trees} with different structure, ready to be explored.
-    \item \textbf{NNS.} Given a point $p$ that we want to search, first, for the root of each tree, the algorithm computes the distance between the root's point and $p$. It stores each root together with the computed distance inside a \textit{priority queue}. Then, while $n > 0$, while the queue is not empty and the algorithm does not find the exact point $p$, it takes the top element $e$ of the queue, it updates the closest point and its distance if $e$'s point is the closest one to $p$ visited so far. After that, it computes the distance between $p$ and each of $e$'s children, if possible, and add them to the queue. At the end of the algorithm, we have the closest point to $p$ that the algorithm can find visiting at most $n$ nodes of all the trees.
-\end{itemize}
+The result of this experiment was bad. Although the searching time of the \textit{RKD-tree} was ... better than \textit{KD-tree}, \textit{RKD-tree} could find the closest point only ... times of the 100. Because of this, I tried to increase the accuracy of the \textit{RKD-tree}, so I made more experiments in order to reach the best possible accuracy with a good execution time. I tried different values of $n$, $m$ and $k$ to achieve the best combination. In the next section I show the results of this experiments.
+

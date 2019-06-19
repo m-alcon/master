@@ -12,12 +12,12 @@ chrono::time_point<chrono::system_clock> start, end;    \
 double elapsed_time;                                    \
 
 
-#define TIME(code)                                                              \
-start = chrono::system_clock::now();                                            \
-code;                                                                           \
-end = chrono::system_clock::now();                                              \
-elapsed_time = chrono::duration_cast<chrono::milliseconds> (end-start).count(); \
-cout << "   Time: " << elapsed_time/1000 << endl;                               \
+#define TIME(code)                                                                      \
+start = chrono::system_clock::now();                                                    \
+code;                                                                                   \
+end = chrono::system_clock::now();                                                      \
+elapsed_time = chrono::duration_cast<chrono::milliseconds> (end-start).count();    \
+cout << "   Time: " << elapsed_time << endl;                                            \
 
 typedef vector<float> Point;
 
