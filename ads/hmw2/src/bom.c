@@ -6,7 +6,6 @@
 #define FALSE 0
 #define TRUE 1
 #define UNDEFINED -1
-#define XSIZE 256
 
 struct _cell{
     int element;
@@ -48,7 +47,7 @@ void setTransition(int p, int q, List L[])
 void oracle(char *x, int m, char T[], List L[])
 {
     int i, p, q;
-    int S[XSIZE + 1];
+    int S[m + 1];
     char c;
 
     S[m] = m + 1;
@@ -75,8 +74,8 @@ void oracle(char *x, int m, char T[], List L[])
 
 long int BOM(char *x, int m, char *y, int n)
 {
-    char T[XSIZE + 1];
-    List L[XSIZE + 1];
+    char T[m + 1];
+    List L[m + 1];
     int i, j, p, period, q, shift;
 
     /* Preprocessing */
