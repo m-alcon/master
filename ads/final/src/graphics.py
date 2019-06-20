@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 
 data = []
-with open('../data/n_experiment.txt', 'r') as file:
+with open('../data/hv_experiment.txt', 'r') as file:
     for line in file.readlines():
         data.append(line.split())
 

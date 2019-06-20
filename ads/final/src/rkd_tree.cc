@@ -34,7 +34,6 @@ Point RKDTree::search(const Point &p) {
     int n = this->n;
     float best_distance = -1;
     Point best_point;
-    // TODO: RECURSIVITY
     while (n > 0 and !q.empty() and best_distance != 0) {
         ITree t = q.top();
         q.pop();

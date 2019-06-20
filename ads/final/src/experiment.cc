@@ -3,10 +3,10 @@
 
 #define MAX_NUM_VAL 10
 #define MAX_SEARCH_LIM 8000
-#define NUM_HIGH_VAR 32
+#define NUM_HIGH_VAR 70
 #define SIZE 20000
 #define DIMENSIONS 128
-#define TREES 6
+#define TREES 24
 #define ITERATIONS 100
 
 Point generate_point(const uint &dim, random_device &rd, uniform_real_distribution<float> &dis) {
@@ -36,10 +36,11 @@ int main() {
     PointVector v = generate_point_vector(SIZE, DIMENSIONS, rd, dis);
 
     INIT_TIME();
-    for (int trees = 1; trees < 32; ++trees) {
+    for (int hv = 2; hv < 128; ++hv) {
+    cerr << hv << endl;
     cout << "========= Construction =========" << endl;
     cout << "RKDTree: " << endl;
-    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, trees, NUM_HIGH_VAR, v));
+    TIME(RKDTree rkd = RKDTree(MAX_SEARCH_LIM, TREES, hv, v));
     cout << "KDTree: " << endl;
     TIME(KDTree kd = KDTree(DIMENSIONS, &rkd.data));
 
@@ -67,7 +68,8 @@ int main() {
             cout << "--------------------------------" << endl;
         }
         //cout << "* " << search_lim << " " << count_correct << endl; 
-        cout << "* " << trees << " " << count_correct << " " << total_time_kd << " " << total_time_rkd << endl;
+        //cout << "* " << " " << count_correct << " " << total_time_kd << " " << total_time_rkd << endl;        
+        cout << "* " << hv << " " << count_correct << " " << total_time_kd << " " << total_time_rkd << endl;
     }
     // int count_correct = 0;
     // for (int i = 0; i < ITERATIONS; ++i) {
