@@ -4,7 +4,7 @@ import vptree
 
 # Define distance function.
 def euclidean(p1, p2):
-  return np.sqrt(np.sum(np.power(p2 - p1, 2)))
+    return np.sqrt(np.sum(np.power(p2 - p1, 2)))
 
 # Generate some random points.
 data = []
@@ -23,7 +23,7 @@ with open('queries.txt', 'r') as file:
     for line in file.readlines():
         query = eval(line)
         start = time.time()
-        py_results.append(tree.get_n_nearest_neighbors(query, 100))
+        py_results.append(tree.get_n_nearest_neighbors(query, 10000))
         py_times.append(time.time() - start)
 
 cpp_results = []
@@ -71,7 +71,7 @@ print('Dist mean: %0.5f'%float(np.mean(dist_difference)))
 print('Dist max: %0.5f'%float(np.max(dist_difference)))
 print('Point lost mean: %0.5f'%float(np.sum(lost_neig)/len(py_points)))
 print('Point lost max: %0.5f'%float(np.max(lost_neig)))
-print('Point lost max: %0.5f'%float(np.min(lost_neig)))
+print('Point lost total: %0.5f'%float(np.sum(lost_neig)))
 print('Py construct time: %0.5f'%float(py_const_time))
 print('Py time mean: %0.5f'%float(np.mean(py_times)))
 print('Py time max: %0.5f'%float(np.max(py_times)))

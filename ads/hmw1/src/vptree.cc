@@ -8,7 +8,7 @@ using namespace std;
 #define SIZE 100000
 #define DIMENSIONS 3
 #define MAX_NUM_VAL 100
-#define N_NEIGHBORS 100
+#define N_NEIGHBORS 10000
 #define ITERATIONS 100
 
 #define INIT_TIME()                                     \
