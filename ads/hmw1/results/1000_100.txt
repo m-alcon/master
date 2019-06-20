@@ -1,0 +1,14 @@
+Correct: 0.89000
+Almost correct: 0.10000
+Wrong: 0.01000
+Dist mean: 0.00000
+Dist max: 0.00016
+Point lost mean: 3.53000
+Point lost max: 58.00000
+Point lost total: 353.00000
+Py construct time: 0.11866
+Py time mean: 0.00609
+Py time max: 0.00845
+C++ construct time: 0.01239
+C++ time mean: 0.00022
+C++ time max: 0.00032

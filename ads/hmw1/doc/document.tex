@@ -35,27 +35,43 @@
 \noindent
 \begin{flushright}
     \large\textbf{Miguel Alcón Doganoc} \\
-    Advance Data Structures \\
-    \today
+    Advanced Data Structures \\
+	%\today
+	June 21, 2019
 \end{flushright}
 
 \noindent
 {\huge{\textbf{Vantage Point Trees}}}
 
 \section*{Introduction}
-In this document I am going to compare two implementations of the vantage point trees (\textit{VPT}), one written in \textit{Python} \cite{python} and the other one in \textit{C++} \cite{cpp}. With this, we can compare which of the programming languages perform better with this kind of data structure.
+In this document I am going to compare two implementations of the vantage point trees (\textit{VPT}), one written in \textit{Python} \cite{python} and the other one in \textit{C++} \cite{cpp}. With this, we can compare which of the programming languages perform better with this kind of data structure. The objective of this work is to compare the times that each implementation lasts to build the tree and to search the point neighbors of a queried point.
 
 \section*{Experiment}
-In order to compare both implementations, I designed the following experiment. First, in \textit{C++} I generated randomly a vector of 3-dimensional points of size 10000, with real values between 100 and -100. Then, I created the \textit{VPT} with the vector. Finally, I searched 100 neighbors of a random point, 100 times. I saved the vector of points, the searched points, the results, and the execution times in a file, to reproduce the same experiment with the other implementation and compare the results.
+In order to compare both implementations, I designed the following experiment. First, in \textit{C++} I generated randomly a vector of 3-dimensional points of size $k$, with real values between 100 and -100. Then, I created the \textit{VPT} with the vector. Finally, I searched $n$ neighbors of a random point, 100 times. I saved the vector of points, the searched points, the results, and the execution times in a file, to reproduce the same experiment with the other implementation and compare the results.
 
 With the \textit{Python} implementation I did the same, but instead of generating the data, I read from the saved files.
 
 \section*{Results}
-As a result of the experiment, I saw that the \textit{C++} implementation performs much better than the \textit{Python} one, in both time and found neighbors.
+I executed the experiment with different values for the parameters, and here you have the results:
 
-In the case of time, \textit{Python} lasts 21.930 s to construct the tree, 0.0163 s to search 100 neighbors of a point on average, and 0.0234 s at most. In the other hand, \textit{C++} lasts 2.831 s to construct the tree, 0.0004 s to search 100 neighbors of a point on average, and 0.0027 s at most.
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{|c| c| c| c | c |c|c|c|}
+		\hline
+		\multicolumn{2}{|c|}{Parameters} & \multicolumn{2}{c|}{Python Time (s)} & \multicolumn{2}{c|}{C++ Time (s)} & \multicolumn{2}{c|}{Python Results} \\ \hline
+		$k$ & $n$ & Build & Search (avg.) & Build & Search (avg.) & Similarity (\%) & Lost points\\ \hline
+		100 & 10 & 0.00954 & 0.00077 & 0.00086 & 0.00003 & 89 & 61 \\
+		1000 & 100 & 0.11866 & 0.00609 & 0.01239 & 0.00022 & 89 & 353 \\
+		10000 & 1000 & 1.56576 & 0.13238 & 0.18959 & 0.00207 & 51 & 3558 \\
+		100000 & 100 & 18.72097 & 0.01371 & 2.38338 & 0.00039 & 97 & 0 \\
+		100000 & 10000 & 20.09716 & 7.28623 & 2.56153 & 0.02612 & 0 & 84459 \\
+		\hline
+	\end{tabular}
+	\caption{Results of the different experiments}
+	\label{tab:res}
+\end{table}
 
-In the other case, the \textit{C++} implementation always returns the 100 closest neighbors to the searched point, while in some cases the \textit{Python} implementation returns other ones or even less than 100 neighbors. Moreover, the \textit{C++} implementation has more decimal precision. As a final comment, the \textit{Python} implementation returned the correct neighbor points 97 of the 100 executions.
+As you can see in table \ref{tab:res}, the \textit{C++} implementation performs a lot better than the \textit{Python} one, in both time and quality of the found neighbors. The \textit{Similarity} field shows the percentage of neighbors that are equal comparing the results of the search in \textit{Python} and \textit{C++}. While $k$ is small or the difference between $k$ and $n$ is big, the \textit{Python} algorithm founds good results. But when it does not happen, \textit{Python} can differ totally with \textit{C++}. Furthermore, sometimes, the cause of the inequality of the neighbors is that the \textit{Python} implementation returns fewer neighbors than the requested ones. This is seen reflected in the \textit{Lost point} field, which shows the total number of neighbors the \textit{Python} implementation lost when searching. Because of that, and because with a small $k$ both implementations behave equally, I assume that the \textit{C++} results are the correct ones, so \textit{Similarity} can be seen as accuracy of the \textit{Python} implementation. Regarding the time, numbers speaks for themselves.
 
 \bibliographystyle{unsrt}
 \bibliography{cite}
