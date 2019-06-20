@@ -1,5 +1,4 @@
 \section{Experiments}
-
 First, I tried to reproduce the experiment that is explained in the paper about \textit{RKD-trees} to check its result. This experiment compares the  expended time in searching one point in a \textit{KD-tree} and a \textit{RKD-tree}. I repeated it 100 times, in order to count how much times the \textit{RKD-tree} does not reach the closest point to the query point. I used the same parameters as the authors to construct the trees, which are the following ones:
 \begin{itemize}
     \item A random vector of 128-dimensional points $V$ of size 20000, with real values between -10 and 10. In the case of the paper, points are normalized to unit length, but this just complicate things and is not relevant.
@@ -9,4 +8,3 @@ First, I tried to reproduce the experiment that is explained in the paper about 
 \end{itemize}
 
 The result of this experiment was bad. Although the searching time of the \textit{RKD-tree} was ... better than \textit{KD-tree}, \textit{RKD-tree} could find the closest point only ... times of the 100. Because of this, I tried to increase the accuracy of the \textit{RKD-tree}, so I made more experiments in order to reach the best possible accuracy with a good execution time. I tried different values of $n$, $m$ and $k$ to achieve the best combination. In the next section I show the results of this experiments.
-
