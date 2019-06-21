@@ -247,6 +247,6 @@ Point KDTree::current_point() {
 //         cout << q <<  endl;
 //     }
 //     catch (string s) {
-//         cout << s << endl;
+//         cout <<s << endl;
 //     }
 // }
