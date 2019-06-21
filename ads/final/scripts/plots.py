@@ -29,17 +29,25 @@ y_acc = []
 for row in data:
     x.append(float(row[0]))
     y_acc.append(float(row[1])/100)
-    y_kd.append(float(row[2])/100000)
-    y_rkd.append(float(row[3])/100000)
+    y_kd.append(float(row[2])/1000)
+    y_rkd.append(float(row[3])/1000)
 
 fig = plt.figure()
 ax = fig.add_subplot(1, 1, 1)
 ax.plot(x, y_kd, color='tab:blue')
 ax.plot(x, y_rkd, color='coral')
+if 'construct' in name:
+    plt.xlabel('k')
+    
+else:
+    plt.xlabel(name)
+plt.ylabel('Time (s)')
 plt.savefig('../plots/%s_times.pdf'%name)
 ax.clear()
 
 plt.plot(x,y_acc, color='coral')
+plt.xlabel(name)
+plt.ylabel('Accuracy')
 plt.savefig('../plots/%s_acc.pdf'%name)
 
 

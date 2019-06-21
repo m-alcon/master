@@ -7,6 +7,6 @@ int main () {
         cout << t->left()->left()->value() << endl;
     }
     catch (string s) {
-        cout << s << endl;
+        cout <<s << endl;
     }
 }

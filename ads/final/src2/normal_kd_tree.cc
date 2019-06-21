@@ -186,6 +186,6 @@ int main() {
         cout << p <<  endl;
     }
     catch (string s) {
-        cout << s << endl;
+        cout <<s << endl;
     }
 }
