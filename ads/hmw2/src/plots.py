@@ -10,6 +10,13 @@ rcParams['savefig.format'] = ['pdf']
 rcParams['savefig.bbox'] = 'tight'
 rcParams['savefig.pad_inches'] = 0
 
+names = {
+    'bf': 'BF',
+    'horspool': 'H',
+    'bndm': 'BNDM',
+    'bom': 'BOM'
+}
+
 colors = {
     'bf': 'royalblue',
     'horspool': 'mediumseagreen',
@@ -33,20 +40,38 @@ for row in data:
             'count': {}
         }
 
+min_times = {}
 for k,v in organizer.items():
     n = [int(vk) for vk in v['time'].keys()]
     n.sort()
     times = [float(v['time'][str(i)]) for i in n]
-    print(n)
-    print(times)
-    plt.plot(n,times, color=colors[k], label=k)
-
+    for i,t in zip(n,times):
+        if i in min_times and min_times[i][1] > t:
+            min_times[i] = [names[k],t]
+        elif not i in min_times:
+            min_times[i] = [names[k],t]
+    plt.plot(n,times, color=colors[k], label=names[k])
 plt.legend()
-plt.show()
+plt.ylabel('Running time (s)')
+plt.xlabel('Length of the pattern')
+plt.savefig('../plots/time.pdf')
+plt.clf()
 
-# ax.plot(, v[0]['time'], color='tab:blue')
-# plt.savefig('../plots/%s_times.pdf'%name)
-# ax.clear()
 
-# plt.plot(x,y_acc, color='coral')
-# plt.savefig('../plots/%s_acc.pdf'%name)
+x = [min_times[i][0] for i in n]
+plt.scatter(n,x, color='grey')
+plt.ylabel('Algorithm with best time')
+plt.xlabel('Length of the pattern')
+plt.savefig('../plots/best.pdf')
+plt.clf()
+
+for k,v in organizer.items():
+    n = [int(vk) for vk in v['count'].keys()]
+    n.sort()
+    counts = [int(v['count'][str(i)]) for i in n]
+    plt.plot(n,counts, color=colors[k], label=names[k])
+plt.legend()
+plt.ylabel('Number of patterns found')
+plt.xlabel('Length of the pattern')
+plt.savefig('../plots/found.pdf')
+plt.clf()
