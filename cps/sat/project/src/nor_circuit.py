@@ -258,10 +258,14 @@ class NORCirucuit(object):
     def solve_and_print(self):
         self.solve()
         self.print_solution()
+    
+    def compute_size(self):
+        count = 0
+        for v in self.N:
+            if self.solution[v-1] > 0:
+                count += 1
+        return count
         
-
-
-
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
@@ -288,10 +292,10 @@ if __name__ == '__main__':
         for size in range(max_size+1):
             problem = NORCirucuit(n, truth_table, depth, size)
             if problem.solve():
-                problem.print_solution()
-                print('*'*50)
+                #problem.print_solution()
+                print('SAT', depth, size, problem.compute_size())
             else:
-                print('UNSAT',depth, size)
+                print('UNSAT', depth, size)
         #         break
         # if problem.has_solution():
         #     break
