@@ -1,0 +1,1 @@
+python3 nor_circuit.py -d 0 -s 10 -t "1 1 1 0" 2 | lingeling | grep "v " | cut -c3-
