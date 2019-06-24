@@ -1,5 +1,4 @@
 import numpy as np
-import argparse
 import subprocess
 import sys
 
@@ -90,12 +89,22 @@ class NORCirucuit(object):
         return variables
 
     def add_clause(self, clause):
-        self.clauses.append(clause)
+        self.clauses.append(frozenset(clause))
 
-    def add_amo(self, variables):
+    def add_amo(self, variables): # quadratic encoding
         for i in range(len(variables)-1):
             for j in range(i+1,len(variables)):
                 self.add_clause([-variables[i],-variables[j]])
+
+    def add_amo_log(self, variables): # logarithmic encoding
+        m = int(np.ceil(np.log2(len(variables))))
+        new_vars = [self.__give_id() for i in range(m)]
+        for i in range(len(variables)):
+            for j in range(m):
+                if self.__bit(j,i):
+                    self.add_clause([-variables[i],new_vars[j]])
+                else:
+                    self.add_clause([-variables[i],-new_vars[j]])
     
     def __2comparator (self, x1, x2):
         y1, y2 = self.__give_id(), self.__give_id()
@@ -108,25 +117,21 @@ class NORCirucuit(object):
         if len(variables1) == 1:
             return self.__2comparator(variables1[0], variables2[0])
         else:
-            even1, odd1 = [], []
-            for i,v in enumerate(variables1):
+            even1, even2, odd1, odd2 = [], [], [], []
+            for i in range(len(variables1)):
                 if i % 2 == 0:
-                    even1.append(v)
+                    even1.append(variables1[i])
+                    even2.append(variables2[i])
                 else:
-                    odd1.append(v)
-            even2, odd2 = [], []
-            for i,v in enumerate(variables2):
-                if i % 2 == 0:
-                    even2.append(v)
-                else:
-                    odd2.append(v)
+                    odd1.append(variables1[i])
+                    odd2.append(variables2[i])
 
-            merged = self.__merge(even1, even2)
-            merged += self.__merge(odd1, odd2)
-            used_vars = [merged[0]]
-            for i in range(1, len(merged)-1, 2):
-                used_vars += self.__2comparator(merged[i], merged[i+1])
-            used_vars.append(merged[-1])
+            merged1 = self.__merge(even1, even2)
+            merged2 = self.__merge(odd1, odd2)
+            used_vars = [merged1[0]]
+            for i in range(len(merged2)-1):
+                used_vars += self.__2comparator(merged2[i], merged1[i+1])
+            used_vars.append(merged2[-1])
             return used_vars
 
     def __sorting_network(self, variables):
@@ -137,8 +142,9 @@ class NORCirucuit(object):
         if len(variables) == 2:
             return self.__2comparator(variables[0], variables[1])
         else:
-            variables1 = variables[:int(len(variables)/2)]
-            variables2 = variables[int(len(variables)/2):]
+            half = int(len(variables)/2)
+            variables1 = variables[:half]
+            variables2 = variables[half:]
             sorted1 = self.__sorting_network(variables1)
             sorted2 = self.__sorting_network(variables2)
             return self.__merge(sorted1, sorted2)
@@ -146,11 +152,11 @@ class NORCirucuit(object):
 
     def add_amk(self, k, variables):
         sorted_vars = self.__sorting_network(variables)
-        # for v in sorted_vars[k:]:
-        #     self.add_clause([-v])
         self.add_clause([-sorted_vars[k]])
 
     def generate_clauses(self):
+        self.clauses = []
+
         # The output of the circuit is equal to the desired value for each row t of the truth table.
         for t in range(np.power(2,self.n)):
             if self.tt[t]:
@@ -169,10 +175,10 @@ class NORCirucuit(object):
                 self.add_clause([self.N.v(i,j), self.Z.r(i,j)])
 
         # Force non-symmetry of NOR gates’ children. Do not allow the same input on both sides.
-        for k in range(self.n):
-            for i in range(self.d):
-                for j in range(np.power(2, i)):
-                    self.add_amo([self.I[k].l(i,j),self.I[k].r(i,j)])
+        # for k in range(self.n):
+        #     for i in range(self.d):
+        #         for j in range(np.power(2, i)):
+        #             self.add_amo([self.I[k].l(i,j),self.I[k].r(i,j)])
 
         #Link each NOR gate with its corresponding value, which is the NOR operation between both children.
         for t in range(np.power(2,self.n)):
@@ -193,7 +199,7 @@ class NORCirucuit(object):
             for t in range(np.power(2,self.n)):
                 for i in range(self.d+1):
                     for j in range(np.power(2, self.d)):
-                        if self.__bit(k, t):
+                        if self.__bit(n-k-1, t):
                             self.add_clause([-self.I[k].v(i,j), self.B[t].v(i,j)])
                         else:
                             self.add_clause([-self.I[k].v(i,j), -self.B[t].v(i,j)])
@@ -209,6 +215,8 @@ class NORCirucuit(object):
 
         # Limit the number of NOR gates to be less than size.
         self.add_amk(self.size, list(self.N))
+
+        self.clauses = frozenset(self.clauses)
 
 
     def solve(self):
@@ -242,10 +250,12 @@ class NORCirucuit(object):
             right_id = remaining_id+2
             print('%d %d'%(left_id, right_id))
             remaining_id += 2
-            self.__print_solution(i+1, 2*j, left_id, remaining_id)
-            self.__print_solution(i+1, 2*j+1, right_id, remaining_id)
+            remaining_id = self.__print_solution(i+1, 2*j, left_id, remaining_id)
+            remaining_id = self.__print_solution(i+1, 2*j+1, right_id, remaining_id)
+            return remaining_id
         else:
             print('0 0')
+        return remaining_id
     
     def print_solution(self):
         print(self.n)
@@ -254,55 +264,28 @@ class NORCirucuit(object):
         print(self.d, self.size)
         if self.solution:
             self.__print_solution(0, 0, 1, 1)
-
-    def solve_and_print(self):
-        self.solve()
-        self.print_solution()
-    
-    def compute_size(self):
-        count = 0
-        for v in self.N:
-            if self.solution[v-1] > 0:
-                count += 1
-        return count
         
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser()
-    parser.add_argument('path', help='Path of the input file')
-    parser.add_argument('-n', type=int, help='Integer n representing the size of the board (nxn)')
-    parser.add_argument('-t', type=str, help='Truth table')
-    args = parser.parse_args()
-
-    n, truth_table = 0, []
-    if args.path:
-        with open(args.path, 'r') as file:
-            file_text = file.readlines()
-            n = int(file_text[0])
-            truth_table = [int(x) for x in file_text[1:]]
-    elif args.n and args.t:
-        n, truth_table = args.n, args.t
-    else:
-        print('You have to provide the path of the file or the description of the problem (n and t)',file=sys.stder)
+    
+    n, truth_table = int(input()), []
+    for _ in range(np.power(2,n)):
+        truth_table.append(int(input()))
 
     max_depth = 5
-
     for depth in range(max_depth+1):
         max_size = np.power(2, depth) - 1
-        for size in range(max_size+1):
+        for size in range(depth, max_size+1):
             problem = NORCirucuit(n, truth_table, depth, size)
             if problem.solve():
-                #problem.print_solution()
-                print('SAT', depth, size, problem.compute_size())
-            else:
-                print('UNSAT', depth, size)
-        #         break
-        # if problem.has_solution():
-        #     break
+                break
+            print('UNSAT', depth, size, file=sys.stderr)
+        if problem.has_solution():
+            break
     if problem.has_solution():
         problem.print_solution()
     else:
-        print('UNSAT')
+        print('UNSAT', file=sys.stderr)
 
 
     

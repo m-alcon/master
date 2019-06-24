@@ -10,13 +10,8 @@ mkdir -p $debug_folder
 rm $output_folder/*
 rm $debug_folder/*
 
-n_threads=0
 n_timeouts=`expr 0`
-if [ -n "$1" ]; then
-	n_threads=$1
-fi
 
-echo "Executing with $n_threads threads."
 total_files=`ls -1 $input_folder | wc -l`
 
 i=`expr 0`
@@ -25,7 +20,7 @@ for input in $input_folder*.inp; do
 	file_name=`basename $input`
 	file_name=${file_name%.*}
 	is_timeout=0
-	timeout 1m python3 nor_circuit.py $input 1> $output_folder/${file_name}.out 2> $debug_folder/${file_name}.err || is_timeout=1
+	timeout 1m python3 nor_circuit.py < $input 1> $output_folder/${file_name}.out 2> $debug_folder/${file_name}.err || is_timeout=1
 	if [ $is_timeout -eq 1 ]; then
 		rm $output_folder/${file_name}.out
 		let n_timeouts+=1
