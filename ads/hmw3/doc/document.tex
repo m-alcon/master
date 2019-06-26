@@ -1,0 +1,81 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.4}
+
+\graphicspath{{../plots/}}
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Advanced Data Structures \\
+	%\today
+	June 21, 2019
+\end{flushright}
+
+\noindent
+{\huge{\textbf{Dictionary with Binary Search Trees}}}
+
+\section*{Introduction}
+The objective of this work is to implement a dictionary using a binary search tree (BST) as the base of the data structure, and then compare it with the default \textit{dict} class of python. I started my implementation from the \textit{Python} BST implementation in \cite{python}.
+
+\section*{Implementation}
+First, I moved the code from \textit{Python 2} to \textit{Python 3} because I am used to work with \textit{Python 3}. After that, I modified the \textit{Node} class to let it accept a \textit{key} and a \textit{value}. The main idea of this modification is to use the \textit{key} as the normal value of a BST, and add a new parameter in the node saving the \textit{value} corresponding to the \textit{key} of the node. In my opinion, this is a simple modification that adds a great functionality to the data structure.
+
+Regarding the operations, all the standard ones were done in the implementation that I took from the Internet, but the deletion operation was not completed, and the insertion operation does not behave as I wanted. The deletion operation did not take into account that a node can have no parent, hence when I wanted to delete the root node of the main tree, it did nothing. For each of the cases (0, 1 and more than 1 children), I implemented the behavior of the deletion operation for the root node of the main tree. For the insertion operation, I had to force the tree to not allow multiple \textit{keys} by modifying the operation itself. Instead of adding a pair \textit{key-value} without checking if the \textit{key} is already in the tree, now the BST dictionary checks it and swaps the previous \textit{value} with the new one, as the \textit{Python} dictionary behaves.
+
+\section*{Experiment}
+As it is known, the \textit{Python} dictionary allows the \textit{key} to be whatever hashable class, and the \textit{value} whatever class. In my case, the \textit{key} has to be a comparable and ordered class. With my own implementation I tried to insert different types of \textit{values} (boolean, dictionaries and lists), with different types of \textit{keys} (integer, float, list and dictionaries).
+
+After that, I tested the performance of the main operations of the BST dictionary and the \textit{Python} one. In order to do that, I generated randomly 1000 integer \textit{keys} and another 1000 integer \textit{values}. First, I inserted them to both dictionaries, then I searched each of the keys, and finally I deleted all of them one by one.
+
+
+\section*{Results}
+In the type acceptance test, only when I tried to insert a pair \textit{key-value} with a dictionary as a \textit{key}, the BST crashed. I checked it for the \textit{Python} one and it also failed.
+
+In the performance test, the \textit{Python} dictionary outperforms the BST one, as you can see in table \ref{tab}.
+
+\begin{table}[hbtp]
+	\centering
+	\begin{tabular}{c c c}
+		\textbf{Operation} & \textbf{Python} & \textbf{BST} \\ \hline
+		Insertion & 0.3516 & 28.728 \\
+		Search & 0.2737 & 4.059 \\
+		Deletion & 0.3114 & 3.905 	\\		
+	\end{tabular}
+	\caption{Performance results (in milliseconds)}
+	\label{tab}
+\end{table}
+
+\bibliographystyle{unsrt}
+\bibliography{cite}
+
+
+\end{document}
