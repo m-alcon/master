@@ -1,0 +1,22 @@
+AVLSI PLACEMENT
+===============
+> Input:
+    * Matrix (dimensions).
+    * Graph (adjacency matrix, ...).
+> Examples:
+    * Known:
+        - Mesh.
+        - Spiral.
+    * Random:
+        - Adjacency matrix generated with probability on the edges.
+            · P = degree/#nodes (e.g. 1000 nodes with degree 3, P = 0.03).
+        - Geometric graph:
+            · Random points.
+            · Each point is connected to the points within a radius r.
+> Cost: sum of distances
+    * Incremental cost (do not compute all the cost for each change).
+> Distance: 2 possible ones (parameter)
+    * Euclidean.
+    * Manhattan.
+> Extra:
+    * Play with SA variables (iterations, temperature)

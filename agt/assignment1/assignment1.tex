@@ -1,0 +1,87 @@
+\documentclass[a4paper, 10pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\renewcommand{\arraystretch}{1.4}
+\definecolor{statement}{gray}{0.5}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Algorithms for Game Theory \\
+    \today
+\end{flushright}
+
+\noindent
+{\huge{\textbf{First Problem Assignment}}}
+
+\section{Exercise 6}
+{\color{statement} Consider a set of $n$ players that must be partitioned into two groups. However, there is a set of bad pairings and the two players in such a pair do not want to be in the same group. Moreover, each player is free to choose which of the two groups to be in. We can model this by a graph $G = (V, E)$ where each player $i$ is a vertex. There is an edge $(i, j)$ if $i$ and $j$ form a bad pair. The private objective of player $i$ is to maximize the number of its neighbors that are in the other group.
+
+Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of this game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
+
+\section{Exercise 7}
+{\color{statement} The Max 2SAT game is defined by a weighted 2-CNF formula on $n$ variables. In a weighted formula each clause has a weight. The game has $n$ players. Player $i$ controls the $i$-th variable and can decide the value assigned to this variable. A strategy profile is a truth assignment $x \in {0, 1}^n$ . Player $i$ gets $1/3$ of the weight of the clauses that are satisfied due to its bit selection.
+
+Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of the Max 2SAT game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
+
+
+
+\section{Exercise 8}
+{\color{statement} Assume that we have fixed a finite set $K$ of $k$ colors. Consider a graph $G = (V, E)$ with a labeling function $\ell: V \rightarrow 2^K$ and define an associated coloring game $\Gamma(G, \ell)$ as follows
+\begin{itemize}
+    \item the players are $V(G)$,
+    \item the set of strategies for player $v$ is $\ell(v)$,
+    \item the payoff function of player $v$ is $u_v(s) = |\{u \in N(v)\hspace{1mm}|\hspace{1mm}s_u = s_v \}|$.
+\end{itemize}
+
+Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of the coloring game game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
+
+
+%\subsection{$\mathbf{P_{||}^{NP} \subseteq \mathbf{P_{log\text{ }n}^{NP}}}$}
+
+% \begin{lstlisting}[escapeinside={*}{*}]
+% *Definition of $M'$:*
+%     *Given input $X = \{x_1,x_2,...,x_n\}$*
+%     *Let $B = \{b_1,b_2,...,b_n\}$ be a boolean array*
+%     *\textbf{If} $M(X) = 0$ \textbf{then}*
+%         *Output 0 and halt*
+%     *\textbf{For} $i = 1,2,...,n$ \textbf{do}*
+%         *\textbf{If} $M(\{b_0,...,b_{i-1},0,x_{i+1},...,x_n\}) = 0$ \textbf{then}*
+%             *Set $b_i$ = 0*
+%         *\textbf{Else if} $M(\{b_0,...,b_{i-1},1,x_{i+1},...,x_n\}) = 0$ \textbf{then}*
+%             *Set $b_i$ = 1*
+%         *\textbf{Else} output 0 and halt*
+%     *Check if $B$ satisfies $X$*
+%     *\textbf{If} it does, output 1 and halt, \textbf{else} output 0 and halt*
+% \end{lstlisting}
+
+\end{document}

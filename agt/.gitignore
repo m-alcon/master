@@ -1,0 +1,4 @@
+assignment*/*
+!assignment*/*.pdf
+!assignment*/*.tex
+
