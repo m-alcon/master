@@ -26,6 +26,7 @@
 
 %\setlength{\parindent}{0cm}
 \newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\suchthat}[0]{\hspace{1mm}|\hspace{1mm}}
 \renewcommand{\arraystretch}{1.4}
 \definecolor{statement}{gray}{0.5}
 
@@ -43,30 +44,58 @@
 \noindent
 {\huge{\textbf{First Problem Assignment}}}
 
-\section{Exercise 6}
-{\color{statement} Consider a set of $n$ players that must be partitioned into two groups. However, there is a set of bad pairings and the two players in such a pair do not want to be in the same group. Moreover, each player is free to choose which of the two groups to be in. We can model this by a graph $G = (V, E)$ where each player $i$ is a vertex. There is an edge $(i, j)$ if $i$ and $j$ form a bad pair. The private objective of player $i$ is to maximize the number of its neighbors that are in the other group.
+\section*{Problem 6}
+{\color{statement} 
+\subsection*{Statement}
+Consider a set of $n$ players that must be partitioned into two groups. However, there is a set of bad pairings and the two players in such a pair do not want to be in the same group. Moreover, each player is free to choose which of the two groups to be in. We can model this by a graph $G = (V, E)$ where each player $i$ is a vertex. There is an edge $(i, j)$ if $i$ and $j$ form a bad pair. The private objective of player $i$ is to maximize the number of its neighbors that are in the other group.
 
 Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of this game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
 
-\section{Exercise 7}
-{\color{statement} The Max 2SAT game is defined by a weighted 2-CNF formula on $n$ variables. In a weighted formula each clause has a weight. The game has $n$ players. Player $i$ controls the $i$-th variable and can decide the value assigned to this variable. A strategy profile is a truth assignment $x \in {0, 1}^n$ . Player $i$ gets $1/3$ of the weight of the clauses that are satisfied due to its bit selection.
+\subsection*{Solution}
+Consider that all players of the game has de same set of actions $A = \{0,1\}$. Each of this
+
+Regarding the EPN problem, we know that there will always exists a cut that splits the graph into two groups. With this split, you can just move around the vertices (from the group with more bad pairs to the other one, if needed) until you arrive to a PNE. Therefore, you can decide the EPN in constant time, since it always exists.
+
+\section*{Problem 7}
+{\color{statement} 
+\subsection*{Statement}
+The Max 2SAT game is defined by a weighted 2-CNF formula on $n$ variables. In a weighted formula each clause has a weight. The game has $n$ players. Player $i$ controls the $i$-th variable and can decide the value assigned to this variable. A strategy profile is a truth assignment $x \in \{0, 1\}^n$ . Player $i$ gets $1/3$ of the weight of the clauses that are satisfied due to its bit selection.
 
 Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of the Max 2SAT game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
 
+\subsection*{Solution}
+Let $F$ be the 2-CNF formula, which is composed by a set of $K$ clauses $c_{i,j,k}$, where $i$ and $j$ represents the position of the variables in $x$ (with $1 \leq i,j \leq n$), and $k$ is the identifier of the clause (with $1 \leq k \leq K$). With this, I define the following function to ease the explanation of the problem: 
+\[\text{clauses}(F,x_i) = \{\forall x_j \in x \suchthat c_{i,j,k} \in F\}\]
+Consider also that eval$(c_{i,j,k},x)$ gives the resultant boolean value of the clause according to the strategy profile $x$.  
+\begin{itemize}
+    \item Strategy profile $x = \{0,1\}^n$
+    \item Set of actions for all players: $A = \{0,1\}$
+    \item Utility: $u_i(x) = \frac{1}{3}\sum_{x_j \in \text{clauses}(F,x_i)} w_{i,j}\cdot \text{eval}(c_{i,j,k},x) \cdot (1-\text{eval}(c_{i,j,k},x_{-i}+(1-x_i)))$
+\end{itemize}
+$$\text{isPNE}(x) = \{\forall x_i \in x \suchthat \sum_{x_j\in x}u_j(x)\geq \sum_{x_j\in x}u_j(1-x_i),x_{-i}) \}$$
 
-
-\section{Exercise 8}
-{\color{statement} Assume that we have fixed a finite set $K$ of $k$ colors. Consider a graph $G = (V, E)$ with a labeling function $\ell: V \rightarrow 2^K$ and define an associated coloring game $\Gamma(G, \ell)$ as follows
+\section*{Problem 8}
+{\color{statement} 
+\subsection*{Statement}
+Assume that we have fixed a finite set $K$ of $k$ colors. Consider a graph $G = (V, E)$ with a labeling function $\ell: V \rightarrow 2^K$ and define an associated coloring game $\Gamma(G, \ell)$ as follows
 \begin{itemize}
     \item the players are $V(G)$,
     \item the set of strategies for player $v$ is $\ell(v)$,
-    \item the payoff function of player $v$ is $u_v(s) = |\{u \in N(v)\hspace{1mm}|\hspace{1mm}s_u = s_v \}|$.
+    \item the payoff function of player $v$ is $u_v(s) = |\{u \in N(v) \suchthat s_u = s_v \}|$.
 \end{itemize}
 
 Provide a formal characterization of the strategy profiles that are pure Nash equilibrium of the coloring game game. Analyze the complexity of the problems related to pure Nash equilibria for this family of games.}
 
+\begin{itemize}
+    \item Strategy profile $s = K^n$
+    \item Set of actions player $v$: $A_v \subseteq K$
+\end{itemize}
 
-%\subsection{$\mathbf{P_{||}^{NP} \subseteq \mathbf{P_{log\text{ }n}^{NP}}}$}
+$$\text{isPNE}(s) = \{\forall s_v \in s, \forall a_v' \in A_v \suchthat \sum_{s_u\in s}u_u(s)\geq \sum_{x_u\in x}u_u(a_v',x_{-v}) \}$$
+
+\subsection*{Solution}
+
+%\subsection*{$\mathbf{P_{||}^{NP} \subseteq \mathbf{P_{log\text{ }n}^{NP}}}$}
 
 % \begin{lstlisting}[escapeinside={*}{*}]
 % *Definition of $M'$:*
