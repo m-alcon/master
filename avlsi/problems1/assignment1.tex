@@ -109,28 +109,33 @@ The final solution is
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.5\linewidth]{1_qplacement.png}
+    \caption{2D plot of the solution}
 \end{figure}
 \newpage
 \section{Channel Routing}
-{\color{statement} Draw the vertical constraint graph without splitting the nets.}
+{\color{statement} Draw the vertical constraint graph (VCG) without splitting the nets. Determine the zone representation for the nets. Draw the vertical constraint graph with net splitting.}
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=0.3\linewidth]{2_vcg.pdf}
-\end{figure}
-
-
-{\color{statement} Determine the zone representation for the nets.}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.2\linewidth]{2_zr.pdf}
-\end{figure}
-
-{\color{statement} Draw the vertical constraint graph with net splitting.}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.3\linewidth]{2_vcg_split.pdf}
+    \begin{subfigure}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2_vcg.pdf}
+        \caption{VCG without splitting}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.22\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2_zr.pdf}
+        \caption{Zone representation}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.32\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{2_vcg_split.pdf}
+        \caption{VCG without splitting}
+        \label{}
+    \end{subfigure}
 \end{figure}
 
 
@@ -143,10 +148,185 @@ Since without net splitting nodes $D$ and $E$ creates a loop in the VCG, it is i
 The assignment of nets to tracks is specified at the right of the route diagram.
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.9\linewidth]{2_route.pdf}
+    \includegraphics[width=1\linewidth]{2_route.pdf}
+    \caption{Final routed channel}
 \end{figure}
 \newpage
+\section{Slicing Floorplan}
+{\color{statement} Find the smallest bounding box that can accommodate the slicing floorplan assuming that blocks can be rotated by 90º. Show the shape functions at each node of the tree and the final floorplan.}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.5\textwidth}
+        \centering
+        \includegraphics[trim=50 670 400 75,clip,width=1\linewidth]{tree1.pdf}
+        \caption{Initial floorplan tree}
+        \label{}
+    \end{subfigure}
+    \hspace{10mm}
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[trim=13 0 0 0,clip,width=0.6\linewidth]{3_floorplan1.pdf}
+        \caption{Floorplan and bounding box}
+        \label{}
+    \end{subfigure}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3_sfx.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3_sfy.pdf}
+    \end{subfigure}
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3_sfz.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[width=\linewidth]{3_sfv.pdf}
+    \end{subfigure}
+    \caption{Shape functions}
+\end{figure}
+
+\newpage
+
+{\color{statement} Find another slicing tree that can give a smaller floorplan. Draw the new floorplan.}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.52\textwidth}
+        \centering
+        \includegraphics[trim=50 670 400 75,clip,width=1\linewidth]{tree2.pdf}
+        \caption{New floorplan tree}
+        \label{}
+    \end{subfigure}
+    \hspace{10mm}
+    \begin{subfigure}{0.35\textwidth}
+        \centering
+        \includegraphics[trim=13 0 0 0,clip,width=0.6\linewidth]{3_floorplan2.pdf}
+        \caption{New floorplan and bounding box}
+        \label{}
+    \end{subfigure}
+\end{figure}
+
 \section{Sequence pairs}
-\Tree [.V [.H c a ] [.H e [.H b d ] ] ]
+
+{\color{statement} Calculate the coordinates of the modules in the floorplan represented by the following sequence pair: (ABDECF, CBAEFD). }
+
+First I drew the vertical and horizontal constraint graphs of the sequence pair to detect the critical (largest) paths.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.4\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{4_vcg.pdf}
+        \caption{VCG}
+        \label{}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.47\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{4_hcg.pdf}
+        \caption{HCG}
+        \label{}
+    \end{subfigure}
+\end{figure}
+
+With it, I was able to compute the bounding box and draw the floorplan (figure \ref{fig:f1}).
+
+{\color{statement} Given the same sequence pair, and assuming that modules can be rotated 90º, propose some rotation to reduce the area.}
+
+Rotating modules D, E and F, I obtained a smaller floorplan (figure \ref{fig:f2}) (probably the minimum with this sequence pair). I rotated modules that were in one of the critical paths (vertical or horizontal), and that improved the floorplan.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.3\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{4_1.pdf}
+        \caption{Initial}
+        \label{fig:f1}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.45\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{4_2.pdf}
+        \caption{With rotations}
+        \label{fig:f2}
+    \end{subfigure}
+    \caption{Floorplans}
+\end{figure}
+
+\section{Partitioning}
+
+{\color{statement} Given the graph in the figure, apply Kernighan\&Lin to find a good bi-partition, starting from the one in the figure. Show all the steps performed during the execution of the algorithm.}
+
+Next you can see the two iterations that I had to do to reach the good bi-partition. Graph marked in grey is the best bi-partitioned graph of the iteration. The black border of the nodes means that they are fixed, i.e. they have already been switched.
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_11.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_12.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_13.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_14.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_15.pdf}
+    \end{subfigure}
+    \caption{First iteration of the algorithm.}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_21.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_22.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_23.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_24.pdf}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}{0.19\textwidth}
+        \centering
+        \includegraphics[width=1\linewidth]{5_25.pdf}
+    \end{subfigure}
+    \caption{Second iteration of the algorithm.}
+\end{figure}
+
 
 \end{document}
