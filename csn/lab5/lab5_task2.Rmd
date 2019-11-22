@@ -1,0 +1,85 @@
+---
+title: "Lab5 Task 2"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Task 2
+
+```{r, include=FALSE}
+# Needed packages
+required_packages <- c("igraph","rstudioapi","knitr")
+for (pac in required_packages) {
+  if(!require(pac,  character.only=TRUE)){
+    install.packages(pac, repos="http://cran.rstudio.com")
+    library(pac,  character.only=TRUE)
+  } 
+}
+rm(pac)
+rm(required_packages)
+
+# Needed data
+g = read.graph("./data/wikipedia.gml", format="gml")
+
+# Functions
+detect.and.plot = function (comm.detector) {
+  community = comm.detector(g)
+  #print(membebrship(community))
+  plot(community,g)
+  return(modularity(community))
+}
+
+## Functions for sample a graph
+sample.vertices = function (g, perc) {
+  n_vertices = round(length(V(g))*perc)
+  sampled_vertices = sample(V(g), n_vertices)
+  return(induced_subgraph(g, sampled_vertices))
+}
+
+sample.edges = function (g, perc) {
+  n_edges = round(length(E(g))*perc)
+  sampled_edges = sample(E(g), n_edges)
+  return(subgraph.edges(g, sampled_edges))
+}
+
+```
+
+## Sample the graph
+```{r}
+data = data.frame(id=numeric(), V=numeric(), E=numeric(), trans=numeric(), transV=numeric(), transE=numeric())
+
+for (i in seq(0.1,1, 0.1)) {
+  sample_g = sample.vertices(g, i)
+  v_l = length(V(sample_g))
+  e_l = length(E(sample_g))
+  trans = transitivity(sample_g)
+  data = rbind(data, data.frame(id=i, V=v_l, E=e_l, trans=trans, transV=(v_l/trans), transE=(e_l/trans)))
+  plot(degree_distribution(sample_g), main=paste(i))
+}
+data
+
+```
+
+```{r}
+#data = data.frame(p=numeric(), size=numeric(), time=numeric(), mod=numeric())
+#for (i in seq(0.01, 0.3, 0.1)) {
+i = 0.325
+  sampled_g = sample.vertices(as.undirected(g), i)
+  n_vertices = length(V(sampled_g))
+  
+  #detect.and.plot(edge.betweenness.community) TOO MUCH TIME
+  #detect.and.plot(fastgreedy.community) UNDIRECTED
+  #detect.and.plot(label.propagation.community)
+  start_time <- Sys.time()
+  community = edge.betweenness.community(sampled_g)
+  end_time <- Sys.time()
+  #print(membebrship(community))
+  #plot(community, sampled_g) 
+  #data = rbind(data, data.frame(p=i, size=n_vertices, time=(end_time - start_time)))
+  data = rbind(data, data.frame(p=i, size=n_vertices, time=(end_time - start_time), mod=modularity(community)))
+#}
+data
+```
