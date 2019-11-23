@@ -1,0 +1,320 @@
+---
+title: 'Complex and Social Networks: Lab session 5'
+subtitle: 'Finding community structure'
+output:
+  pdf_document:
+    fig_crop: no
+    fig_height: 4
+    toc: yes
+  html_document:
+    toc: yes
+author: Miguel Alcon & Egon 
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+fig.pos = 'h'
+```
+
+```{r include=FALSE}
+require(igraph, quietly = T)
+require(viridis, quietly = T)
+require(knitr, quietly = T)
+```
+
+# TASK 1 
+
+## Introduction
+
+In this session we will run and compare different community finding algorithms. We will use implementations  from the igraph package.
+
+Given an undirected graph, we want to analyze, for each available community finding algorithm the value achieved by the output partition for each of the following criteria: ‘Triangle Partition Ratio’ (TPT), ‘expansion’, ‘conductance’ and ‘modularity’.
+
+  * Triangle partition ratio: fraction of nodes in C that belong to a triad
+  $$TPT= \frac{|\{u: u \in C \text { and }\{(w, v) \in E: w, v \in C,(u, w),(u, v) \in E\} \neq \emptyset\} |}{n_{c}}$$
+
+  * Expansion: number of edges per node leaving the cluster
+  $$\frac{f_c}{n_c}$$
+  * Conductance: fraction of total edge volume that points outside the cluster
+  $$\frac{f_c}{2m_c+f_c}$$
+
+  * Modularity: difference between numebr of edges in C and the expected nr. of edges $E[mc]$ of a random 
+  graph with the same degree distribution
+  $$\frac{1}{4 m}\left(m_{c}-E\left[m_{c}\right]\right)$$
+    
+Where: $$f_c = C=|\{(u, v) | u \in C, v \notin C\}|$$  
+$$m_c = C=|\{(u, v) | u, v \in C\}|$$
+and $n_c$ is just the number of nodes.
+
+To calculate TPT of a community division we decided to calculate a weighted average of the TPT evaluated on each cluster. For the other metrics this is not necessary. 
+
+## Test on the Zachary Karate Graph
+
+This is a social network of friendships between 34 members of a karate club at a US university in the 1970s. 
+
+[See W. W. Zachary, An information flow model for conflict and fission in small groups, Journal of Anthropological Research 33, 452-473 (1977)]
+
+This network became a popular example of community structure.
+
+```{r}
+karate <- graph.famous("Zachary")
+```
+
+```{r}
+plot(karate, vertex.size=20, vertex.color='orchid', vertex.label.color="white",
+     vertex.label.font=0.001,  vertex.label.cex=.7, vertex.frame.color="white", edge.arrow.size=.2, layout=layout_with_dh)
+```
+
+
+```{r include=FALSE}
+from_community_to_measures<- function(community, graph){
+  
+  nc=length(V(graph)) #nodes in the graph
+  fc=sum(crossing(community, graph)) #intercluster edges 
+  mc=length(E(graph))-fc #intracluster edges 
+  
+  #modularity
+  modu=modularity(community)
+  
+  #TPT
+  cluster_labels=membership(community)
+  numgp <- max(cluster_labels) #number of clusters. 
+  sum=0
+  for (i in 1:numgp){
+    W <- c(which(cluster_labels==i))
+    sub<-induced_subgraph(graph, W)
+    weigth=(length(V(sub))) #weight AKA number of nodes in the cluster
+    sum=sum+((length(triangles(sub))/3)*weigth)
+  }
+  TPT=(sum/nc)
+  
+  #conductance
+  
+  conductance= fc/((2*mc)+fc)
+  
+  #expansion
+  
+  expansion=fc/nc
+
+  return(c(numgp,TPT, expansion, conductance, modu))
+}
+```
+
+
+
+```{r include=FALSE}
+from_graph_to_table<- function(graph){
+  result=data.frame(row.names =c('Ncluster','TPT', 'Expansion', 'Conductance','Modularity'))
+  
+  edge<-edge.betweenness.community(graph)
+  result['Edge Betweennes']=from_community_to_measures(edge, graph)
+  
+  fast<-fastgreedy.community(graph)
+  result['Fastgreedy']=from_community_to_measures(fast, graph)
+  
+  label<-label.propagation.community(graph)
+  result['Label propagation']=from_community_to_measures(label, graph)
+  
+  leading<-leading.eigenvector.community(graph)
+  result['Leading eigenvector']=from_community_to_measures(leading, graph)
+  
+  multi<-multilevel.community(graph)
+  result['Multilevel']=from_community_to_measures(multi, graph)
+  
+  opti<-optimal.community(graph)
+  result['Optimal']=from_community_to_measures(opti, graph)
+  
+  if (is.connected(graph)==TRUE){
+    spingla<-spinglass.community(graph)
+    result['Spinglass']=from_community_to_measures(spingla, graph)
+  }
+  
+  walka<-walktrap.community(graph)
+  result['Walktrap']=from_community_to_measures(walka, graph)
+  
+  info<-infomap.community(graph)
+  result['Infomap']=from_community_to_measures(info, graph)
+  
+  kable(t(result))
+
+}
+
+```
+
+
+```{r}
+from_graph_to_table(karate)
+```
+
+The infomap algorithm seems to work very well: with only three clusters we got quite high TPT and modularity (as we want), and low conductance and expansion (as we want).
+
+```{r}
+info<-infomap.community(karate)
+plot(info, karate, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7, main='Infomap community detection algorithm' )
+```
+
+With four cluster instead we have three algoritms that hold similar results, for example:
+
+```{r}
+info<-optimal.community(karate)
+plot(info, karate, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7, main='Optimal community detection algorithm' )
+```
+
+
+## Dolphin social network
+
+All members of a school were assumed associated. Half-weight index (HWI) was used to quantify the frequency of association among individuals.
+[Data source](http://networkrepository.com/mammalia-dolphin-social.php)
+
+Lusseau, David, et al. "The bottlenose dolphin community of Doubtful Sound features a large proportion of long-lasting associations." Behavioral Ecology and Sociobiology 54.4 (2003): 396-405.
+
+
+```{r}
+dol<-read_graph('data/mammalia-dolphin-social.edges',directed=FALSE)
+plot(dol, vertex.size=20, vertex.color='lightblue', vertex.label.color="white",
+     vertex.label.font=0.001,  vertex.label.cex=.7, vertex.frame.color="white", edge.arrow.size=.2 )
+
+```
+
+
+```{r}
+from_graph_to_table(dol)
+```
+
+Spinglass is omitted because the algorithm does not work with unconnected graphs.
+
+```{r}
+multi<-multilevel.community(dol)
+plot(multi, dol, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Multilevel community detection algorithm')
+```
+
+```{r}
+edge_bet<-edge.betweenness.community(dol)
+plot(edge_bet, dol, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Edge betweenness community detection algorithm')
+```
+
+Both multilevel and edge betweenness seems to be good choice for our dolphin school.
+
+## Tortoises
+
+A bipartite network was first constructed based on burrow use - an edge connecting a tortoise node to a burrow node indicated burrow use by the individual. Social networks of desert tortoises were then constructed by the bipartite network into a single-mode projection of tortoise nodes.
+
+Sah, Pratha, et al. "Inferring social structure and its drivers from refuge use in the desert tortoise, a relatively solitary species." Behavioral Ecology and Sociobiology 70.8 (2016): 1277-1289.
+
+```{r}
+tor<-read_graph('data/reptilia-tortoise-network-lm.edges',directed=FALSE)
+plot(tor, vertex.size=20, vertex.color='lightgreen', vertex.label.color="white",
+     vertex.label.font=0.001,  vertex.label.cex=.7, vertex.frame.color="white", edge.arrow.size=.2 )
+tor<-simplify(tor)
+```
+
+```{r}
+set.seed(123)
+from_graph_to_table(tor)
+```
+
+This time we see that, given the difficult disconnetted graph, the different community algorithms performs really differently. 
+
+The only algorithm that find a small number of cluster is the Label propagation algorithm.
+
+```{r}
+set.seed(123)
+lab<-label.propagation.community(tor)
+plot(lab, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Label propagation community detection algorithm')
+```
+
+Unfortunatly, a glance is enough to say that this division is not satisfyng. The algorithm mainly divid in different clusters the disconnected components. 
+
+On the other extreme, the edge betweenness algorithm finds 15 clusters.
+
+```{r}
+set.seed(123)
+edg<-edge.betweenness.community(tor)
+plot(edg, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Label propagation community detection algorithm')
+```
+
+Does this makes any sense?
+
+
+We can try to see partitions computed by other algorithms (but we still have to question ourselves if it makes sense to us having 7/9 cluster on only 46 individuals).
+This two algorithms return an almost identical result, but the second one takes a little bit of computational time more.
+
+
+```{r}
+set.seed(123)
+multi<-multilevel.community(tor)
+plot(multi, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Multilevel community detection algorithm')
+```
+
+```{r}
+set.seed(123)
+opt<-optimal.community(tor)
+plot(opt, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Optimal community detection algorithm')
+```
+
+With 9 clusters, we have again two algorithms that finds similar result. The first one is a little bit better on the TPT metric, the other one is slightly better in all the other metrics.
+
+```{r}
+set.seed(123)
+walk<-walktrap.community(tor)
+plot(walk, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Walktrap community detection algorithm')
+```
+
+
+```{r}
+set.seed(123)
+inf<-infomap.community(tor)
+plot(inf, tor, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Infomap community detection algorithm')
+```
+
+## Weaver aves
+
+A network edge was drawn between individuals that used the same nest chambers either for roosting or nest-building at any given time within a series of observations at the same colony in the same year, either together in the nest chamber at the same time or at different times.
+
+van Dijk, Rene E., et al., "Cooperative investment in public goods is kin directed in communal nests of social birds." Ecology letters 17.9 (2014): 1141-1148.
+
+```{r}
+wea<-read_graph('data/aves-weaver-social-00.edges',directed=FALSE)
+plot(wea, vertex.size=20, vertex.color='gold', vertex.label.color="white",
+     vertex.label.font=0.001,  vertex.label.cex=.7, vertex.frame.color="white", edge.arrow.size=.2 )
+
+```
+
+```{r}
+set.seed(123)
+from_graph_to_table(wea)
+```
+
+This time we have a more "easy" graph to partition (communities are easy to see even just by looking at it), and results algotrithms seems indeed more consistent. All the algorithm finds the similiar solution, with the exception that one of them divides one of the communities in two.
+
+```{r}
+inf<-infomap.community(wea)
+plot(inf, wea, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Infomap community detection algorithm')
+```
+
+```{r}
+set.seed(123)
+inf<-leading.eigenvector.community(wea)
+plot(inf, wea, vertex.size=20, vertex.label.color="white",
+     vertex.label.font=0.001, vertex.label.cex=.7,  main='Leading eigenvector community detection algorithm')
+```
+
+# TASK 2
+
+## Introduction
+In this section, we are going to analyze the resultant communities of applying one community detection algorithm to a huge network, the Wikipedia network.
+
+## Algorithm selection
+To do so, we selected the algorithm \textfff{label.propagation.community}. We did it because it is nearly a linear-time algorithm, and we need a fast one because of the size of the network.
+

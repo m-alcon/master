@@ -22,7 +22,7 @@ rm(pac)
 rm(required_packages)
 
 # Needed data
-g = read.graph("./data/wikipedia.gml", format="gml")
+g = as.undirected(read.graph("./data/wikipedia.gml", format="gml"))
 
 # Functions
 detect.and.plot = function (comm.detector) {
@@ -47,26 +47,10 @@ sample.edges = function (g, perc) {
 
 ```
 
-## Sample the graph
-```{r}
-data = data.frame(id=numeric(), V=numeric(), E=numeric(), trans=numeric(), transV=numeric(), transE=numeric())
 
-for (i in seq(0.1,1, 0.1)) {
-  sample_g = sample.vertices(g, i)
-  v_l = length(V(sample_g))
-  e_l = length(E(sample_g))
-  trans = transitivity(sample_g)
-  data = rbind(data, data.frame(id=i, V=v_l, E=e_l, trans=trans, transV=(v_l/trans), transE=(e_l/trans)))
-  plot(degree_distribution(sample_g), main=paste(i))
-}
-data
-
-```
 
 ```{r}
-#data = data.frame(p=numeric(), size=numeric(), time=numeric(), mod=numeric())
-#for (i in seq(0.01, 0.3, 0.1)) {
-i = 0.325
+for (i in seq(0.25, 0.325, 0.025)) {
   sampled_g = sample.vertices(as.undirected(g), i)
   n_vertices = length(V(sampled_g))
   
@@ -80,6 +64,26 @@ i = 0.325
   #plot(community, sampled_g) 
   #data = rbind(data, data.frame(p=i, size=n_vertices, time=(end_time - start_time)))
   data = rbind(data, data.frame(p=i, size=n_vertices, time=(end_time - start_time), mod=modularity(community)))
-#}
+}
+data
+```
+
+## Sample the graph
+```{r}
+test.algorithm = function (func, g) {
+  start_time <- Sys.time()
+  community = func(g)
+  end_time <- Sys.time()
+  return(data.frame(id=algorithm(community), time=(end_time-start_time), mod=modularity(community)))
+}
+data = data.frame(id=character(), time=numeric(), mod=numeric())
+#rbind(data, test.algorithm(edge.betweenness,sample.vertices(g, 0.3)))
+data = rbind(data, test.algorithm(fastgreedy.community,g))
+data = rbind(data, test.algorithm(label.propagation.community,g))
+data = rbind(data, test.algorithm(leading.eigenvector.community,g))
+data = rbind(data, test.algorithm(multilevel.community,g))
+#data = rbind(data, test.algorithm(optimal.community,g))
+#data = rbind(data, test.algorithm(spinglass.community,g))
+data = rbind(data, test.algorithm(walktrap.community,g))
 data
 ```
