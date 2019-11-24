@@ -315,6 +315,78 @@ plot(inf, wea, vertex.size=20, vertex.label.color="white",
 ## Introduction
 In this section, we are going to analyze the resultant communities of applying one community detection algorithm to a huge network, the Wikipedia network.
 
-## Algorithm selection
-To do so, we selected the algorithm \textfff{label.propagation.community}. We did it because it is nearly a linear-time algorithm, and we need a fast one because of the size of the network.
+```{r, include=FALSE}
+# Needed packages
+required_packages <- c("igraph","rstudioapi","knitr")
+for (pac in required_packages) {
+  if(!require(pac,  character.only=TRUE)){
+    install.packages(pac, repos="http://cran.rstudio.com")
+    library(pac,  character.only=TRUE)
+  } 
+}
+rm(pac)
+rm(required_packages)
 
+# Needed data
+g = as.undirected(read.graph("./data/wikipedia.gml", format="gml"))
+
+# Functions
+detect.and.plot = function (comm.detector) {
+  community = comm.detector(g)
+  #print(membebrship(community))
+  plot(community,g)
+  return(modularity(community))
+}
+
+## Functions for sample a graph
+sample.vertices = function (g, perc) {
+  n_vertices = round(length(V(g))*perc)
+  sampled_vertices = sample(V(g), n_vertices)
+  return(induced_subgraph(g, sampled_vertices))
+}
+
+sample.edges = function (g, perc) {
+  n_edges = round(length(E(g))*perc)
+  sampled_edges = sample(E(g), n_edges)
+  return(subgraph.edges(g, sampled_edges))
+}
+
+```
+
+## Algorithm selection
+We did an experiment to select the algorithm we are going to use in the analysis. Time of computation, modularity, and number of communities are the values we focus on to make the decision. The following table shows the results of this experiment.
+
+```{r}
+test.algorithm = function (func, g) {
+  start_time <- Sys.time()
+  community = func(g)
+  end_time <- Sys.time()
+  return(data.frame(id=algorithm(community), time=as.numeric(end_time - start_time, units="secs"), mod=modularity(community), comm=length(community)))
+}
+data = data.frame(id=character(), time=numeric(), mod=numeric())
+data = rbind(data, test.algorithm(edge.betweenness.community, sample.vertices(g, 0.3)))
+data = rbind(data, test.algorithm(fastgreedy.community,g))
+data = rbind(data, test.algorithm(label.propagation.community,g))
+data = rbind(data, test.algorithm(leading.eigenvector.community,g))
+data = rbind(data, test.algorithm(multilevel.community,g))
+#data = rbind(data, test.algorithm(optimal.community,g))
+#data = rbind(data, test.algorithm(spinglass.community,g))
+data = rbind(data, test.algorithm(walktrap.community,g))
+colnames(data) = c("Algorithm","Time","Modularity","Community length")
+kable(data)
+```
+
+We had to discard some of the algorithms:
+\begin{itemize}
+  \item \texttt{edge.betweenness.community}. Long computation time. We applied this algorithm to a 30\% sample of the network because with a larger sample it did not finish in a reasonable time.  
+  \item \texttt{leading.eigenvector.community} Low modularity compared with the other ones.
+  \item \texttt{optimal.community}. It crashes.
+  \item \texttt{spinglass.community}. It crashes.
+\end{itemize}
+
+Finally, we selected the \texttt{fastgreedy.community} algotithm because it has more centered values for modularity and community length.
+
+## Analysis of the communities
+```{r}
+community = fastgreedy.community(g)
+```
