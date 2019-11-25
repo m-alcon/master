@@ -1,0 +1,18 @@
+---
+title: 'Complex and Social Networks: Lab session 5'
+subtitle: 'Finding community structure'
+output:
+  pdf_document:
+    fig_crop: no
+    fig_height: 4
+    toc: yes
+  html_document:
+    toc: yes
+author: Miguel Alcon & Egon 
+---
+
+```{r include = FALSE}
+knitr::opts_chunk$set(echo=FALSE)
+fig.pos = 'h'
+```
+

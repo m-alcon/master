@@ -312,33 +312,12 @@ plot(inf, wea, vertex.size=20, vertex.label.color="white",
 
 # TASK 2
 
-## Introduction
-In this section, we are going to analyze the resultant communities of applying one community detection algorithm to a huge network, the Wikipedia network.
-
 ```{r, include=FALSE}
-# Needed packages
-required_packages <- c("igraph","rstudioapi","knitr")
-for (pac in required_packages) {
-  if(!require(pac,  character.only=TRUE)){
-    install.packages(pac, repos="http://cran.rstudio.com")
-    library(pac,  character.only=TRUE)
-  } 
-}
-rm(pac)
-rm(required_packages)
-
 # Needed data
-g = as.undirected(read.graph("./data/wikipedia.gml", format="gml"))
+g_un = as.undirected(read.graph("./data/wikipedia.gml", format="gml"))
+g = read.graph("./data/wikipedia.gml", format="gml")
 
-# Functions
-detect.and.plot = function (comm.detector) {
-  community = comm.detector(g)
-  #print(membebrship(community))
-  plot(community,g)
-  return(modularity(community))
-}
-
-## Functions for sample a graph
+# Functions for sample a graph
 sample.vertices = function (g, perc) {
   n_vertices = round(length(V(g))*perc)
   sampled_vertices = sample(V(g), n_vertices)
@@ -352,41 +331,76 @@ sample.edges = function (g, perc) {
 }
 
 ```
-
-## Algorithm selection
-We did an experiment to select the algorithm we are going to use in the analysis. Time of computation, modularity, and number of communities are the values we focus on to make the decision. The following table shows the results of this experiment.
-
-```{r}
-test.algorithm = function (func, g) {
-  start_time <- Sys.time()
-  community = func(g)
-  end_time <- Sys.time()
-  return(data.frame(id=algorithm(community), time=as.numeric(end_time - start_time, units="secs"), mod=modularity(community), comm=length(community)))
-}
-data = data.frame(id=character(), time=numeric(), mod=numeric())
-data = rbind(data, test.algorithm(edge.betweenness.community, sample.vertices(g, 0.3)))
-data = rbind(data, test.algorithm(fastgreedy.community,g))
-data = rbind(data, test.algorithm(label.propagation.community,g))
-data = rbind(data, test.algorithm(leading.eigenvector.community,g))
-data = rbind(data, test.algorithm(multilevel.community,g))
-#data = rbind(data, test.algorithm(optimal.community,g))
-#data = rbind(data, test.algorithm(spinglass.community,g))
-data = rbind(data, test.algorithm(walktrap.community,g))
-colnames(data) = c("Algorithm","Time","Modularity","Community length")
-kable(data)
-```
-
-We had to discard some of the algorithms:
-\begin{itemize}
-  \item \texttt{edge.betweenness.community}. Long computation time. We applied this algorithm to a 30\% sample of the network because with a larger sample it did not finish in a reasonable time.  
-  \item \texttt{leading.eigenvector.community} Low modularity compared with the other ones.
-  \item \texttt{optimal.community}. It crashes.
-  \item \texttt{spinglass.community}. It crashes.
-\end{itemize}
-
-Finally, we selected the \texttt{fastgreedy.community} algotithm because it has more centered values for modularity and community length.
+## Introduction
+In this section, we are going to analyze the resultant communities of applying one community detection algorithm to a huge network, the Wikipedia network. Since this network is a directed graph, only two algorithms can handle it, which are \texttt{edge.betweenness.community}, \texttt{label.propagation.community} and \texttt{walktrap.community} (the other ones crashed). Only the \texttt{walktrap.community} algorithm finish its execution in a reasonable time, hence it is the one we used. 
 
 ## Analysis of the communities
-```{r}
-community = fastgreedy.community(g)
+The algorithm groups the nodes in 3352 communities. In the following figure, you can see the distribution of the nodes along the communities.
+```{r, include=FALSE}
+community.name = function(g,community,id) {
+  vertex_attr(g)$label[which(community$membership == id)]
+}
+set.seed(251120)
+community = walktrap.community(g)
+length(community)
+sum(sizes(community) > 100)
+sum(sizes(community) < 3)
+sum(sizes(community) == 1)
 ```
+
+```{r}
+plot(sizes(community), xlab = "Community", ylab = "Size",  col="blue")
+```
+As you can observe, nodes are not very well distributed. We have only 15 communities that have more than 100 nodes, while 1528 of them have less than 3 (only 16 have only one single node). However, we are going to take a look at the labels of the nodes of some of these communities.
+
+```{r, include=FALSE}
+set.seed(251120)
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+community.name(g,community,sample(1:length(community), 1))
+max(sizes(community))
+sample(community.name(g,community,which(sizes(community) == max(sizes(community)))), 10)
+```
+
+We selected randomly 10 communities:
+\begin{enumerate}
+  \item "Kd-trie", "Prefix hash tree", "Trie", "Burstsort", "Hash trie" and "Acyclic deterministic finite automaton".
+  \item "Etherloop" and "High Speed Voice and Data Link".
+  \item "Fleet Satellite Communications System" and "UHF Follow-On System".
+  \item "Loop Maintenance Operations System" and "Craft access system".
+  \item "Sheikh Ahmad Dede" and "Heaven \& Earth (TV series)".
+  \item "Comedy of errors", "Havoc, Inc", "Farce" and "Body swap".
+  \item "Family Ties (Farscape episode)", "Meltdown (Farscape episode)" and "A Human Reaction".
+  \item "Penrose method", "One man, one vote" and "Plural voting".
+  \item "Porto Alegre Manifesto" and "Armand Mattelart".
+  \item "Elizabeth Moberly" and "Environmental factor".
+\end{enumerate}
+
+  
+Doing a little bit of research in Wikipedia, we found a common point between nodes of each community:
+\begin{enumerate}
+  \item Tries.
+  \item Voice and data transmision.
+  \item Satellite communication systems of the U.S. Navy.
+  \item -
+  \item TV show and a man who appeared in.
+  \item Literature.
+  \item Episodes of the Farscape TV show.
+  \item Voting.
+  \item A manifesto and a man who signed it.
+  \item Cancer.
+\end{enumerate}
+  
+In point 4, we could not find any entrance in Wikipedia for "Craft access system". Moreover, in point 10, we have "Elizabeth Moberly": a British research psychologist and theologian who became involved in cancer research, and "Environmental factor", where the main result of it is cancer. The relation is almost inexistent.
+
+We also had a look to the largest community (4651 nodes) to see if there is a relation between its nodes. We selected randomly 10 elements of the community, which are: "Bairstow's method", "Boolean algebra (structure)", "Ideal (set theory)", "Pappus graph", "Parity (mathematics)", "Semi-continuity", "Elongated triangular cupola", "Methods of contour integration", "Jensen's Device", "Domain (ring theory)". Again, doing some research in Wikipedia, we notice that all nodes are related with mathematics.
+
+## Conclusions
+To sum up, community detection algorithms (\texttt{walktrap.community} to be concrete) group nodes into communities correctly, but probably not the best way. I.e., the communities it creates are good because nodes within it are related, but they could be inside one where they fit better. Furthermore, we are sure that most of the small communities can be in a bigger one with a more general topic, for instance, the TV shows of points 5 and 7. 
