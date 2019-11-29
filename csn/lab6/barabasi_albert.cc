@@ -12,31 +12,32 @@ void BarabasiAlbert::start_random_graph(Graph &graph, Vector &stubs) {
         stubs.push_back(order[i-1]);
         stubs.push_back(order[i]);
     }
-
-    graph.write_edges(cout);
 }
 
-void BarabasiAlbert::growth_preferential(const uint &t_max, const uint &m0) {
+void BarabasiAlbert::growth_preferential(const uint &t_max) {
     Graph graph(n0);
-    Vector stubs;
+    Vector stubs(0);
     start_random_graph (graph, stubs);
-    uint s0 = stubs.size();
 
     for (uint t = 1; t < t_max; ++ t) {
-        uint new_node = graph.create_node();
+        uint node = graph.create_node();
+        Vector aux = stubs; // Used to avoid multi-edges
         for (uint i = 0; i < m0; ++i) {
-            uniform_int_distribution<int> distribution(0,stubs.size());
-            uint stub_node = distribution(generator);
-            graph.add_edge(stub_node, new_node);
-            stubs.push_back(stub_node);
-            stubs.push_back(new_node);            
+            uniform_int_distribution<int> distribution(0,aux.size()-1);
+            uint idx = distribution(generator);
+            graph.add_edge(aux[idx], node);
+            stubs.push_back(aux[idx]);
+            stubs.push_back(node);
+            aux.erase(remove(aux.begin(), aux.end(), aux[idx]), aux.end());
+            if (aux.empty()) 
+                break;
         }
     }
-
-    graph.write_edges(cout);
+    //graph.write_edges(cout);
+    graph.write_degree_sequence(cout);
 }
 
 int main() {
-    BarabasiAlbert ba (5);
-    ba.growth_preferential(10, 1);
+    BarabasiAlbert ba (5, 6);
+    ba.growth_preferential(10);
 }

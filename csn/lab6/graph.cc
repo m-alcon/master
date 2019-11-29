@@ -11,10 +11,15 @@ Graph::Graph (const uint &N) {
 }
         
 void Graph::write_edges(ostream &output) {
-    output << n_vertices() << " " << n_edges() << endl;
+    //output << n_vertices() << " " << n_edges() << endl;
     for (Edge e: edges) {
         output << e.u << " " << e.v << endl; 
     }
+}
+
+void Graph::write_degree_sequence(ostream &output) {
+    for (uint i = 0; i < adjacency.size(); ++i)
+        output << adjacency[i].size() << endl;
 }
 
 uint Graph::create_node() {

@@ -25,8 +25,8 @@ class Graph {
         uint n_vertices();
         uint n_edges();
         void write_edges(ostream &output);
-        
-        Vector degree_sequence();
+        void write_degree_sequence(ostream &output);
+
         uint create_node();
         void add_edge(const uint &u, const uint &v);
 
