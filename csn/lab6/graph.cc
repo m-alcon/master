@@ -14,15 +14,15 @@ void Graph::add_edge (const uint &u, const uint &v) {
     adjacency[v].push_back(u);
 }
 
-uint Graph::n_vertices () {
+uint Graph::n_vertices () const {
     return adjacency.size();
 }
 
-uint Graph::degree (const uint &node) {
+uint Graph::degree (const uint &node) const {
     return adjacency[node].size();
 }
 
-bool Graph::has_connection (const uint &u, const uint &v) {
+bool Graph::has_connection (const uint &u, const uint &v) const {
     if (u == v)
         return true;
     if (adjacency[u].size() > adjacency[v].size())
@@ -31,12 +31,12 @@ bool Graph::has_connection (const uint &u, const uint &v) {
         return find(adjacency[u].begin(), adjacency[u].end(), v) != adjacency[u].end();
 }
 
-void Graph::write_degree_sequence (ostream &output) {
+void Graph::write_degree_sequence (ostream &output) const {
     for (uint i = 0; i < adjacency.size(); ++i)
         output << degree(i) << endl;
 }
 
-void Graph::write_limited_degree_sequence (uint lim, ostream &output) {
+void Graph::write_limited_degree_sequence (uint lim, ostream &output) const {
     lim = min(lim, (uint) adjacency.size());
     for (uint i = 0; i < lim; ++i)
         output << degree(i) << endl;

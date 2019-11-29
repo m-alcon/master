@@ -36,11 +36,37 @@ void BarabasiAlbert::start_random_cycle_stubs (Graph &graph, Vector &stubs) {
     stubs.push_back(order[0]);
 }
 
+void BarabasiAlbert::write_degree_sequence(const Graph &graph, const string &main_name) const {
+    ofstream output(main_name + "_ds.txt");
+    graph.write_degree_sequence(output);
+    output.close();
+}
+
+void BarabasiAlbert::write_time_series(const Graph &graph, const uint &t, const string &main_name) const {
+    if (t == 1) {
+        ofstream output(main_name + "_ts_1.txt");
+        graph.write_limited_degree_sequence(n0+1, output);
+        output.close();
+    } else if (t == 10) {
+        ofstream output(main_name + "_ts_2.txt");
+        graph.write_limited_degree_sequence(n0+1, output);
+        output.close();
+    } else if (t == 100) {
+        ofstream output(main_name + "_ts_3.txt");
+        graph.write_limited_degree_sequence(n0+1, output);
+        output.close(); 
+    } else if (t == 1000) {
+        ofstream output(main_name + "_ts_4.txt");
+        graph.write_limited_degree_sequence(n0+1, output);
+        output.close();
+    }
+}
+
 void BarabasiAlbert::growth_preferential (const uint &t_max) {
     Graph graph(n0);
     Vector stubs(0);
     start_random_cycle_stubs(graph, stubs);
-    string main_file = "data/gp_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
+    string main_name = "data/gp_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
 
     for (uint t = 1; t < t_max; ++ t) {
         uint min_m0 = min(m0, graph.n_vertices());
@@ -54,33 +80,15 @@ void BarabasiAlbert::growth_preferential (const uint &t_max) {
             stubs.push_back(stubs[idx]);
             stubs.push_back(node);
         }
-        if (t == 1) {
-            ofstream output(main_file + "_ts_1.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        } else if (t == 10) {
-            ofstream output(main_file + "_ts_2.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        } else if (t == 100) {
-            ofstream output(main_file + "_ts_3.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close(); 
-        } else if (t == 1000) {
-            ofstream output(main_file + "_ts_4.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        }
+        write_time_series(graph, t, main_name);
     }
-    ofstream output(main_file + "_ds.txt");
-    graph.write_degree_sequence(output);
-    output.close();
+    write_degree_sequence(graph, main_name);
 }
 
 void BarabasiAlbert::growth_random (const uint &t_max) {
     Graph graph(n0);
     start_random_cycle(graph);
-    string main_file = "data/gr_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
+    string main_name = "data/gr_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
 
     for (uint t = 1; t < t_max; ++ t) {
         uint min_m0 = min(m0, graph.n_vertices());
@@ -92,35 +100,16 @@ void BarabasiAlbert::growth_random (const uint &t_max) {
                 old_node = distribution(generator);
             graph.add_edge(old_node, new_node);
         }
-
-        if (t == 1) {
-            ofstream output(main_file + "_ts_1.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        } else if (t == 10) {
-            ofstream output(main_file + "_ts_2.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        } else if (t == 100) {
-            ofstream output(main_file + "_ts_3.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close(); 
-        } else if (t == 1000) {
-            ofstream output(main_file + "_ts_4.txt");
-            graph.write_limited_degree_sequence(n0+1, output);
-            output.close();
-        }
+        write_time_series(graph, t, main_name);
     }
-    ofstream output(main_file + "_ds.txt");
-    graph.write_degree_sequence(output);
-    output.close();
+    write_degree_sequence(graph, main_name);
 }
 
 void BarabasiAlbert::nogrowth_preferential (const uint &t_max) {
     Graph graph(n0);
     Vector stubs(0);
     start_random_cycle_stubs(graph, stubs);
-    string main_file = "data/np_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
+    string main_name = "data/np_" + to_string(n0) + "_" + to_string(m0) + "_" + to_string(t_max);
 
     uniform_int_distribution<int> distribution(0, n0-1);
     for (uint t = 1; t < t_max; ++ t) {
@@ -135,58 +124,7 @@ void BarabasiAlbert::nogrowth_preferential (const uint &t_max) {
             stubs.push_back(stubs[idx]);
             stubs.push_back(node);
         }
-        if (t == 1) {
-            ofstream output(main_file + "_ts_1.txt");
-            graph.write_degree_sequence(output);
-            output.close();
-        } else if (t == 10) {
-            ofstream output(main_file + "_ts_2.txt");
-            graph.write_degree_sequence(output);
-            output.close();
-        } else if (t == 100) {
-            ofstream output(main_file + "_ts_3.txt");
-            graph.write_degree_sequence(output);
-            output.close(); 
-        } else if (t == 1000) {
-            ofstream output(main_file + "_ts_4.txt");
-            graph.write_degree_sequence(output);
-            output.close();
-        }
+        write_time_series(graph, t, main_name);
     }
-    ofstream output(main_file + "_ds.txt");
-    graph.write_degree_sequence(output);
-    output.close();
-}
-
-void print_usage() {
-    cerr << "usage: ./barabasi_albert type n0 m0 t_max" << endl;
-    cerr << "\ttype: all gp gr np" << endl;
-}
-
-int main (int argc, char *argv[]) {
-    if (argc != 5) {
-        cerr << "ERROR: some parameters are not specified." << endl;
-        print_usage();
-        return 1;
-    }
-    string type = argv[1];
-    int n0 = atoi(argv[2]);
-    int m0 = atoi(argv[3]);
-    int t_max = atoi(argv[4]);
-
-    BarabasiAlbert ba (n0, m0);
-    if (type == "all") {
-        ba.growth_preferential(t_max);
-        ba.growth_random(t_max);
-        ba.nogrowth_preferential(t_max);
-    } else if (type == "gp") {
-        ba.growth_preferential(t_max);
-    } else if (type == "gr") {
-        ba.growth_random(t_max);
-    } else if (type == "np") {
-        ba.nogrowth_preferential(t_max);
-    } else {
-        cerr << "ERROR: Non-defined type." << endl;
-        print_usage();
-    }    
+    write_degree_sequence(graph, main_name);
 }
