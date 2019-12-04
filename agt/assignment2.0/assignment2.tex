@@ -1,0 +1,155 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{enumitem}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\onemm}[0]{\hspace{1mm}}
+\newcommand{\suchthat}[0]{\onemm|\onemm}
+\renewcommand{\arraystretch}{1.4}
+\definecolor{statement}{gray}{0.5}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Algorithms for Game Theory \\
+    \today
+\end{flushright}
+
+\noindent
+{\huge{\textbf{First Problem Assignment}}}
+
+\section*{Problem 17}
+{\color{statement}
+\subsection*{Statement}
+Consider the sending from $s$ to $t$ game. Compute (or provide bounds for) the PoA and the PoS for the following social cost/utility functions:
+\begin{enumerate}[label=(\alph*)]
+    \item $C(s) = \begin{cases}
+        \sum_{i\in N} u_i(s) & \text{if there is a path from $s$ to $t$ in $G[s]$.} \\
+        n^2 & \text{otherwise.}
+    \end{cases}$
+    \item $U(s) = \max_{i\in N} u_i(s)$.
+    \item $U(s) = \sum_{i\in N} u_i(s)$.
+\end{enumerate}
+
+}
+\subsection*{Solution}
+In order to ease the explanation, I define the following functions:
+\begin{itemize}
+    \item $LP(G)$ = ``number of vertices that are inside the longest path of $G$''.
+    \item $SP(G)$ = ``number of vertices that are inside the shortest path of $G$''.
+\end{itemize}
+Both situations (longest and shortest paths) leads to a NE.
+\begin{itemize}
+    \item Longest path: all vertices that are on the way between $s$ and $t$ (i.e., all possible vertices that can be included in the path) are included in the (longest) path. Hence, all vertices are ``happy''.
+    \item Shortest path: no vertex outside the (shortest) path can be part of it with only changing its own action.
+\end{itemize}
+With this, we can start with the computation of the bounds.
+\begin{enumerate}[label=(\alph*)]
+    \item Here I use the formulas of PoA and PoS for the cost functions, which are:
+        \begin{align}
+            &\text{PoA}(\Gamma) = \frac{max_{s \in \text{NE}(\Gamma)} C(s)}{min_{s \in A} C(s)} & \text{PoS}(\Gamma) = \frac{min_{s \in \text{NE}(\Gamma)} C(s)}{min_{s \in A} C(s)}
+        \end{align}
+        I know that $min_{s \in \text{NE}(\Gamma)} C(s) = min_{s \in A} C(s) = min(SP(G), n^2)$ since the minimum path will be always a NE and the shortest possible one. If $G$ is unconnected, $SP(G) = \infty$ and $\forall s \in A$, $C(s) = n^2$.
+
+        By the statement, I also know that if there is not a path from $s$ to $t$ in G[s], then  $max_{s \in \text{NE}(\Gamma)} C(s) = n^2$.
+
+        If $G$ is connected
+        \begin{align}
+            \frac{LP(G)}{SP(G)} \leq \text{PoA}(\Gamma) \leq \frac{n^2}{SP(G)}
+        \end{align}
+        Moreover, the largest value of $SP(G)$ is $SP(G) = LP(G)$, and the smallest value of it is $SP(G) = 1$, therefore
+        \begin{align}
+            1 \leq \text{PoA}(\Gamma) \leq n^2
+        \end{align}
+        If $G$ is unconnected, it is possible that no path from $s$ to $t$ exists. This implies that $min_{s \in A} C(s) = max_{s \in \text{NE}(\Gamma)} C(s) = n^2$ can happen. However, it does not affect the bounds.
+        \begin{align}
+            \frac{n^2}{n^2} = 1 \leq \text{PoA}(\Gamma) \leq n^2
+        \end{align}
+        As I explained before, $min_{s \in \text{NE}(\Gamma)} C(s) = min_{s \in A} C(s) = min(SP(G), n^2)$, so PoS $= 1$.
+    \item Here, and in the following point, I use the formulas of PoA and PoS for the utility functions, which are:
+        \begin{align}
+            &\text{PoA}(\Gamma) = \frac{max_{s \in A} U(s)}{min_{s \in \text{NE}(\Gamma)} U(s)} & \text{PoS}(\Gamma) = \frac{max_{s \in A} U(s)}{max_{s \in \text{NE}(\Gamma)} U(s)}
+        \end{align}
+        In this case $\forall s$, $0 \leq U(s) \leq 1$.
+
+        If $G$ is connected, there always exists a path from $s$ to $t$, so $max_{s \in A} U(s) = 1$. It can happen that a NE exists with no path from $s$ to $t$, if there is no single action from any of the vertices that connects $s$ to $t$. In this case, $min_{s \in \text{NE}(\Gamma)} U(s) = 0$. Then, we can bound PoA as follows:
+        \begin{align}
+            \frac{1}{1} = 1 \leq \text{PoA} \leq \infty = \frac{1}{0}
+        \end{align}
+        Because there always exists a path between $s$ and $t$, we can define PoS $= 1$.
+
+        If $G$ is unconnected, $max_{s \in A} U(s) = 1$ is not true because maybe a path from $s$ to $t$ does not exist. Then, the PoA and PoS can be equal to the indeterminate form $\frac{0}{0}$.
+    \item If $G$ is connected, there always exists a path from $s$ to $t$, so $max_{s \in A} U(s) = LP(G)$. As in (b), it can happen that a NE exists with no path from $s$ to $t$, so $min_{s \in \text{NE}(\Gamma)} U(s)$ can be 0, otherwise it is equal to $SP(G)$. Then
+        \begin{align}
+            \frac{LP(G)}{SP(G)} \leq \text{PoA} \leq \infty = \frac{LP(G)}{0}
+        \end{align}
+        As in (b), if $G$ is unconnected, PoA and PoS can be equal to the indeterminate form $\frac{0}{0}$.
+\end{enumerate}
+
+
+\section*{Problem 28}
+{\color{statement}
+\subsection*{Statement}
+Consider a GSP auction for $n$ players. Recall that in such an auction each bid profile $b$ defines an allocation $\pi$ mapping slots to players. We say that an allocation is reasonable if for each pair $i$, $j$ of slots
+\begin{equation*}
+    \frac{\alpha_j}{\alpha_i} + \frac{\gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}} \geq 1.
+\end{equation*}
+\begin{itemize}
+    \item Prove that when $b$ is a NE, the corresponding allocation $\pi$ is reasonable.
+    \item Use the previous fact to show that the price of anarchy, on pure strategies, of the GSP auction is at most 2.
+\end{itemize}
+
+}
+\subsection*{Solution}
+
+\section*{Problem 35}
+{\color{statement}
+\subsection*{Statement}
+Consider a the following decision process which runs on a leader-follower society with $n$ members. The interaction among the society is represented by a bipartite directed graph $G = (L,F,E)$ having the following property: all the vertices in $L$ have in-degree 0 and all the vertices in $F$ have out-degree 0. The decision process is defined by two parameters $\alpha$, $0 \leq \alpha \leq 1$ and $q$, $0 \leq q \leq n$.
+
+When the society has to reach a decision about some topic, each member takes an initial position. We model this situation as an initial decision vector $x \in \{0, 1\}^n$. Then, each $i \in F$ looks at the values $p_{i1} =|\{(j,i) \in E \suchthat x_j = 1\}|$ and $p_{i0} = |\{(j,i) \in E \suchthat x_j = 0\}|$ and reconsiders its position according to the following algorithm.
+
+\begin{itemize}
+    \item If $p_{i1} > \alpha(p_{i1}+p_{i0})$ and $p_{i0} < \alpha(p_{i1}+p_{i0})$, $x_i =1$
+    \item If $p_{i0} > \alpha(p_{i1}+p_{i0})$ and $p_{i1} < \alpha(p_{i1}+p_{i0})$, $x_i =0$
+\end{itemize}
+
+Finally, the society reaches a ``yea'' (1) when $\sum^n_{i=1} x_i \geq q$, and a ``nay'' (0) otherwise.
+\begin{enumerate}[label=(\alph*)]
+    \item Assuming that a coalition $S$ is represented as the initial decision vector $x \in \{0,1\}^n$ defined as $x_i = 1$ iff $i \in S$, the decision system process defines a cooperative game assigning to a coalition $S$ a value in $v(S) \in \{0, 1\}$. Is this game simple?
+    \item Provide a characterization of the games in the family with non-empty core.
+    \item Can the Banzhaf value of player $i$ be computed in polynomial time?
+\end{enumerate}
+}
+\subsection*{Solution}
+
+
+\end{document}
