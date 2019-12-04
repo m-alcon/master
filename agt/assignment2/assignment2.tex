@@ -1,0 +1,56 @@
+\documentclass[a4paper, 11pt]{article}
+\usepackage{fullpage} % changes the margin
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{longtable}
+\usepackage[bottom]{footmisc}
+\usepackage{cite}
+\usepackage{parskip}
+\usepackage{subcaption}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{listings}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue
+}
+
+%\setlength{\parindent}{0cm}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\onemm}[0]{\hspace{1mm}}
+\newcommand{\suchthat}[0]{\onemm|\onemm}
+\renewcommand{\arraystretch}{1.4}
+\definecolor{statement}{gray}{0.5}
+
+\graphicspath{{img/}}
+
+\begin{document}
+
+\noindent
+\begin{flushright}
+    \large\textbf{Miguel Alcón Doganoc} \\
+    Algorithms for Game Theory \\
+    \today
+\end{flushright}
+
+\noindent
+{\huge{\textbf{First Problem Assignment}}}
+
+\section*{Problem 6}
+{\color{statement}
+\subsection*{Statement}
+}
+
+\[
+\text{If } i \geq j \Rightarrow \alpha_j \geq \alpha_i \Rightarrow \frac{\alpha_j}{\alpha_i} \geq 1    
+\]
+\end{document}

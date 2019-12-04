@@ -16,7 +16,8 @@ void BarabasiAlbert::start_random_cycle (Graph &graph) {
     for (uint i = 1; i < order.size(); ++i) {
         graph.add_edge(order[i-1], order[i]);
     }
-    graph.add_edge(order[order.size()-1], order[0]);
+    if (order.size() > 2)
+        graph.add_edge(order[order.size()-1], order[0]);
 }
 
 void BarabasiAlbert::start_random_cycle_stubs (Graph &graph, Vector &stubs) {
@@ -31,9 +32,11 @@ void BarabasiAlbert::start_random_cycle_stubs (Graph &graph, Vector &stubs) {
         stubs.push_back(order[i-1]);
         stubs.push_back(order[i]);
     }
-    graph.add_edge(order[order.size()-1], order[0]);
-    stubs.push_back(order[order.size()-1]);
-    stubs.push_back(order[0]);
+    if (order.size() > 2) {
+        graph.add_edge(order[order.size()-1], order[0]);
+        stubs.push_back(order[order.size()-1]);
+        stubs.push_back(order[0]);
+    }
 }
 
 void BarabasiAlbert::write_degree_sequence(const Graph &graph, const string &main_name) const {
