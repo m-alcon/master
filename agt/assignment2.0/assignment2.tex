@@ -71,7 +71,7 @@ Both situations (longest and shortest paths) leads to a NE.
     \item Longest path: all vertices that are on the way between $s$ and $t$ (i.e., all possible vertices that can be included in the path) are included in the (longest) path. Hence, all vertices are ``happy''.
     \item Shortest path: no vertex outside the (shortest) path can be part of it with only changing its own action.
 \end{itemize}
-With this, we can start with the computation of the bounds.
+With this, I can start with the computation of the bounds.
 \begin{enumerate}[label=(\alph*)]
     \item Here I use the formulas of PoA and PoS for the cost functions, which are:
         \begin{align}
@@ -100,11 +100,11 @@ With this, we can start with the computation of the bounds.
         \end{align}
         In this case $\forall s$, $0 \leq U(s) \leq 1$.
 
-        If $G$ is connected, there always exists a path from $s$ to $t$, so $max_{s \in A} U(s) = 1$. It can happen that a NE exists with no path from $s$ to $t$, if there is no single action from any of the vertices that connects $s$ to $t$. In this case, $min_{s \in \text{NE}(\Gamma)} U(s) = 0$. Then, we can bound PoA as follows:
+        If $G$ is connected, there always exists a path from $s$ to $t$, so $max_{s \in A} U(s) = 1$. It can happen that a NE exists with no path from $s$ to $t$, if there is no single action from any of the vertices that connects $s$ to $t$. In this case, $min_{s \in \text{NE}(\Gamma)} U(s) = 0$. Then, PoA can be bounded as follows:
         \begin{align}
             \frac{1}{1} = 1 \leq \text{PoA} \leq \infty = \frac{1}{0}
         \end{align}
-        Because there always exists a path between $s$ and $t$, we can define PoS $= 1$.
+        Because there always exists a path between $s$ and $t$, PoS $= 1$.
 
         If $G$ is unconnected, $max_{s \in A} U(s) = 1$ is not true because maybe a path from $s$ to $t$ does not exist. Then, the PoA and PoS can be equal to the indeterminate form $\frac{0}{0}$.
     \item If $G$ is connected, there always exists a path from $s$ to $t$, so $max_{s \in A} U(s) = LP(G)$. As in (b), it can happen that a NE exists with no path from $s$ to $t$, so $min_{s \in \text{NE}(\Gamma)} U(s)$ can be 0, otherwise it is equal to $SP(G)$. Then
@@ -122,13 +122,46 @@ Consider a GSP auction for $n$ players. Recall that in such an auction each bid 
 \begin{equation*}
     \frac{\alpha_j}{\alpha_i} + \frac{\gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}} \geq 1.
 \end{equation*}
-\begin{itemize}
+\begin{enumerate}[label=(\alph*)]
     \item Prove that when $b$ is a NE, the corresponding allocation $\pi$ is reasonable.
     \item Use the previous fact to show that the price of anarchy, on pure strategies, of the GSP auction is at most 2.
-\end{itemize}
+\end{enumerate}
 
 }
 \subsection*{Solution}
+\begin{enumerate}[label=(\alph*)]
+    \item I first divided the prove in two parts, when $i \geq j$ and $i < j$.
+    \begin{itemize}
+        \item $\mathbf{i \geq j}$: Using the fact that $\alpha_1 \geq \alpha_2 \geq ... \geq \alpha_n$:
+        \begin{equation*}
+            \alpha_j \geq \alpha_i \Rightarrow \frac{\alpha_j}{\alpha_i} \geq 1
+        \end{equation*}
+        \item $\mathbf{i < j}$: Using the fact that $b$ is a NE, I can use the NE property for $i < j$, which is:
+        \begin{equation*}
+            \alpha_j(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(j+1)}b_{\pi(j+1)}) \geq \alpha_i(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(i)}b_{\pi(i)})
+        \end{equation*}
+        Since $0 \leq b_k \leq v_k$ (for all $k$), it is easy to see that $- \gamma_{\pi(i)}b_{\pi(i)} \geq - \gamma_{\pi(i)}v_{\pi(i)}$, hence
+        \begin{equation*}
+            \alpha_i(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(i)}b_{\pi(i)}) \geq \alpha_i(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(i)}v_{\pi(i)})
+        \end{equation*}
+        As I said, $0 \leq b_k$, so
+        \begin{equation*}
+            \alpha_j(\gamma_{\pi(j)}v_{\pi(j)}) \geq \alpha_j(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(j+1)}b_{\pi(j+1)})
+        \end{equation*}
+        All this leads to
+        \begin{align*}
+            \alpha_j(\gamma_{\pi(j)}v_{\pi(j)}) &\geq \alpha_i(\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(i)}v_{\pi(i)}) \\
+            \frac{\alpha_j}{\alpha_i} &\geq \frac{\gamma_{\pi(j)}v_{\pi(j)} - \gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}} \\
+            \frac{\alpha_j}{\alpha_i} &\geq \frac{\gamma_{\pi(j)}v_{\pi(j)}}{\gamma_{\pi(j)}v_{\pi(j)}} - \frac{\gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}} \\
+            \frac{\alpha_j}{\alpha_i} &\geq 1 - \frac{\gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}}
+        \end{align*}
+        Finally, I obtain the initial inequality.
+        \begin{equation*}
+            \frac{\alpha_j}{\alpha_i} + \frac{\gamma_{\pi(i)}v_{\pi(i)}}{\gamma_{\pi(j)}v_{\pi(j)}} \geq 1.
+        \end{equation*}
+
+    \end{itemize}
+\end{enumerate}
 
 \section*{Problem 35}
 {\color{statement}
@@ -150,6 +183,10 @@ Finally, the society reaches a ``yea'' (1) when $\sum^n_{i=1} x_i \geq q$, and a
 \end{enumerate}
 }
 \subsection*{Solution}
+\begin{enumerate}[label=(\alph*)]
+    \item Yes, it is a WVG to be exact. We can represent it as $\Gamma = (q; x)$, and also as $\Gamma = (N,S)$, being S either the winning or the losing coalition (depending on the problem). I assume that $x$ has already passed through the algorithm.
+    \item To know if a simple game has a non-empty core, you only have to ensure that it has at least one veto player. A player $p$ is a veto player if $v(C) = 0$, for any $C \subseteq N \setminus \{p\}$. The only scenario where a veto player exists is when $\mathbf{\sum_{i=i}^n x_i = q}$. In this case $v(C) = 1$. Then, the $q$ nodes $x_i = 1$ are all veto players because if I remove one from the game, then $v(C) = 0$.
+\end{enumerate}
 
 
 \end{document}
