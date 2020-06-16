@@ -1,0 +1,7 @@
+(17) Towards the Verification of Safety-critical Autonomous Systems in Dynamic Environments
+(93) The Architectural Implications of Autonomous Driving: Constraints and Acceleration
+(68) Stochastic Analysis of CAN-Based Real-Time Automotive Systems
+(38) Autonomous Vehicles Testing Methods Review
+(68) Computer Architectures for Autonomous Driving
+(66) An Evaluation of the NVIDIA TX1 for Supporting Real-time Computer-Vision Workloads
+(241) Challenges in Autonomous Vehicle Testing and Validation
