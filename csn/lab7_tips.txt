@@ -1,0 +1,5 @@
+M = as_adjacency_matrix(G)
+eigen{base} ?
+eigen_centrality$value gamma_i, gamma_2
+specify symmetry = TRUE for barabasi
+compute prob for each susceptible node (counting its infected neighbors)
